@@ -1,13 +1,3 @@
----
-title: "AgentKit SEO: Personal Branding & AI Context"
-platform: "general"
-objective: "An open-source framework for engineering your professional discoverability across platform algorithms, search engines, and AI agents."
-status: "stable"
-last_updated: "2026-04-23"
-tags: ["readme", "seo", "branding", "agents", "ats"]
-agent_priority: "high"
----
-
 <h1 align="center">AgentKit SEO</h1>
 
 > Optimize your digital presence for the algorithmic era. A dual-purpose Knowledge Hub for humans and an installable Skill for coding agents.
