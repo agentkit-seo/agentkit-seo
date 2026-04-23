@@ -24,7 +24,7 @@ Before writing prose or detailing experience, the profile's underlying structure
 Clean your LinkedIn URL to remove the random alphanumeric string appended by default (e.g., change `linkedin.com/in/john-doe-8a3b21` to `linkedin.com/in/johndoe`). This improves SEO indexing and looks professional on a CV.
 
 **Rule:** Earn the Verifications badge.
-The "About this profile" section has evolved into the "Verifications" menu. Use LinkedIn's verification tools (like CLEAR, workplace email, or academic institution) to earn the checkmark badge. AI agents and search algorithms heavily prioritize verified profiles to filter out bot accounts.
+The "About this profile" section has evolved into the "Verifications" menu. Use LinkedIn's verification tools—such as **CLEAR** (available in the US, Canada, and Mexico) or **Persona** (for Europe and global users)—to earn the checkmark badge. LinkedIn data indicates that verified profiles receive an average of 60% more views, as the internal algorithm prioritizes verified accounts to improve search relevance and trust.
 
 **Rule:** Use Location SEO explicitly for remote roles.
 If you are targeting remote work, you must explicitly add "Remote" as a location preference in your profile settings. Simply writing "Open to Remote" in your headline or About section is not enough to bypass strict automated location filters used by recruiters.
@@ -35,7 +35,7 @@ If you are targeting remote work, you must explicitly add "Remote" as a location
 The banner image is prime real estate. Do not leave it blank or use a generic stock photo. Use a custom design (via Canva or Figma) that displays your Unique Selling Proposition (USP) or a clear Call to Action (CTA).
 
 **Recommendation:** Record the Voice Badge on mobile.
-Use the LinkedIn mobile app (this feature is not available on desktop) to record the 10-second name pronunciation audio clip. This adds a layer of authenticity and signals to the algorithm that the profile is highly complete and actively maintained. AI-driven platforms also increasingly evaluate these clips for "communication fit."
+Use the LinkedIn mobile app (this feature is not available on desktop) to record the 10-second name pronunciation audio clip. This adds a layer of authenticity and signals to the 360brew algorithm that the profile is highly complete and actively maintained.
 
 ---
 

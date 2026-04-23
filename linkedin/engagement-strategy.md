@@ -18,10 +18,10 @@ agent_priority: "medium"
 
 An optimized profile structure is useless if the algorithm does not surface it. The 360brew engine heavily weights recency, meaningful interaction, and session timing. Active engagement signals to the AI that your account is authoritative within a specific niche, driving consistent, targeted traffic back to your profile.
 
-## 2. The Golden Window (Gold Time)
+## 2. The Golden Hour (Gold Time)
 
-**Rule:** Maximize the 2-hour Golden Window.
-The first two hours after publishing a post are critical. The algorithm uses this window to determine the content's velocity. Respond to every comment received during this period to double the engagement signals and trigger broader distribution to 2nd and 3rd-degree connections.
+**Rule:** Maximize the 60-minute Golden Hour.
+The first 60 to 90 minutes after publishing a post are critical. The algorithm uses this initial window to determine the content's velocity. Respond to every comment received during this period to double the engagement signals and trigger broader distribution to 2nd and 3rd-degree connections.
 
 **Rule:** Warm up the profile before posting.
 Spend 15 minutes engaging with other people's content immediately before publishing your own post. This signals active presence to the algorithm and increases the likelihood that your connections are online and ready to reciprocate engagement.
@@ -39,8 +39,8 @@ If your profile is optimized for Cybersecurity, do not spend your time commentin
 
 ## 4. Post frequency
 
-**Rule:** Aim for 1 post per week and 5-10 high-value comments.
-Do not attempt to post every single day. The algorithm suppresses accounts that over-post low-quality content via Frequency Capping. Focus on creating one deeply insightful, niche-specific post per week that maximizes Dwell Time.
+**Rule:** Aim for 2-5 posts per week with 12-hour gaps.
+Do not attempt to post multiple times in a single day. The algorithm suppresses accounts that over-post via Frequency Capping. Focus on creating high-quality, niche-specific content 2 to 5 times per week, ensuring at least a 12-hour gap between posts to maximize individual reach.
 
 ---
 
