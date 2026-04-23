@@ -1,0 +1,142 @@
+\documentclass[a4paper,10pt]{article}
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[left=1.4cm,right=1.4cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{enumitem}
+\setlist{leftmargin=*,noitemsep,topsep=0.05em,partopsep=0em,parsep=0em}
+\usepackage{parskip}
+\setlength{\parskip}{0.1em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\hfuzz=2pt
+\usepackage{xcolor}
+\definecolor{myblue}{HTML}{205792}
+\usepackage[colorlinks=true,urlcolor=myblue,linkcolor=myblue,citecolor=myblue]{hyperref}
+\usepackage{microtype}
+\newcommand{\cventry}[2]{\noindent\begin{minipage}[t]{\linewidth}\textbf{#1}\hfill\textbf{#2}\end{minipage}}
+\hypersetup{pdftitle={Renato Mignone CV},pdfauthor={Renato Mignone}}
+% \renewcommand{\href}[2]{\textcolor{myblue}{#2}}   % <-- add this
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+
+
+% --- SECTION TITLE STYLE ---
+% \newcommand{\mysection}[1]{%
+%   \vspace{0.3ex}
+%   {\large\bfseries\scshape\raggedright\color{myblue} #1}
+%   \rule{\linewidth}{0.4pt}
+%   \vspace{-0.3em}
+% }
+
+\newcommand{\mysection}[1]{%
+  \vspace{0.3ex}
+  {\large\bfseries\scshape\color{myblue} #1}\enspace%
+  \leaders\hrule height 0.4pt\hfill\kern0pt
+  \vspace{-0.2em}
+}
+
+
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    {\LARGE\scshape\color{myblue} Renato Mignone}\\[0.15em]
+    {\normalsize Cybersecurity Engineer | Post-Quantum Cryptography, AI Security}\\[0.25em]
+    \href{tel:+391234567890}{+39 123 456 7890} \quad
+    \href{mailto:renato.mignone@gmail.com}{renato.mignone@gmail.com} \quad
+    \href{https://www.linkedin.com/in/renato-mignone}{linkedin.com/in/renato-mignone} \quad
+    \href{https://github.com/RenatoMignone}{github.com/RenatoMignone}\\
+    \href{https://renatomignone.github.io}{renatomignone.github.io} \enspace|\enspace Düsseldorf, Germany\enspace|\enspace EU Work Authorization\enspace|\enspace Open to Relocation\enspace|\enspace Available Sept 2026
+\end{center}
+
+% --- TECHNICAL SKILLS ---
+\mysection{Technical Skills}
+\begin{itemize}
+    \item \textbf{Security Engineering:} Penetration Testing, Vulnerability Research \& Exploitation, Kernel Security \& eBPF, Binary Analysis (Ghidra, GDB, radare2), Malware Analysis, Web Application Security (OWASP Top 10)
+    \item \textbf{Threat Detection \& Response:} MITRE ATT\&CK Framework, Threat Modeling, Network Intrusion Detection (NIDS/IDS), Anomaly Detection, Incident Response, Threat Intelligence, Detection Engineering
+    \item \textbf{Cryptography:} Post-Quantum Cryptography (Lattice-Based, Hash-Based), Blind Signatures, Zero-Knowledge Proofs (ZKP), OPRFs, Anonymous Tokens, PKI, OpenSSL, Cryptographic Protocol Design
+    \item \textbf{AI for Cybersecurity:} AI-Based Threat Detection, PyTorch, Scikit-learn, GNN, RNN, LSTM, FFNN, Transformers (BERT, UniXcoder), Anomaly Detection Models, Adversarial ML
+    \item \textbf{Programming:} Python (multithreading, automation, ML/AI), C/C++ (systems, cryptographic implementations), Bash, Assembly (RISC-V, ARM), SQL, Java, JavaScript/TypeScript, Rust, Node.js/Express, React, PostgreSQL
+    \item \textbf{Systems \& Platforms:} Linux (Kali, Ubuntu), Docker, Container Security, QEMU, Git, bpftool, Wireshark, Nmap, GNS3
+\end{itemize}
+
+% --- EXPERIENCE ---
+\mysection{Experience}
+\cventry{Security Engineer Intern, Huawei - Data Privacy Lab, D\"usseldorf, Germany}{Feb 2026 - Present}
+\begin{itemize}
+    \item Engineered a PBAT (Policy-Based Anonymous Token) layer on a STARK-based post-quantum circuit, extending the trace by 105 Poseidon columns (+15\%) and 210 degree-3 transition constraints while preserving 115-bit security.
+    \item Benchmarked the full construction end-to-end: proof generation 294\,ms to 520\,ms, verification 29.2\,ms to 32.3\,ms (+10.6\%), proof size 172.7\,KB to 191.5\,KB; all 4 integration tests passing.
+    \item Analyzed cryptographic protocols for privacy-preserving tokens, including PQ blind signatures, zero-knowledge proofs, and OPRFs; evaluated CRYSTALS-Dilithium, SPHINCS+, and PS signatures under formal game-based security models.
+\end{itemize}
+% \begin{itemize}
+%     \item Researching post-quantum secure policy-based anonymous authentication tokens, exploring lattice-based and hash-based cryptographic constructions resistant to quantum attacks.
+%     \item Analyzing cryptographic protocols including blind signatures, zero-knowledge proofs, and oblivious pseudorandom functions for privacy-preserving token systems.
+%     \item Implementing and evaluating constructions using CRYSTALS-Dilithium, Sphincs+, and PS signatures with focus on formal security models (game-based and simulation-based proofs).
+% \end{itemize}
+
+\mysection{Leadership}
+\cventry{Logistics and Fundraising, IEEE-HKN (Mu Nu Chapter) - Honor Society}{Apr 2024 - Present}
+\begin{itemize}
+    \item Coordinated 5+ STEM events and hackathons (150-250 participants): logistics, infrastructure, and support.
+    \item Secured sponsorships and hardware from ARM, NXP, and STMicroelectronics for university events.
+    \item Built secure full-stack app (React/Node.js/PostgreSQL, TOTP 2FA, JWT, RBAC) - 1st place, IEEE-HKN Hackathon 2025.
+\end{itemize}
+
+% --- PROJECTS ---
+\mysection{Key Projects}
+\vspace{0.2em}
+
+\cventry{\textbf{AI-Driven Threat Detection Suite} - \href{https://github.com/RenatoMignone/AI-Driven-Threat-Detection-Research}{GitHub}}{Jan 2026}
+\begin{itemize}
+    \item Multi-model defense system leveraging FFNNs, RNNs, GNNs to detect malware, network intrusions, and bash-level attacks.
+    \item Achieved 98.1\% accuracy in malware classification by modeling API call sequences with GNNs and RNNs.
+    \item Developed an unsupervised network IDS with 95\% precision using deep autoencoders for anomaly detection.
+    \item Built an NLP-based MITRE ATT\&CK tactic classifier to map bash command sessions using BERT and UniXcoder.
+    \item \textbf{Stack:} PyTorch, GNN, RNN, LSTM, FFNN, Transformers (BERT, UniXcoder), Deep Autoencoders, Malware Analysis
+\end{itemize}
+
+\vspace{0.2em}
+\cventry{\textbf{Linux Kernel eBPF Verifier Security Analysis} - \href{https://github.com/RenatoMignone/Linux-eBPF-Verifier-Bypass-Research}{GitHub}}{Sept 2025}
+\begin{itemize}
+    \item Conducted security analysis of Linux kernel 6.8 eBPF verifier, identifying privilege escalation vulnerabilities based on ISO-IEC TS 17961-2013 secure coding standards.
+    \item Developed proof-of-concept exploits demonstrating kernel privilege escalation through verifier logic bypass techniques (5 confirmed exploitable vulnerabilities from 60+ candidates).
+    \item Performed multi-stage vulnerability analysis covering C source code, eBPF bytecode verification, JIT compilation semantics, and runtime exploitation using QEMU, bpftool, and custom static analysis tools.
+    \item \textbf{Stack:} Kernel Exploitation, eBPF Internals, Vulnerability Research, Reverse Engineering, C/Assembly, QEMU, GDB
+\end{itemize}
+
+\vspace{0.2em}
+\cventry{\textbf{Goodware Equivocal Behavior Analysis System} - (private - research project)}{Sept 2024}
+\begin{itemize}
+    \item Designed and implemented an asynchronous, multithreaded Python CLI tool integrating 3 sandbox platforms (Hybrid Analysis, VirusTotal, ANY.RUN) to analyze 36 trusted binaries in parallel across Windows 10 and Windows 11 environments.
+    \item Defined 12 Equivocal Software Behaviours from 60 MITRE ATT\&CK Enterprise Matrix techniques; detected System Reconnaissance and Advanced OS Utility Exploitation in 100\% of analyzed systems, including major browsers.
+    % \item Produced per-binary, per-sandbox structured JSON reports and post-processed results with Pandas and Seaborn to quantify undisclosed covert reconnaissance activity in goodware, contributing to the software transparency research agenda.
+    \item \textbf{Stack:} Python, Multithreading, REST APIs, MITRE ATT\&CK, Hybrid Analysis, VirusTotal, ANY.RUN, Supply Chain Security
+\end{itemize}
+
+
+% --- EDUCATION ---
+\mysection{Education}
+\cventry{MSc in Cybersecurity Engineering\enspace|\enspace Politecnico di Torino, Italy}{Sept 2024 - Oct 2026}\\
+GPA: 29.48/30 (top 5\% of cohort) \enspace|\enspace English-taught, ECSO-aligned curriculum\\
+Thesis: \textit{Post-Quantum Secure Policy-Based Anonymous Authentication Tokens} (Huawei Data Privacy Lab)\\
+% Relevant Coursework: Advanced Cryptography, Security Verification and Testing, Network and Cloud Security, Hardware and Wireless Security, AI for Cybersecurity, Advanced Information Systems Security
+\vspace{0.15em}
+\cventry{BSc in Computer Engineering\enspace|\enspace University of Sannio, Italy}{Sept 2021 - June 2024}\\
+Grade: 101/110 \enspace|\enspace Italian-taught curriculum\\
+Thesis: \href{https://zenodo.org/records/19262869}{\textit{Extracting Equivocal Behaviors from Trusted Systems}} (system integrity \& anomaly detection)
+
+% --- CERTIFICATIONS, LEADERSHIP & LANGUAGES ---
+\mysection{Certifications, Achievements \& Languages}
+
+\begin{itemize}
+    \item \textbf{Achievements:} Winner (1st place), IEEE-HKN International Hackathon 2025; Top 60 (57th/2000 Teams), Reply AI Agent Challenge 2026; Top 100 (88th), Reply Hack The Code Challenge 2025 (56,196,106 points).
+    \item \textbf{Certifications:} GNU/Linux Advanced (NetStudent \& WEEE Open, 2025); Cambridge English B2 First (FCE, 2024).
+    \item \textbf{Languages:} Italian (Native), English (Professional Working Proficiency), German (Basic).
+\end{itemize}
+
+\end{document}
