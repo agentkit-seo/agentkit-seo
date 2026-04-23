@@ -8,7 +8,6 @@ current_location: Düsseldorf, Germany
 linkedin: https://www.linkedin.com/in/renato-mignone/
 website: https://renatomignone.github.io/
 github: https://github.com/RenatoMignone
-target_roles: [Security Research Engineer, Cryptography Researcher, Cybersecurity Analyst]
 open_to_relocation: true
 
 education:
@@ -42,7 +41,9 @@ This file is a personal knowledge base documenting Renato Mignone's full academi
 
 <!-- VERIFIED FACTS: bsc_graduation=2024-06-13, bsc_grade=101/110, msc_gpa=29.48/30, msc_expected_graduation=2026-10, iss_grade=29/30, cnct_grade=30L/30, ml4net_grade=27/30, caos_grade=30/30, ncs_grade=30L/30, hardware_sec_grade=30L/30, wireless_sec_grade=30L/30, crypto_grade=30L/30, webapp_grade=30L/30, aiss_grade=30L/30, ai_cyber_grade=30L/30, svt_grade=30L/30, cyber_law_grade=27/30, english_cert_score=172, english_cert_id=C7109952, ieee_hackathon_result=1st_place, ieee_hackathon_year=2025, reply_challenge_result=88th_place, reply_challenge_score=56196106, reply_challenge_year=2025 -->
 
-## [DEGREE] BSc in Computer Engineering (L-8 — Classe delle lauree in ingegneria dell'informazione) | Università degli Studi del Sannio, Benevento, Italy | 101/110 | September 2021 – June 2024
+## [DEGREE] BSc in Computer Engineering (L-8 — Classe delle lauree in ingegneria dell'informazione) | Università degli Studi del Sannio, Benevento, Italy
+
+101/110 | September 2021 – June 2024
 
 The bachelor's degree provided foundational training in computer engineering, covering programming (C, Java, Python), computer architecture, and information systems. The cybersecurity-relevant component is the research thesis, detailed below.
 
