@@ -407,4 +407,4 @@ Before considering a context file complete, verify all of the following items.
 
 ---
 
-*This file governs the user's external agent context file. For the authoring standards that govern files inside this repository, see [STYLEGUIDE.md](../STYLEGUIDE.md).*
+*Next step: Learn how to load the file into a session in the [Agent workflow for context file users](./agent-workflow.md).*

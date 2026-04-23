@@ -168,4 +168,4 @@ A good interview preparation output:
 
 ---
 
-*For the structural rules that govern a valid context file, see [context-file-spec.md](./context-file-spec.md). For instructions on keeping the file current over time, see [file-maintenance.md](./file-maintenance.md).*
+*Next step: Keep your file accurate over time in [Context file maintenance](./file-maintenance.md).*

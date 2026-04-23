@@ -118,4 +118,4 @@ If a Git repository is not practical, a versioned cloud document with named vers
 
 ---
 
-*For the structural rules that govern a valid context file, see [context-file-spec.md](./context-file-spec.md). For instructions on using the file with an agent session, see [agent-workflow.md](./agent-workflow.md).*
+*Return to the [Agent context optimization index](./README.md).*

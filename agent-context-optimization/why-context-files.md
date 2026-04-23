@@ -94,4 +94,4 @@ That is the case for building it.
 
 ---
 
-*For the structural rules that govern a valid context file, see [context-file-spec.md](./context-file-spec.md). For a complete real example, see [renato-mignone-context-file.md](./examples/renato-mignone-context-file.md). To start building your own, use [context-file-template.md](./templates/context-file-template.md).*
+*Next step: Learn the required architecture in the [Agent context file specification](./context-file-spec.md).*
