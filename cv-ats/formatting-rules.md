@@ -96,3 +96,5 @@ Bad example:
 **What to do instead:** Use standard tab stops or right-alignment formatting within a single text line to position dates. If using LaTeX, the `\hfill` command is perfect for this: `\textbf{Role}\hfill\textbf{Date}` generates the visual space while parsing sequentially as pure text.
 
 ---
+
+*Next step: Learn how to test your layout in [Common pitfalls](./common-pitfalls.md).*

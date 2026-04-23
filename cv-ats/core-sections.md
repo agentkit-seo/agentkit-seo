@@ -78,3 +78,5 @@ Bad example:
 **What to do instead:** Always use "Work Experience".
 
 ---
+
+*Next step: Apply the strict layout constraints in [Formatting rules](./formatting-rules.md).*

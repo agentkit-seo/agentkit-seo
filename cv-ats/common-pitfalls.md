@@ -53,3 +53,5 @@ If the text is out of order, missing entirely, or contains strange characters, t
 **What to do instead:** Write the URL directly into the text: `GitHub profile: github.com/username`.
 
 ---
+
+*Next step: Extract and inject the right vocabulary using the [Keyword strategy](./keyword-strategy.md).*

@@ -57,3 +57,5 @@ Bad example:
 **What to do instead:** Translate duties into achievements using the Action Verb + Task + Result formula.
 
 ---
+
+*Next step: Automate this process in [Agent workflow](./agent-workflow.md).*

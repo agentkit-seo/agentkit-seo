@@ -68,3 +68,5 @@ Skills: SEO, Search Engine Optimization, SEO strategy, search engine marketing, 
 **What to do instead:** Integrate the most important keywords naturally into the Professional Summary and Work Experience sections.
 
 ---
+
+*Next step: Prove your keywords with impact in [Achievement metrics](./achievement-metrics.md).*

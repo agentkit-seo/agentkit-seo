@@ -58,3 +58,5 @@ Architected a microservices backend...
 *Why it fails:* Manual spacing (`\hspace`) and forced line breaks (`\\`) make the document fragile. If the agent changes the job title length, the date alignment will break.
 
 ---
+
+*Return to the [CV and ATS optimization index](./README.md).*
