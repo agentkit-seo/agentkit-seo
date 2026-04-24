@@ -20,6 +20,9 @@ Search visibility for a personal site is not only a technical problem. A portfol
 
 ## 2. Best practices
 
+**Rule:** Build the portfolio around Google's E-E-A-T framework.
+Google rewards Experience, Expertise, Authoritativeness, and Trustworthiness. In an era of AI-generated content, *Experience* (first-hand knowledge) and *Expertise* (verifiable skills) are the primary differentiators for a portfolio. Case studies must demonstrate that the author actually did the work, not just summarized a topic.
+
 **Rule:** Give the site a clear professional focus.
 The homepage and About page should make the target domain obvious. A portfolio that tries to rank for every possible role sends a weak quality signal and creates vague page copy.
 
@@ -31,6 +34,9 @@ State the current role, operating domain, core strengths, and the type of work r
 
 **Rule:** Give every serious project a detail page.
 A project card is not enough. The detail page should explain the problem, role, scope, stack, decisions, constraints, and outcome in enough depth that a recruiter or search engine can understand why the work matters.
+
+**Recommendation:** Use internal linking to build topical authority.
+Case studies and project pages should not exist in isolation. Link between related projects, shared technologies, or relevant blog posts within the portfolio to improve crawl depth and signal related expertise to search engines.
 
 **Recommendation:** Publish case studies or writing only when there is first-hand value.
 Original process notes, system design tradeoffs, migration lessons, and postmortems are stronger than keyword-targeted filler posts.

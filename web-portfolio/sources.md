@@ -36,8 +36,11 @@ The rules in this module are based primarily on Google Search Central, Google Se
 - [Mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) — Confirms that Google indexes with the mobile crawler and explains mobile parity requirements.
 - [Link best practices for Google](https://developers.google.com/search/docs/crawling-indexing/links-crawlable) — Validates the requirement for crawlable `<a href>` links and meaningful anchor text.
 - [Provide a site name to Google Search](https://developers.google.com/search/docs/appearance/site-names) — Explains homepage site-name signals and the role of `WebSite` structured data.
-- [Profile page structured data](https://developers.google.com/search/docs/appearance/structured-data/profile-page) — Confirms `ProfilePage` support and explicitly includes About-style profile pages as valid use cases.
-- [Breadcrumb structured data](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) — Validates breadcrumb markup and the recommendation to support site hierarchy with structured data.
+- [ProfilePage (Schema.org)](https://schema.org/ProfilePage) — The authoritative spec for `ProfilePage` markup.
+- [Profile page structured data (Google)](https://developers.google.com/search/docs/appearance/structured-data/profile-page) — Confirms `ProfilePage` support and explicitly includes About-style profile pages as valid use cases.
+- [Person (Schema.org)](https://schema.org/Person) — The authoritative spec for `Person` markup used inside the `ProfilePage` `mainEntity` or `Article` `author`.
+- [SoftwareSourceCode (Schema.org)](https://schema.org/SoftwareSourceCode) — The authoritative spec for developer project markup covering languages, code repository links, and application architecture.
+- [Breadcrumb structured data (Google)](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) — Validates breadcrumb markup and the recommendation to support site hierarchy with structured data.
 - [Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article) — Documents article markup and author markup best practices relevant to writing and case-study pages.
 - [General structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) — Confirms that structured data must match visible content and must not be blocked if rich-result eligibility is desired.
 - [Understanding Core Web Vitals and Google search results](https://developers.google.com/search/docs/appearance/core-web-vitals) — Defines the current performance metrics Google recommends monitoring for page experience.

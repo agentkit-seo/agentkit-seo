@@ -43,6 +43,9 @@ Images, galleries, and below-the-fold embeds can be deferred. The primary text, 
 **Rule:** Load deferred content when it enters the viewport.
 Do not require scroll depth tricks, button clicks, or hover states to reveal content that should be indexed.
 
+**Recommendation:** Provide `<noscript>` fallbacks for critical identity content.
+While search engines execute JavaScript, providing a lightweight `<noscript>` block containing the basic profile summary, contact links, and primary skills serves as a failsafe for strict environments, privacy browsers, or simple crawlers that do not support JS.
+
 **Recommendation:** Treat dynamic rendering as a workaround, not a default architecture.
 If the site needs a special bot-rendered path to be indexable, the underlying architecture is already fragile.
 

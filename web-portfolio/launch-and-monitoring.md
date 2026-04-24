@@ -22,7 +22,7 @@ Many portfolio SEO failures are not architectural. They happen after deployment:
 
 Complete the following checks before asking any search engine to index the site:
 
-1. Confirm that the preferred host and protocol are final and that all alternates redirect to the canonical URL.
+1. Confirm that the preferred host and protocol are final and that all alternates redirect to the canonical URL directly (no redirect chains). For example, `http://example.com` should redirect directly to `https://www.example.com`, not to `https://example.com` first.
 2. Confirm that the homepage, About page, Projects hub, and key project pages return HTTP `200`.
 3. Confirm that `/robots.txt` and `/sitemap.xml` are live on production.
 4. Confirm that titles, meta descriptions, canonicals, and structured data are present on the rendered production pages.

@@ -28,7 +28,7 @@ Content is organized by platform or output type. Each platform directory contain
 - `/github/` — Profile README, repository READMEs, pinned repo structuring
 - `/portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
 - `/cv-ats/` — Keyword optimization, formatting rules, examples and templates that have passed real ATS screening (Apple, Anthropic, Google)
-- `/twitter-x/` — Bio, pinned post strategy, content positioning
+- `/x-twitter/` — Bio, pinned post strategy, content positioning
 - `/zenodo/` — Research output formatting, DOI-based credibility signals
 
 More platform directories will be added as the project grows. The structure is designed to be extended without breaking existing conventions.
@@ -46,7 +46,7 @@ The `.skills/` directory is the machine-readable layer. It is structured as a co
     github/
     portfolio/
     cv-ats/
-    twitter-x/
+    x-twitter/
     zenodo/
     ...
 ```
@@ -60,6 +60,7 @@ The `.skills/` directory is the machine-readable layer. It is structured as a co
 - `/personal-branding-seo:linkedin` loads only the LinkedIn submodule
 - `/personal-branding-seo:github` loads only the GitHub submodule
 - `/personal-branding-seo:cv-ats` loads only the CV and ATS submodule
+- `/personal-branding-seo:x-twitter` loads only the X (Twitter) submodule
 - `/personal-branding-seo` loads the full `SKILL.md` master index for orchestration tasks
 
 This directly solves the context window problem: a user who only wants to optimize their LinkedIn profile does not load any GitHub or CV rules, and wastes no tokens on irrelevant context.

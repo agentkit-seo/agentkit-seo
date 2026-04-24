@@ -26,6 +26,9 @@ Traditional SEO is still the base layer of discoverability, but personal website
 **Rule:** Treat `llms.txt` as a curated guide, not as a shadow sitemap.
 List the most important pages only: homepage, About page, Projects hub, best project-detail pages, writing hub, and selected articles or case studies. The file should stay short enough to be genuinely useful to a model with limited context.
 
+**Recommendation:** Publish `/llms-full.txt` to provide a complete context dump.
+While `llms.txt` serves as a lightweight index, the `llms-full.txt` variant is designed to contain the full Markdown content of the most important pages on the site. For developer portfolios, providing a self-contained context file helps models accurately summarize projects without needing to perform multiple external fetch requests.
+
 **Recommendation:** Keep canonical pages concise and self-contained.
 LLM retrieval works better when a project page can be summarized accurately from its own content. Do not force agents to reconstruct meaning by stitching together dozens of fragments across the site.
 

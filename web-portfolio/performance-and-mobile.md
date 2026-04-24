@@ -29,8 +29,14 @@ The mobile page should expose the same main text, titles, meta tags, structured 
 **Rule:** Serve the site over HTTPS and redirect HTTP to HTTPS.
 Transport security is a baseline trust signal and prevents protocol duplication.
 
-**Recommendation:** Keep Largest Contentful Paint under 2.5 seconds and Interaction to Next Paint under 200 milliseconds on the pages that matter most.
-The homepage, About page, Projects hub, and project-detail pages should load and respond quickly enough to feel immediate on ordinary devices and connections.
+**Recommendation:** Keep Largest Contentful Paint (LCP) under 2.5 seconds, Interaction to Next Paint (INP) under 200 milliseconds, and Cumulative Layout Shift (CLS) under 0.1 on the pages that matter most.
+The homepage, About page, Projects hub, and project-detail pages should load and respond quickly enough to feel immediate on ordinary devices and connections. 
+
+**Rule:** Define explicit width and height dimensions for all images and videos to prevent Cumulative Layout Shift (CLS).
+Portfolios fail CLS checks most often because images load late and push the surrounding text down. Explicit dimensions allow the browser to reserve the exact space needed before the asset finishes loading.
+
+**Rule:** Use `font-display: swap` for all custom web fonts.
+Custom fonts must not delay the rendering of the main heading or the first paragraph (Flash of Invisible Text). Using `font-display: swap` ensures the browser immediately paints a fallback font and swaps it once the custom font is ready.
 
 **Recommendation:** Compress and size media intentionally.
 Portfolio sites often fail because screenshots, animated backgrounds, and hero video dominate the first load. Resize media to its real display size, choose appropriate formats, and defer non-critical assets.

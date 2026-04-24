@@ -38,6 +38,9 @@ Project detail pages, articles, and case studies benefit from visible breadcrumb
 **Recommendation:** Avoid orphan pages.
 Every indexable page should be reachable through normal internal linking from at least one crawlable parent page. If a project page exists only in the sitemap and nowhere else on the site, it sends a weak importance signal.
 
+**Rule:** Serve a hard `404` status code for missing routes.
+Portfolio sites built on static hosts (like Netlify or GitHub Pages) or SPA frameworks often default to serving a custom "Not Found" page while returning a `200 OK` status. This creates "soft 404s" that confuse search engines and dilute crawl budgets. Ensure the server explicitly returns a `404` or `410` header.
+
 ## 3. Recommended URL map
 
 The exact portfolio can vary by profession, but the baseline structure should look like this:

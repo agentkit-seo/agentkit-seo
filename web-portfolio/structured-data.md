@@ -29,11 +29,17 @@ Google explicitly supports `ProfilePage` for pages whose primary focus is a sing
 **Recommendation:** Use `BreadcrumbList` on nested project and writing pages.
 Breadcrumbs help reinforce hierarchy on pages that sit below a hub such as `/projects/` or `/writing/`.
 
+**Recommendation:** Use `SoftwareSourceCode` or `SoftwareApplication` on developer project pages.
+Generic `Article` schema is often incorrect for a deployed tool or a GitHub repository write-up. Use `SoftwareSourceCode` for open-source repositories and `SoftwareApplication` for deployed applications or SaaS projects to accurately describe the project's requirements, language, and operating system.
+
 **Recommendation:** Use `Article` or `BlogPosting` only for real editorial pages.
 Case studies, technical essays, and blog posts can use article markup when they have visible headings, body copy, dates, and author information. A generic project landing page should not pretend to be an article if it is not written as one.
 
 **Recommendation:** Link authors to a real author or About URL.
 When article markup includes an author, use `Person` and provide a valid `url` or `sameAs` value that points to a page or profile that identifies the author clearly.
+
+**Recommendation:** Use `rel="me"` for cross-platform identity verification.
+On outbound links to external profiles (e.g., GitHub, LinkedIn, Mastodon), include the `rel="me"` attribute. This serves as a decentralized identity-verification function, helping AI disambiguation systems and search engines confirm that the portfolio and the social profiles belong to the exact same entity.
 
 **Rule:** Keep markup aligned with visible page content.
 Structured data must describe what users can actually see on the page. Hidden, misleading, or generic markup can invalidate rich-result eligibility and weaken trust signals.

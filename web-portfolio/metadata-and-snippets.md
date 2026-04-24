@@ -23,6 +23,9 @@ Metadata is the interface layer between a page and a search result. Title links,
 **Rule:** Give every indexable page a unique `<title>`.
 Each page must have a title that clearly names its subject. Reusing the same title pattern across every page weakens relevance and makes search results harder to distinguish.
 
+**Rule:** Keep the title under 60 characters to prevent truncation.
+Google displays roughly 50–60 characters before cutting off the title in Search Engine Results Pages (SERPs). A portfolio title that is too long will lose its primary keywords and look unprofessional.
+
 **Rule:** Put the page topic first and the site name second.
 For portfolios, the page subject should lead the title. A project page should begin with the project name or the core topic, not with the site name.
 
@@ -43,7 +46,20 @@ Google primarily builds snippets from page content itself. The first paragraph o
 **Rule:** Do not stuff keywords into descriptions.
 A list of repeated technologies or role titles looks manipulative and does not improve snippet quality.
 
-## 4. Best practices for canonical identity
+## 4. Best practices for Open Graph and social tags
+
+Open Graph (OG) tags do not directly impact Google rankings, but they control how a link appears when shared on LinkedIn, Slack, X (Twitter), and they are actively used by AI crawlers as a lightweight content summary.
+
+**Rule:** Provide `og:title`, `og:description`, `og:image`, and `og:url` on every public page.
+Without these tags, platforms will scrape the page unpredictably, resulting in broken link previews that destroy Click-Through Rate (CTR).
+
+**Rule:** Set a high-quality `og:image` that represents the specific page.
+The `og:image` is often the first visual impression a recruiter or peer sees. It should be 1200 x 630 pixels. Do not use a generic site-wide logo for a specific project case study; use a screenshot of that specific project.
+
+**Recommendation:** Include X (Twitter) Card tags as a fallback.
+Set `twitter:card` to `summary_large_image` to ensure the link unfurls into a full-width image preview on X, rather than a small thumbnail.
+
+## 5. Best practices for canonical identity
 
 **Rule:** Pick one canonical host and protocol.
 Choose the preferred public address of the site, such as `https://example.com/` or `https://www.example.com/`, and redirect all alternatives to it.

@@ -40,8 +40,9 @@ When an AI agent is tasked with optimizing a user's personal website:
 1. If the site is missing from search or has indexing issues, start with `indexability-and-submission.md` and `launch-and-monitoring.md`.
 2. If the site is built with a modern frontend stack, load `javascript-seo.md` and `performance-and-mobile.md`.
 3. If the task involves rewriting page templates or content, load `metadata-and-snippets.md`, `structured-data.md`, and `content-and-case-studies.md`.
-4. If the user wants AI-facing discoverability in addition to traditional SEO, load `llms-and-aeo.md`.
-5. Always keep metadata, structured data, and visible page content aligned. Never invent facts to satisfy markup or keyword targets.
+4. If the user wants to optimize for AI-assisted job search tools (e.g., Perplexity, ChatGPT queries like "find me a frontend engineer with React experience"), load both `llms-and-aeo.md` and `structured-data.md`.
+5. If the user wants AI-facing discoverability in addition to traditional SEO, load `llms-and-aeo.md`.
+6. Always keep metadata, structured data, and visible page content aligned. Never invent facts to satisfy markup or keyword targets.
 
 ---
 
