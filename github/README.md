@@ -3,7 +3,7 @@ title: "GitHub optimization"
 platform: "github"
 objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-24"
 tags: ["github", "index", "seo", "blackbird"]
 agent_priority: "high"
 ---
@@ -29,10 +29,10 @@ The optimization logic is divided into the following documents, ordered from fou
 - **[The Blackbird algorithm](./algorithm-blackbird.md):** Deep dive into GitHub's internal search engine, including exact-match weighting and indexing exclusions.
 - **[Profile architecture](./profile-architecture.md):** Foundational settings, optimizing the 160-character bio, strategic repository pinning, and contribution graph management.
 - **[Profile README](./profile-readme.md):** Strategy for the special `username/username` repository, using markdown badges, and maintaining token efficiency.
-- **[Repository SEO](./repository-seo.md):** Rules for optimizing individual projects, including naming conventions, the 15-word "About" description, and topic tags.
+- **[Repository SEO](./repository-seo.md):** Rules for optimizing individual projects, including naming conventions, short descriptions, and topic tags.
 - **[Linguist and statistics](./linguist-and-stats.md):** How to manipulate the repository language statistics bar using `.gitattributes` to prevent CSS or vendor files from skewing your perceived stack.
 - **[Engagement signals](./engagement-signals.md):** How GitHub uses "social proof" (stars, forks, releases) to rank repositories.
-- **[Copilot and agents](./copilot-and-agents.md):** The definitive guide to AEO within GitHub, including Copilot's semantic vector indexing and `AGENTS.md` boundaries.
+- **[Copilot and agents](./copilot-and-agents.md):** The definitive guide to AEO within GitHub, including Copilot indexing, repository instructions, and `AGENTS.md` precedence.
 - **[Sources](./sources.md):** Citations and research validating the internal mechanics of GitHub search and Copilot indexing.
 
 ## 3. Usage for agents

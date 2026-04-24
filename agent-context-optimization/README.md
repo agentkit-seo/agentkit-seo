@@ -1,43 +1,49 @@
 ---
-title: "Agent context optimization — folder index"
-platform: general
-objective: "Navigation index for the agent-context-optimization folder, listing every file with its purpose and a direct link."
-status: draft
-last_updated: 2026-04-23
-tags: [context-file, index, navigation]
-agent_priority: medium
+title: "Agent context optimization"
+platform: "general"
+objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, template, and example file."
+status: "draft"
+last_updated: "2026-04-24"
+tags: ["context-file", "index", "navigation"]
+agent_priority: "medium"
 ---
 
-# Agent Context Optimization
+# Agent context optimization
 
-Welcome to the definitive standard for building a **Personal Agent Context File**.
+> This folder defines the standard for building and maintaining a personal agent context file. It is the source-of-truth module for grounding career-focused AI work in verified facts.
 
-This directory provides everything required to create a single, highly structured Markdown document that acts as your professional source of truth. A context file is designed specifically for injection into the context window of any Large Language Model or agentic workflow, granting the AI instant, high-fidelity awareness of your entire academic and professional history.
+---
 
-## The Problem
+## 1. Overview
 
-Interacting with AI agents for career tasks—such as tailoring CVs, writing cover letters, or preparing for technical interviews—often involves a frustrating loop:
-- You paste scattered, unformatted snippets of your resume into every new prompt.
-- You rely on the AI's long-term memory, which frequently degrades and hallucinates critical details.
-- You receive generic, unconvincing outputs because the AI lacks the granular technical context of what you actually built and achieved.
+This directory contains the architecture, workflow, and maintenance rules for a personal agent context file. The file itself is a structured Markdown knowledge base describing a person's academic and professional record in a format that both humans and AI agents can navigate reliably.
 
-## The Solution: A Unified Context File
+The intended use is simple: keep one canonical context file up to date, load it into an agent session, and combine it with the platform-specific modules in this repository when generating CVs, LinkedIn text, portfolio copy, or interview prep.
 
-A personal agent context file solves these issues by standardizing your history into a format optimized for machine readability and token efficiency. 
+## 2. Directory contents
 
-It flattens exhaustive bullet points into dense metadata strings, utilizes strict semantic tags (like `[PROJECT]` and `[COURSE]`) to guide AI parsing, and enforces a purely factual tone. By attaching this single file at the start of a session, you immediately ground the agent's outputs in verified facts. The AI stops guessing and starts referencing your exact technology stacks, academic metrics, and project outcomes.
+- [context-file-spec.md](./context-file-spec.md): The authoritative specification for structure, section order, semantic tags, and validation.
+- [why-context-files.md](./why-context-files.md): The motivation document explaining why a context file outperforms copy-pasted raw text or agent memory.
+- [agent-workflow.md](./agent-workflow.md): The operational guide for loading the file into agent sessions and combining it with other modules.
+- [file-maintenance.md](./file-maintenance.md): The maintenance lifecycle for updates, token growth, verified facts, and version history.
+- [templates/context-file-template.md](./templates/context-file-template.md): A guided template for building a new personal context file.
+- [examples/renato-mignone-context-file.md](./examples/renato-mignone-context-file.md): A full worked example showing how the spec looks in practice.
 
-## Directory Contents
+## 3. Recommended reading order
 
-Explore the files below to understand, build, and maintain your own context file.
+Read the files in this order when onboarding a new user or agent:
 
-| File | Purpose |
-|---|---|
-| [context-file-spec.md](./context-file-spec.md) | The authoritative specification: required sections, formatting rules, semantic tags, and validation checklist for a personal agent context file. |
-| [why-context-files.md](./why-context-files.md) | Motivation document explaining the problem the context file solves and why it outperforms copy-pasting, agent memory, and per-session prompts. |
-| [agent-workflow.md](./agent-workflow.md) | Practical how-to: how to invoke the context file in an agent session, prompt templates for common career tasks, and how to combine the file with Skill submodules. |
-| [file-maintenance.md](./file-maintenance.md) | Rules and workflows for keeping the context file accurate, current, and token-efficient as the user's career evolves. |
-| [templates/context-file-template.md](./templates/context-file-template.md) | Guided template for building a new personal agent context file. Every section is present with a pre-filled example and a blank placeholder. |
-| [examples/renato-mignone-context-file.md](./examples/renato-mignone-context-file.md) | A real personal agent context file, demonstrating how the spec is applied to a full career record in cybersecurity engineering. |
+- Start with [why-context-files.md](./why-context-files.md) if the reader does not yet understand the purpose.
+- Read [context-file-spec.md](./context-file-spec.md) before authoring or editing any real file.
+- Use [templates/context-file-template.md](./templates/context-file-template.md) to draft a new file.
+- Use [agent-workflow.md](./agent-workflow.md) when operating with the file in live sessions.
+- Use [file-maintenance.md](./file-maintenance.md) whenever new achievements, grades, roles, or certifications need to be added.
 
-To get started, read the [Specification](./context-file-spec.md) to understand the architecture, then use the [Template](./templates/context-file-template.md) to begin drafting your own professional knowledge base.
+## 4. Usage for agents
+
+When an AI agent is asked to work with a personal context file:
+
+1. Load [context-file-spec.md](./context-file-spec.md) before editing or validating the file.
+2. Load [agent-workflow.md](./agent-workflow.md) when the task is about prompting or module routing.
+3. Load [file-maintenance.md](./file-maintenance.md) when new content must be integrated into an existing file.
+4. Treat the personal context file itself as the factual source of truth, not the surrounding explanatory docs.

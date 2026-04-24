@@ -3,7 +3,7 @@ title: "LinkedIn profile architecture"
 platform: "linkedin"
 objective: "Rules for the visual and structural basics of a LinkedIn profile, including URLs, location SEO, and Creator Mode."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-24"
 tags: ["linkedin", "architecture", "seo", "setup"]
 agent_priority: "medium"
 ---
@@ -24,10 +24,10 @@ Before writing prose or detailing experience, the profile's underlying structure
 Clean your LinkedIn URL to remove the random alphanumeric string appended by default (e.g., change `linkedin.com/in/john-doe-8a3b21` to `linkedin.com/in/johndoe`). This improves SEO indexing and looks professional on a CV.
 
 **Rule:** Earn the Verifications badge.
-The "About this profile" section has evolved into the "Verifications" menu. Use LinkedIn's verification tools—such as **CLEAR** (available in the US, Canada, and Mexico) or **Persona** (for Europe and global users)—to earn the checkmark badge. LinkedIn data indicates that verified profiles receive an average of 60% more views, as the internal algorithm prioritizes verified accounts to improve search relevance and trust.
+Use LinkedIn's verification tools when eligible. LinkedIn says verified members see 60% more profile views and 50% more engagement on average. Treat verification as a trust and conversion signal, not as proof of a specific ranking boost. At the time of writing, LinkedIn supports identity verification through partners such as CLEAR in the U.S., Canada, and Mexico, and Persona in many other regions.
 
-**Rule:** Use Location SEO explicitly for remote roles.
-If you are targeting remote work, you must explicitly add "Remote" as a location preference in your profile settings. Simply writing "Open to Remote" in your headline or About section is not enough to bypass strict automated location filters used by recruiters.
+**Rule:** Set location and job preferences explicitly.
+If remote work is a target, configure that through LinkedIn's profile and job-preference settings rather than only mentioning it in free text. Structured settings are more reliable than a headline note.
 
 ## 3. Visual and audio hierarchy
 
@@ -35,7 +35,7 @@ If you are targeting remote work, you must explicitly add "Remote" as a location
 The banner image is prime real estate. Do not leave it blank or use a generic stock photo. Use a custom design (via Canva or Figma) that displays your Unique Selling Proposition (USP) or a clear Call to Action (CTA).
 
 **Recommendation:** Record the Voice Badge on mobile.
-Use the LinkedIn mobile app (this feature is not available on desktop) to record the 10-second name pronunciation audio clip. This adds a layer of authenticity and signals to the 360brew algorithm that the profile is highly complete and actively maintained.
+Use the LinkedIn mobile app to record the name pronunciation clip if it improves the profile experience. This is optional, but it helps human readers pronounce the name correctly and can make the profile feel more complete.
 
 ---
 

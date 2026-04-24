@@ -1,16 +1,18 @@
 ---
 title: "Agent workflow for context file users"
-platform: general
+platform: "general"
 objective: "Explains how to invoke the context file in an agent session, how to combine it with Skill submodules, and what good output looks like for each major task type."
-status: draft
-last_updated: 2026-04-23
-tags: [context-file, workflow, prompting, agent, skill]
-agent_priority: medium
+status: "draft"
+last_updated: "2026-04-24"
+tags: ["context-file", "workflow", "prompting", "agent", "skill"]
+agent_priority: "medium"
 ---
 
 # Agent workflow for context file users
 
 > Practical instructions for using a personal agent context file in an agent session, covering invocation patterns, Skill submodule routing, prompt templates, and output quality criteria for the four most common career tasks.
+
+---
 
 ## 1. Overview
 

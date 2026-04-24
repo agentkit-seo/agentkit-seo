@@ -3,57 +3,61 @@ title: "Copilot and agent optimization"
 platform: "github"
 objective: "Guide to Agentic Engine Optimization (AEO) within GitHub, utilizing AGENTS.md and Copilot context."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-24"
 tags: ["github", "copilot", "aeo", "agents"]
 agent_priority: "high"
 ---
 
 # Copilot and agent optimization
 
-> This file is the definitive guide to Agentic Engine Optimization (AEO) for codebases. It explains how to structure your repository so that GitHub Copilot, AI agents, and RAG pipelines can parse, index, and reason over your code flawlessly.
+> This file explains how to structure a repository so GitHub Copilot and other AI agents can find the right context quickly. It distinguishes official GitHub behavior from general recommendations for external tooling.
 
 ---
 
 ## 1. Overview
 
-Developers and recruiters are increasingly using AI tools to evaluate code. GitHub Copilot indexes entire repositories to answer structural questions, while external agents use Retrieval-Augmented Generation (RAG) to scan documentation. Optimizing for these tools requires setting explicit boundaries and providing clear, token-efficient context.
+Developers and recruiters increasingly use AI tools to evaluate repositories. On GitHub itself, Copilot uses repository indexing and repository-specific instruction files. Outside GitHub, other agents and retrieval pipelines often depend on clean documentation and file structure. These are related needs, but they are not the same system.
 
 ## 2. Copilot semantic indexing
 
-**Rule:** Understand the 60-second semantic window.
-Unlike standard text search, GitHub Copilot uses a vector-based semantic code search index. When Copilot first encounters a large repository, it takes approximately 60 seconds to build this index. Do not expect Copilot to instantly understand complex architectural relationships the second you push code; allow the background indexing to complete.
+**Rule:** Expect initial indexing to take time on large repositories.
+GitHub documents that repository indexing runs in the background and can take up to 60 seconds for a large repository. The first question in a fresh repository context may therefore be weaker than later questions once indexing completes.
 
-## 3. The AGENTS.md file (AEO Standard)
+## 3. Repository instruction files
 
-**Rule:** Create an `AGENTS.md` file in the root of your repository.
-This acts as a "README for AI." It is a dedicated file where you provide explicit instructions, constraints, and architectural maps for any AI agent interacting with the codebase.
+**Rule:** Use `.github/copilot-instructions.md` for repository-wide Copilot guidance.
+GitHub's official repository custom instructions file for Copilot is `.github/copilot-instructions.md`. Use it for broad repository guidance such as coding conventions, test commands, and validation expectations.
 
-**Rule:** Use the Three-Tier constraint system.
-Structure your `AGENTS.md` with explicit boundary markers that LLMs easily comprehend:
-1.  **Always do:** (e.g., "Always format TypeScript using the Prettier configuration in root").
-2.  **Ask first:** (e.g., "Always ask the user for confirmation before executing `npm install`").
-3.  **Never do:** (e.g., "Never modify configuration files in the `.github/workflows/` directory").
+**Rule:** Use `.github/instructions/*.instructions.md` for path-specific guidance.
+GitHub supports path-specific instruction files inside `.github/instructions`. These use frontmatter with `applyTo` globs so guidance can target only certain parts of the codebase.
 
-**Rule:** Provide an architectural index.
-Do not force the agent to crawl the entire file tree to find the routing logic. Provide a clear map in the `AGENTS.md`: "Database schemas are in `/prisma`, API routes are in `/src/routes/`, and UI components are in `/src/components/`."
+**Rule:** Use `AGENTS.md` for agent-specific instructions, and place it where scope matters.
+GitHub documents that `AGENTS.md` files can be stored anywhere within the repository, and that the nearest `AGENTS.md` in the directory tree takes precedence when Copilot is working.
 
-## 4. GitHub Copilot Instructions
+**Recommendation:** Keep instruction files focused and non-conflicting.
+GitHub's docs do not prescribe a strict template, but concise, task-oriented instructions are easier for agents to follow than sprawling policy documents.
 
-**Rule:** Use `.github/copilot-instructions.md` for Copilot Chat.
-While `AGENTS.md` is a general standard for all AI agents, GitHub Copilot specifically looks for a file named `copilot-instructions.md` located within the `.github/` directory. 
+**Recommendation:** Use a simple boundary structure inside `AGENTS.md`.
+A practical pattern is:
 
-You can use this file to feed custom prompt instructions directly into Copilot Chat. For example, you can enforce specific coding styles (e.g., "Always use functional components in React") or direct the AI to specific testing frameworks.
+- **Always do:** non-negotiable conventions.
+- **Ask first:** actions that require confirmation.
+- **Never do:** hard boundaries and dangerous areas.
 
-**Rule:** Adhere to the 1,000-line recommended limit.
-Do not treat this file as exhaustive API documentation. GitHub recommends keeping `.github/copilot-instructions.md` concise (ideally under 1,000 lines or 2 pages of text). Exceeding this limit can overwhelm the context window, causing Copilot to become slow or produce lower-quality responses.
+This is a recommendation pattern drawn from GitHub's blog, not a product requirement.
 
-**Rule:** Use YAML glob patterns for targeted instructions.
-Instead of one massive file, you can modularize instructions (e.g., `.github/instructions/python.instructions.md`) and use YAML glob patterns at the top of the file (like `applyTo: "**/*.py"`) to inject rules only when specific files are open.
+## 4. External agent preparedness
 
-## 5. RAG Pipeline Preparedness
+**Recommendation:** Keep critical operational documentation in Markdown and easy-to-find paths.
+This is not a GitHub product requirement. It is an inference for external agents and retrieval systems. Many simple tooling stacks work better with clean Markdown in obvious locations than with scattered PDFs or generated documentation.
 
-**Rule:** Keep documentation flat and in Markdown.
-Many developers build custom RAG pipelines by syncing GitHub repositories to vector databases. If your documentation relies on complex HTML, dynamically generated React pages, or PDFs, it will fail to index properly in these vector stores. Maintain all critical project documentation as flat, clean `.md` files to ensure 100% extraction accuracy by external LLMs.
+**Recommendation:** Include an architectural index somewhere near the root.
+Do not force an agent to infer the repository map from scratch. A short map of where core domains live is high-value context for both humans and AI tools.
+
+## 5. Documentation hygiene
+
+**Recommendation:** Prefer source-of-truth docs over duplicated summaries.
+External retrieval systems perform better when the repository has one authoritative place for setup instructions, one for architecture, and one for conventions. Duplication creates conflicting context.
 
 ---
 

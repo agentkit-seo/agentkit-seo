@@ -1,16 +1,16 @@
 ---
 title: "LinkedIn profile optimization"
 platform: "linkedin"
-objective: "Master index and routing logic for optimizing LinkedIn profiles for the 360brew algorithm and AI agents."
+objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
 status: "draft"
-last_updated: "2026-04-23"
-tags: ["linkedin", "360brew", "index", "llm"]
+last_updated: "2026-04-24"
+tags: ["linkedin", "360Brew", "search", "ai"]
 agent_priority: "high"
 ---
 
 # LinkedIn profile optimization
 
-> This directory contains the rules and strategies for engineering a LinkedIn profile that ranks highly in both the internal 360brew algorithm and external AI-agent scrapers.
+> This directory contains the rules and strategies for engineering a LinkedIn profile that performs well in LinkedIn search and recommendations while remaining easy for external AI tools to interpret.
 
 ---
 
@@ -18,25 +18,27 @@ agent_priority: "high"
 
 Optimizing a LinkedIn profile is no longer just about adding keywords for a human recruiter to skim. You are now optimizing for two distinct, machine-driven audiences simultaneously.
 
-The first audience is LinkedIn's internal **360brew algorithm**. This is a semantic AI foundation model that evaluates your profile for "Semantic Coherence." It penalizes generic profiles that try to appeal to everyone and rewards specialists whose headlines, experience, and content all point to a single, focused narrative.
+The first audience is LinkedIn's own ranking, recommendation, and people-search systems. LinkedIn's official help pages say these systems use signals from profile identity, content quality, and recent activity to personalize what members see.
 
-The second audience consists of external **AI Agents and LLMs** (like open-source recruitment tools built on LangChain). These tools scrape LinkedIn's internal API, bypassing visual HTML to extract structured data. They evaluate profiles by clustering them in vector databases and using LLMs to qualify candidates against job descriptions. 
+The second audience consists of external AI tools used in recruiting and research. These tools may consume LinkedIn profile data through exports, enrichment products, browser automation, or scraping. The safest optimization strategy is still the same: use explicit job titles, clean skill names, and structured proof of work.
 
-This module provides the exact structural rules, formatting constraints, and content formulas needed to satisfy both engines while maintaining an engaging narrative for the human reader who ultimately makes the hiring decision.
+As of April 24, 2026, LinkedIn has publicly released the 360Brew research paper, but there is no official LinkedIn statement confirming a full production rollout of 360Brew as the live feed algorithm. This module therefore treats 360Brew as a relevant research direction, not as a fully confirmed production rulebook.
+
+This module provides the structural rules, formatting constraints, and content formulas needed to satisfy both audiences while maintaining an engaging narrative for the human reader who ultimately makes the hiring decision.
 
 ## 2. Module index
 
 The optimization logic is divided into the following documents, ordered from foundational algorithms to specific section strategies:
 
-- **[360brew algorithm](./algorithm-360brew.md):** Deep dive into how the internal semantic engine evaluates coherence, targets reach, and weights recent interactions.
-- **[AI agent optimization](./ai-agent-optimization.md):** Rules for ensuring your profile clusters correctly in vector searches and is easily parsed by external LLM tools.
+- **[360Brew and ranking signals](./algorithm-360brew.md):** What LinkedIn officially documents, what the public 360Brew paper shows, and what should still be treated as inference.
+- **[AI agent optimization](./ai-agent-optimization.md):** Rules for making the profile easy for external AI tools, parsers, and enrichment workflows to understand.
 - **[Profile architecture](./profile-architecture.md):** Visual and structural basics, including custom URLs, the Verifications badge, the Voice badge, and Location settings.
 - **[Headline strategy](./headline-strategy.md):** Strict formulas for writing highly discoverable, keyword-rich headlines without corporate fluff.
-- **[About section](./about-section.md):** Constraints for writing the About section, focusing on the first-person perspective, defining the "Ideal Role," and injecting LLM-friendly keywords.
-- **[Experience and skills](./experience-and-skills.md):** How to sync your LinkedIn experience with your CV to avoid the "Trust Gap," and why Verified Skill Assessments are mandatory.
+- **[About section](./about-section.md):** Constraints for writing the About section, focusing on first-person voice, clear role positioning, and readable evidence.
+- **[Experience and skills](./experience-and-skills.md):** How to keep profile facts aligned with the CV, surface proof links, and use current LinkedIn skills features well.
 - **[Featured section](./featured-section.md):** Structuring the Featured carousel with "Proof of Work" (video demos, architecture diagrams, GitHub repositories).
-- **[Engagement strategy](./engagement-strategy.md):** The golden ratio of posting and the strategy for "Comment Marketing" to drive profile velocity.
-- **[Sources](./sources.md):** Citations and research validating the 360brew mechanics and AI-agent scraping tactics.
+- **[Engagement strategy](./engagement-strategy.md):** Evidence-based posting and commenting practices that align with documented relevance and quality signals.
+- **[Sources](./sources.md):** Official help pages, the 360Brew paper, and limited external sources used in this module.
 
 ## 3. Reference profiles
 
@@ -52,6 +54,6 @@ When an AI agent is tasked with optimizing a user's LinkedIn profile:
 1. Review this index to determine which specific sub-module is relevant to the task.
 2. If optimizing the overall profile positioning, load `algorithm-360brew.md` and `ai-agent-optimization.md`.
 3. If rewriting specific text sections, load `headline-strategy.md` or `about-section.md`.
-4. Always enforce the formatting constraints defined in the sub-modules over generic creative writing.
+4. Prefer official LinkedIn guidance over third-party folklore, and label any inferred algorithm behavior as inference rather than fact.
 
 ---

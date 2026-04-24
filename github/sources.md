@@ -3,7 +3,7 @@ title: "GitHub optimization sources"
 platform: "github"
 objective: "Centralized citations and research validating the mechanics of GitHub search and Copilot indexing."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-24"
 tags: ["github", "sources", "research", "blackbird"]
 agent_priority: "low"
 ---
@@ -16,13 +16,14 @@ agent_priority: "low"
 
 ## 1. Overview
 
-The rules defined in the `github` module are based on GitHub's official system documentation, community discussions, and empirical testing of the Blackbird search engine and Copilot semantic index.
+The rules defined in the `github` module are based primarily on GitHub's official documentation. Community or blog sources are used only where GitHub publishes guidance informally rather than as product documentation.
 
 ## 2. Sources
 
-- [Indexing repositories for GitHub Copilot (GitHub Docs)](https://docs.github.com/en/copilot/concepts/context/repository-indexing) — Validates the mechanics of semantic indexing, the 60-second initial indexing window, and context awareness limits.
-- [GitHub Repo Indexing Guide (DevActivity)](https://devactivity.com/insights/unlocking-visibility-a-guide-to-github-repository-indexing-and-achieving-your-software-development-goals) — Details the requirements for Blackbird indexing, including the necessity of a default branch commit and the exclusion of archived or oversized repositories.
-- [How to write a great agents.md (GitHub Blog)](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/) — Validates the structure and necessity of the `AGENTS.md` file for Agentic Engine Optimization (AEO), including the Three-Tier constraint system.
-- [GitHub Community Discussions (#52095, #57889)](https://github.com/orgs/community/discussions) — Provides empirical evidence on forcing search indexing triggers via local repository search queries.
-- [Markdown Badges (Ileriayo)](https://github.com/Ileriayo/markdown-badges) — Open-source standard for visual hierarchy and machine-readable SVG badges in profile READMEs.
-- [Customizing GitHub Copilot Chat (GitHub Docs)](https://docs.github.com/en/copilot/customizing-copilot) — Documentation on the implementation and priority of the `.github/copilot-instructions.md` file.
+- [Indexing repositories for GitHub Copilot (GitHub Docs)](https://docs.github.com/en/copilot/concepts/context/repository-indexing) — Official description of repository indexing, initial indexing time, and automatic updates.
+- [Adding repository custom instructions for GitHub Copilot (GitHub Docs)](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions) — Official documentation for `.github/copilot-instructions.md`, path-specific instructions, and `AGENTS.md` precedence.
+- [Searching code (GitHub Docs source)](https://github.com/github/docs/blob/main/content/search-github/searching-on-github/searching-code.md) — Primary source for legacy code-search restrictions such as default-branch indexing, fork rules, searchable file size, and archived-repository exclusions.
+- [Navigating code on GitHub (GitHub Docs)](https://docs.github.com/en/repositories/working-with-files/using-files/navigating-code-on-github) — Official documentation for code navigation and symbol search behavior.
+- [Archiving repositories (GitHub Docs)](https://docs.github.com/repositories/archiving-a-github-repository/archiving-repositories) — Official behavior of archived repositories and their read-only state.
+- [Setting repository visibility (GitHub Docs)](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility) — Official behavior for public and private visibility.
+- [How to write a great agents.md: Lessons from over 2,500 repositories (GitHub Blog)](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/) — Useful secondary guidance for the structure and practical use of `AGENTS.md`.

@@ -3,7 +3,7 @@ title: "CV common pitfalls"
 platform: "cv-ats"
 objective: "Lists specific elements that break ATS parsers and introduces the Plain Text Test for verification."
 status: "draft"
-last_updated: "2026-04-22"
+last_updated: "2026-04-24"
 tags: ["cv", "ats", "pitfalls", "testing"]
 agent_priority: "medium"
 ---
@@ -16,33 +16,33 @@ agent_priority: "medium"
 
 ## 1. Overview
 
-Many candidates are rejected not because they lack qualifications, but because their CV is constructed in a way that breaks the ATS parsing logic. This document highlights the most common technical formatting errors that lead to automatic rejection and introduces the Plain Text Test, a verification step to ensure data extraction works as intended.
+Many candidates are filtered out or slowed down not because they lack qualifications, but because the CV is difficult for parsing systems to extract cleanly. This document highlights the most common technical formatting mistakes and introduces a quick plain-text compatibility test.
 
 ## 2. Critical errors to avoid
 
 **Rule:** Do not use headers and footers for critical information.
-Never place contact information (name, phone, email, links) in the header or footer sections of a Word document. Many older ATS parsers are configured to scan only the document body and will skip these sections entirely.
+Keep contact information in the main document body. Many resume parsers and screening workflows handle headers and footers unreliably, so they are the wrong place for email addresses, phone numbers, or portfolio links.
 
 **Rule:** Do not embed hyperlinks in text.
-Write out URLs explicitly (e.g., `linkedin.com/in/username` or `github.com/username`). Do not hide links behind anchor text like "Click Here" or "My Portfolio." ATS parsers often strip the underlying HTML, leaving the recruiter with plain text and no way to visit the link.
+Write out URLs explicitly (e.g., `linkedin.com/in/username` or `github.com/username`). Do not rely on anchor text such as "Portfolio" or "Click here" as the only visible representation of the link.
 
 **Rule:** Avoid visual skill rating elements.
 Do not use progress bars, star ratings, or pie charts to represent your proficiency in a skill (e.g., "Python: 4/5 stars"). The parser cannot read the visual graphic, and the resulting text extraction will be gibberish.
 
 **Rule:** Avoid the "Trust Gap" (LinkedIn De-sync).
-Ensure your optimized CV and public LinkedIn profile remain in semantic sync. If an automated background check tool or human recruiter finds differing dates, titles, or fundamentally different impacts between the two, it creates a major red flag and potential rejection due to trust issues.
+Ensure the CV and public LinkedIn profile remain factually aligned. If dates, titles, or major claims differ across public materials, the candidate creates an avoidable credibility problem.
 
 ## 3. Verification: The Copy-Paste-Friendly test
 
 **Rule:** Always verify the CV using a hard copy-paste into a plain text editor.
-While many modern ATS platforms are LLM-based, the "copy-paste-friendly" test is mandatory to ensure backwards compatibility with older ATS parsers that rely on basic text extraction.
+Many modern ATS platforms parse PDFs well, but a plain-text check is still the cheapest way to catch missing text, reordered content, and broken layout before submission.
 
 1. Open the finalized PDF in a standard PDF viewer.
 2. Select all text (Ctrl+A / Cmd+A) and perform a hard copy.
 3. Paste the text into a plain text editor (e.g., Notepad on Windows, TextEdit on macOS in plain text mode).
 4. Review the output. 
 
-If the text is out of order, missing entirely, or contains strange characters, the CV will fail legacy ATS parsing. You must adjust the layout and formatting (like replacing hidden tables with `\hfill` in LaTeX) until the plain text output reads logically from top to bottom.
+If the text is out of order, missing entirely, or contains strange characters, the file needs to be fixed before submission. Adjust the layout until the plain-text output reads logically from top to bottom.
 
 ## 4. Anti-Patterns
 

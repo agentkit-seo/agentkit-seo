@@ -1,31 +1,37 @@
 ---
 title: "LinkedIn optimization sources"
 platform: "linkedin"
-objective: "Centralized citations and research validating the 360brew mechanics and AI-agent scraping tactics."
+objective: "Centralized citations for the LinkedIn module, separating official platform guidance from public research and limited external examples."
 status: "draft"
-last_updated: "2026-04-23"
-tags: ["linkedin", "sources", "research", "360brew"]
+last_updated: "2026-04-24"
+tags: ["linkedin", "sources", "research", "360Brew"]
 agent_priority: "low"
 ---
 
 # LinkedIn optimization sources
 
-> This file contains the research, citations, and system documentation that validate the rules and constraints defined in the linkedin module.
+> This file contains the citations used by the `linkedin` module. Official LinkedIn help pages are the baseline; 360Brew research and third-party examples are secondary sources.
 
 ---
 
 ## 1. Overview
 
-The rules defined in the `linkedin` module are based on empirical testing, algorithmic analysis of the "360brew" update, and open-source intelligence regarding how AI agents parse and rank profile data.
+The rules defined in the `linkedin` module are based primarily on LinkedIn help-center documentation about Feed relevance, people search, profile verification, and skills. The 360Brew paper is used to understand LinkedIn's public research direction, not to assert undocumented production behavior.
 
 ## 2. Sources
 
-- [360Brew: Il nuovo algoritmo di LinkedIn (Francesco De Nobili)](https://www.francescodenobili.it/360brew-algoritmo-linkedin/) — Details the shift to Semantic Coherence, In-Context Learning (ICL), Frequency Capping, and the penalization of engagement pods.
-- [La Guida completa al nuovo algoritmo LinkedIn 360Brew (Maria Letizia Russo)](https://www.marialetiziarusso.com/nuovo-algoritmo-linkedin-360brew-cosa-cambia-come-funziona/) — Validates the focus on Targeted Reach, the 30-day interaction weight, and the shift away from vanity metrics toward value-added consumption.
-- [OpenOutreach (eracle)](https://github.com/eracle/OpenOutreach) — Open-source project demonstrating how AI agents use FastEmbed vectors and LLMs to scrape, cluster, and qualify LinkedIn profiles.
-- [LinkedIn Tool/Skill for AI (r/LangChain)](https://www.reddit.com/r/LangChain/comments/1smun46/built_an_opensource_linkedin_toolskill_for_ai/) — Insights into Vector Search readiness and the necessity of structured data for API scrapers.
-- [LinkedIn Profile Optimization Tips for Software Developers (BloomHQ)](https://blog.bloomhq.ai/linkedin-profile-optimization-tips-software-developers/) — Validates the strict Headline formulas, the "Proof of Work" Featured section, and the importance of Verified Skill Assessments.
-- [Make Your Resume ATS-Friendly (MIT CAPD)](https://capd.mit.edu/resources/make-your-resume-ats-friendly/) — Supports the concept of avoiding the "Trust Gap" by keeping public profiles in strict semantic sync with CV data.
-- [LinkedIn Algorithm Updates 2025 (Botdog)](https://botdog.co/) — Validates the algorithmic shift toward Dwell Time (consumption rate), the 2-hour Golden Window (Gold Time), and expertise-driven Subject Matter Authority.
+- [How the Feed ranks content (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a9554004) — Official description of how Feed ranking uses signals from context, profile, network, and activity.
+- [LinkedIn relevance - Optimizing the member experience (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a1339724) — Official breakdown of Identity, Content, and Activity signals used to personalize Feed and recommendations.
+- [Order of your profile in people search results (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a521944) — Official guidance on profile completeness, standard job titles, skills, and connections for people-search discoverability.
+- [Verifications on your LinkedIn profile (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a1359065/verifications-on-your-linkedin-profile?lang=en) — Official verification overview, including LinkedIn's statement that verified members see more profile views on average.
+- [Identity verification via CLEAR (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a1485597) — Official eligibility and region support for CLEAR-based verification.
+- [Identity verification via Persona (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a6513799) — Official eligibility and device requirements for Persona-based verification.
+- [Add and remove skills on your profile (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a549047?lang=en) — Official guidance on adding up to 100 skills and linking them to experience entries.
+- [Display Order of Skills (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a568137/display-order-of-skills?lang=en) — Official guidance on reordering skills.
+- [Skill endorsements (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a565106) — Official description of endorsements as a social-proof signal.
+- [Skill Assessments - no longer available (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a1690529) — Confirms that LinkedIn Skill Assessments were discontinued.
+- [360Brew: A Decoder-only Foundation Model for Personalized Ranking and Recommendation (arXiv)](https://arxiv.org/abs/2501.16450) — Primary research source describing 360Brew as a pre-production model for ranking and recommendation tasks.
+- [The truth behind ‘360Brew’: what we actually know (and what we don’t) (Phil Szomszor)](https://www.linkedin.com/pulse/truth-behind-360brew-what-we-actually-know-dont-phil-szomszor-7yzre) — Useful secondary source summarizing the public evidence and the current lack of official rollout confirmation.
+- [OpenOutreach (GitHub)](https://github.com/eracle/OpenOutreach) — Example of an open-source recruitment workflow that helps illustrate how external AI tooling may consume profile data. This is an example source, not evidence of LinkedIn internals.
 
 ---

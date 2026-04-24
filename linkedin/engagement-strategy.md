@@ -1,46 +1,58 @@
 ---
 title: "LinkedIn engagement strategy"
 platform: "linkedin"
-objective: "The strategic action plan for platform engagement, including the golden ratio and Comment Marketing."
+objective: "Evidence-based guidance for posting and commenting on LinkedIn without relying on folklore timing rules."
 status: "draft"
-last_updated: "2026-04-23"
-tags: ["linkedin", "engagement", "360brew", "marketing"]
+last_updated: "2026-04-24"
+tags: ["linkedin", "engagement", "comments", "content"]
 agent_priority: "medium"
 ---
 
 # LinkedIn engagement strategy
 
-> This file defines the active usage strategy required to maintain high profile velocity under the 360brew algorithm, shifting from volume-based posting to high-value interaction and timing optimization.
+> This file focuses on stable engagement practices that align with LinkedIn's documented relevance signals. It deliberately avoids unsupported folklore such as fixed golden-hour formulas or comment word-count thresholds.
 
 ---
 
 ## 1. Overview
 
-An optimized profile structure is useless if the algorithm does not surface it. The 360brew engine heavily weights recency, meaningful interaction, and session timing. Active engagement signals to the AI that your account is authoritative within a specific niche, driving consistent, targeted traffic back to your profile.
+An optimized profile structure is less useful if the account looks inactive, unfocused, or low-value. LinkedIn's official guidance emphasizes recent content, meaningful interactions, and quality signals. That supports a simple operating principle: stay active in ways that reinforce the topic you want to be known for.
 
-## 2. The Golden Hour (Gold Time)
+## 2. Posting best practices
 
-**Rule:** Maximize the 60-minute Golden Hour.
-The first 60 to 90 minutes after publishing a post are critical. The algorithm uses this initial window to determine the content's velocity. Respond to every comment received during this period to double the engagement signals and trigger broader distribution to 2nd and 3rd-degree connections.
+**Recommendation:** Publish on a sustainable cadence.
+There is no official LinkedIn rule saying everyone should post at a fixed frequency. A consistent schedule that can be maintained for months is better than short bursts of activity followed by silence.
 
-**Rule:** Warm up the profile before posting.
-Spend 15 minutes engaging with other people's content immediately before publishing your own post. This signals active presence to the algorithm and increases the likelihood that your connections are online and ready to reciprocate engagement.
+**Rule:** Keep posts tightly aligned with the expertise the profile claims.
+If the profile is positioned around backend engineering, the content should mostly teach, show, or comment on backend engineering, adjacent infrastructure, and relevant case studies. Topical clarity is better for both human readers and recommendation systems.
 
-## 3. Comment Marketing
+**Recommendation:** Reply while the conversation is still active.
+LinkedIn does not publish a fixed response window, but recent engagement is explicitly part of the relevance model. When a worthwhile discussion begins, respond while it is still current instead of leaving threads unattended for days.
 
-**Rule:** Practice "Comment Marketing."
-A comment on a viral post often receives more views than an original post on a small account. Do not leave generic comments like "Great post!" or "Agreed." Write long-form, insightful comments that add new data, offer a counter-perspective, or ask a highly technical follow-up question. 
+## 3. Commenting best practices
 
-**Rule:** Apply the 15-word minimum to comments.
-Comments under 15 words carry significantly less weight in the algorithm. To maximize your "Social Selling Index" (SSI) and profile visibility, ensure your comments are substantive and directly related to the post's semantic core.
+**Rule:** Comment where expertise is visible.
+The best comments add a concrete example, a counterexample, a technical clarification, or a first-hand lesson. Generic praise creates little value and does not strengthen positioning.
 
-**Rule:** Maintain semantic coherence in your comments.
-If your profile is optimized for Cybersecurity, do not spend your time commenting on viral posts about Marketing strategy. The 360brew algorithm maps your engagement to your profile's semantic identity. Engaging outside your niche dilutes your authority score.
+**Rule:** Stay inside the professional topics you want associated with the profile.
+LinkedIn's official relevance guidance combines profile identity with recent activity. Comments across completely unrelated topics dilute the signal of what the profile is actually about.
 
-## 4. Post frequency
+**Recommendation:** Prioritize constructiveness over volume.
+LinkedIn says it considers whether a conversation is constructive and professional. A smaller number of useful comments is better than spraying short reactions across many threads.
 
-**Rule:** Aim for 2-5 posts per week with 12-hour gaps.
-Do not attempt to post multiple times in a single day. The algorithm suppresses accounts that over-post via Frequency Capping. Focus on creating high-quality, niche-specific content 2 to 5 times per week, ensuring at least a 12-hour gap between posts to maximize individual reach.
+## 4. Anti-patterns
+
+### The generic comment
+
+**What it looks like:** Repeating comments such as "Great post," "So true," or "Agreed."
+**Why it fails:** It adds no information, no expertise, and no reason for anyone to click through to the profile.
+**What to do instead:** Add one useful detail, one real example, or one thoughtful question.
+
+### The topic chase
+
+**What it looks like:** Jumping into every trending topic regardless of fit.
+**Why it fails:** Temporary visibility from unrelated topics often weakens the long-term clarity of the profile.
+**What to do instead:** Keep a small number of topic pillars and return to them consistently.
 
 ---
 

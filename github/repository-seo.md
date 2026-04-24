@@ -3,7 +3,7 @@ title: "GitHub repository SEO"
 platform: "github"
 objective: "Rules for optimizing individual projects for GitHub Explore and internal search ranking."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-24"
 tags: ["github", "repository", "seo", "topics"]
 agent_priority: "high"
 ---
@@ -24,10 +24,10 @@ Creating a great codebase is only half the battle; if the repository metadata is
 Do not use internal project codenames (e.g., `project-phoenix`). Use clear, descriptive names separated by hyphens so the search engine can tokenize the words (e.g., `react-native-auth-template`).
 
 **Rule:** Optimize the "About" section as a meta description.
-The short description in the right sidebar is critical for SEO. Keep it between 5 and 15 words. Start with the main keyword. Answer "What is it?" and "Who is it for?" immediately. Do not leave this field blank.
+The short description in the right sidebar is critical for discovery. Keep it short, concrete, and front-loaded with the main concept. Answer "What is it?" and, when useful, "Who is it for?" Do not leave this field blank.
 
 **Rule:** Maximize the 20 Topic tags.
-GitHub allows up to 20 topics (tags) per repository. These function as Latent Semantic Indexing (LSI) keywords. You should aim to use 10 to 20 relevant topics.
+GitHub allows up to 20 topics per repository. These work as structured discovery tags. Aim to use the most relevant topics instead of filling the list with weak matches.
 *   Include the core language/framework (`python`, `fastapi`).
 *   Include the architectural pattern (`microservices`, `rest-api`).
 *   Include the industry or use case (`ecommerce`, `automation`).
