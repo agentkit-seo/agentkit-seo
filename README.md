@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".assets/image/banner.png" alt="AgentKit SEO Banner" width="70%" />
+  <img src=".assets/image/banner.png" alt="AgentKit SEO Banner" width="80%" />
 </p>
 
 <p align="center">
