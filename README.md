@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <em>Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolios, and X.</em>
+  <em>Agent skills that help AI tools audit, rewrite, and maintain your professional presence across CVs, LinkedIn, GitHub, portfolios, and X.</em>
 </p>
 
 <p align="center">
@@ -18,8 +18,11 @@
 
 <p align="center">
   <a href="#what-it-is">What It Is</a> •
+  <a href="#example">Example</a> •
+  <a href="#who-its-for">Who It's For</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
+  <a href="#quality-gate">Quality Gate</a> •
   <a href="#support">Support</a> •
   <a href="#authors">Authors</a>
 </p>
@@ -31,7 +34,8 @@
 AgentKit SEO is a modular skill pack for AI coding agents that work on career
 artifacts and professional discoverability.
 
-It gives the agent:
+Most agents rewrite career material generically because they lack durable
+personal context and platform-specific rules. AgentKit SEO gives the agent:
 
 - one shared skill source in `.skills/agent-skill/`
 - one focused module per system
@@ -41,6 +45,38 @@ It gives the agent:
 The goal is simple: make agent output for profiles, resumes, portfolios, and
 personal-branding workflows more structured, more evidence-based, and less
 generic.
+
+## Example
+
+Ask your agent:
+
+```text
+Use AgentKit SEO to audit my GitHub profile and portfolio for hiring visibility.
+Use my personal context file at ~/.agentkit-seo/context.md.
+```
+
+The agent can return a focused action plan covering:
+
+- weak project positioning and missing proof points
+- missing GitHub repository topics, metadata, or README structure
+- portfolio title, description, canonical, schema.org, and indexability gaps
+- CV/ATS keyword alignment risks
+- LinkedIn headline, About, Experience, Featured, and Skills improvements
+- next actions ranked by impact and evidence
+
+The deeper workflow is the personal agent context file: a structured career
+source of truth that lives outside this repository and can be reused across
+agents, profiles, CVs, portfolios, and job applications.
+
+## Who It's For
+
+AgentKit SEO is designed for:
+
+- developers preparing for job search or promotion cycles
+- students turning projects into credible portfolio proof
+- founders and freelancers improving public trust signals
+- agents that need structured personal context before editing public profiles
+- maintainers building portable skills for more than one coding agent
 
 ## Modules
 
@@ -102,6 +138,28 @@ node .skills/export/scripts/agentkit-seo.mjs export \
   --provider claude-code \
   --output /tmp/agentkit-seo-bundles
 ```
+
+## Compatibility
+
+| Agent | Status | Current path |
+| --- | --- | --- |
+| Claude Code | Ready | Direct skill install |
+| Codex | Ready | Direct skill install |
+| OpenCode | Ready | Direct skill install |
+| Gemini CLI | Planned | Provider notes exist; wrapper export is not shipped yet |
+| Generic agents | Partial | Read the repo or reuse the portable `SKILL.md` files manually |
+
+## Quality Gate
+
+Before public release, each launch-ready module should include:
+
+- one reproducible scenario
+- expected output shape
+- hallucination and overclaim guardrails
+- verification checklist
+
+The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other
+modules can remain beta until their scenarios and demos are executable.
 
 ## Support
 
