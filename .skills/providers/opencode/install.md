@@ -11,6 +11,24 @@ OpenCode can discover skills from multiple compatible locations, including:
 Copy the full shared skill folder so the local `references/` directory remains
 available at runtime.
 
+## Source-first workflow
+
+Keep `.skills/agent-skill/` as the only canonical source tree, then install an
+OpenCode-friendly layout when needed. The OpenCode adapter notes belong in
+`.skills/providers/opencode/`.
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider opencode \
+  --project-root .
+```
+
+This installs the shared skills into:
+
+- `.opencode/skills/`
+
+Use `export` only when you want a preview bundle or a packaging artifact.
+
 ## Invocation model
 
 OpenCode has native skill discovery and also supports custom commands.

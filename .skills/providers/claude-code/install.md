@@ -10,6 +10,31 @@ Install the shared skills into:
 Copy the whole self-contained shared skill folder, not only the root
 `SKILL.md`. The local `references/` directory is part of the runtime bundle.
 
+## Source-first workflow
+
+Do not treat `.claude/skills/` as the canonical authoring surface in this
+repository. The source of truth lives in `.skills/agent-skill/`, while Claude
+adapter notes live in `.skills/providers/claude-code/`.
+
+If you want a Claude-ready layout installed directly into a project, use:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider claude-code \
+  --project-root .
+```
+
+The repo also ships a minimal root `package.json` so the same CLI can later be
+published or invoked through `npx` without moving the source of truth out of
+`.skills/`.
+
+This installs the shared skills into:
+
+- `.claude/skills/`
+
+If you want a preview bundle instead of writing directly into the project, use
+the `export` command and send it to a staging directory such as `/tmp/`.
+
 ## What works well
 
 - Claude Code supports `SKILL.md`-based skills directly.

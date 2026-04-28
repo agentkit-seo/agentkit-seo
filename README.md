@@ -3,90 +3,123 @@
 </p>
 
 <p align="center">
-  <em>The open-source Knowledge Hub and Agent Skill for Personal Branding, SEO, and ATS Optimization.</em>
+  <em>Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolios, and X.</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Agent--Ready-000000?style=for-the-badge&logo=openai&logoColor=white" alt="Agent-Ready" />
   <img src="https://img.shields.io/badge/Markdown--First-4285F4?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown-First" />
-  <img src="https://img.shields.io/badge/CV_&_ATS-000000?style=for-the-badge&logo=googledocs&logoColor=white" alt="CV & ATS" />
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  <img src="https://img.shields.io/badge/X_(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+  <img src="https://img.shields.io/badge/CV_&_ATS-000000?style=for-the-badge&logo=googledocs&logoColor=white" alt="CV & ATS" />
   <img src="https://img.shields.io/badge/Web_Portfolio-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
+  <img src="https://img.shields.io/badge/X_(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
 </p>
 
 <p align="center">
-  <a href="#the-problem-vs-the-solution">Problem/Solution</a> •
-  <a href="#module-index">Modules</a> •
-  <a href="#quick-start-for-agents">Agent Install</a> •
-  <a href="#quick-start-for-humans">Human Guide</a> •
-  <a href="#about-the-authors">Authors</a>
+  <a href="#what-it-is">What It Is</a> •
+  <a href="#modules">Modules</a> •
+  <a href="#install">Install</a> •
+  <a href="#support">Support</a> •
+  <a href="#authors">Authors</a>
 </p>
 
 ---
 
-## The Problem vs. The Solution
+## What It Is
 
-When you ask an AI agent to write a cover letter or update your LinkedIn, it usually fails because it is fed unstructured, bloated data (like PDF resumes or HTML scrapes). It hallucinates facts, misses critical keywords, and generates generic fluff.
+AgentKit SEO is a modular skill pack for AI coding agents that work on career
+artifacts and professional discoverability.
 
-**AgentKit SEO solves this.** It is built on the principle of **Agentic Engine Optimization (AEO)**.
+It gives the agent:
 
-We provide a strict, Markdown-first architecture. You feed your agent a verified, token-efficient *Context File*, and install our agent skill. The agent parses our rules flawlessly (100% extraction) and generates perfectly tailored, SEO-optimized career artifacts without hallucinating.
+- one shared skill source in `.skills/agent-skill/`
+- one focused module per system
+- one install/export CLI for provider-specific layouts
+- one human-readable repo hub for research and maintenance
 
-## Module Index
+The goal is simple: make agent output for profiles, resumes, portfolios, and
+personal-branding workflows more structured, more evidence-based, and less
+generic.
 
-AgentKit SEO is modularized by platform to keep agent context windows lean. Browse the directories below for platform-specific rules, or instruct your agent to load a specific module.
+## Modules
 
-| Module | Description |
-| :--- | :--- |
-| [**`/agent-context-optimization/`**](./agent-context-optimization/README.md) | Specs for your foundational Personal Agent Context File. |
-| [**`/cv-ats/`**](./cv-ats/README.md) | Formatting constraints for Applicant Tracking Systems. |
-| [**`/linkedin/`**](./linkedin/README.md) | Strategies for the 360brew algorithm & vector search. |
-| [**`/github/`**](./github/README.md) | Profile README structuring and pinned repo SEO. |
-| [**`/web-portfolio/`**](./web-portfolio/README.md) | Semantic HTML, `llms.txt`, and AEO compliance. |
-| [**`/x-twitter/`**](./x-twitter/README.md) | Bio optimization and professional positioning. |
+| Module | Focus |
+| --- | --- |
+| `agent-context-optimization` | Build the structured personal context file the other modules rely on. |
+| `linkedin` | Headline, About, Experience, Skills, Featured, activity, and profile audits. |
+| `github` | Profile metadata, pinned repositories, README positioning, topics, and repo hygiene. |
+| `cv-ats` | ATS-safe resume structure, keyword alignment, bullet writing, and CV audits. |
+| `web-portfolio` | Portfolio architecture, metadata, structured data, indexability, and AEO signals. |
+| `x-twitter` | Bio, pinned post, threads, posting strategy, and account audits. |
 
-## Quick Start for Agents
+Browse the editorial hub directly from the repo root:
 
-AgentKit SEO is designed as one shared skill layer plus thin provider-specific
-adapters. The stable contract is the module skill name, while the exact command
-surface depends on the agent you use.
+- [agent-context-optimization](./agent-context-optimization/README.md)
+- [linkedin](./linkedin/README.md)
+- [github](./github/README.md)
+- [cv-ats](./cv-ats/README.md)
+- [web-portfolio](./web-portfolio/README.md)
+- [x-twitter](./x-twitter/README.md)
 
-1. Create your **Personal Agent Context File** (see `/agent-context-optimization/`).
-2. Install the relevant shared skills from `.skills/agent-skill/` into your agent environment. Each shared skill is self-contained, including its own `references/` content and provider metadata.
-3. Invoke the smallest relevant module for the task:
+## Install
+
+Treat `.skills/agent-skill/` as the canonical source tree. Provider-specific
+material lives in `.skills/providers/`.
+
+Install directly into the target agent folder:
 
 ```bash
-# Gemini CLI can expose namespaced wrapper commands
-/agentkit-seo:linkedin "Rewrite my LinkedIn About section to target Senior Backend roles using my context file."
-
-# Codex / native skill flows are better treated as explicit skill selection
-$agentkit-seo-linkedin
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider claude-code \
+  --project-root .
 ```
 
-### The "Always-On" Hook (GEMINI.md / CLAUDE.md)
-To make AgentKit SEO a permanent part of your agent's workflow, add this snippet to your project's `GEMINI.md`, `CLAUDE.md`, or `.cursorrules` file:
+Supported install targets today:
 
-```markdown
-Before generating any career documents, CVs, or profile updates, you MUST load the formatting rules and constraints from the AgentKit SEO skill. Never output unstructured or generic career advice.
+| Provider | Install location |
+| --- | --- |
+| Claude Code | `.claude/skills/` |
+| Codex | `.codex/skills/` |
+| OpenCode | `.opencode/skills/` |
+
+If you want the CLI entrypoint from a local checkout:
+
+```bash
+npm exec --package ./. -- agentkit-seo install \
+  --provider codex \
+  --project-root .
 ```
 
-## Quick Start for Humans
+If you want to inspect a generated bundle before installing it:
 
-You don't need an AI agent to use this repository. Browse the directories in the **Module Index** directly on GitHub. Each folder acts as a "Knowledge Hub" containing plain-English best practices, templates, and real examples relevant to that platform.
+```bash
+node .skills/export/scripts/agentkit-seo.mjs export \
+  --provider claude-code \
+  --output /tmp/agentkit-seo-bundles
+```
 
-## Style Guide and Contributing
+## Support
 
-This repository strictly enforces the formatting and architectural constraints defined in `.assets/docs/STYLEGUIDE.md`. All Markdown files must adhere to these rules to ensure both human readability and flawless machine parsability. Read the style guide before authoring or modifying any content.
+| Target | Status |
+| --- | --- |
+| Shared skill source | Ready |
+| Install/export CLI | Ready |
+| Claude Code direct install | Ready |
+| Codex direct install | Ready |
+| OpenCode direct install | Ready |
+| Gemini CLI extension install | Not shipped yet |
+| Published `npx agentkit-seo ...` package | Not shipped yet |
+| Marketplace / registry distribution | Not shipped yet |
 
----
+Current internal implementation notes live in
+[.assets/docs/current-status.md](./.assets/docs/current-status.md).
 
-## About the Authors
+## Authors
 
-This project is maintained by **Renato Mignone** and **Elia Innocenti**.
+Maintained by **Renato Mignone** and **Elia Innocenti**.
 
 | Author | GitHub | LinkedIn | Portfolio |
-|---|---|---|---|
-| **Renato Mignone** | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/RenatoMignone) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/renato-mignone/) | [![Portfolio](https://img.shields.io/badge/Portfolio-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://renatomignone.github.io/) |
-| **Elia Innocenti** | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/eliainnocenti) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eliainnocenti/) | [![Portfolio](https://img.shields.io/badge/Portfolio-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://eliainnocenti.github.io/) |
+| --- | --- | --- | --- |
+| **Renato Mignone** | [GitHub](https://github.com/RenatoMignone) | [LinkedIn](https://www.linkedin.com/in/renato-mignone/) | [Portfolio](https://renatomignone.github.io/) |
+| **Elia Innocenti** | [GitHub](https://github.com/eliainnocenti) | [LinkedIn](https://www.linkedin.com/in/eliainnocenti/) | [Portfolio](https://eliainnocenti.github.io/) |

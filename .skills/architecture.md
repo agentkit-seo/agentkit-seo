@@ -1,7 +1,7 @@
 # Agent skill architecture
 
-This directory stores the portable skill bundles and the provider-specific
-adapter notes for `AgentKit SEO`.
+This directory stores the portable skill bundles, provider adapters, and export
+tooling for `AgentKit SEO`.
 
 ## Recommended structure
 
@@ -15,10 +15,14 @@ adapter notes for `AgentKit SEO`.
     agentkit-seo-linkedin/
     agentkit-seo-web-portfolio/
     agentkit-seo-x-twitter/
-  claude-code/
-  codex/
-  gemini-cli/
-  opencode/
+  providers/
+    claude-code/
+    codex/
+    gemini-cli/
+    opencode/
+  export/
+    export-config.json
+    scripts/
 ```
 
 ## Why the shared skills are namespaced
@@ -41,7 +45,10 @@ plain `linkedin` for three reasons:
    Self-contained skills in `.skills/agent-skill/` using `SKILL.md`,
    `references/`, and `agents/openai.yaml`.
 3. Provider adapter:
-   Install notes, wrappers, or export helpers in `.skills/<provider>/`.
+   Install notes, wrappers, or provider-specific templates in
+   `.skills/providers/<provider>/`.
+4. Export layer:
+   Generated provider-facing layouts produced from `.skills/export/`.
 
 ## Design rules
 
@@ -54,9 +61,63 @@ plain `linkedin` for three reasons:
    agent at the correct shared skill.
 6. Do not assume one invocation style works everywhere. The slash namespace
    model is provider-dependent.
+7. Keep provider packaging generated wherever possible; do not hand-maintain a
+   second canonical copy of the skill tree at the repo root.
 
 ## Packaging stance
 
 The shared skills should be installable on their own without requiring the
 entire repository checkout. The repo hub remains the editorial workspace, but
 the portable runtime artifact is the `.skills/agent-skill/` tree.
+
+When a provider expects a different directory layout, install or export that
+layout from the canonical `.skills` source tree instead of editing provider
+folders by hand. The reference CLI lives at:
+
+- `.skills/export/export-config.json`
+- `.skills/export/scripts/agentkit-seo.mjs`
+
+Current supported direct install targets are:
+
+- `claude-code`
+- `codex`
+- `opencode`
+
+Direct install example:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider claude-code \
+  --project-root .
+```
+
+Current supported export targets are:
+
+- `shared`
+- `claude-code`
+- `codex`
+- `opencode`
+
+Preview export example:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs export \
+  --provider claude-code \
+  --output /tmp/agentkit-seo-bundles
+```
+
+## Root files and distribution
+
+Keep the source of truth inside `.skills/`. Root-level packaging files should
+exist only when they unlock a real distribution channel.
+
+Today that means:
+
+- a minimal root `package.json` is justified if we want an `npx`-friendly CLI
+  for installing, exporting, or packaging the shared skills
+- provider manifests such as `gemini-extension.json` or
+  `.claude-plugin/plugin.json` do not need to live at the repo root while we
+  are still authoring the shared source tree
+
+Generate provider-facing manifests only when we intentionally publish a
+provider-specific release artifact.

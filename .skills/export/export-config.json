@@ -1,0 +1,55 @@
+{
+  "package": {
+    "name": "agentkit-seo",
+    "version": "0.1.0-dev",
+    "description": "Portable AgentKit SEO skill bundle generated from the canonical .skills source tree."
+  },
+  "skills": [
+    {
+      "name": "agentkit-seo",
+      "source": ".skills/agent-skill/agentkit-seo"
+    },
+    {
+      "name": "agentkit-seo-agent-context-optimization",
+      "source": ".skills/agent-skill/agentkit-seo-agent-context-optimization"
+    },
+    {
+      "name": "agentkit-seo-cv-ats",
+      "source": ".skills/agent-skill/agentkit-seo-cv-ats"
+    },
+    {
+      "name": "agentkit-seo-github",
+      "source": ".skills/agent-skill/agentkit-seo-github"
+    },
+    {
+      "name": "agentkit-seo-linkedin",
+      "source": ".skills/agent-skill/agentkit-seo-linkedin"
+    },
+    {
+      "name": "agentkit-seo-web-portfolio",
+      "source": ".skills/agent-skill/agentkit-seo-web-portfolio"
+    },
+    {
+      "name": "agentkit-seo-x-twitter",
+      "source": ".skills/agent-skill/agentkit-seo-x-twitter"
+    }
+  ],
+  "providers": {
+    "shared": {
+      "layout": "shared",
+      "target": "skills"
+    },
+    "claude-code": {
+      "layout": "skill-folders",
+      "target": ".claude/skills"
+    },
+    "codex": {
+      "layout": "skill-folders",
+      "target": ".codex/skills"
+    },
+    "opencode": {
+      "layout": "skill-folders",
+      "target": ".opencode/skills"
+    }
+  }
+}

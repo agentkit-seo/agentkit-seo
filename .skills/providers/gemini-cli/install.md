@@ -7,6 +7,24 @@ Use two layers:
 - skills exported from `.skills/agent-skill/<skill-name>/`
 - commands in `.gemini/commands/agentkit-seo/<module>.toml`
 
+## Source-first workflow
+
+Gemini should still be authored from the shared `.skills/agent-skill/` source
+tree. Gemini adapter notes belong in `.skills/providers/gemini-cli/`. The
+current export layer keeps the shared skill bundle canonical first, then leaves
+Gemini-specific command wrappers as a thin adapter step on top.
+
+That means the installable source content should continue to come from:
+
+- `.skills/agent-skill/`
+- `.skills/providers/gemini-cli/install.md`
+
+instead of duplicating long-lived packaging files at the repo root by hand.
+
+If we later publish a provider-facing installer, the root should only expose
+the minimal distribution adapter needed for that channel, not a second copy of
+the shared skills.
+
 ## Why Gemini CLI is a strong fit for namespaced commands
 
 Gemini CLI documents namespaced custom commands derived from nested command file

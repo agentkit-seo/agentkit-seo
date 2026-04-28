@@ -11,6 +11,24 @@ In practice, the reusable source of truth is:
 - `.skills/agent-skill/<skill-name>/references/`
 - `.skills/agent-skill/<skill-name>/agents/openai.yaml`
 
+## Source-first workflow
+
+Do not hand-maintain a second Codex skill tree in the repo root. Author in
+`.skills/agent-skill/`, keep Codex adapter notes in
+`.skills/providers/codex/`, then install a Codex-facing layout when needed:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider codex \
+  --project-root .
+```
+
+This installs the shared skills into:
+
+- `.codex/skills/`
+
+Use `export` only when you want a preview bundle or a packaging artifact.
+
 ## Invocation model
 
 Codex skills are better treated as explicit skills than as slash commands.
