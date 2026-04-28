@@ -26,44 +26,55 @@ Content is organized by platform or output type. Each platform directory contain
 
 - `/linkedin/` — Headline, Featured section, About, Experience entries
 - `/github/` — Profile README, repository READMEs, pinned repo structuring
-- `/portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
+- `/web-portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
 - `/cv-ats/` — Keyword optimization, formatting rules, examples and templates that have passed real ATS screening (Apple, Anthropic, Google)
 - `/x-twitter/` — Bio, pinned post strategy, content positioning
-- `/zenodo/` — Research output formatting, DOI-based credibility signals
 
 More platform directories will be added as the project grows. The structure is designed to be extended without breaking existing conventions.
 
-All working templates, real CV examples, sample READMEs, and before/after comparisons live inside their respective hub directories (e.g., `/cv-ats/templates/`, `/github/examples/`). The Skill references them by path, keeping the `.skills/` layer lean and the examples human-inspectable and version-controlled directly on GitHub.
+All working templates, real CV examples, sample READMEs, and before/after comparisons live inside their respective hub directories (e.g., `/cv-ats/templates/`, `/github/examples/`). The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
 
 **B. The Agent Skill System (The Engine)**
 
 The `.skills/` directory is the machine-readable layer. It is structured as a collection of focused submodules, one per platform or output type, so that an agent loads only the context it needs for a given task.
 
-```
+```text
 .skills/
-    SKILL.md
-    linkedin/
-    github/
-    portfolio/
-    cv-ats/
-    x-twitter/
-    zenodo/
-    ...
+    agent-skill/
+        agentkit-seo/
+        agentkit-seo-agent-context-optimization/
+        agentkit-seo-cv-ats/
+        agentkit-seo-github/
+        agentkit-seo-linkedin/
+        agentkit-seo-web-portfolio/
+        agentkit-seo-x-twitter/
+    claude-code/
+    codex/
+    gemini-cli/
+    opencode/
 ```
 
-`SKILL.md` is the master index. It defines the agent's persona, its boundaries, and the routing logic for loading submodules. Each subdirectory mirrors a platform directory in the Knowledge Hub and contains the prompts and rules the agent uses when working on that platform.
+The shared source of truth lives in `.skills/agent-skill/`. Each folder there is
+an actual portable skill bundle with its own `SKILL.md`, local `references/`
+directory, and optional provider metadata such as `agents/openai.yaml`. The
+root `agentkit-seo` skill acts as an orchestrator, while the platform-specific
+skills keep context scoped to a single surface whenever possible.
 
-**Provider-agnostic and provider-specific:** The core `.skills/` structure uses no provider-specific syntax, making it portable across agents. At the same time, provider-specific versions of the Skill will be published separately, so that users can pull and install the Skill directly from within their agent of choice. For example, a Claude Code user will be able to install the Skill straight into the `.claude/` folder in their home directory without any manual configuration. The same applies for other supported providers as they are onboarded.
+**Provider-agnostic and provider-specific:** The shared skills use a portable
+`SKILL.md` format and optional provider metadata such as `agents/openai.yaml`.
+The sibling provider folders are adapters only: they define install targets,
+wrapper commands, and provider-specific behavior without duplicating the core
+methodology.
 
-**Subcommand routing:** Because each platform lives in its own subfolder, the Skill exposes scoped commands. If the installed skill is named `personal-branding-seo`, the user can invoke:
+**Scoped invocation:** The stable cross-provider contract is the shared skill
+name, such as `agentkit-seo-linkedin` or `agentkit-seo-github`. Some providers
+can expose ergonomic wrapper commands on top of those skills. For example,
+Gemini CLI can expose `/agentkit-seo:linkedin` through namespaced command files,
+while Codex is better treated as explicit skill selection and Claude Code needs
+either direct skill invocation or a later plugin wrapper for exact namespacing.
 
-- `/personal-branding-seo:linkedin` loads only the LinkedIn submodule
-- `/personal-branding-seo:github` loads only the GitHub submodule
-- `/personal-branding-seo:cv-ats` loads only the CV and ATS submodule
-- `/personal-branding-seo:x-twitter` loads only the X (Twitter) submodule
-- `/personal-branding-seo` loads the full `SKILL.md` master index for orchestration tasks
-
-This directly solves the context window problem: a user who only wants to optimize their LinkedIn profile does not load any GitHub or CV rules, and wastes no tokens on irrelevant context.
+This architecture still solves the context window problem: a user who only wants
+LinkedIn help loads the LinkedIn skill instead of the whole system.
 
 ---
 
@@ -81,7 +92,7 @@ Keeping the repository clean and well-structured from the start is critical. AI 
   Create the official GitHub Organization and the final public repository. Commit the finalized structure from scratch to ensure a pristine commit history.
 
 - **Phase 4: Prompt Engineering & Context Tuning**
-  Refine each submodule in `.skills/` so the agent does not hallucinate. Write strict routing rules in `SKILL.md`, for example: *"When optimizing a GitHub README, load `.skills/github/` before generating any output."* Test the subcommand routing end-to-end for each supported provider.
+  Refine each shared skill in `.skills/agent-skill/` so the agent does not hallucinate. Write strict routing rules in the root `agentkit-seo` skill, for example: *"When optimizing a GitHub README, load `agentkit-seo-github` before generating any output."* Test the adapter commands and direct skill invocation end-to-end for each supported provider.
 
 ---
 
@@ -114,7 +125,7 @@ Before writing a single line of final content, these foundational decisions must
 
 - *"How are we managing context window limits at the submodule level? If a single platform's submodule (e.g., `linkedin/`) grows large enough, does it need its own lite version for agents with smaller context windows?"*
 
-- *"For the subcommand routing (e.g., `/personal-branding-seo:linkedin`), is the implementation purely a convention enforced by `SKILL.md`, or does it require native support from each provider's CLI? What is the fallback for providers that do not support named subcommands?"*
+- *"For the subcommand routing (e.g., `/agentkit-seo:linkedin`), how much is implemented natively by each provider's CLI versus by our adapter layer, and what is the fallback when a provider does not support namespaced slash commands?"*
 
 - *"How do we handle the provider-specific Skill publications in parallel with the provider-agnostic core? Is there a single source of truth that gets compiled into provider-specific formats, or does each provider version get maintained separately?"*
 

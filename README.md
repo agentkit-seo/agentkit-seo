@@ -14,7 +14,6 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   <img src="https://img.shields.io/badge/X_(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
   <img src="https://img.shields.io/badge/Web_Portfolio-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" />
-  <img src="https://img.shields.io/badge/Zenodo-024059?style=for-the-badge&logo=zenodo&logoColor=white" alt="Zenodo" />
 </p>
 
 <p align="center">
@@ -47,19 +46,23 @@ AgentKit SEO is modularized by platform to keep agent context windows lean. Brow
 | [**`/github/`**](./github/README.md) | Profile README structuring and pinned repo SEO. |
 | [**`/web-portfolio/`**](./web-portfolio/README.md) | Semantic HTML, `llms.txt`, and AEO compliance. |
 | [**`/x-twitter/`**](./x-twitter/README.md) | Bio optimization and professional positioning. |
-| [**`/zenodo/`**](./zenodo/README.md) | Research output formatting and DOI signals. |
 
 ## Quick Start for Agents
 
-Whether you use Claude Code, Gemini CLI, or Cursor, the workflow is designed to be frictionless. AgentKit SEO is built to be an installable extension for your favorite coding agent.
+AgentKit SEO is designed as one shared skill layer plus thin provider-specific
+adapters. The stable contract is the module skill name, while the exact command
+surface depends on the agent you use.
 
 1. Create your **Personal Agent Context File** (see `/agent-context-optimization/`).
-2. Install the skill into your agent environment (e.g., via `npm`, `npx`, or your agent's native extension manager).
-3. Use the agent's internal command to invoke the specific platform constraints you need:
+2. Install the relevant shared skills from `.skills/agent-skill/` into your agent environment. Each shared skill is self-contained, including its own `references/` content and provider metadata.
+3. Invoke the smallest relevant module for the task:
 
 ```bash
-# Example command in an AI Agent CLI
+# Gemini CLI can expose namespaced wrapper commands
 /agentkit-seo:linkedin "Rewrite my LinkedIn About section to target Senior Backend roles using my context file."
+
+# Codex / native skill flows are better treated as explicit skill selection
+$agentkit-seo-linkedin
 ```
 
 ### The "Always-On" Hook (GEMINI.md / CLAUDE.md)
