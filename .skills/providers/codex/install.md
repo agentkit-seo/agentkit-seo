@@ -15,15 +15,33 @@ In practice, the reusable source of truth is:
 
 Do not hand-maintain a second Codex skill tree in the repo root. Author in
 `.skills/agent-skill/`, keep Codex adapter notes in
-`.skills/providers/codex/`, then install a Codex-facing layout when needed:
+`.skills/providers/codex/`, then install a Codex-facing layout when needed.
+
+For the published package, the default command is:
+
+```bash
+npx agentkit-seo install --provider codex
+```
+
+This installs the shared skills into `CODEX_HOME/skills` when `CODEX_HOME` is
+set, otherwise into:
+
+- `~/.codex/skills/`
+
+From a local checkout, use:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider codex
+```
+
+For project-local installation, pass `--project-root`:
 
 ```bash
 node .skills/export/scripts/agentkit-seo.mjs install \
   --provider codex \
   --project-root .
 ```
-
-This installs the shared skills into:
 
 - `.codex/skills/`
 

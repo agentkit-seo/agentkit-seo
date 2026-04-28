@@ -4,10 +4,10 @@ This matrix captures the current adapter assumptions for April 28, 2026.
 
 | Provider | Shared skill-bundle fit | Custom command fit | Best user-facing module trigger |
 | --- | --- | --- | --- |
-| Claude Code | Strong | Strong, but local commands do not give clean colon namespacing from directories | Direct skill use or later plugin namespace |
+| Claude Code | Strong | Strong for plugins; local command directories do not create colon namespacing | Direct skill use or later plugin command such as `/agentkit-seo:linkedin` |
 | Codex | Strong | Do not assume slash wrappers are the primary interface | Explicit skill selection such as `$agentkit-seo-linkedin` |
 | Gemini CLI | Strong | Strong, with documented namespaced commands from nested paths | `/agentkit-seo:linkedin` |
-| OpenCode | Strong | Strong, but safest documented command surface is flat by filename | Native skill loading or `/agentkit-seo-linkedin` |
+| OpenCode | Strong | Strong, with documented flat commands from Markdown filenames | Native skill loading or `/agentkit-seo-linkedin` |
 
 ## Policy
 
@@ -20,3 +20,12 @@ actually supports.
 The provider-facing artifact should be the self-contained shared skill bundle.
 Provider adapters may add wrapper commands, installer metadata, or export
 layout, but they should not become alternate knowledge bases.
+
+## Current command wrapper status
+
+| Provider | Shipped command wrappers | Notes |
+| --- | --- | --- |
+| Claude Code | No | Exact `/agentkit-seo:module` syntax should wait for a Claude plugin package. |
+| Codex | No | Use installed skills directly. |
+| Gemini CLI | Yes | Extension bundle installs namespaced wrappers under `commands/agentkit-seo/`. |
+| OpenCode | Yes | Flat wrappers are copied to `.opencode/commands/` or `~/.config/opencode/commands/`. |

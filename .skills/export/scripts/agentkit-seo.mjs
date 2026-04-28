@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
@@ -10,10 +11,11 @@ function usage() {
 
 Usage:
   agentkit-seo export --provider <provider|all> --output <dir> [--force]
-  agentkit-seo install --provider <provider> --project-root <dir> [--force]
+  agentkit-seo install --provider <provider> [--project-root <dir>|--target-dir <dir>] [--commands-target-dir <dir>] [--force]
   agentkit-seo install --provider shared --target-dir <dir> [--force]
   agentkit-seo list providers
   agentkit-seo list skills
+  agentkit-seo list commands --provider <provider>
 `);
 }
 
@@ -67,6 +69,16 @@ function removeIfExists(targetPath) {
   }
 }
 
+function expandUserPath(targetPath) {
+  if (targetPath === "~") {
+    return os.homedir();
+  }
+  if (targetPath.startsWith("~/")) {
+    return path.join(os.homedir(), targetPath.slice(2));
+  }
+  return targetPath;
+}
+
 function copySkillFolders(repoRoot, skills, targetRoot) {
   const exported = [];
 
@@ -81,6 +93,67 @@ function copySkillFolders(repoRoot, skills, targetRoot) {
   }
 
   return exported;
+}
+
+function copyProviderFiles(repoRoot, files, targetRoot, force) {
+  const copied = [];
+
+  if (!files || files.length === 0) {
+    return copied;
+  }
+
+  fs.mkdirSync(targetRoot, { recursive: true });
+
+  for (const file of files) {
+    const source = path.join(repoRoot, file.source);
+    const destination = path.join(targetRoot, file.target ?? path.basename(file.source));
+    if (!fs.existsSync(source)) {
+      throw new Error(`Provider file source does not exist: ${source}`);
+    }
+    if (fs.existsSync(destination)) {
+      if (!force) {
+        throw new Error(
+          `Provider file target already exists: ${destination}. Use --force to replace AgentKit SEO provider files.`
+        );
+      }
+      removeIfExists(destination);
+    }
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    fs.cpSync(source, destination, { recursive: true });
+    copied.push(path.relative(targetRoot, destination));
+  }
+
+  return copied;
+}
+
+function copyCommandFiles(repoRoot, commands, targetRoot, force) {
+  const copied = [];
+
+  if (!commands || commands.length === 0) {
+    return copied;
+  }
+
+  fs.mkdirSync(targetRoot, { recursive: true });
+
+  for (const command of commands) {
+    const source = path.join(repoRoot, command.source);
+    const destination = path.join(targetRoot, path.basename(command.source));
+    if (!fs.existsSync(source)) {
+      throw new Error(`Command source does not exist: ${source}`);
+    }
+    if (fs.existsSync(destination)) {
+      if (!force) {
+        throw new Error(
+          `Command target already exists: ${destination}. Use --force to replace AgentKit SEO command files.`
+        );
+      }
+      removeIfExists(destination);
+    }
+    fs.cpSync(source, destination);
+    copied.push(command.name);
+  }
+
+  return copied;
 }
 
 function installSkillFolders(repoRoot, skills, targetRoot, force) {
@@ -110,11 +183,14 @@ function installSkillFolders(repoRoot, skills, targetRoot, force) {
 }
 
 function writeBundleManifest(bundleRoot, provider, config, exportedSkills) {
+  const providerSpec = config.providers[provider];
   const manifest = {
     package: config.package,
     provider,
     exported_at: new Date().toISOString(),
-    skills: exportedSkills
+    skills: exportedSkills,
+    commands: providerSpec.commands?.map((command) => command.name) ?? [],
+    layout: providerSpec.layout
   };
   const manifestPath = path.join(bundleRoot, "agentkit-seo-export.json");
   fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
@@ -125,44 +201,110 @@ function exportProvider(repoRoot, outputRoot, provider, config, force) {
   const bundleRoot = path.join(outputRoot, provider);
   ensureCleanDirectory(bundleRoot, force);
 
-  const targetRoot = path.join(bundleRoot, providerSpec.target);
+  if (providerSpec.files) {
+    copyProviderFiles(repoRoot, providerSpec.files, bundleRoot, force);
+  }
+
+  const skillTarget = providerSpec.skillTarget ?? ".";
+  const targetRoot =
+    providerSpec.layout === "gemini-extension"
+      ? path.join(bundleRoot, skillTarget)
+      : path.join(bundleRoot, providerSpec.target);
   fs.mkdirSync(targetRoot, { recursive: true });
 
   const exportedSkills = copySkillFolders(repoRoot, config.skills, targetRoot);
+  if (providerSpec.commandTarget && providerSpec.commands) {
+    const commandRoot = path.join(bundleRoot, providerSpec.commandTarget);
+    copyCommandFiles(repoRoot, providerSpec.commands, commandRoot, force);
+  }
   writeBundleManifest(bundleRoot, provider, config, exportedSkills);
 }
 
 function resolveInstallRoot(flags, providerSpec, provider) {
-  if (provider === "shared") {
-    if (!flags["target-dir"]) {
-      throw new Error(
-        "Shared installs require --target-dir because there is no single default workspace location."
-      );
-    }
-    return path.resolve(flags["target-dir"]);
+  if (flags["target-dir"]) {
+    return path.resolve(expandUserPath(flags["target-dir"]));
   }
 
-  if (!flags["project-root"]) {
+  if (provider === "shared") {
     throw new Error(
-      `Provider '${provider}' installs require --project-root so the CLI knows where to place ${providerSpec.target}.`
+      "Shared installs require --target-dir because there is no single default workspace location."
     );
   }
 
-  return path.resolve(flags["project-root"], providerSpec.target);
+  if (flags["project-root"]) {
+    return path.resolve(flags["project-root"], providerSpec.target);
+  }
+
+  if (providerSpec.homeEnv && process.env[providerSpec.homeEnv]) {
+    return path.resolve(process.env[providerSpec.homeEnv], "skills");
+  }
+
+  if (providerSpec.globalTarget) {
+    return path.resolve(expandUserPath(providerSpec.globalTarget));
+  }
+
+  throw new Error(
+    `Provider '${provider}' installs require --project-root or --target-dir because no default target is configured.`
+  );
+}
+
+function resolveCommandInstallRoot(flags, providerSpec) {
+  if (!providerSpec.commandTarget || !providerSpec.commands) {
+    return null;
+  }
+
+  if (flags["commands-target-dir"]) {
+    return path.resolve(expandUserPath(flags["commands-target-dir"]));
+  }
+
+  if (flags["target-dir"]) {
+    return null;
+  }
+
+  if (flags["project-root"]) {
+    return path.resolve(flags["project-root"], providerSpec.commandTarget);
+  }
+
+  if (providerSpec.globalCommandTarget) {
+    return path.resolve(expandUserPath(providerSpec.globalCommandTarget));
+  }
+
+  return null;
 }
 
 function installProvider(repoRoot, provider, config, flags) {
   const providerSpec = config.providers[provider];
   const targetRoot = resolveInstallRoot(flags, providerSpec, provider);
+  if (providerSpec.files) {
+    copyProviderFiles(repoRoot, providerSpec.files, targetRoot, Boolean(flags.force));
+  }
+  const skillTargetRoot =
+    providerSpec.layout === "gemini-extension"
+      ? path.join(targetRoot, providerSpec.skillTarget ?? "skills")
+      : targetRoot;
   const installedSkills = installSkillFolders(
     repoRoot,
     config.skills,
-    targetRoot,
+    skillTargetRoot,
     Boolean(flags.force)
   );
+  const commandTargetRoot =
+    providerSpec.layout === "gemini-extension"
+      ? path.join(targetRoot, providerSpec.commandTarget)
+      : resolveCommandInstallRoot(flags, providerSpec);
+  const installedCommands = commandTargetRoot
+    ? copyCommandFiles(repoRoot, providerSpec.commands, commandTargetRoot, Boolean(flags.force))
+    : [];
 
   console.log(`Installed ${installedSkills.length} skill folder(s) for ${provider}`);
-  console.log(`- target: ${targetRoot}`);
+  console.log(`- target: ${skillTargetRoot}`);
+  if (installedCommands.length > 0) {
+    console.log(`Installed ${installedCommands.length} command file(s) for ${provider}`);
+    console.log(`- commands target: ${commandTargetRoot}`);
+  }
+  if (providerSpec.layout === "gemini-extension") {
+    console.log(`- extension target: ${targetRoot}`);
+  }
 }
 
 function listProviders(config) {
@@ -174,6 +316,17 @@ function listProviders(config) {
 function listSkills(config) {
   for (const skill of config.skills) {
     console.log(skill.name);
+  }
+}
+
+function listCommands(config, provider) {
+  const providerSpec = config.providers[provider];
+  if (!providerSpec) {
+    const available = Object.keys(config.providers).sort().join(", ");
+    throw new Error(`Unknown provider '${provider}'. Available: ${available}`);
+  }
+  for (const command of providerSpec.commands ?? []) {
+    console.log(command.name);
   }
 }
 
@@ -189,6 +342,7 @@ function run() {
 
   if (command === "list") {
     const subject = rest[0];
+    const flags = parseFlags(rest.slice(1));
     if (subject === "providers") {
       listProviders(config);
       return;
@@ -197,14 +351,21 @@ function run() {
       listSkills(config);
       return;
     }
-    throw new Error("Usage: agentkit-seo list providers|skills");
+    if (subject === "commands") {
+      if (!flags.provider) {
+        throw new Error("Usage: agentkit-seo list commands --provider <provider>");
+      }
+      listCommands(config, flags.provider);
+      return;
+    }
+    throw new Error("Usage: agentkit-seo list providers|skills|commands --provider <provider>");
   }
 
   if (command === "install") {
     const flags = parseFlags(rest);
     if (!flags.provider) {
       throw new Error(
-        "Usage: agentkit-seo install --provider <provider> --project-root <dir> [--force]"
+        "Usage: agentkit-seo install --provider <provider> [--project-root <dir>|--target-dir <dir>] [--commands-target-dir <dir>] [--force]"
       );
     }
     if (flags.provider === "all") {

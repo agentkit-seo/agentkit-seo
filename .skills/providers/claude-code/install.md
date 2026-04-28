@@ -16,7 +16,26 @@ Do not treat `.claude/skills/` as the canonical authoring surface in this
 repository. The source of truth lives in `.skills/agent-skill/`, while Claude
 adapter notes live in `.skills/providers/claude-code/`.
 
-If you want a Claude-ready layout installed directly into a project, use:
+If you want a Claude-ready layout installed globally from the published
+package, use:
+
+```bash
+npx agentkit-seo install --provider claude-code
+```
+
+From a local checkout, use:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider claude-code
+```
+
+This installs the shared skills into:
+
+- `~/.claude/skills/`
+
+If you want a Claude-ready layout installed directly into a project, pass
+`--project-root`:
 
 ```bash
 node .skills/export/scripts/agentkit-seo.mjs install \

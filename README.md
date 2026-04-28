@@ -107,29 +107,42 @@ Authoring and runtime conventions are defined in
 Treat `.skills/agent-skill/` as the canonical source tree. Provider-specific
 material lives in `.skills/providers/`.
 
-Install directly into the target agent folder:
+After the package is published, install directly into the target agent's global
+skills folder:
+
+```bash
+npx agentkit-seo install --provider codex
+```
+
+For Codex, this copies the shipped skill folders into `CODEX_HOME/skills` when
+`CODEX_HOME` is set, otherwise into `~/.codex/skills`.
+
+From a local checkout, use:
 
 ```bash
 node .skills/export/scripts/agentkit-seo.mjs install \
-  --provider claude-code \
-  --project-root .
+  --provider codex
 ```
 
 Supported install targets today:
 
-| Provider | Install location |
+| Provider | Default global install location |
 | --- | --- |
-| Claude Code | `.claude/skills/` |
-| Codex | `.codex/skills/` |
-| OpenCode | `.opencode/skills/` |
+| Claude Code | `~/.claude/skills/` |
+| Codex | `CODEX_HOME/skills` or `~/.codex/skills/` |
+| Gemini CLI | `~/.gemini/extensions/agentkit-seo/` with namespaced commands |
+| OpenCode | `~/.config/opencode/skills/` plus command wrappers in `~/.config/opencode/commands/` |
 
-If you want the CLI entrypoint from a local checkout:
+If you want to install into a project-local folder instead:
 
 ```bash
 npm exec --package ./. -- agentkit-seo install \
   --provider codex \
   --project-root .
 ```
+
+This writes the same skill folders into `.codex/skills/` inside the selected
+project.
 
 If you want to inspect a generated bundle before installing it:
 
@@ -143,10 +156,10 @@ node .skills/export/scripts/agentkit-seo.mjs export \
 
 | Agent | Status | Current path |
 | --- | --- | --- |
-| Claude Code | Ready | Direct skill install |
-| Codex | Ready | Direct skill install |
-| OpenCode | Ready | Direct skill install |
-| Gemini CLI | Planned | Provider notes exist; wrapper export is not shipped yet |
+| Claude Code | Ready | Global or project-local skill install |
+| Codex | Ready | Global or project-local skill install |
+| Gemini CLI | Ready | Extension install with namespaced commands such as `/agentkit-seo:linkedin` |
+| OpenCode | Ready | Global or project-local skill install plus flat commands such as `/agentkit-seo-linkedin` |
 | Generic agents | Partial | Read the repo or reuse the portable `SKILL.md` files manually |
 
 ## Quality Gate
@@ -170,7 +183,7 @@ modules can remain beta until their scenarios and demos are executable.
 | Claude Code direct install | Ready |
 | Codex direct install | Ready |
 | OpenCode direct install | Ready |
-| Gemini CLI extension install | Not shipped yet |
+| Gemini CLI extension install | Ready locally |
 | Published `npx agentkit-seo ...` package | Not shipped yet |
 | Marketplace / registry distribution | Not shipped yet |
 

@@ -81,10 +81,20 @@ Current supported direct install targets are:
 
 - `claude-code`
 - `codex`
+- `gemini-cli`
 - `opencode`
 
-Gemini CLI adapter notes exist, but Gemini is not a direct export/install target
-until the command-wrapper artifact is implemented.
+Gemini CLI installs as an extension at `~/.gemini/extensions/agentkit-seo`.
+The extension includes `gemini-extension.json`, a `GEMINI.md` context file,
+shared skill folders under `skills/`, and namespaced command wrappers under
+`commands/agentkit-seo/`. Gemini exposes those wrappers as commands such as
+`/agentkit-seo:linkedin`. A `--project-root` install can still preview the same
+generated extension layout inside a repository, but the active Gemini extension
+discovery path is the user extension directory.
+
+OpenCode installs include both shared skill folders and thin flat command
+wrappers. The wrappers live in `.skills/providers/opencode/commands/` and map
+commands such as `/agentkit-seo-linkedin` to the corresponding shared skill.
 
 Direct install example:
 
@@ -99,10 +109,12 @@ Current supported export targets are:
 - `shared`
 - `claude-code`
 - `codex`
+- `gemini-cli`
 - `opencode`
 
-Do not list `gemini-cli` as an export target until `.gemini/commands/` wrappers
-are generated or copied as part of the exported bundle.
+Keep Gemini extension files generated from `.skills/providers/gemini-cli/` and
+the canonical `.skills/agent-skill/` source tree. Do not maintain a second
+Gemini-specific copy of the skill methodology.
 
 Preview export example:
 

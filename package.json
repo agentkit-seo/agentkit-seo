@@ -6,6 +6,9 @@
   "bin": {
     "agentkit-seo": ".skills/export/scripts/agentkit-seo.mjs"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     ".skills/agent-skill",
     ".skills/export",

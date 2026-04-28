@@ -41,15 +41,88 @@
     },
     "claude-code": {
       "layout": "skill-folders",
-      "target": ".claude/skills"
+      "target": ".claude/skills",
+      "globalTarget": "~/.claude/skills"
     },
     "codex": {
       "layout": "skill-folders",
-      "target": ".codex/skills"
+      "target": ".codex/skills",
+      "homeEnv": "CODEX_HOME",
+      "globalTarget": "~/.codex/skills"
+    },
+    "gemini-cli": {
+      "layout": "gemini-extension",
+      "target": ".gemini/extensions/agentkit-seo",
+      "globalTarget": "~/.gemini/extensions/agentkit-seo",
+      "skillTarget": "skills",
+      "commandTarget": "commands/agentkit-seo",
+      "files": [
+        {
+          "source": ".skills/providers/gemini-cli/extension/gemini-extension.json"
+        },
+        {
+          "source": ".skills/providers/gemini-cli/extension/GEMINI.md"
+        }
+      ],
+      "commands": [
+        {
+          "name": "agentkit-seo:context",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/context.toml"
+        },
+        {
+          "name": "agentkit-seo:cv-ats",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/cv-ats.toml"
+        },
+        {
+          "name": "agentkit-seo:github",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/github.toml"
+        },
+        {
+          "name": "agentkit-seo:linkedin",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/linkedin.toml"
+        },
+        {
+          "name": "agentkit-seo:portfolio",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/portfolio.toml"
+        },
+        {
+          "name": "agentkit-seo:x-twitter",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/x-twitter.toml"
+        }
+      ]
     },
     "opencode": {
       "layout": "skill-folders",
-      "target": ".opencode/skills"
+      "target": ".opencode/skills",
+      "globalTarget": "~/.config/opencode/skills",
+      "commandTarget": ".opencode/commands",
+      "globalCommandTarget": "~/.config/opencode/commands",
+      "commands": [
+        {
+          "name": "agentkit-seo-context",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-context.md"
+        },
+        {
+          "name": "agentkit-seo-cv-ats",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-cv-ats.md"
+        },
+        {
+          "name": "agentkit-seo-github",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-github.md"
+        },
+        {
+          "name": "agentkit-seo-linkedin",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-linkedin.md"
+        },
+        {
+          "name": "agentkit-seo-portfolio",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-portfolio.md"
+        },
+        {
+          "name": "agentkit-seo-x-twitter",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-x-twitter.md"
+        }
+      ]
     }
   }
 }
