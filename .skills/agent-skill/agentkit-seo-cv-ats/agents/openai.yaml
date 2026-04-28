@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgentKit SEO CV ATS"
+  short_description: "Optimize resumes for ATS and humans"
+  default_prompt: "Use $agentkit-seo-cv-ats to improve this resume for a target role without inventing claims."
