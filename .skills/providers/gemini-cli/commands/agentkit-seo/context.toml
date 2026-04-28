@@ -1,0 +1,15 @@
+description = "Build or maintain a personal AgentKit SEO context file."
+prompt = """
+Use AgentKit SEO module `agentkit-seo-agent-context-optimization`.
+
+Read `skills/agentkit-seo-agent-context-optimization/SKILL.md` from the active
+AgentKit SEO Gemini extension context before drafting or editing. Treat the
+user arguments as the source path, target path, persona focus, or requested
+context update:
+
+{{args}}
+
+Prefer explicit files provided by the user. If no target is provided, recommend
+`~/.agentkit-seo/context.md` as the durable personal source of truth. Do not
+scan the whole filesystem.
+"""

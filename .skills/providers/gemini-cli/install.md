@@ -2,17 +2,61 @@
 
 ## Preferred install targets
 
-Use two layers:
+Install AgentKit SEO as a Gemini CLI extension:
 
-- skills exported from `.skills/agent-skill/<skill-name>/`
-- commands in `.gemini/commands/agentkit-seo/<module>.toml`
+- global extension: `~/.gemini/extensions/agentkit-seo/`
+- local generated-layout preview: `<project>/.gemini/extensions/agentkit-seo/`
+
+The extension contains:
+
+- `gemini-extension.json`
+- `GEMINI.md`
+- shared skills copied into `skills/<skill-name>/`
+- commands copied into `commands/agentkit-seo/<module>.toml`
+
+Gemini CLI exposes the nested command files as namespaced commands:
+
+- `/agentkit-seo:context`
+- `/agentkit-seo:linkedin`
+- `/agentkit-seo:github`
+- `/agentkit-seo:cv-ats`
+- `/agentkit-seo:portfolio`
+- `/agentkit-seo:x-twitter`
+
+After installing or changing the extension, restart Gemini CLI. For loose
+custom command files, Gemini also supports `/commands reload`, but extension
+changes are picked up on restart.
+
+## Install command
+
+```bash
+npx agentkit-seo install --provider gemini-cli
+```
+
+From a local checkout:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider gemini-cli
+```
+
+For a project-local generated-layout preview:
+
+```bash
+node .skills/export/scripts/agentkit-seo.mjs install \
+  --provider gemini-cli \
+  --project-root .
+```
+
+Gemini CLI discovers active extensions from the user extension directory, so the
+global install is the one users should expect Gemini to load automatically.
 
 ## Source-first workflow
 
 Gemini should still be authored from the shared `.skills/agent-skill/` source
 tree. Gemini adapter notes belong in `.skills/providers/gemini-cli/`. The
-current export layer keeps the shared skill bundle canonical first, then leaves
-Gemini-specific command wrappers as a thin adapter step on top.
+export layer keeps the shared skill bundle canonical first, then packages the
+Gemini extension as an adapter step on top.
 
 That means the installable source content should continue to come from:
 
@@ -33,12 +77,9 @@ wrappers.
 
 ## Practical recommendation
 
-1. Install the shared skill folders as real skills.
-2. Add very small command wrappers that map:
-   - `/agentkit-seo:linkedin` -> tell Gemini to use `agentkit-seo-linkedin`
-   - `/agentkit-seo:github` -> tell Gemini to use `agentkit-seo-github`
-   - `/agentkit-seo:cv-ats` -> tell Gemini to use `agentkit-seo-cv-ats`
-3. Keep the wrapper prompt thin so the reusable logic stays in the shared skill.
+1. Keep shared skill logic in `.skills/agent-skill/`.
+2. Keep `GEMINI.md` concise and import only the shared skill entrypoints.
+3. Keep command wrappers thin so reusable logic stays in the shared skills.
 
 ## Distribution note
 

@@ -1,0 +1,13 @@
+description = "Optimize a CV, resume, or job-application draft for ATS and human review."
+prompt = """
+Use AgentKit SEO module `agentkit-seo-cv-ats`.
+
+Read `skills/agentkit-seo-cv-ats/SKILL.md` from the active AgentKit SEO Gemini
+extension context before auditing or rewriting. Treat the user arguments as a
+CV path, pasted CV text, job description, target role, or rewrite instruction:
+
+{{args}}
+
+Preserve factual accuracy, keep unverifiable claims separate, and explain the
+highest-impact ATS and recruiter-facing changes.
+"""
