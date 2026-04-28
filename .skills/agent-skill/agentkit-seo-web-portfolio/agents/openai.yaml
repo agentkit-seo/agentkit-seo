@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgentKit SEO Web Portfolio"
+  short_description: "Improve portfolio crawlability and snippets"
+  default_prompt: "Use $agentkit-seo-web-portfolio to improve my site's crawlability, metadata, and portfolio SEO."
