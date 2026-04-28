@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgentKit SEO LinkedIn"
+  short_description: "Optimize LinkedIn profile discoverability"
+  default_prompt: "Use $agentkit-seo-linkedin to optimize my LinkedIn profile for clarity and discoverability."
