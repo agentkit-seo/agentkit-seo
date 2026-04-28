@@ -3,7 +3,7 @@ title: "CV and ATS optimization"
 platform: "cv-ats"
 objective: "Master index and routing logic for formatting and optimizing CVs for Applicant Tracking Systems."
 status: "draft"
-last_updated: "2026-04-22"
+last_updated: "2026-04-28"
 tags: ["cv", "ats", "resume", "index"]
 agent_priority: "high"
 ---
@@ -16,11 +16,11 @@ agent_priority: "high"
 
 ## 1. Overview: The ATS problem
 
-When you apply for a job, a human recruiter rarely reads your CV first. The first gatekeeper is almost always an Applicant Tracking System (ATS). Human Resources departments at major companies use these software platforms to automatically parse, filter, and rank thousands of applications before a human ever looks at a screen.
+When you apply for a job, a human recruiter may not read your CV first. Many hiring teams use an Applicant Tracking System (ATS) to store applications, parse resumes into structured fields, search for candidates, and manage review workflows before a human evaluates the final profile.
 
-The problem is that ATS parsers do not see visual design. They strip away proprietary file formatting (like PDF or Word layers) to extract pure text. They look for standard section headers (like "Experience" and "Education") to map your text into their database fields. They calculate your years of experience by parsing standard date formats, and they rank your profile by matching the extracted text against the keywords in the job description.
+The problem is that ATS parsers do not understand visual design the way a human does. They extract text from PDF or Word files, look for standard section headers such as "Experience" and "Education," and map the result into database fields. Some workflows also use keywords, filters, or matching tools to help recruiters find relevant candidates.
 
-The solution is to design a CV exclusively for the machine parser first, and the human reader second. This module provides the exact constraints and strategies needed to build a fully machine-readable CV that ensures your qualifications are correctly extracted and ranked.
+The solution is to design a CV for reliable parsing first and human readability second. This module provides constraints and strategies for building a machine-readable CV that gives the user's qualifications the best chance of being extracted correctly.
 
 ## 2. Module index
 

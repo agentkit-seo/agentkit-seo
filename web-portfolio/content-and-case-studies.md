@@ -3,7 +3,7 @@ title: "Portfolio content and case studies"
 platform: "portfolio"
 objective: "Define the content patterns that make a personal website useful, trustworthy, and capable of ranking beyond branded searches."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["portfolio", "content", "case-studies", "trust"]
 agent_priority: "high"
 ---
@@ -20,11 +20,11 @@ Search visibility for a personal site is not only a technical problem. A portfol
 
 ## 2. Best practices
 
-**Rule:** Build the portfolio around Google's E-E-A-T framework.
-Google rewards Experience, Expertise, Authoritativeness, and Trustworthiness. In an era of AI-generated content, *Experience* (first-hand knowledge) and *Expertise* (verifiable skills) are the primary differentiators for a portfolio. Case studies must demonstrate that the author actually did the work, not just summarized a topic.
+**Recommendation:** Use Google's E-E-A-T framework as a quality checklist.
+Google uses Experience, Expertise, Authoritativeness, and Trustworthiness as part of its quality guidance, especially for evaluating whether content is helpful and reliable. For a portfolio, *Experience* (first-hand knowledge) and *Expertise* (verifiable skills) are the primary differentiators. Case studies must demonstrate that the author actually did the work, not just summarized a topic.
 
 **Rule:** Give the site a clear professional focus.
-The homepage and About page should make the target domain obvious. A portfolio that tries to rank for every possible role sends a weak quality signal and creates vague page copy.
+The homepage and About page should make the target domain obvious. A portfolio that tries to target every possible role creates vague page copy and makes the site harder to understand.
 
 **Rule:** Make authorship and credibility explicit.
 People and search systems should be able to tell who created the content, what domain experience exists, and where supporting proof lives. Link to GitHub, LinkedIn, publications, demos, talks, or shipped products when relevant.
@@ -42,7 +42,7 @@ Case studies and project pages should not exist in isolation. Link between relat
 Original process notes, system design tradeoffs, migration lessons, and postmortems are stronger than keyword-targeted filler posts.
 
 **Rule:** Update or retire stale pages.
-If a project is abandoned, rewritten, or no longer representative, revise the page or remove it from the index. Thin, outdated pages weaken the average quality of the site.
+If a project is abandoned, rewritten, or no longer representative, revise the page or remove it from the index. Thin, outdated pages weaken the usefulness and credibility of the site.
 
 ## 3. Recommended case study template
 

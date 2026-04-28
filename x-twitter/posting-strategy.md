@@ -3,7 +3,7 @@ title: "X posting strategy and formats"
 platform: "x-twitter"
 objective: "Evidence-aligned guidelines for formatting posts, media, and Alt Text to maximize readability, accessibility, and discoverability."
 status: "review"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["posting", "media", "alt-text", "seo"]
 agent_priority: "high"
 ---
@@ -27,7 +27,7 @@ There is no official public rule proving a deterministic "first 50 characters" r
 
 ### 2.2 Alt Text and AI visibility
 
-Visuals are critical, but AI models cannot natively "read" all images perfectly without context.
+Visuals are critical, but AI models and accessibility tools need text context to interpret images reliably.
 
 **Rule:** Add descriptive Alt Text to every image or GIF when possible.
 **Recommendation:** Write Alt Text for accessibility first, then include relevant keywords naturally when accurate to the visual.

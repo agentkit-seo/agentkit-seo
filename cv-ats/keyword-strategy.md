@@ -3,28 +3,28 @@ title: "CV keyword strategy"
 platform: "cv-ats"
 objective: "Methodology for extracting and integrating job description keywords effectively into a CV."
 status: "draft"
-last_updated: "2026-04-22"
+last_updated: "2026-04-28"
 tags: ["cv", "ats", "keywords", "seo"]
 agent_priority: "high"
 ---
 
 # CV keyword strategy
 
-> This file defines how to identify high-value keywords from a job description and integrate them naturally into a CV to satisfy ATS matching algorithms.
+> This file defines how to identify high-value keywords from a job description and integrate them naturally into a CV for safer ATS parsing and recruiter screening.
 
 ---
 
 ## 1. Overview
 
-ATS platforms rank candidates based on keyword matches against the job description. This ranking determines which CVs are surfaced for human review. This document provides the strategy for identifying the right keywords (hard vs. soft skills) and contextualizing them within the CV without triggering "keyword stuffing" penalties or compromising human readability.
+ATS platforms and recruiter workflows often use keyword matches, structured fields, and search filters to surface candidates. The exact scoring behavior varies by vendor and employer. This document provides the strategy for identifying the right keywords (hard vs. soft skills) and contextualizing them within the CV without creating spammy or unreadable text.
 
 ## 2. Keyword extraction rules
 
 **Rule:** Differentiate between hard skills and soft skills.
-Hard skills are technical abilities, tools, and platforms (e.g., "Python," "AWS," "Figma"). These are heavily weighted by the ATS and must be prioritized. Soft skills (e.g., "Leadership," "Communication") are secondary and should be demonstrated through context rather than listed verbatim.
+Hard skills are technical abilities, tools, and platforms (e.g., "Python," "AWS," "Figma"). These are usually easier for parsers and recruiters to search directly, so prioritize them. Soft skills (e.g., "Leadership," "Communication") are secondary and should be demonstrated through context rather than listed verbatim.
 
 **Rule:** Mirror the exact phrasing of the job description for hard skills.
-If the job description asks for "Search Engine Optimization," do not write "SEO Strategy." The ATS uses exact string matching.
+If the job description asks for "Search Engine Optimization," do not write only "SEO Strategy." Some systems and recruiter searches still rely on exact string matching.
 
 **Rule:** Handle acronyms defensively.
 Include both the spelled-out term and the acronym on the first mention to capture all possible search queries.
@@ -34,14 +34,14 @@ Map transferable skills from one industry to the terminology of another. For exa
 
 ## 3. Keyword integration rules
 
-**Rule:** Contextualize keywords for Reasoning-Based Matching.
-Modern ATS systems (powered by LLMs like Claude or OpenAI) perform "Reasoning-Based Matching." They evaluate *how* a skill was used in context, not just that it exists. Integrate target keywords directly into the Work Experience bullet points to prove proficiency and demonstrate the complexity of the implementation. Do not create a massive block of comma-separated keywords at the bottom of the CV.
+**Recommendation:** Contextualize keywords for semantic matching.
+Modern recruiting tools increasingly use semantic search or AI-assisted screening, but the exact models are usually not public. Integrate target keywords directly into Work Experience bullet points to show how the skill was used and why it mattered. Do not create a massive block of comma-separated keywords at the bottom of the CV.
 
 **Rule:** Avoid keyword stuffing.
-Do not hide keywords using white text or artificially repeat a keyword more than naturally required. Modern ATS algorithms penalize invisible text and unnatural keyword frequency.
+Do not hide keywords using white text or artificially repeat a keyword more than naturally required. Parsers may still extract hidden text, and human reviewers can reject the application if the tactic is discovered.
 
 **Recommendation:** Balance tailoring with speed (The "First-Come" Factor).
-Do not over-optimize at the expense of time. On many platforms (like Workday), recruiters view applications chronologically. A good, 80% optimized CV submitted within the first 24 hours of the job posting often outperforms a "perfect" CV submitted two weeks later.
+Do not over-optimize at the expense of time. Many recruiters review applications in arrival order or in batches. A clear, well-tailored CV submitted early can outperform a heavily polished CV submitted after the hiring pipeline is already crowded.
 
 ## 4. Examples
 

@@ -3,20 +3,20 @@ title: "Agent workflow for CV optimization"
 platform: "cv-ats"
 objective: "Explains why LaTeX (.tex) is the superior format for AI agents automating CV tailoring."
 status: "draft"
-last_updated: "2026-04-22"
+last_updated: "2026-04-28"
 tags: ["cv", "ats", "latex", "agents", "automation"]
 agent_priority: "high"
 ---
 
 # Agent workflow for CV optimization
 
-> This file details the optimal technical workflow for AI agents managing CVs, strongly advocating for LaTeX (`.tex`) as the standard source format for flawless ATS extraction and precise visual control.
+> This file details a robust technical workflow for AI agents managing CVs, advocating for LaTeX (`.tex`) as a version-controlled source format with precise visual control.
 
 ---
 
 ## 1. Overview
 
-While word processors like Microsoft Word are standard for humans, they introduce invisible metadata, complex XML structures, and unpredictable layout shifts when edited programmatically. For an AI agent tasked with continuously updating a user's CV to match specific job descriptions, plain text formats are strictly necessary. LaTeX (`.tex`) is the gold standard for this workflow.
+While word processors like Microsoft Word are standard for humans, they introduce invisible metadata, complex XML structures, and layout shifts when edited programmatically. For an AI agent tasked with continuously updating a user's CV to match specific job descriptions, plain text source formats are easier to review and version. LaTeX (`.tex`) is a strong default for this workflow when the user is comfortable compiling PDFs.
 
 ## 2. The LaTeX advantage
 
@@ -24,7 +24,7 @@ While word processors like Microsoft Word are standard for humans, they introduc
 LaTeX files are pure plain text. This allows AI agents to directly inject keywords, rewrite bullet points, and reorder sections without ever breaking the visual layout. 
 
 **Recommendation:** Compile `.tex` directly to PDF for the final ATS submission.
-A PDF generated from LaTeX guarantees 100% control over layout, margins, and typography. Unlike Word-to-PDF exports that sometimes scramble the underlying text layer with floating text boxes, pdflatex or xelatex generates a mathematically rigid text layer that ATS parsers read perfectly from top to bottom.
+A PDF generated from LaTeX gives strong control over layout, margins, and typography. Unlike Word-to-PDF exports that can scramble the underlying text layer with floating text boxes, `pdflatex` or `xelatex` usually produces a cleaner text layer. The exported PDF still needs to pass a plain-text extraction check before submission.
 
 ## 3. Agent workflow constraints
 

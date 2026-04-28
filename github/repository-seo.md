@@ -1,22 +1,22 @@
 ---
 title: "GitHub repository SEO"
 platform: "github"
-objective: "Rules for optimizing individual projects for GitHub Explore and internal search ranking."
+objective: "Rules for optimizing individual projects for GitHub search, external search, and human evaluation."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["github", "repository", "seo", "topics"]
 agent_priority: "high"
 ---
 
 # GitHub repository SEO
 
-> This file provides the rules for optimizing an individual project repository to ensure it ranks highly in GitHub Explore, internal search queries, and external search engines.
+> This file provides the rules for optimizing an individual project repository so it is easier to find, understand, and evaluate across GitHub, external search, and AI tools.
 
 ---
 
 ## 1. Overview
 
-Creating a great codebase is only half the battle; if the repository metadata is not optimized, no one will find it. GitHub's internal search algorithm relies heavily on specific, structured metadata fields—namely the repository name, the About description, and Topic tags.
+Creating a great codebase is only half the battle; if the repository metadata is weak, fewer people will understand or find it. Repository names, About descriptions, README headings, and topic tags all provide structured context for GitHub search, external search engines, and human visitors.
 
 ## 2. Metadata constraints
 
@@ -34,14 +34,14 @@ GitHub allows up to 20 topics per repository. These work as structured discovery
 
 ## 3. Visual and structural constraints
 
-**Rule:** Upload a custom Social Preview image.
-Navigate to Settings > General > Social preview and upload a custom 1280x640px image. When your repository is shared on LinkedIn, Twitter, or Discord, this image acts as a professional card, drastically increasing the Click-Through Rate (CTR).
+**Recommendation:** Upload a custom Social Preview image.
+Navigate to Settings > General > Social preview and upload a custom 1280 x 640 px image. When your repository is shared on LinkedIn, X, Discord, or chat tools, this image acts as a professional card and can improve click-through.
 
 **Rule:** Provide a clear "Quickstart" in the README.
 The project `README.md` must have an explicit "Installation" or "Quickstart" section near the top, featuring a one-line install command (e.g., `npm install package-name`). This reduces friction and increases the likelihood that a visitor will actually test the code and star the repository.
 
-**Rule:** Include Security and Maintenance signal files.
-Both human developers and algorithms look for signals of professional maintenance. Including files like `CODEOWNERS`, `SECURITY.md`, `LICENSE`, and displaying security badges (like the OpenSSF Scorecard) signals to external SEO algorithms and AI agents that the project is actively maintained and secure, boosting its authority score.
+**Recommendation:** Include Security and Maintenance signal files.
+Human developers and automated tools look for signals of professional maintenance. Including files like `CODEOWNERS`, `SECURITY.md`, and `LICENSE`, plus relevant security badges such as OpenSSF Scorecard, makes the project easier to evaluate. These files support trust; do not describe them as a guaranteed authority-score boost.
 
 ## 4. Examples
 

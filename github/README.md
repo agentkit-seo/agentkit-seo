@@ -3,22 +3,22 @@ title: "GitHub optimization"
 platform: "github"
 objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["github", "index", "seo", "blackbird"]
 agent_priority: "high"
 ---
 
 # GitHub optimization
 
-> This directory contains the rules and strategies for engineering a GitHub profile and repositories that rank highly in GitHub's internal search algorithm (Blackbird) and are perfectly indexed for AI agents and GitHub Copilot.
+> This directory contains the rules and strategies for making a GitHub profile and repositories easier to find, inspect, and understand through GitHub search, external search, GitHub Copilot, and other AI agents.
 
 ---
 
 ## 1. Overview: The internal ecosystem
 
-Optimizing for GitHub is fundamentally different from optimizing for Google or a traditional ATS. You are optimizing for an ecosystem that weights open-source contribution graphs, exact-match code queries, and semantic vector indexing.
+Optimizing for GitHub is fundamentally different from optimizing for Google or a traditional ATS. You are optimizing for an ecosystem that combines repository metadata, exact-match code queries, contribution visibility, human trust signals, and semantic indexing for Copilot.
 
-The first audience is GitHub's internal code search engine, known as **Blackbird**. It dictates how your repositories appear when recruiters or developers search for specific technologies or projects.
+The first audience is GitHub's internal code search engine, known as **Blackbird**. It affects how code and repositories can be discovered when recruiters or developers search for specific technologies or projects.
 
 The second audience consists of **AI Agents and Copilot**. Copilot uses a sophisticated semantic search index that updates in the background. Ensuring your documentation and codebase are structured to feed this index correctly is the foundation of Agentic Engine Optimization (AEO) for code.
 
@@ -31,7 +31,7 @@ The optimization logic is divided into the following documents, ordered from fou
 - **[Profile README](./profile-readme.md):** Strategy for the special `username/username` repository, using markdown badges, and maintaining token efficiency.
 - **[Repository SEO](./repository-seo.md):** Rules for optimizing individual projects, including naming conventions, short descriptions, and topic tags.
 - **[Linguist and statistics](./linguist-and-stats.md):** How to manipulate the repository language statistics bar using `.gitattributes` to prevent CSS or vendor files from skewing your perceived stack.
-- **[Engagement signals](./engagement-signals.md):** How GitHub uses "social proof" (stars, forks, releases) to rank repositories.
+- **[Engagement signals](./engagement-signals.md):** How stars, forks, releases, and maintenance hygiene affect repository trust and discovery.
 - **[Copilot and agents](./copilot-and-agents.md):** The definitive guide to AEO within GitHub, including Copilot indexing, repository instructions, and `AGENTS.md` precedence.
 - **[Sources](./sources.md):** Citations and research validating the internal mechanics of GitHub search and Copilot indexing.
 

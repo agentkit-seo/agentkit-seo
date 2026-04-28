@@ -3,7 +3,7 @@ title: "GitHub Linguist and statistics"
 platform: "github"
 objective: "How to manipulate the repository language statistics bar using .gitattributes."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-28"
 tags: ["github", "linguist", "gitattributes", "stats"]
 agent_priority: "medium"
 ---
@@ -57,8 +57,8 @@ If Linguist misidentifies a file extension, you can force it to recognize the co
 
 ## 3. Impact on Search Indexing
 
-**Rule:** Understand that overridden files are excluded from Blackbird search.
-When you mark a file with `linguist-vendored` or `linguist-generated`, GitHub's Blackbird search engine **will not index the contents of that file**. This is generally the desired outcome—you do not want someone searching your repository for a specific function to be flooded with results from a third-party vendor library.
+**Rule:** Understand that some Linguist overrides can affect code search visibility.
+GitHub code search excludes generated and vendored files from many search paths. This is generally the desired outcome for third-party bundles or generated artifacts, but do not mark first-party source code as vendored or generated just to change the language bar.
 
 ## 4. Anti-Patterns
 

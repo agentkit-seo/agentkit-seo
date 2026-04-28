@@ -3,7 +3,7 @@ title: "Portfolio LLMs and AEO"
 platform: "portfolio"
 objective: "Define the optional AI-discovery enhancements that make a personal website easier to retrieve and summarize accurately."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["portfolio", "llms", "aeo", "llms-txt"]
 agent_priority: "medium"
 ---
@@ -21,13 +21,13 @@ Traditional SEO is still the base layer of discoverability, but personal website
 ## 2. Best practices
 
 **Recommendation:** Publish `/llms.txt` if AI retrieval is part of the site's goals.
-`llms.txt` is not a Google or Bing indexing standard. It is an inference-time guidance file intended to help language models understand what a site contains and where the most useful pages live.
+`llms.txt` is not a Google or Bing indexing standard. It is a community proposal for inference-time guidance intended to help language models understand what a site contains and where the most useful pages live.
 
 **Rule:** Treat `llms.txt` as a curated guide, not as a shadow sitemap.
 List the most important pages only: homepage, About page, Projects hub, best project-detail pages, writing hub, and selected articles or case studies. The file should stay short enough to be genuinely useful to a model with limited context.
 
 **Recommendation:** Publish `/llms-full.txt` to provide a complete context dump.
-While `llms.txt` serves as a lightweight index, the `llms-full.txt` variant is designed to contain the full Markdown content of the most important pages on the site. For developer portfolios, providing a self-contained context file helps models accurately summarize projects without needing to perform multiple external fetch requests.
+While `llms.txt` serves as a lightweight index, the proposed `llms-full.txt` variant contains the full Markdown content of the most important pages on the site. For developer portfolios, a self-contained context file can help models summarize projects with fewer external fetch requests.
 
 **Recommendation:** Keep canonical pages concise and self-contained.
 LLM retrieval works better when a project page can be summarized accurately from its own content. Do not force agents to reconstruct meaning by stitching together dozens of fragments across the site.

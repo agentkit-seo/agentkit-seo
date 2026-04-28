@@ -3,7 +3,7 @@ title: "Portfolio metadata and snippets"
 platform: "portfolio"
 objective: "Define the metadata rules that shape how a personal website appears in search results and how canonical identity is established."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["portfolio", "metadata", "titles", "canonical"]
 agent_priority: "high"
 ---
@@ -24,7 +24,7 @@ Metadata is the interface layer between a page and a search result. Title links,
 Each page must have a title that clearly names its subject. Reusing the same title pattern across every page weakens relevance and makes search results harder to distinguish.
 
 **Rule:** Keep the title under 60 characters to prevent truncation.
-Google displays roughly 50–60 characters before cutting off the title in Search Engine Results Pages (SERPs). A portfolio title that is too long will lose its primary keywords and look unprofessional.
+Google does not enforce a fixed character limit for title links, but long titles are often truncated in search results. A portfolio title that is too long can hide its primary keywords and look unprofessional.
 
 **Rule:** Put the page topic first and the site name second.
 For portfolios, the page subject should lead the title. A project page should begin with the project name or the core topic, not with the site name.
@@ -48,10 +48,10 @@ A list of repeated technologies or role titles looks manipulative and does not i
 
 ## 4. Best practices for Open Graph and social tags
 
-Open Graph (OG) tags do not directly impact Google rankings, but they control how a link appears when shared on LinkedIn, Slack, X (Twitter), and they are actively used by AI crawlers as a lightweight content summary.
+Open Graph (OG) tags do not directly impact Google rankings, but they control how a link appears when shared on LinkedIn, Slack, X, and other preview surfaces. Some crawlers and summarizers may also use them as lightweight page summaries.
 
 **Rule:** Provide `og:title`, `og:description`, `og:image`, and `og:url` on every public page.
-Without these tags, platforms will scrape the page unpredictably, resulting in broken link previews that destroy Click-Through Rate (CTR).
+Without these tags, platforms may scrape the page unpredictably, resulting in broken or generic link previews that reduce click-through.
 
 **Rule:** Set a high-quality `og:image` that represents the specific page.
 The `og:image` is often the first visual impression a recruiter or peer sees. It should be 1200 x 630 pixels. Do not use a generic site-wide logo for a specific project case study; use a screenshot of that specific project.
@@ -70,7 +70,7 @@ Canonical tags help with duplicate clustering. They should not be used to push u
 **Recommendation:** Keep site identity signals consistent on the homepage.
 Use the same professional name in the homepage title, main heading, site branding, and `WebSite` structured data. If an alternate short name exists, provide it as an alternate site name rather than switching names page to page.
 
-## 5. Examples
+## 6. Examples
 
 Good example:
 

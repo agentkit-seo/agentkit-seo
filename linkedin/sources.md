@@ -3,7 +3,7 @@ title: "LinkedIn optimization sources"
 platform: "linkedin"
 objective: "Centralized citations for the LinkedIn module, separating official platform guidance from public research and limited external examples."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["linkedin", "sources", "research", "360Brew"]
 agent_priority: "low"
 ---
@@ -16,7 +16,7 @@ agent_priority: "low"
 
 ## 1. Overview
 
-The rules defined in the `linkedin` module are based primarily on LinkedIn help-center documentation about Feed relevance, people search, profile verification, and skills. The 360Brew paper is used to understand LinkedIn's public research direction, not to assert undocumented production behavior.
+The rules defined in the `linkedin` module are based primarily on LinkedIn help-center documentation about Feed relevance, people search, profile verification, and skills. 360Brew sources are used to understand the public research debate, not to assert undocumented production behavior.
 
 ## 2. Sources
 
@@ -30,8 +30,9 @@ The rules defined in the `linkedin` module are based primarily on LinkedIn help-
 - [Display Order of Skills (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a568137/display-order-of-skills?lang=en) — Official guidance on reordering skills.
 - [Skill endorsements (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a565106) — Official description of endorsements as a social-proof signal.
 - [Skill Assessments - no longer available (LinkedIn Help)](https://www.linkedin.com/help/linkedin/answer/a1690529) — Confirms that LinkedIn Skill Assessments were discontinued.
-- [360Brew: A Decoder-only Foundation Model for Personalized Ranking and Recommendation (arXiv)](https://arxiv.org/abs/2501.16450) — Primary research source describing 360Brew as a pre-production model for ranking and recommendation tasks.
-- [The truth behind ‘360Brew’: what we actually know (and what we don’t) (Phil Szomszor)](https://www.linkedin.com/pulse/truth-behind-360brew-what-we-actually-know-dont-phil-szomszor-7yzre) — Useful secondary source summarizing the public evidence and the current lack of official rollout confirmation.
+- [360Brew: A Decoder-only Foundation Model for Personalized Ranking and Recommendation (arXiv)](https://arxiv.org/abs/2501.16450) — Research source describing 360Brew as a pre-production model for ranking and recommendation tasks.
+- [The truth behind '360Brew': what we actually know (and what we don't) (Phil Szomszor)](https://www.linkedin.com/pulse/truth-behind-360brew-what-we-actually-know-dont-phil-szomszor-7yzre) — Secondary source summarizing the public evidence and reporting that LinkedIn did not roll out 360Brew as the live Feed algorithm.
+- [How the LinkedIn Algorithm Works in 2026 (PostEverywhere)](https://posteverywhere.ai/blog/how-the-linkedin-algorithm-works) — Vendor blog claiming 360Brew deployment and summarizing creator-facing tactics. Use only as an example of the contested public narrative, not as official LinkedIn documentation.
 - [OpenOutreach (GitHub)](https://github.com/eracle/OpenOutreach) — Example of an open-source recruitment workflow that helps illustrate how external AI tooling may consume profile data. This is an example source, not evidence of LinkedIn internals.
 
 ---

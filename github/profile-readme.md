@@ -3,7 +3,7 @@ title: "GitHub profile README"
 platform: "github"
 objective: "Strategy for the username/username repository, focusing on Markdown badges and token efficiency."
 status: "draft"
-last_updated: "2026-04-23"
+last_updated: "2026-04-28"
 tags: ["github", "readme", "badges", "seo"]
 agent_priority: "high"
 ---
@@ -16,17 +16,17 @@ agent_priority: "high"
 
 ## 1. Overview
 
-By creating a public repository with a name that exactly matches your GitHub username, the `README.md` file within it will be automatically displayed at the top of your profile page. This is your developer landing page. It must balance high-impact visual design to increase human "dwell time" with token-efficient text for AI agents and search engines.
+By creating a public repository with a name that exactly matches your GitHub username, the `README.md` file within it will be automatically displayed at the top of your profile page. This is your developer landing page. It should balance clear visual hierarchy for humans with concise, machine-readable text for search engines and AI agents.
 
 ## 2. Content constraints
 
 **Rule:** Apply the "First 100 Words" rule.
-Search engines (like Google) and LLMs index the beginning of a document most heavily. Place your primary keywords (e.g., "Full-Stack Engineer," "Distributed Systems," "React") in the H1/H2 tags and the very first paragraph. Do not start with a long, rambling personal story.
+Search engines, scrapers, and LLM retrieval systems often rely heavily on early page text when summarizing or classifying a profile. Place your primary keywords (e.g., "Full-Stack Engineer," "Distributed Systems," "React") in the H1/H2 tags and the very first paragraph. Do not start with a long, rambling personal story.
 
 **Rule:** Use Markdown Badges for the tech stack.
 Use the `Ileriayo/markdown-badges` syntax to create a visual tech stack. This serves a dual purpose:
 1.  **For Humans:** It creates a clean, scannable, and colorful UI that increases dwell time.
-2.  **For AI:** The `alt` text in the Markdown image tag (e.g., `![PostgreSQL](...)`) acts as a pure, machine-readable keyword for scrapers and indexing algorithms.
+2.  **For AI:** The `alt` text in the Markdown image tag (e.g., `![PostgreSQL](...)`) gives scrapers and accessibility tools readable context for the visual badge.
 
 ## 3. Formatting rules
 
@@ -34,7 +34,7 @@ Use the `Ileriayo/markdown-badges` syntax to create a visual tech stack. This se
 Do not use bold text to simulate headers. Use standard Markdown headers (`## About Me`, `## Tech Stack`, `## Featured Projects`). LLM agents use these headers to chunk the document semantically.
 
 **Rule:** Avoid heavy dynamic stat cards if token efficiency is required.
-While dynamic stat cards (like GitHub Readme Stats) look great to humans, they inject complex SVG code into the DOM. If your primary goal is Agentic Engine Optimization (AEO), excessive dynamic SVGs can bloat the context window of an agent scraping your profile. Stick to static Markdown badges for maximum efficiency.
+While dynamic stat cards (like GitHub Readme Stats) look useful to humans, they add generated SVG content that may not help external agents understand your work. If your primary goal is Agentic Engine Optimization (AEO), keep dynamic visuals secondary to plain Markdown sections that summarize your stack, projects, and links.
 
 ## 4. Examples
 

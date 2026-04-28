@@ -3,14 +3,14 @@ title: "CV core sections"
 platform: "cv-ats"
 objective: "Standardizes the required CV sections, their naming conventions, and correct chronological ordering."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["cv", "ats", "sections", "structure"]
 agent_priority: "high"
 ---
 
 # CV core sections
 
-> This file specifies the mandatory sections every ATS-optimized CV must contain, enforcing standard naming and structural hierarchy.
+> This file specifies the safest default sections for an ATS-optimized CV, using standard naming and structural hierarchy.
 
 ---
 
@@ -18,10 +18,10 @@ agent_priority: "high"
 
 Applicant Tracking Systems and resume parsers work better with recognizable section names than with novelty labels. This document defines the safest naming patterns and ordering conventions for a machine-readable CV.
 
-## 2. Mandatory sections and naming rules
+## 2. Core sections and naming rules
 
 **Rule:** Use standard section headers.
-Do not use creative variations. Safe defaults include:
+Do not use creative variations for core sections. Safe defaults include:
 - Contact Information (Do not use a header; place directly at the top)
 - Professional Summary
 - Work Experience or Experience

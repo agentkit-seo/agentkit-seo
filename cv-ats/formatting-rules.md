@@ -3,15 +3,15 @@ title: "ATS formatting rules"
 platform: "cv-ats"
 objective: "Defines the hard technical constraints for ATS parsing to ensure a CV is machine-readable."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["cv", "ats", "formatting", "layout"]
 agent_priority: "high"
 ---
 
 # ATS formatting rules
 
-> This file dictates the absolute technical limits for CV formatting to ensure Applicant Tracking Systems can parse the document accurately.
-> Deviation from these layout rules is the most common cause of automatic rejection.
+> This file defines conservative CV formatting constraints that improve the odds of clean parsing across Applicant Tracking Systems.
+> Deviation from these layout rules can cause missing, reordered, or poorly classified text.
 
 ---
 
@@ -45,7 +45,7 @@ Use established system fonts (Arial, Calibri, Georgia, Helvetica, Times New Roma
 Do not split words across lines with automatic hyphenation if the template can avoid it. Plain-text extraction is cleaner when keywords stay intact.
 
 **Rule:** Avoid graphics, icons, and non-standard bullets.
-Do not use SVG icons, PNG graphics, or custom bullet point shapes (like arrows, checkmarks, or diamonds) which can compile into garbled characters. Stick to standard, solid circles (`•`) or squares (`▪`).
+Do not use SVG icons, PNG graphics, or custom bullet point shapes that can compile into garbled characters. Stick to simple hyphens or standard solid bullets.
 
 ## 4. File format rules
 
@@ -55,7 +55,7 @@ If the employer does not specify a format, `.docx` and text-based `.pdf` are the
 **Recommendation:** Use LaTeX (`.tex`) compiled to PDF for absolute layout control.
 LaTeX is a strong option for version-controlled, text-first workflows because the source file is plain text and layout is explicit. It is not magic: the exported PDF still needs to pass a plain-text extraction check.
 
-> ⚠️ Never submit an image-based PDF (a scanned document or a flat image saved as a PDF). The ATS cannot read the text, resulting in a blank profile.
+> Warning: Never submit an image-based PDF (a scanned document or a flat image saved as a PDF). The ATS may not read the text, resulting in a blank or incomplete profile.
 
 ## 5. Examples
 

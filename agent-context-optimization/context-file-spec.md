@@ -359,7 +359,7 @@ Technologies:
 
 **What it looks like:** A term appears in the Skills index but does not appear in any course, project, or role section.
 
-**Why it fails:** An agent asked to justify a skill claim in a cover letter cannot cite supporting evidence. ATS systems that cross-reference claims may penalize unsupported skills.
+**Why it fails:** An agent asked to justify a skill claim in a cover letter cannot cite supporting evidence. Recruiters or screening workflows that compare claims across documents may flag unsupported skills as weak or inconsistent.
 
 **What to do instead:** Only list a skill if it is backed by at least one course, project, role, or certification in the file body.
 

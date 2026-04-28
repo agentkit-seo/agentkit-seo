@@ -3,7 +3,7 @@ title: "X algorithm and ranking signals"
 platform: "x-twitter"
 objective: "Explains what is officially documented in the X open-source code versus what is inferred about Grok and the Phoenix update."
 status: "review"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["algorithm", "open-source", "weights", "ranking"]
 agent_priority: "high"
 ---
@@ -38,10 +38,10 @@ The values below are historical examples from the 2023 open-source release and a
 
 ## 3. SimClusters and Two-Tower Retrieval
 
-X sources out-of-network content using a mix of embedding models.
+X has historically sourced out-of-network content using graph and embedding-based retrieval systems.
 
-**Rule:** Stay in your lane to maximize out-of-network reach.
-Historically, SimClusters modeled community affinity from follow and engagement graphs. More recent architecture snapshots describe Two-Tower retrieval (User Tower + Candidate Tower) for semantic matching. Strategic takeaway: strong topical consistency generally improves retrieval quality and out-of-network fit.
+**Recommendation:** Stay in your lane to improve out-of-network fit.
+Historically, SimClusters modeled community affinity from follow and engagement graphs. More recent architecture snapshots describe Two-Tower retrieval (User Tower + Candidate Tower) for semantic matching. Strategic takeaway: strong topical consistency can improve retrieval quality and out-of-network fit.
 
 ## 4. The current architecture (Phoenix and Grok)
 
@@ -52,7 +52,7 @@ Recent public architecture snapshots describe a Phoenix pipeline with:
 - Author diversity scoring to avoid feed monotony.
 - Filtering layers for policy, safety, duplication, and user preferences.
 
-These are useful high-confidence design signals, but not a full public contract for every live ranking behavior.
+These are useful design signals, but not a full public contract for every live ranking behavior.
 
 **Not publicly documented as deterministic rules:**
 
@@ -62,7 +62,7 @@ These are useful high-confidence design signals, but not a full public contract 
 
 **Recommendation:** Use controlled A/B tests for contested tactics (for example, inline links vs first-reply links), and prefer clear, value-dense posts over engagement bait.
 
-**Rule:** Pace posts to reduce self-competition in the same feed session.
+**Recommendation:** Pace posts to reduce self-competition in the same feed session.
 
 ## 5. Examples
 

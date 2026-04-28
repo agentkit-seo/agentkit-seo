@@ -3,14 +3,14 @@ title: "CV common pitfalls"
 platform: "cv-ats"
 objective: "Lists specific elements that break ATS parsers and introduces the Plain Text Test for verification."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["cv", "ats", "pitfalls", "testing"]
 agent_priority: "medium"
 ---
 
 # CV common pitfalls
 
-> This file catalogs the critical errors that cause a CV to be immediately rejected or misparsed, and provides a foolproof method to verify ATS compatibility.
+> This file catalogs common errors that cause a CV to be misparsed, and provides a practical method to verify ATS compatibility.
 
 ---
 

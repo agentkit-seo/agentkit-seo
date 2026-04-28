@@ -3,7 +3,7 @@ title: "LinkedIn profile optimization"
 platform: "linkedin"
 objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-28"
 tags: ["linkedin", "360Brew", "search", "ai"]
 agent_priority: "high"
 ---
@@ -22,7 +22,7 @@ The first audience is LinkedIn's own ranking, recommendation, and people-search 
 
 The second audience consists of external AI tools used in recruiting and research. These tools may consume LinkedIn profile data through exports, enrichment products, browser automation, or scraping. The safest optimization strategy is still the same: use explicit job titles, clean skill names, and structured proof of work.
 
-As of April 24, 2026, LinkedIn has publicly released the 360Brew research paper, but there is no official LinkedIn statement confirming a full production rollout of 360Brew as the live feed algorithm. This module therefore treats 360Brew as a relevant research direction, not as a fully confirmed production rulebook.
+As of April 28, 2026, public commentary around 360Brew is disputed. Some creator and vendor articles describe it as deployed, but secondary reporting and LinkedIn posts quote LinkedIn VP Tim Jurka saying 360Brew was tested with a small group of members and shut down. This module therefore treats 360Brew as research and public debate, not as a production rulebook.
 
 This module provides the structural rules, formatting constraints, and content formulas needed to satisfy both audiences while maintaining an engaging narrative for the human reader who ultimately makes the hiring decision.
 
@@ -30,7 +30,7 @@ This module provides the structural rules, formatting constraints, and content f
 
 The optimization logic is divided into the following documents, ordered from foundational algorithms to specific section strategies:
 
-- **[360Brew and ranking signals](./algorithm-360brew.md):** What LinkedIn officially documents, what the public 360Brew paper shows, and what should still be treated as inference.
+- **[360Brew and ranking signals](./algorithm-360brew.md):** What LinkedIn officially documents, what the public 360Brew debate shows, and what should still be treated as inference.
 - **[AI agent optimization](./ai-agent-optimization.md):** Rules for making the profile easy for external AI tools, parsers, and enrichment workflows to understand.
 - **[Profile architecture](./profile-architecture.md):** Visual and structural basics, including custom URLs, the Verifications badge, the Voice badge, and Location settings.
 - **[Headline strategy](./headline-strategy.md):** Strict formulas for writing highly discoverable, keyword-rich headlines without corporate fluff.
