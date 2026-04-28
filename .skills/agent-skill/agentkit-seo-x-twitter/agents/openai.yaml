@@ -1,0 +1,4 @@
+interface:
+  display_name: "AgentKit SEO X Twitter"
+  short_description: "Optimize X profile and posting strategy"
+  default_prompt: "Use $agentkit-seo-x-twitter to improve my X profile positioning and posting strategy."
