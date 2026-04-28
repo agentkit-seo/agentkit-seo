@@ -40,6 +40,11 @@ summarized, and trusted by search engines and AI systems.
   every important claim resolves to a crawlable page.
 - When facts are missing, ask for the canonical URL, page inventory, or source
   content before inventing portfolio copy or structured data.
+- When editing portfolio code, preserve existing styling and application logic
+  unless the user explicitly asks for a redesign. Prefer metadata, structured
+  data, semantic HTML, crawlability, and content changes before layout changes.
+- For direct code edits, run the available build, lint, test, or preview command
+  when the project provides one, and report any verification that could not run.
 
 ## Output expectation
 

@@ -30,7 +30,17 @@ Every session that uses the context file follows the same three-step pattern.
 
 **Step 3 — Evaluate and iterate.** Use the quality criteria in section 5 of this file to assess the output. If a section is weak, ask the agent to revise it by naming the specific fact or section in the context file that should be drawn on more heavily.
 
-### 2.2 What the agent can and cannot do without additional input
+### 2.2 File discovery convention
+
+The safest way to use a context file is to pass the path explicitly in the prompt. This avoids accidental use of an old or unrelated profile.
+
+**Rule:** Prefer an explicit path when invoking the skill, for example `Use the context file at ~/career/context.md`.
+
+**Recommendation:** If the user wants a default location, use `~/.agentkit-seo/context.md`. Agents may check this path only after the user asks to use the default context file or confirms that the default path is correct.
+
+**Rule:** Do not search the user's entire filesystem for a context file. If no explicit path or confirmed default exists, ask the user for the file path.
+
+### 2.3 What the agent can and cannot do without additional input
 
 The agent can generate, reword, tailor, and format outputs using the facts in the context file. It can select the most relevant subset of your experience for a given role, apply platform-specific formatting rules from a Skill submodule, and produce outputs in the correct tone and length.
 
@@ -120,6 +130,7 @@ The table below shows the correct submodule to load for each common task.
 | GitHub profile README or repository README | `github` |
 | CV or ATS optimization | `cv-ats` |
 | Portfolio page copy | `web-portfolio` |
+| X/Twitter profile, bio, pinned post, or posting plan | `x-twitter` |
 
 **Rule:** Always load the context file first, then the submodule. If you load only the submodule, the agent has rules but no content. If you load only the context file, the agent has content but no platform-specific rules.
 

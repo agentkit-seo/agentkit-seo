@@ -12,6 +12,8 @@ heavy.
 - `.skills/providers/` contains provider-specific adapter notes.
 - `.skills/export/` contains the install/export tooling.
 - The repo root docs remain the human-readable editorial hub.
+- `.assets/docs/STYLEGUIDE.md` defines the schema boundaries between editorial docs,
+  runtime skills, provider notes, templates, and examples.
 
 ### Skill coverage
 
@@ -47,7 +49,17 @@ Not shipped yet:
 - published npm package for public `npx agentkit-seo ...`
 - Gemini CLI extension wrapper
 - marketplace / registry distribution
-- public demos/evals
+- executable public demos/evals
+
+Drafted but not executable yet:
+
+- public evaluation plan in `.assets/docs/evaluation-plan.md`
+
+Last verified locally on April 28, 2026:
+
+- `npm run list:skills`
+- `npm run list:providers`
+- `node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-review-export --force`
 
 ### Why this file exists
 

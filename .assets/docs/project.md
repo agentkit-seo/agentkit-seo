@@ -20,7 +20,7 @@ The architecture serves two distinct users simultaneously: the Human and the AI 
 
 **A. The Knowledge Hub (Human & AI Context)**
 
-The repository is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `STYLEGUIDE.md` at the root of the repository. That file is the single source of truth for how every `.md` file in this repo is written. Contributors and agents alike must read it before authoring any content.
+The repository is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `.assets/docs/STYLEGUIDE.md`. That file is the single source of truth for editorial Knowledge Hub files, runtime skill files, provider adapter notes, examples, and templates. Contributors and agents alike must read it before authoring content.
 
 Content is organized by platform or output type. Each platform directory contains the rules, best practices, templates, and real examples relevant to that platform, as well as a `sources.md` file listing the credibility links, research, and algorithm documentation specific to it. Current platforms include:
 
@@ -48,10 +48,14 @@ The `.skills/` directory is the machine-readable layer. It is structured as a co
         agentkit-seo-linkedin/
         agentkit-seo-web-portfolio/
         agentkit-seo-x-twitter/
-    claude-code/
-    codex/
-    gemini-cli/
-    opencode/
+    providers/
+        claude-code/
+        codex/
+        gemini-cli/
+        opencode/
+    export/
+        export-config.json
+        scripts/
 ```
 
 The shared source of truth lives in `.skills/agent-skill/`. Each folder there is
@@ -82,11 +86,11 @@ LinkedIn help loads the LinkedIn skill instead of the whole system.
 
 Keeping the repository clean and well-structured from the start is critical. AI agents perform worse when fed chaotic file histories or unstructured data. The commit history itself is a signal of quality.
 
-- **Phase 1: The "Dirty" Beta (Current state)**
+- **Phase 1: The "Dirty" Beta**
   Work in a private or local repository. Sketch the folder structure, test the Markdown formatting with a local agent, and validate that the agent can successfully read the rules and rewrite a sample CV or README.
 
-- **Phase 2: Architectural Lockdown (The Milestone Phase)**
-  Finalize the folder hierarchy. Lock the YAML frontmatter schema defined in `STYLEGUIDE.md`. Agree on the exact structure of each `.skills/` submodule. Define the provider-specific installation flow for at least one provider.
+- **Phase 2: Architectural Lockdown (Current state)**
+  Finalize the folder hierarchy. Lock the schema boundaries defined in `.assets/docs/STYLEGUIDE.md`. Keep `.skills/agent-skill/` as the only portable source of truth. Keep `.skills/providers/` as adapter notes. Keep `.skills/export/` as the install/export implementation. Direct installs now work for Claude Code, Codex, and OpenCode.
 
 - **Phase 3: The "Clean" Repository**
   Create the official GitHub Organization and the final public repository. Commit the finalized structure from scratch to ensure a pristine commit history.
@@ -94,34 +98,38 @@ Keeping the repository clean and well-structured from the start is critical. AI 
 - **Phase 4: Prompt Engineering & Context Tuning**
   Refine each shared skill in `.skills/agent-skill/` so the agent does not hallucinate. Write strict routing rules in the root `agentkit-seo` skill, for example: *"When optimizing a GitHub README, load `agentkit-seo-github` before generating any output."* Test the adapter commands and direct skill invocation end-to-end for each supported provider.
 
+- **Phase 5: Public Proof & Distribution**
+  Add scenario evals, public demos, provider-specific release artifacts, and a published `npx` package only after the shared source tree and direct installs are stable.
+
 ---
 
-### **4. Mandatory to Define NOW**
+### **4. Architectural Decisions Now Defined**
 
-Before writing a single line of final content, these foundational decisions must be agreed on:
+The foundational decisions below are now part of the project contract:
 
-1. **The Data Schema:** Every `.md` file in the Knowledge Hub follows the structure and YAML frontmatter defined in `STYLEGUIDE.md`. The open question is whether the `.skills/` submodule files use the same schema, or a more structured format optimized specifically for agent parsing (e.g., XML-style tags like `<rule>`, `<example>`, `<anti-pattern>` inside the Markdown). The two schemas can coexist, but the boundary between them must be explicitly defined before writing any content.
+1. **The Data Schema:** Editorial Knowledge Hub files follow the full YAML/frontmatter structure defined in `.assets/docs/STYLEGUIDE.md`. Runtime skill entrypoints use Agent Skills frontmatter with `name` and `description`. Runtime references and provider adapter notes use lean Markdown optimized for loading cost and operational clarity.
 
-2. **The Scope of the MVP:** Do not launch all platforms at once. Pick two submodules (recommended: `cv-ats` and `github`) to prove the Skill architecture works end-to-end before building the rest.
+2. **The Scope of the MVP:** All seven shared skill bundles now exist, but launch readiness should be proven first with `cv-ats`, `github`, and `linkedin`. The remaining modules can ship as beta modules until scenario evals and demos exist.
 
-3. **The Symlink vs. Setup Script decision:** Symlinks are the cleanest solution for developers, but Windows users encounter frequent issues with them. The options are: rely on symlinks only and document the Windows workaround, or provide a cross-platform setup script (`init.sh` / `init.bat`) that handles provider routing automatically for Claude, Gemini, and Codex.
+3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. This avoids common Windows symlink failure modes and keeps installed bundles portable.
 
-4. **The Personal Context File schema:** Define what the personal agent context file looks like structurally. Since it lives outside this repository, the Skill needs a clear convention for how the agent locates and reads it when the user invokes a subcommand from an arbitrary working directory.
+4. **The Personal Context File schema:** The schema is defined in `agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional default path `~/.agentkit-seo/context.md`.
 
 ---
 
 ### **5. Important to Define LATER (Post-MVP)**
 
-- **CLI Installer:** A single executable that installs the Skill globally and sets up provider routing without manual symlinks or configuration.
+- **Published CLI Installer:** Publish the existing CLI as an npm package so users can run `npx agentkit-seo ...` without cloning the repository.
 - **Marketplace Publishing:** Listing on official provider hubs (Claude's MCP marketplace, Gemini extensions, and equivalents).
 - **Organization Website:** A public-facing landing page explaining the project to non-developer users. Non-developer users can already use the Knowledge Hub by reading the repo directly on GitHub, or by pasting the repository URL into any LLM chat interface that can fetch web content.
 - **Multi-user / Team support:** Allowing a team (e.g., a startup founding team) to share a base Skill while each member maintains their own personal context file independently.
+- **Scenario Evals and Demos:** Add small reproducible scenarios for CV tailoring, GitHub README optimization, LinkedIn section rewriting, and portfolio metadata audits before marketplace publication.
 
 ---
 
 ### **6. Open Doubts & Questions**
 
-- *"If the agent modifies a user's portfolio code to improve SEO, how do we prevent it from accidentally breaking the site's styling or logic? The dry-run output format defined in `STYLEGUIDE.md` handles this for Markdown files, but does it extend cleanly to HTML, CSS, and JS modifications?"*
+- *"How strict should the public release gate be? Should marketplace publication require passing scenario evals for every module, or only the launch-ready MVP modules?"*
 
 - *"How are we managing context window limits at the submodule level? If a single platform's submodule (e.g., `linkedin/`) grows large enough, does it need its own lite version for agents with smaller context windows?"*
 
@@ -129,4 +137,4 @@ Before writing a single line of final content, these foundational decisions must
 
 - *"How do we handle the provider-specific Skill publications in parallel with the provider-agnostic core? Is there a single source of truth that gets compiled into provider-specific formats, or does each provider version get maintained separately?"*
 
-- *"When a user's personal context file is stored outside the repo and the Skill is invoked from a new working directory, how does the agent know where to find it? Do we define a standard path convention (e.g., `~/.personal-context.md`), or does the user pass the path explicitly at invocation time?"*
+- *"How much of the Gemini CLI adapter should be generated by `.skills/export/` versus maintained as a provider-specific release artifact once command wrappers are implemented?"*

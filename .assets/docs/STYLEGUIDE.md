@@ -1,6 +1,6 @@
 # STYLEGUIDE.md
 
-> **Scope:** This file defines the authoring standards for every `.md` file in this repository.
+> **Scope:** This file defines the authoring standards for Markdown files in this repository.
 > It is a binding reference for human contributors and a mandatory first-read for any AI agent working on this codebase.
 
 ---
@@ -59,7 +59,7 @@ If you feel the urge to use an emoji to make a list item stand out, use **bold t
 
 ## 4. File Architecture (The Universal Template)
 
-Every `.md` file in this repository — regardless of which directory it lives in — follows this exact structure. The sections must appear in this order. Optional sections may be omitted, but their position in the order must not shift.
+Editorial Knowledge Hub files follow this exact structure. The sections must appear in this order. Optional sections may be omitted, but their position in the order must not shift.
 
 ```
 [YAML Frontmatter]          ← always required
@@ -77,7 +77,7 @@ Every `.md` file in this repository — regardless of which directory it lives i
 
 ### 4.1 YAML Frontmatter
 
-Every file begins with a YAML frontmatter block. All fields below are required unless marked optional.
+Every editorial Knowledge Hub file begins with a YAML frontmatter block. All fields below are required unless marked optional.
 
 ```yaml
 ---
@@ -151,6 +151,25 @@ Use `---` only in two places:
 
 Do not use `---` as a visual decoration between sections. Use headings instead.
 
+### 4.6 File classes and schema boundaries
+
+This repository contains several Markdown file classes. They do not all use the
+same schema.
+
+| File class | Examples | Required schema |
+|---|---|---|
+| Editorial Knowledge Hub docs | `linkedin/*.md`, `github/*.md`, `cv-ats/*.md`, `web-portfolio/*.md`, `x-twitter/*.md`, `agent-context-optimization/*.md` | Full Universal Template from section 4 |
+| Runtime skill entrypoints | `.skills/agent-skill/*/SKILL.md` | Agent Skills frontmatter with `name` and `description`, followed by concise procedural instructions |
+| Runtime skill references | `.skills/agent-skill/*/references/*.md` | Lean Markdown optimized for agent loading; H1 plus focused procedural sections |
+| Provider adapter notes | `.skills/providers/*/install.md` | Lean Markdown describing install targets and provider-specific behavior |
+| Public repository README | `README.md` | GitHub-facing project overview; exempt from frontmatter and the Universal Template |
+| Local planning and status docs | `.assets/docs/*.md` | Practical maintainer notes; frontmatter optional |
+| Templates and examples | `templates/*.md`, `examples/*.md` | May intentionally contain multiple headings or placeholder structure needed by the artifact |
+
+Do not force runtime skill references into the editorial schema. Their purpose is
+to minimize context cost and provide procedural guidance at runtime. Do not put
+long-lived skill methodology in provider adapter notes.
+
 ---
 
 ## 5. Formatting Rules
@@ -198,7 +217,7 @@ Every table must have a header row. Column headers use sentence case. Tables mus
 
 ### 5.5 Links
 
-Use inline links `[anchor text](url)` for external URLs. Use relative links `[anchor text](../path/to/file.md)` for internal cross-references.
+Use inline links `[anchor text](url)` for external URLs. Use relative links such as `[README](../../README.md)` for internal cross-references from this file.
 
 Do not use bare URLs in prose. Bare URLs are allowed only inside code blocks or YAML frontmatter.
 
@@ -269,17 +288,19 @@ This section is written directly for AI agents ingesting this repository as cont
 
 Before performing any task:
 
-1. Read `STYLEGUIDE.md` (this file) in full.
+1. Read `.assets/docs/STYLEGUIDE.md` (this file) in full.
 2. Read the `objective` field of every file in the relevant subdirectory before loading full file content. Use `agent_priority: high` files as mandatory context.
 
 ### 7.2 Output format
 
 When generating or editing a `.md` file in this repository:
 
-- Match the Universal Template in section 4 exactly.
-- Populate the YAML frontmatter completely. Set `status: draft` unless explicitly told otherwise.
+- Match the Universal Template in section 4 exactly for editorial Knowledge Hub files.
+- Populate the YAML frontmatter completely for editorial Knowledge Hub files. Set `status: draft` unless explicitly told otherwise.
+- For `.skills/agent-skill/*/SKILL.md`, use Agent Skills frontmatter with `name` and `description`.
+- For `.skills/agent-skill/*/references/*.md`, keep files lean, procedural, and self-contained.
 - Use `last_updated` set to the current date.
-- Do not add sections that do not exist in the template.
+- Do not add sections that do not exist in the relevant file-class template.
 - Do not remove existing sections from a file you are editing.
 
 ### 7.3 Constraints
@@ -302,6 +323,38 @@ REASON: (which rule from which file justifies this change)
 ```
 
 Do not apply changes directly to user files without explicit confirmation.
+
+### 7.5 Portfolio code-edit safety
+
+When asked to modify a user's portfolio code, default to a dry-run or review
+plan unless the user explicitly asks for direct edits. If direct edits are
+authorized:
+
+1. Identify the target files and intended SEO or accessibility outcome.
+2. Preserve existing visual design and application logic unless the user asks
+   for a redesign.
+3. Prefer metadata, structured data, crawlability, semantic HTML, and content
+   improvements before layout changes.
+4. Run the available build, lint, test, or preview command after edits when the
+   project provides one.
+5. Report any command that could not be run and the remaining risk.
+
+For HTML, CSS, JavaScript, TypeScript, or framework templates, include this
+change summary:
+
+```text
+FILES CHANGED:
+- path/to/file
+
+SEO/AEO PURPOSE:
+- what the change improves
+
+BEHAVIORAL RISK:
+- expected risk level and why
+
+VERIFICATION:
+- commands run or manual checks performed
+```
 
 ---
 

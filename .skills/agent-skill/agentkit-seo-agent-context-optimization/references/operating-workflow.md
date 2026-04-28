@@ -15,6 +15,23 @@
 5. revise the source context file if the task exposed missing or conflicting
    facts
 
+## File discovery convention
+
+Prefer an explicit path supplied by the user, such as:
+
+```text
+Use the context file at ~/career/context.md.
+```
+
+If the user wants a default location, use:
+
+```text
+~/.agentkit-seo/context.md
+```
+
+Do not search the user's full filesystem for a context file. If no explicit path
+or confirmed default exists, ask for the path before using this skill.
+
 ## Combination rule
 
 The context file supplies facts.

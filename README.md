@@ -62,6 +62,10 @@ Browse the editorial hub directly from the repo root:
 - [web-portfolio](./web-portfolio/README.md)
 - [x-twitter](./x-twitter/README.md)
 
+Authoring and runtime conventions are defined in
+[.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and
+[.skills/architecture.md](./.skills/architecture.md).
+
 ## Install
 
 Treat `.skills/agent-skill/` as the canonical source tree. Provider-specific
@@ -113,7 +117,9 @@ node .skills/export/scripts/agentkit-seo.mjs export \
 | Marketplace / registry distribution | Not shipped yet |
 
 Current internal implementation notes live in
-[.assets/docs/current-status.md](./.assets/docs/current-status.md).
+[.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release
+scenario checks are drafted in
+[.assets/docs/evaluation-plan.md](./.assets/docs/evaluation-plan.md).
 
 ## Authors
 

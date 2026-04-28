@@ -37,7 +37,7 @@ plain `linkedin` for three reasons:
 3. Provider adapters can still expose a cleaner command surface on top, such as
    `/agentkit-seo:linkedin`, where that syntax is actually supported.
 
-## Three layers
+## Four layers
 
 1. Repo hub:
    Human-readable editorial docs at the repo root.
@@ -83,6 +83,9 @@ Current supported direct install targets are:
 - `codex`
 - `opencode`
 
+Gemini CLI adapter notes exist, but Gemini is not a direct export/install target
+until the command-wrapper artifact is implemented.
+
 Direct install example:
 
 ```bash
@@ -97,6 +100,9 @@ Current supported export targets are:
 - `claude-code`
 - `codex`
 - `opencode`
+
+Do not list `gemini-cli` as an export target until `.gemini/commands/` wrappers
+are generated or copied as part of the exported bundle.
 
 Preview export example:
 

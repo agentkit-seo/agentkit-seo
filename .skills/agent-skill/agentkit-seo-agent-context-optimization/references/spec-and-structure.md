@@ -10,6 +10,15 @@
 
 The context file is one Markdown document with a fixed, stable structure.
 
+Recommended default location when the user wants a reusable path:
+
+```text
+~/.agentkit-seo/context.md
+```
+
+This path is a convention, not a requirement. An explicit path supplied by the
+user always wins.
+
 Required and conditional sections, in order:
 
 1. H1 with full name and positioning descriptor

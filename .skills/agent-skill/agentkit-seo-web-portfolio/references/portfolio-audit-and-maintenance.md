@@ -85,6 +85,21 @@ For each URL, verify:
 - Remove or repair broken proof links quickly; they age a portfolio faster than
   modest design flaws do.
 
+## Code-edit safety workflow
+
+When the task requires changing portfolio source code:
+
+1. identify the exact pages, templates, or metadata files involved
+2. state the SEO, AEO, accessibility, or crawlability purpose of the edit
+3. preserve existing styling and behavior unless the user requests a redesign
+4. prefer metadata, structured data, semantic HTML, link, and copy fixes before
+   layout changes
+5. run the available build, lint, test, or preview command when one exists
+6. report any verification step that could not be performed
+
+Default to a proposed diff or dry-run plan when the requested edit may affect
+layout, routing, hydration, or application logic.
+
 ## Output format for audits
 
 When reporting findings, group them by:
@@ -101,3 +116,10 @@ For each issue, name:
 - observed problem
 - why it matters
 - recommended fix
+
+When reporting code edits, include:
+
+- files changed
+- SEO or AEO purpose
+- behavioral risk level
+- verification performed
