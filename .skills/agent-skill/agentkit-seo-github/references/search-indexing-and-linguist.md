@@ -3,11 +3,11 @@
 ## Use this reference for
 
 - searchability issues
-- Blackbird-aware repository reviews
+- GitHub code-search repository reviews
 - code-search limitations
 - language-bar fixes
 
-## Blackbird basics
+## Code-search basics
 
 - public code search depends on the default branch
 - private repositories may be indexed for authorized users, but not for public
@@ -34,7 +34,8 @@
   generated, or data-heavy files
 - use `.gitattributes` to mark generated, vendored, or documentation-heavy
   files correctly
-- do not mark first-party source as vendored just to manipulate the bar
+- do not mark first-party source as vendored just to change the bar
+- use Linguist overrides to correct representation, not to hide real source
 
 ## Important caution
 

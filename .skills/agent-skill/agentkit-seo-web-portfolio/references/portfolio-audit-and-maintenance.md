@@ -7,6 +7,18 @@
 - indexability triage
 - recurring portfolio maintenance
 
+## Contents
+
+- Audit workflow
+- Core URL checklist
+- Technical checklist
+- Content and proof checklist
+- Metadata and schema checklist
+- Performance and mobile checklist
+- Maintenance rules
+- Code-edit safety workflow
+- Output format for audits
+
 ## Audit workflow
 
 Review the site in this order:

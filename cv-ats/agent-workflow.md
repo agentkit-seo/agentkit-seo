@@ -3,7 +3,7 @@ title: "Agent workflow for CV optimization"
 platform: "cv-ats"
 objective: "Explains why LaTeX (.tex) is the superior format for AI agents automating CV tailoring."
 status: "draft"
-last_updated: "2026-04-28"
+last_updated: "2026-04-29"
 tags: ["cv", "ats", "latex", "agents", "automation"]
 agent_priority: "high"
 ---
@@ -32,7 +32,7 @@ A PDF generated from LaTeX gives strong control over layout, margins, and typogr
 When an agent edits a `.tex` file, it must only modify the content strings within predefined macros (e.g., `\cventry{Role}{Date}`). Do not alter the document preamble (`\usepackage`, `\geometry`) unless explicitly directed to change the global design.
 
 **Recommendation:** Use the provided templates as the baseline.
-The `cv-ats/examples/renato-mignone-cv.tex` file serves as a reference architecture. It relies on standard packages (`geometry`, `enumitem`, `hyperref`) without complex custom classes that might fail compilation in different environments.
+The files in `cv-ats/examples/` are personal worked examples, not normative templates. Use them only to understand how real application artifacts can look in practice; apply the canonical rules from this workflow, the formatting rules, and the templates when generating or editing user-facing CVs.
 
 ## 4. Examples
 

@@ -4,7 +4,7 @@ This file is the local working status note for the repository. It is meant to
 hold implementation-state context that would make the public `README.md` too
 heavy.
 
-## As of April 28, 2026
+## As of April 29, 2026
 
 ### Core architecture
 
@@ -69,6 +69,12 @@ Last verified locally on April 28, 2026:
 - `node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --target-dir /tmp/agentkit-seo-gemini-extension --force`
 - `node .skills/export/scripts/agentkit-seo.mjs install --provider opencode --target-dir /tmp/agentkit-seo-opencode-skills --commands-target-dir /tmp/agentkit-seo-opencode-commands --force`
 - `npm --cache /tmp/npm-cache pack --dry-run`
+
+Reverified locally on April 29, 2026 after content-alignment updates:
+
+- `npm run list:skills`
+- `npm run list:providers`
+- `node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-review-export --force`
 
 ### Why this file exists
 

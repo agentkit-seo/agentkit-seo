@@ -68,6 +68,8 @@ The deeper workflow is the personal agent context file: a structured career
 source of truth that lives outside this repository and can be reused across
 agents, profiles, CVs, portfolios, and job applications.
 
+The files inside module-level `examples/` folders are personal working examples, not normative fixtures. They reflect material used during real application workflows, including interviews and applications with companies such as Anthropic, Apple, and Bending Spoons, and the personal context example supported cover-letter and application drafting. Treat them as practical reference artifacts rather than strict implementations of the current best-practice architecture; the canonical rules live in the module docs, templates, and runtime skill references.
+
 ## Who It's For
 
 AgentKit SEO is designed for:
@@ -128,6 +130,7 @@ Supported install targets today:
 
 | Provider | Default global install location |
 | --- | --- |
+| Shared bundle | Portable `SKILL.md` folders for manual reuse or packaging |
 | Claude Code | `~/.claude/skills/` |
 | Codex | `CODEX_HOME/skills` or `~/.codex/skills/` |
 | Gemini CLI | `~/.gemini/extensions/agentkit-seo/` with namespaced commands |
@@ -188,8 +191,7 @@ modules can remain beta until their scenarios and demos are executable.
 | Marketplace / registry distribution | Not shipped yet |
 
 Current internal implementation notes live in
-[.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release
-scenario checks are drafted in
+[.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release scenario checks are drafted in
 [.assets/docs/evaluation-plan.md](./.assets/docs/evaluation-plan.md).
 
 ## Authors

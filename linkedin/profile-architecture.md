@@ -1,9 +1,9 @@
 ---
 title: "LinkedIn profile architecture"
 platform: "linkedin"
-objective: "Rules for the visual and structural basics of a LinkedIn profile, including URLs, location SEO, and Creator Mode."
+objective: "Rules for the visual and structural basics of a LinkedIn profile, including URLs, location SEO, verification, and profile settings."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-29"
 tags: ["linkedin", "architecture", "seo", "setup"]
 agent_priority: "medium"
 ---

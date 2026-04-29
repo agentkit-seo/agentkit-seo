@@ -8,6 +8,15 @@
 - Skills ordering
 - Featured section recommendations
 
+## Contents
+
+- Headline recipe
+- About section recipe
+- Experience entry recipe
+- Skills recipe
+- Featured section recipe
+- Section rewrite posture
+
 ## Headline recipe
 
 Default pattern:

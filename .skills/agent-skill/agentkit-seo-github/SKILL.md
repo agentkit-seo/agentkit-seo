@@ -22,11 +22,29 @@ without claiming undocumented ranking guarantees.
    writing or rewriting bios, profile READMEs, repository READMEs, About text,
    topics, or pinning strategy.
 3. Read [references/search-indexing-and-linguist.md](references/search-indexing-and-linguist.md)
-   for Blackbird-aware searchability and language-stat issues.
+   for code-search visibility and language-stat issues.
 4. Read [references/profile-and-repo-audit.md](references/profile-and-repo-audit.md)
    for full-profile reviews, repository audits, and maintenance workflow.
 5. Read [references/copilot-and-agent-readiness.md](references/copilot-and-agent-readiness.md)
    for `AGENTS.md`, Copilot instructions, and AI-readable repo structure.
+
+## Intake workflow
+
+- If the user provides a GitHub profile or repository URL, fetch and inspect
+  public profile, pinned repository, repository metadata, README, topics,
+  default branch, and visible language signals when tools allow it.
+- If the user provides only a username, treat it as enough to inspect public
+  GitHub material when tools allow it.
+- If the task depends on private repositories, contribution details, or
+  account settings, ask the user for screenshots, copied settings, exports, or
+  explicit local files instead of guessing.
+- If the user has or needs an agent context file, load or recommend
+  `agentkit-seo-agent-context-optimization` before rewriting profile-level
+  positioning.
+- For repository-specific work, prefer concrete file edits when the repository
+  is available locally; otherwise return copy blocks and a change checklist.
+- Do not request login or tokens unless the user explicitly asks for private
+  repository work.
 
 ## Rules
 
@@ -46,3 +64,13 @@ without claiming undocumented ranking guarantees.
 Produce GitHub-specific edits or recommendations that improve profile clarity,
 repository packaging, or discoverability while staying within documented
 platform behavior.
+
+## Response shape
+
+Return:
+
+1. public inputs inspected and any inaccessible inputs
+2. priority issues by profile, pinned repos, and repositories
+3. ready-to-apply copy or file changes
+4. confidence notes where advice is inferred rather than documented
+5. next actions, including context-file creation when profile facts are weak

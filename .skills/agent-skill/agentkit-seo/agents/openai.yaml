@@ -1,4 +1,4 @@
 interface:
   display_name: "AgentKit SEO"
   short_description: "Route AgentKit SEO workflows"
-  default_prompt: "Use $agentkit-seo to choose the right AgentKit SEO module for this task."
+  default_prompt: "Use $agentkit-seo to choose the right workflow, gather the needed inputs, and improve my personal-branding SEO."

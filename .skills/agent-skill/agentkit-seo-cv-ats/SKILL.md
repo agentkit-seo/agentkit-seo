@@ -28,6 +28,21 @@ constraints.
 5. Read [references/cv-audit-and-maintenance.md](references/cv-audit-and-maintenance.md)
    for full-document reviews, consistency checks, and update workflow.
 
+## Intake workflow
+
+- Ask for the current resume or CV, target role, and job description before
+  doing role-specific optimization.
+- If the user supplies only a resume, perform a general parser-safety and
+  recruiter-readability pass and identify the missing target-role inputs.
+- If the user supplies a context file, use it to verify facts before rewriting
+  bullets, summaries, projects, or skills.
+- If the user has no context file and the CV conflicts with LinkedIn, GitHub,
+  or portfolio facts, recommend creating or repairing the context file first.
+- Accept source material as pasted text, PDF text extraction, LaTeX, Markdown,
+  DOCX text, screenshots when supported, or local files.
+- Never add keywords, tools, metrics, employers, dates, or credentials that are
+  not supported by the supplied material.
+
 ## Rules
 
 - Do not claim guaranteed ATS success or exact ranking behavior.
@@ -47,3 +62,13 @@ constraints.
 
 Return edits that are specific to the user's target role and easy to apply to a
 real resume or CV draft.
+
+## Response shape
+
+Return:
+
+1. inputs used and target role assumptions
+2. parser and structure issues
+3. rewritten sections or bullet changes
+4. keyword alignment notes tied to the job description
+5. missing facts or evidence needed before stronger claims

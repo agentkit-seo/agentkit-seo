@@ -29,6 +29,21 @@ summarized, and trusted by search engines and AI systems.
    when auditing an existing site, reviewing a deployment, or planning ongoing
    maintenance.
 
+## Intake workflow
+
+- If the user provides a public portfolio URL, fetch and inspect the homepage,
+  important pages, metadata, canonicals, sitemap, robots, structured data, and
+  visible copy when tools allow it.
+- If the portfolio source is available locally, inspect the source and prefer
+  direct code edits for metadata, structured data, semantic HTML, links, and
+  content.
+- If public crawling is blocked or the site is not deployed, ask for local
+  source paths, built HTML, screenshots, page inventory, or pasted page copy.
+- If the site copy depends on biography, project claims, or career facts,
+  recommend using the agent context file before rewriting.
+- Do not invent projects, testimonials, metrics, employers, or credentials to
+  fill portfolio pages.
+
 ## Rules
 
 - Separate documented standards from emerging conventions such as `llms.txt`.
@@ -50,3 +65,13 @@ summarized, and trusted by search engines and AI systems.
 
 Return web-ready changes or recommendations tied to real pages, metadata, and
 site structure rather than vague SEO advice.
+
+## Response shape
+
+Return:
+
+1. URLs or local files inspected
+2. crawlability, metadata, structured-data, and content issues
+3. direct code edits or page-ready copy
+4. verification run or checks still needed
+5. context-file gaps that affect public claims

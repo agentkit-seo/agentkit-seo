@@ -27,6 +27,21 @@ sequence cross-platform work in a sane order.
 4. If the request is only about the skill system itself, read the references in
    this skill before changing provider adapters or install instructions.
 
+## Intake workflow
+
+- If the user already has an agent context file, ask for or use its explicit
+  path before rewriting platform assets.
+- If the task spans multiple surfaces, or the user's facts are scattered,
+  recommend creating or repairing the agent context file first.
+- Do not block a narrow one-off edit on a full context file when the supplied
+  material is already enough.
+- For public URLs, fetch or inspect public material when tools allow it and
+  cite which source was used.
+- For private or login-gated surfaces, ask the user for pasted section text,
+  screenshots, exports, or a local text file instead of guessing.
+- If critical facts are missing, ask only for the minimum extra inputs needed
+  to proceed.
+
 ## Module map
 
 - LinkedIn work: `agentkit-seo-linkedin`
@@ -44,6 +59,17 @@ sequence cross-platform work in a sane order.
   uncertain or disputed.
 - Do not rewrite the shared methodology in provider adapter folders. Keep the
   portable source of truth in `.skills/agent-skill/`.
+
+## Response shape
+
+For broad requests, return:
+
+1. the selected workflow or module
+2. inputs used and missing inputs
+3. concrete edits or recommendations
+4. unresolved risks or assumptions
+5. next action, preferably creating or updating the context file when that
+   would reduce drift
 
 ## References
 

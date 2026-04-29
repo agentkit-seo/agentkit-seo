@@ -1,4 +1,4 @@
 interface:
   display_name: "AgentKit SEO Context"
   short_description: "Build a source-of-truth context file"
-  default_prompt: "Use $agentkit-seo-agent-context-optimization to consolidate my facts into a clean personal context file."
+  default_prompt: "Use $agentkit-seo-agent-context-optimization to create or repair my source-of-truth context file from my profile, CV, links, and notes."

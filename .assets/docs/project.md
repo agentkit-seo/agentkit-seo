@@ -27,12 +27,12 @@ Content is organized by platform or output type. Each platform directory contain
 - `/linkedin/` — Headline, Featured section, About, Experience entries
 - `/github/` — Profile README, repository READMEs, pinned repo structuring
 - `/web-portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
-- `/cv-ats/` — Keyword optimization, formatting rules, examples and templates that have passed real ATS screening (Apple, Anthropic, Google)
+- `/cv-ats/` — Keyword optimization, formatting rules, personal examples, and templates for ATS-safe CV workflows
 - `/x-twitter/` — Bio, pinned post strategy, content positioning
 
 More platform directories will be added as the project grows. The structure is designed to be extended without breaking existing conventions.
 
-All working templates, real CV examples, sample READMEs, and before/after comparisons live inside their respective hub directories (e.g., `/cv-ats/templates/`, `/github/examples/`). The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
+All working templates, personal examples, sample READMEs, and before/after comparisons live inside their respective hub directories (e.g., `/cv-ats/templates/`, `/github/examples/`). Files under `examples/` are practical reference artifacts, not canonical fixtures; the canonical rules live in the module docs, templates, and runtime skill references. The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
 
 **B. The Agent Skill System (The Engine)**
 

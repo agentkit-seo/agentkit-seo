@@ -3,7 +3,7 @@ title: "GitHub optimization"
 platform: "github"
 objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
 status: "draft"
-last_updated: "2026-04-28"
+last_updated: "2026-04-29"
 tags: ["github", "index", "seo", "blackbird"]
 agent_priority: "high"
 ---
@@ -18,7 +18,7 @@ agent_priority: "high"
 
 Optimizing for GitHub is fundamentally different from optimizing for Google or a traditional ATS. You are optimizing for an ecosystem that combines repository metadata, exact-match code queries, contribution visibility, human trust signals, and semantic indexing for Copilot.
 
-The first audience is GitHub's internal code search engine, known as **Blackbird**. It affects how code and repositories can be discovered when recruiters or developers search for specific technologies or projects.
+The first audience is GitHub's internal code search engine, known as **Blackbird**. The durable optimization target is not a secret ranking formula; it is making public repositories eligible for code search and easy to query, inspect, and understand when recruiters or developers search for specific technologies or projects.
 
 The second audience consists of **AI Agents and Copilot**. Copilot uses a sophisticated semantic search index that updates in the background. Ensuring your documentation and codebase are structured to feed this index correctly is the foundation of Agentic Engine Optimization (AEO) for code.
 
@@ -26,11 +26,11 @@ The second audience consists of **AI Agents and Copilot**. Copilot uses a sophis
 
 The optimization logic is divided into the following documents, ordered from foundational algorithms to specific technical configurations:
 
-- **[The Blackbird algorithm](./algorithm-blackbird.md):** Deep dive into GitHub's internal search engine, including exact-match weighting and indexing exclusions.
+- **[GitHub code search and Blackbird](./algorithm-blackbird.md):** Practical guide to GitHub code search, documented limits, query qualifiers, and indexing exclusions.
 - **[Profile architecture](./profile-architecture.md):** Foundational settings, optimizing the 160-character bio, strategic repository pinning, and contribution graph management.
 - **[Profile README](./profile-readme.md):** Strategy for the special `username/username` repository, using markdown badges, and maintaining token efficiency.
 - **[Repository SEO](./repository-seo.md):** Rules for optimizing individual projects, including naming conventions, short descriptions, and topic tags.
-- **[Linguist and statistics](./linguist-and-stats.md):** How to manipulate the repository language statistics bar using `.gitattributes` to prevent CSS or vendor files from skewing your perceived stack.
+- **[Linguist and statistics](./linguist-and-stats.md):** How to correct the repository language statistics bar using `.gitattributes` so generated, vendored, or documentation-heavy files do not skew your perceived stack.
 - **[Engagement signals](./engagement-signals.md):** How stars, forks, releases, and maintenance hygiene affect repository trust and discovery.
 - **[Copilot and agents](./copilot-and-agents.md):** The definitive guide to AEO within GitHub, including Copilot indexing, repository instructions, and `AGENTS.md` precedence.
 - **[Sources](./sources.md):** Citations and research validating the internal mechanics of GitHub search and Copilot indexing.
@@ -47,4 +47,4 @@ When an AI agent is tasked with optimizing a user's GitHub presence:
 
 ---
 
-*Next step: Understand the search engine in [The Blackbird algorithm](./algorithm-blackbird.md).*
+*Next step: Understand the search engine in [GitHub code search and Blackbird](./algorithm-blackbird.md).*

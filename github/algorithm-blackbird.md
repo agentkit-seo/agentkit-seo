@@ -1,22 +1,22 @@
 ---
-title: "The Blackbird algorithm"
+title: "GitHub code search and Blackbird"
 platform: "github"
-objective: "Deep dive into GitHub's code search mechanics and the documented restrictions that affect repository discoverability."
+objective: "Practical guide to GitHub code search mechanics and the documented restrictions that affect repository discoverability."
 status: "draft"
-last_updated: "2026-04-24"
+last_updated: "2026-04-29"
 tags: ["github", "algorithm", "blackbird", "search"]
 agent_priority: "medium"
 ---
 
-# The Blackbird algorithm
+# GitHub code search and Blackbird
 
-> This file details the mechanics of GitHub's internal code search engine, Blackbird, explaining how it indexes repositories and what causes a project to be excluded from search results.
+> This file summarizes durable, documented GitHub code-search behavior and the repository conditions that affect whether a project can be searched and inspected.
 
 ---
 
 ## 1. Overview
 
-GitHub's global code search is powered by Blackbird. Unlike standard web search engines, it is designed specifically for code and repository navigation. The most useful optimization work here is not "SEO theater"; it is removing conditions that prevent repositories or files from being searchable in the first place.
+GitHub's global code search is powered by Blackbird. Unlike standard web search engines, it is designed specifically for code and repository navigation. The useful optimization work here is not reverse-engineering hidden ranking behavior; it is removing documented conditions that prevent repositories or files from being searchable in the first place, then making code, paths, and documentation easy to query.
 
 ## 2. Indexing requirements and exclusions
 
@@ -47,8 +47,8 @@ While private repositories are indexed, they are only searchable by users with e
 **Rule:** Leverage the Symbol index.
 GitHub code search includes symbol search and code navigation. Cleanly named functions, classes, and files are easier to discover than vague identifiers.
 
-**Rule:** Use query-time qualifiers for discovery.
-Users and agents can refine Blackbird searches using qualifiers such as `repo:`, `path:`, `language:`, and `symbol:`. A searchable repository with sensible paths and names is dramatically easier to inspect than one that depends on internal tribal knowledge.
+**Rule:** Use query-time qualifiers for inspection.
+Users and agents can refine code searches using qualifiers such as `repo:`, `path:`, `language:`, and `symbol:`. A searchable repository with sensible paths and names is dramatically easier to inspect than one that depends on internal tribal knowledge.
 
 ## 5. Anti-Patterns
 

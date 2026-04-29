@@ -3,7 +3,7 @@ title: "GitHub repository SEO"
 platform: "github"
 objective: "Rules for optimizing individual projects for GitHub search, external search, and human evaluation."
 status: "draft"
-last_updated: "2026-04-28"
+last_updated: "2026-04-29"
 tags: ["github", "repository", "seo", "topics"]
 agent_priority: "high"
 ---
@@ -16,7 +16,7 @@ agent_priority: "high"
 
 ## 1. Overview
 
-Creating a great codebase is only half the battle; if the repository metadata is weak, fewer people will understand or find it. Repository names, About descriptions, README headings, and topic tags all provide structured context for GitHub search, external search engines, and human visitors.
+Creating a great codebase is only half the battle; if the repository metadata is weak, fewer people will understand or find it. Repository names, About descriptions, README headings, and topic tags all provide structured context for GitHub search surfaces, external search engines, AI tools, and human visitors.
 
 ## 2. Metadata constraints
 
@@ -62,7 +62,7 @@ This is my final project for the web dev bootcamp.
 ### The undocumented monolith
 
 **What it looks like:** Pushing 10,000 lines of complex backend code to a repository with a README that only says "Backend Server."
-**Why it fails:** Neither humans nor AI agents can understand the value of the code without context. The Blackbird search engine cannot index the architectural concepts, and recruiters will immediately leave the page.
+**Why it fails:** Neither humans nor AI agents can understand the value of the code without context. Search tools may still index the code, but they will not receive clear project-level language about the architecture, use case, or value. Recruiters and developers are also more likely to leave quickly.
 **What to do instead:** Always document the architecture, the "Why," and the tech stack in the repository README, even if the code itself is clean.
 
 ---
