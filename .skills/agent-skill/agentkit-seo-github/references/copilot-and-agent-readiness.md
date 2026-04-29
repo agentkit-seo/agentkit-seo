@@ -11,8 +11,7 @@
 
 - Use `.github/copilot-instructions.md` for repo-wide Copilot guidance.
 - Use `.github/instructions/*.instructions.md` for path-specific guidance.
-- Use `AGENTS.md` where scope matters; nearest-file precedence matters for
-  agent behavior in the tree.
+- Use `AGENTS.md` where scope matters; nearest-file precedence matters for agent behavior in the tree.
 
 ## Good instruction-file behavior
 
@@ -32,5 +31,4 @@
 
 ## Writing rule
 
-Separate GitHub-native behavior from general agent-readability advice. Do not
-present external-agent best practices as if GitHub itself guarantees them.
+Separate GitHub-native behavior from general agent-readability advice. Do not present external-agent best practices as if GitHub itself guarantees them.

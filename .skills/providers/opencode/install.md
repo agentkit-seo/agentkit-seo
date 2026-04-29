@@ -9,8 +9,7 @@ OpenCode can discover skills from multiple compatible locations, including:
 - `.claude/skills/<skill-name>/SKILL.md`
 - `.agents/skills/<skill-name>/SKILL.md`
 
-Copy the full shared skill folder so the local `references/` directory remains
-available at runtime.
+Copy the full shared skill folder so the local `references/` directory remains available at runtime.
 
 OpenCode custom commands are Markdown files in:
 
@@ -19,9 +18,7 @@ OpenCode custom commands are Markdown files in:
 
 ## Source-first workflow
 
-Keep `.skills/agent-skill/` as the only canonical source tree, then install an
-OpenCode-friendly layout when needed. The OpenCode adapter notes belong in
-`.skills/providers/opencode/`.
+Keep `.skills/agent-skill/` as the only canonical source tree, then install an OpenCode-friendly layout when needed. The OpenCode adapter notes belong in `.skills/providers/opencode/`.
 
 For the published package, the default command is:
 
@@ -63,9 +60,7 @@ OpenCode has native skill discovery and also supports custom commands.
 
 ## Important constraint
 
-The docs clearly describe flat custom command names from filenames, but they do
-not document the same clean colon namespace pattern for commands that Gemini CLI
-does. Because of that, the safest OpenCode command surface is flat:
+The docs clearly describe flat custom command names from filenames, but they do not document the same clean colon namespace pattern for commands that Gemini CLI does. Because of that, the safest OpenCode command surface is flat:
 
 - `/agentkit-seo-context`
 - `/agentkit-seo-linkedin`
@@ -76,7 +71,4 @@ does. Because of that, the safest OpenCode command surface is flat:
 
 ## Practical recommendation
 
-Prioritize native skill loading first. Command wrappers are now included as thin
-entrypoints that ask OpenCode to load the matching shared skill. Keep wrappers
-flat and mapped to shared skill names without inventing undocumented namespacing
-behavior.
+Prioritize native skill loading first. Command wrappers are now included as thin entrypoints that ask OpenCode to load the matching shared skill. Keep wrappers flat and mapped to shared skill names without inventing undocumented namespacing behavior.

@@ -1,7 +1,6 @@
 # AgentKit SEO evaluation plan
 
-This maintainer note defines the minimum scenario checks that should exist
-before public marketplace or registry publication.
+This maintainer note defines the minimum scenario checks that should exist before public marketplace or registry publication.
 
 ## Release gate
 
@@ -124,5 +123,4 @@ npm run list:providers
 node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-review-export --force
 ```
 
-Add provider-specific install checks when Gemini wrappers, marketplace bundles,
-or public `npx` distribution are added.
+Add provider-specific install checks when Gemini wrappers, marketplace bundles, or public `npx` distribution are added.

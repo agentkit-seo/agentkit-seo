@@ -20,8 +20,7 @@
 
 ## Display-name recipe
 
-Use the display name to improve immediate clarity when it helps the account's
-real positioning.
+Use the display name to improve immediate clarity when it helps the account's real positioning.
 
 Default pattern:
 
@@ -45,10 +44,8 @@ Writing rules:
 
 - place the most important niche terms early
 - keep it natural rather than keyword-stacked
-- use real proof only: role, domain, shipped work, results, or recognized
-  expertise
-- use the CTA only when there is a real next step such as a link, resource, or
-  pinned asset
+- use real proof only: role, domain, shipped work, results, or recognized expertise
+- use the CTA only when there is a real next step such as a link, resource, or pinned asset
 
 ## Pinned-post recipe
 
@@ -68,8 +65,7 @@ Default pinned-post structure:
 3. what the reader will get
 4. clear next step or link
 
-If no strong evergreen post exists yet, leave the slot unpinned or rotate only
-after stronger material exists.
+If no strong evergreen post exists yet, leave the slot unpinned or rotate only after stronger material exists.
 
 ## Single-post recipe
 

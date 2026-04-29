@@ -1,8 +1,6 @@
 # AgentKit SEO Current Status
 
-This file is the local working status note for the repository. It is meant to
-hold implementation-state context that would make the public `README.md` too
-heavy.
+This file is the local working status note for the repository. It is meant to hold implementation-state context that would make the public `README.md` too heavy.
 
 ## As of April 29, 2026
 
@@ -12,8 +10,7 @@ heavy.
 - `.skills/providers/` contains provider-specific adapter notes.
 - `.skills/export/` contains the install/export tooling.
 - The repo root docs remain the human-readable editorial hub.
-- `.assets/docs/STYLEGUIDE.md` defines the schema boundaries between editorial docs,
-  runtime skills, provider notes, templates, and examples.
+- `.assets/docs/STYLEGUIDE.md` defines the schema boundaries between editorial docs, runtime skills, provider notes, templates, and examples.
 
 ### Skill coverage
 

@@ -8,9 +8,7 @@
 
 ## Core purpose
 
-A personal context file is the factual source of truth for career-oriented agent
-work. It prevents the agent from starting from zero on every session and keeps
-outputs grounded in one maintained record.
+A personal context file is the factual source of truth for career-oriented agent work. It prevents the agent from starting from zero on every session and keeps outputs grounded in one maintained record.
 
 ## When it is most valuable
 
@@ -33,5 +31,4 @@ Start with context optimization first when:
 - dates and titles conflict across sources
 - the task spans multiple public surfaces
 
-If the user only needs a quick single-surface edit and facts are already clean,
-full context-file work can be optional.
+If the user only needs a quick single-surface edit and facts are already clean, full context-file work can be optional.

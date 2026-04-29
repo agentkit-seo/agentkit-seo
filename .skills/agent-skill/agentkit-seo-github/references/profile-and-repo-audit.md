@@ -45,8 +45,7 @@ For each showcase repository, check:
 - the repository is not archived if search visibility matters
 - large generated or vendored files are not skewing language stats
 - `.gitattributes` overrides are semantically correct
-- forks are not being treated as strong portfolio anchors without considering
-  GitHub's fork-search limits
+- forks are not being treated as strong portfolio anchors without considering GitHub's fork-search limits
 
 ## Agent and Copilot readiness checklist
 

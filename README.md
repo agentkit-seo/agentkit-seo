@@ -31,20 +31,16 @@
 
 ## What It Is
 
-AgentKit SEO is a modular skill pack for AI coding agents that work on career
-artifacts and professional discoverability.
+AgentKit SEO is a modular skill pack for AI coding agents that work on career artifacts and professional discoverability.
 
-Most agents rewrite career material generically because they lack durable
-personal context and platform-specific rules. AgentKit SEO gives the agent:
+Most agents rewrite career material generically because they lack durable personal context and platform-specific rules. AgentKit SEO gives the agent:
 
 - one shared skill source in `.skills/agent-skill/`
 - one focused module per system
 - one install/export CLI for provider-specific layouts
 - one human-readable repo hub for research and maintenance
 
-The goal is simple: make agent output for profiles, resumes, portfolios, and
-personal-branding workflows more structured, more evidence-based, and less
-generic.
+The goal is simple: make agent output for profiles, resumes, portfolios, and personal-branding workflows more structured, more evidence-based, and less generic.
 
 ## Example
 
@@ -64,9 +60,7 @@ The agent can return a focused action plan covering:
 - LinkedIn headline, About, Experience, Featured, and Skills improvements
 - next actions ranked by impact and evidence
 
-The deeper workflow is the personal agent context file: a structured career
-source of truth that lives outside this repository and can be reused across
-agents, profiles, CVs, portfolios, and job applications.
+The deeper workflow is the personal agent context file: a structured career source of truth that lives outside this repository and can be reused across agents, profiles, CVs, portfolios, and job applications.
 
 The files inside module-level `examples/` folders are personal working examples, not normative fixtures. They reflect material used during real application workflows, including interviews and applications with companies such as Anthropic, Apple, and Bending Spoons, and the personal context example supported cover-letter and application drafting. Treat them as practical reference artifacts rather than strict implementations of the current best-practice architecture; the canonical rules live in the module docs, templates, and runtime skill references.
 
@@ -100,24 +94,19 @@ Browse the editorial hub directly from the repo root:
 - [web-portfolio](./web-portfolio/README.md)
 - [x-twitter](./x-twitter/README.md)
 
-Authoring and runtime conventions are defined in
-[.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and
-[.skills/architecture.md](./.skills/architecture.md).
+Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
 
 ## Install
 
-Treat `.skills/agent-skill/` as the canonical source tree. Provider-specific
-material lives in `.skills/providers/`.
+Treat `.skills/agent-skill/` as the canonical source tree. Provider-specific material lives in `.skills/providers/`.
 
-After the package is published, install directly into the target agent's global
-skills folder:
+After the package is published, install directly into the target agent's global skills folder:
 
 ```bash
 npx agentkit-seo install --provider codex
 ```
 
-For Codex, this copies the shipped skill folders into `CODEX_HOME/skills` when
-`CODEX_HOME` is set, otherwise into `~/.codex/skills`.
+For Codex, this copies the shipped skill folders into `CODEX_HOME/skills` when `CODEX_HOME` is set, otherwise into `~/.codex/skills`.
 
 From a local checkout, use:
 
@@ -144,8 +133,7 @@ npm exec --package ./. -- agentkit-seo install \
   --project-root .
 ```
 
-This writes the same skill folders into `.codex/skills/` inside the selected
-project.
+This writes the same skill folders into `.codex/skills/` inside the selected project.
 
 If you want to inspect a generated bundle before installing it:
 
@@ -174,8 +162,7 @@ Before public release, each launch-ready module should include:
 - hallucination and overclaim guardrails
 - verification checklist
 
-The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other
-modules can remain beta until their scenarios and demos are executable.
+The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other modules can remain beta until their scenarios and demos are executable.
 
 ## Support
 
@@ -190,9 +177,7 @@ modules can remain beta until their scenarios and demos are executable.
 | Published `npx agentkit-seo ...` package | Not shipped yet |
 | Marketplace / registry distribution | Not shipped yet |
 
-Current internal implementation notes live in
-[.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release scenario checks are drafted in
-[.assets/docs/evaluation-plan.md](./.assets/docs/evaluation-plan.md).
+Current internal implementation notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release scenario checks are drafted in [.assets/docs/evaluation-plan.md](./.assets/docs/evaluation-plan.md).
 
 ## Authors
 

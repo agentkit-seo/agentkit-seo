@@ -40,8 +40,7 @@ The values below are historical examples from the 2023 open-source release and a
 
 X has historically sourced out-of-network content using graph and embedding-based retrieval systems.
 
-**Recommendation:** Stay in your lane to improve out-of-network fit.
-Historically, SimClusters modeled community affinity from follow and engagement graphs. More recent architecture snapshots describe Two-Tower retrieval (User Tower + Candidate Tower) for semantic matching. Strategic takeaway: strong topical consistency can improve retrieval quality and out-of-network fit.
+**Recommendation:** Stay in your lane to improve out-of-network fit. Historically, SimClusters modeled community affinity from follow and engagement graphs. More recent architecture snapshots describe Two-Tower retrieval (User Tower + Candidate Tower) for semantic matching. Strategic takeaway: strong topical consistency can improve retrieval quality and out-of-network fit.
 
 ## 4. The current architecture (Phoenix and Grok)
 
@@ -67,6 +66,7 @@ These are useful design signals, but not a full public contract for every live r
 ## 5. Examples
 
 Good example:
+
 ```text
 <!-- CORRECT: optimized for replies and conversation depth -->
 We migrated our entire backend from Node.js to Go last month. Memory usage dropped by 60%, but the developer learning curve was steeper than expected.
@@ -84,8 +84,6 @@ Bad example:
 
 ### The Like-farming thread
 
-**What it looks like:** "10 tools you need. Like and bookmark this!"
-**Why it fails:** Historically, likes were much lower-weight than replies and conversation depth.
-**What to do instead:** End the thread with a specific, open-ended question to invite substantive replies, then continue the discussion in follow-up responses.
+**What it looks like:** "10 tools you need. Like and bookmark this!" **Why it fails:** Historically, likes were much lower-weight than replies and conversation depth. **What to do instead:** End the thread with a specific, open-ended question to invite substantive replies, then continue the discussion in follow-up responses.
 
 ---

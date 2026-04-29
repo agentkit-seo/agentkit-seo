@@ -10,8 +10,7 @@
 
 ## What is grounded
 
-Historical open-source snapshots of X's recommendation stack support these
-directional priors:
+Historical open-source snapshots of X's recommendation stack support these directional priors:
 
 - deep conversation matters more than shallow likes
 - author replies have historically been very strong signals
@@ -43,8 +42,7 @@ Reasonable advice from that:
 - avoid burst posting that makes your own posts compete
 - favor clear topical identity
 - optimize for conversation, not pure impression bait
-- use controlled tests for contested tactics such as link placement or post
-  length
+- use controlled tests for contested tactics such as link placement or post length
 
 ## What not to overstate
 

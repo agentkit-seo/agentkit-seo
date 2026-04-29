@@ -20,26 +20,19 @@ Search engines infer a large part of a portfolio's meaning from structure. Clear
 
 ## 2. Best practices
 
-**Recommendation:** Give each important intent its own URL.
-Keep the homepage focused on orientation. Move durable information into dedicated pages such as `/about/`, `/projects/`, `/projects/<slug>/`, `/writing/`, and `/contact/`. A single long homepage can still rank for branded queries, but it is a weak container for project-specific discovery.
+**Recommendation:** Give each important intent its own URL. Keep the homepage focused on orientation. Move durable information into dedicated pages such as `/about/`, `/projects/`, `/projects/<slug>/`, `/writing/`, and `/contact/`. A single long homepage can still rank for branded queries, but it is a weak container for project-specific discovery.
 
-**Rule:** Keep important pages within a shallow, obvious hierarchy.
-The homepage should link directly to the major hubs. Hub pages should link directly to their detail pages. Do not hide critical pages behind multiple overlays, filters, or client-side interactions.
+**Rule:** Keep important pages within a shallow, obvious hierarchy. The homepage should link directly to the major hubs. Hub pages should link directly to their detail pages. Do not hide critical pages behind multiple overlays, filters, or client-side interactions.
 
-**Rule:** Use readable, stable, lowercase, hyphenated URLs.
-Portfolio URLs should communicate content at a glance. Prefer `/projects/agentkit-seo/` over `/work?id=17` or `/ProjectPhoenixFinalV2/`. Stable URLs also make future redirects and external linking easier.
+**Rule:** Use readable, stable, lowercase, hyphenated URLs. Portfolio URLs should communicate content at a glance. Prefer `/projects/agentkit-seo/` over `/work?id=17` or `/ProjectPhoenixFinalV2/`. Stable URLs also make future redirects and external linking easier.
 
-**Rule:** Use real internal links.
-For navigation and content discovery, use `<a href="...">` links that resolve to real URLs. Do not rely on buttons, `onclick` handlers, or fragment-driven routes for primary navigation.
+**Rule:** Use real internal links. For navigation and content discovery, use `<a href="...">` links that resolve to real URLs. Do not rely on buttons, `onclick` handlers, or fragment-driven routes for primary navigation.
 
-**Recommendation:** Add breadcrumb trails on nested pages.
-Project detail pages, articles, and case studies benefit from visible breadcrumb navigation. This helps users move through the site and gives search engines a clearer hierarchical model.
+**Recommendation:** Add breadcrumb trails on nested pages. Project detail pages, articles, and case studies benefit from visible breadcrumb navigation. This helps users move through the site and gives search engines a clearer hierarchical model.
 
-**Recommendation:** Avoid orphan pages.
-Every indexable page should be reachable through normal internal linking from at least one crawlable parent page. If a project page exists only in the sitemap and nowhere else on the site, it sends a weak importance signal.
+**Recommendation:** Avoid orphan pages. Every indexable page should be reachable through normal internal linking from at least one crawlable parent page. If a project page exists only in the sitemap and nowhere else on the site, it sends a weak importance signal.
 
-**Rule:** Serve a hard `404` status code for missing routes.
-Portfolio sites built on static hosts (like Netlify or GitHub Pages) or SPA frameworks often default to serving a custom "Not Found" page while returning a `200 OK` status. This creates "soft 404s" that confuse search engines and dilute crawl budgets. Ensure the server explicitly returns a `404` or `410` header.
+**Rule:** Serve a hard `404` status code for missing routes. Portfolio sites built on static hosts (like Netlify or GitHub Pages) or SPA frameworks often default to serving a custom "Not Found" page while returning a `200 OK` status. This creates "soft 404s" that confuse search engines and dilute crawl budgets. Ensure the server explicitly returns a `404` or `410` header.
 
 ## 3. Recommended URL map
 
@@ -86,9 +79,7 @@ Bad example:
 
 ### The single-page trap
 
-**What it looks like:** The entire portfolio lives on one long homepage with sections like "About," "Work," and "Contact," but no dedicated URLs for project details.
-**Why it fails:** The site has very few indexable entry points for non-branded queries. Search engines and AI agents also struggle to deep-link to a specific project or a specific proof point.
-**What to do instead:** Keep a concise homepage, then publish dedicated detail pages for every serious project, article, or case study worth ranking.
+**What it looks like:** The entire portfolio lives on one long homepage with sections like "About," "Work," and "Contact," but no dedicated URLs for project details. **Why it fails:** The site has very few indexable entry points for non-branded queries. Search engines and AI agents also struggle to deep-link to a specific project or a specific proof point. **What to do instead:** Keep a concise homepage, then publish dedicated detail pages for every serious project, article, or case study worth ranking.
 
 ---
 

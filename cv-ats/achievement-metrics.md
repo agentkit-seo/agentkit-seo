@@ -20,17 +20,14 @@ Recruiters and many screening workflows prioritize candidates who demonstrate im
 
 ## 2. The bullet point formula
 
-**Rule:** Structure every bullet point using an established framework like STAR, STAR+R, or XYZ.
-Adopt a rigorous formula to make impact visible. The baseline is Action Verb + Task + Result. Highly recommended variations include:
+**Rule:** Structure every bullet point using an established framework like STAR, STAR+R, or XYZ. Adopt a rigorous formula to make impact visible. The baseline is Action Verb + Task + Result. Highly recommended variations include:
 - **STAR:** Situation (context), Task (challenge), Action (what you did), Result (quantifiable outcome).
 - **STAR+R:** Adds *Reflection* to STAR (what was learned or how it shaped future architectural decisions). This is useful for seniority signals and interview preparation, especially when a reviewer wants evidence of reasoning.
 - **XYZ:** Accomplished [X] as measured by [Y], by doing [Z].
 
-**Rule:** Quantify achievements with hard numbers.
-Use numeric values (%, $, #) to define the result. Numbers make impact easier to scan and easier to search. If exact numbers are unknown, use the **Resume Quantifier** strategy to ethically estimate impact based on defensible proxy metrics (e.g., "Reduced latency by an estimated 30% based on baseline profiling").
+**Rule:** Quantify achievements with hard numbers. Use numeric values (%, $, #) to define the result. Numbers make impact easier to scan and easier to search. If exact numbers are unknown, use the **Resume Quantifier** strategy to ethically estimate impact based on defensible proxy metrics (e.g., "Reduced latency by an estimated 30% based on baseline profiling").
 
-**Rule:** Use the active voice and past tense for past roles.
-Avoid passive phrases like "Responsible for" or "Tasked with." Start immediately with the action. Use present tense only for ongoing responsibilities in a current role.
+**Rule:** Use the active voice and past tense for past roles. Avoid passive phrases like "Responsible for" or "Tasked with." Start immediately with the action. Use present tense only for ongoing responsibilities in a current role.
 
 ## 3. Examples
 

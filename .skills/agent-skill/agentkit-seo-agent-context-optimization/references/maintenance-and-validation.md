@@ -22,10 +22,8 @@ Do not add speculative future entries.
 
 1. Identify the target section using the canonical tags and section order.
 2. Draft only the new or revised entry in the required format.
-3. Update the `VERIFIED FACTS` comment if the material adds dates, grades,
-   scores, IDs, rankings, or other hard anchors.
-4. Check whether the material evidences a new skill that belongs in the Skills
-   index.
+3. Update the `VERIFIED FACTS` comment if the material adds dates, grades, scores, IDs, rankings, or other hard anchors.
+4. Check whether the material evidences a new skill that belongs in the Skills index.
 5. Apply the smallest edit that preserves the rest of the file untouched.
 
 ## Validation checklist
@@ -35,14 +33,10 @@ A valid context file should satisfy all of the following:
 - exactly one H1 title with full name and positioning descriptor
 - `QUICK REFERENCE` appears immediately after the title
 - the QUICK REFERENCE block is YAML and uses only flat values or flat arrays
-- required sections are present: scope declaration, education, skills index,
-  languages
+- required sections are present: scope declaration, education, skills index, languages
 - conditional sections appear only when the user has relevant content
-- semantic tags are used consistently: `[DEGREE]`, `[COURSE]`, `[PROJECT]`,
-  `[THESIS]`, `[ROLE]`, `[PAPER]`, `[PREPRINT]`, `[CERT]`, `[COMPETITION]`,
-  `[AWARD]`, `[ORG]`
-- every `[PROJECT]`, `[THESIS]`, and `[ROLE]` entry has a meaningful `TL;DR`
-  when the format requires one
+- semantic tags are used consistently: `[DEGREE]`, `[COURSE]`, `[PROJECT]`, `[THESIS]`, `[ROLE]`, `[PAPER]`, `[PREPRINT]`, `[CERT]`, `[COMPETITION]`, `[AWARD]`, `[ORG]`
+- every `[PROJECT]`, `[THESIS]`, and `[ROLE]` entry has a meaningful `TL;DR` when the format requires one
 - the Skills index contains only skills supported elsewhere in the file
 - the `VERIFIED FACTS` comment exists and covers the hard facts in the body
 - dates, titles, metrics, and chronology are internally consistent
@@ -52,13 +46,11 @@ A valid context file should satisfy all of the following:
 - Keep the QUICK REFERENCE block current and selective.
 - Preserve the historical record in the body.
 - Compress peripheral detail instead of deleting important evidence.
-- Remove stale items from `top_skills` or the QUICK REFERENCE `professional`
-  snapshot when they are no longer central to current positioning.
+- Remove stale items from `top_skills` or the QUICK REFERENCE `professional` snapshot when they are no longer central to current positioning.
 
 ## Editing posture for agents
 
 - Prefer targeted diffs over whole-file rewrites.
 - Do not silently normalize conflicting facts; surface the conflict.
 - Do not add unsupported skills just because they would sound useful.
-- If the file is structurally broken, repair structure first, then improve
-  wording.
+- If the file is structurally broken, repair structure first, then improve wording.

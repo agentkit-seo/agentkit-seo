@@ -20,30 +20,24 @@ Applicant Tracking Systems and resume parsers work better with recognizable sect
 
 ## 2. Core sections and naming rules
 
-**Rule:** Use standard section headers.
-Do not use creative variations for core sections. Safe defaults include:
+**Rule:** Use standard section headers. Do not use creative variations for core sections. Safe defaults include:
 - Contact Information (Do not use a header; place directly at the top)
 - Professional Summary
 - Work Experience or Experience
 - Skills
 - Education
 
-**Recommendation:** Format section headers consistently.
-ALL CAPS is acceptable, but consistency matters more than the exact visual treatment.
+**Recommendation:** Format section headers consistently. ALL CAPS is acceptable, but consistency matters more than the exact visual treatment.
 
-**Rule:** Structure the CV in reverse-chronological order.
-Within the Work Experience and Education sections, list entries from the most recent to the oldest.
+**Rule:** Structure the CV in reverse-chronological order. Within the Work Experience and Education sections, list entries from the most recent to the oldest.
 
 ## 3. Formatting rules within sections
 
-**Rule:** Follow the "Top Line" rule for your name.
-The first line of the document should contain the full name only. Move degrees or credentials to later lines so the file opens with one clean identity signal.
+**Rule:** Follow the "Top Line" rule for your name. The first line of the document should contain the full name only. Move degrees or credentials to later lines so the file opens with one clean identity signal.
 
-**Rule:** Place contact information in the document body.
-Do not put email, phone number, or LinkedIn URL in the header or footer, because these areas are handled less reliably by parsers.
+**Rule:** Place contact information in the document body. Do not put email, phone number, or LinkedIn URL in the header or footer, because these areas are handled less reliably by parsers.
 
-**Rule:** Use one explicit date format throughout the document.
-Use an unambiguous format such as `MM/YYYY - MM/YYYY` or `Month YYYY - Month YYYY`, and apply it consistently. Do not use seasons such as "Summer 2021" or year-only ranges if a month is known.
+**Rule:** Use one explicit date format throughout the document. Use an unambiguous format such as `MM/YYYY - MM/YYYY` or `Month YYYY - Month YYYY`, and apply it consistently. Do not use seasons such as "Summer 2021" or year-only ranges if a month is known.
 
 ## 4. Examples
 
@@ -52,8 +46,7 @@ Good example:
 <!-- CORRECT -->
 ## Work Experience
 
-**Software Engineer**
-Tech Corp | San Francisco, CA | 06/2021 - Present
+**Software Engineer** Tech Corp | San Francisco, CA | 06/2021 - Present
 - Bullet point one.
 - Bullet point two.
 ```

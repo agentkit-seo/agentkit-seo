@@ -20,22 +20,17 @@ The Featured section sits prominently near the top of the profile, just below th
 
 ## 2. Content constraints
 
-**Rule:** Prioritize visual media over plain text links.
-Text links often generate generic, poorly formatted preview cards. Use high-quality thumbnails, architectural diagrams, or short video demos (e.g., a screen recording of an app you built) when adding links to the Featured section. Strong visuals usually improve human scanning and conversion compared with plain links.
+**Rule:** Prioritize visual media over plain text links. Text links often generate generic, poorly formatted preview cards. Use high-quality thumbnails, architectural diagrams, or short video demos (e.g., a screen recording of an app you built) when adding links to the Featured section. Strong visuals usually improve human scanning and conversion compared with plain links.
 
-**Rule:** Directly link to GitHub repositories and live demos.
-Do not link to generic company homepages. Link directly to the specific GitHub repository you maintain, the specific feature you shipped, or a detailed technical blog post you authored.
+**Rule:** Directly link to GitHub repositories and live demos. Do not link to generic company homepages. Link directly to the specific GitHub repository you maintain, the specific feature you shipped, or a detailed technical blog post you authored.
 
-**Rule:** Feature your best-performing niche content.
-If you authored a LinkedIn post that performed well and aligns with your target niche, pin it to the Featured section. This gives new profile visitors a quick proof point for your domain focus.
+**Rule:** Feature your best-performing niche content. If you authored a LinkedIn post that performed well and aligns with your target niche, pin it to the Featured section. This gives new profile visitors a quick proof point for your domain focus.
 
 ## 3. Anti-Patterns
 
 ### The stale carousel
 
-**What it looks like:** A Featured section containing links to a project from 5 years ago, or a broken link to a startup that no longer exists.
-**Why it fails:** It signals to both humans and the algorithm that the profile is abandoned or that the user has not produced meaningful work recently.
-**What to do instead:** Rotate the content in your Featured section at least twice a year to highlight your most recent and relevant achievements.
+**What it looks like:** A Featured section containing links to a project from 5 years ago, or a broken link to a startup that no longer exists. **Why it fails:** It signals to both humans and the algorithm that the profile is abandoned or that the user has not produced meaningful work recently. **What to do instead:** Rotate the content in your Featured section at least twice a year to highlight your most recent and relevant achievements.
 
 ---
 

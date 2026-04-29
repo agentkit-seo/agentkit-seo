@@ -13,8 +13,7 @@
 - Keep handle and identity aligned with the user's other public surfaces.
 - Use a display name that improves clarity when appropriate.
 - Treat the 160-character bio as a compact landing page.
-- Keep profile image, header, bio, and linked destination aligned around the
-  same niche.
+- Keep profile image, header, bio, and linked destination aligned around the same niche.
 
 ## Bio formula
 
@@ -34,8 +33,7 @@ Guidance:
 
 - Pin an evergreen asset only when it is genuinely strong.
 - If the account has no strong evergreen post yet, do not force a weak pin.
-- Use Highlights or equivalent profile curation only when there is enough
-  quality material to justify it.
+- Use Highlights or equivalent profile curation only when there is enough quality material to justify it.
 - Keep the pinned asset aligned with the current professional goal.
 
 ## Post-format rules
@@ -53,5 +51,4 @@ Do not claim a universal external-link penalty as settled fact. Safer advice:
 
 - deliver core value natively
 - use external links where they genuinely support the goal
-- test inline link placement versus first-reply placement if optimization is
-  important
+- test inline link placement versus first-reply placement if optimization is important

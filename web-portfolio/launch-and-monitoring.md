@@ -54,9 +54,7 @@ Keep the monitoring loop small and repeatable:
 
 ### The launch and disappear workflow
 
-**What it looks like:** The site ships, the sitemap is submitted once, and no one checks Search Console again until traffic drops months later.
-**Why it fails:** Indexing regressions, broken canonicals, and accidental `noindex` states can persist quietly.
-**What to do instead:** Treat Search Console and Bing Webmaster Tools as part of routine maintenance, not as one-time launch tools.
+**What it looks like:** The site ships, the sitemap is submitted once, and no one checks Search Console again until traffic drops months later. **Why it fails:** Indexing regressions, broken canonicals, and accidental `noindex` states can persist quietly. **What to do instead:** Treat Search Console and Bing Webmaster Tools as part of routine maintenance, not as one-time launch tools.
 
 ---
 

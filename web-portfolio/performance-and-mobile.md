@@ -20,32 +20,23 @@ Google indexes the mobile version of a site and strongly recommends mobile-frien
 
 ## 2. Best practices
 
-**Rule:** Use responsive design as the default mobile strategy.
-Serving the same URL and same core content to desktop and mobile is the simplest way to preserve parity. Avoid splitting a personal portfolio across separate mobile URLs unless there is a compelling legacy reason.
+**Rule:** Use responsive design as the default mobile strategy. Serving the same URL and same core content to desktop and mobile is the simplest way to preserve parity. Avoid splitting a personal portfolio across separate mobile URLs unless there is a compelling legacy reason.
 
-**Rule:** Keep mobile and desktop content equivalent.
-The mobile page should expose the same main text, titles, meta tags, structured data, and critical links as the desktop page. If mobile hides key content, search visibility weakens.
+**Rule:** Keep mobile and desktop content equivalent. The mobile page should expose the same main text, titles, meta tags, structured data, and critical links as the desktop page. If mobile hides key content, search visibility weakens.
 
-**Rule:** Serve the site over HTTPS and redirect HTTP to HTTPS.
-Transport security is a baseline trust signal and prevents protocol duplication.
+**Rule:** Serve the site over HTTPS and redirect HTTP to HTTPS. Transport security is a baseline trust signal and prevents protocol duplication.
 
-**Recommendation:** Keep Largest Contentful Paint (LCP) under 2.5 seconds, Interaction to Next Paint (INP) under 200 milliseconds, and Cumulative Layout Shift (CLS) under 0.1 on the pages that matter most.
-The homepage, About page, Projects hub, and project-detail pages should load and respond quickly enough to feel immediate on ordinary devices and connections. 
+**Recommendation:** Keep Largest Contentful Paint (LCP) under 2.5 seconds, Interaction to Next Paint (INP) under 200 milliseconds, and Cumulative Layout Shift (CLS) under 0.1 on the pages that matter most. The homepage, About page, Projects hub, and project-detail pages should load and respond quickly enough to feel immediate on ordinary devices and connections.
 
-**Rule:** Define explicit width and height dimensions for all images and videos to prevent Cumulative Layout Shift (CLS).
-Portfolios fail CLS checks most often because images load late and push the surrounding text down. Explicit dimensions allow the browser to reserve the exact space needed before the asset finishes loading.
+**Rule:** Define explicit width and height dimensions for all images and videos to prevent Cumulative Layout Shift (CLS). Portfolios fail CLS checks most often because images load late and push the surrounding text down. Explicit dimensions allow the browser to reserve the exact space needed before the asset finishes loading.
 
-**Rule:** Use `font-display: swap` for all custom web fonts.
-Custom fonts must not delay the rendering of the main heading or the first paragraph (Flash of Invisible Text). Using `font-display: swap` ensures the browser immediately paints a fallback font and swaps it once the custom font is ready.
+**Rule:** Use `font-display: swap` for all custom web fonts. Custom fonts must not delay the rendering of the main heading or the first paragraph (Flash of Invisible Text). Using `font-display: swap` ensures the browser immediately paints a fallback font and swaps it once the custom font is ready.
 
-**Recommendation:** Compress and size media intentionally.
-Portfolio sites often fail because screenshots, animated backgrounds, and hero video dominate the first load. Resize media to its real display size, choose appropriate formats, and defer non-critical assets.
+**Recommendation:** Compress and size media intentionally. Portfolio sites often fail because screenshots, animated backgrounds, and hero video dominate the first load. Resize media to its real display size, choose appropriate formats, and defer non-critical assets.
 
-**Recommendation:** Use descriptive image filenames and meaningful alt text.
-Images can surface the site in visual search features and also reinforce page meaning. Keep images near relevant text and describe them accurately.
+**Recommendation:** Use descriptive image filenames and meaningful alt text. Images can surface the site in visual search features and also reinforce page meaning. Keep images near relevant text and describe them accurately.
 
-**Rule:** Do not let ornamental effects dominate the critical path.
-Custom fonts, scroll effects, parallax systems, and autoplay media should not delay the main heading, the first paragraph, or the primary project proof.
+**Rule:** Do not let ornamental effects dominate the critical path. Custom fonts, scroll effects, parallax systems, and autoplay media should not delay the main heading, the first paragraph, or the primary project proof.
 
 ## 3. Examples
 
@@ -73,9 +64,7 @@ Bad example:
 
 ### The animation-first portfolio
 
-**What it looks like:** The homepage opens with a full-screen animation, large web fonts, multiple video loops, and a heavy JavaScript timeline before any useful text appears.
-**Why it fails:** Load performance drops, mobile usability degrades, and the page spends its budget on decoration instead of clarity.
-**What to do instead:** Render the main heading, value proposition, and navigation first. Add motion only after the page is already fast and stable.
+**What it looks like:** The homepage opens with a full-screen animation, large web fonts, multiple video loops, and a heavy JavaScript timeline before any useful text appears. **Why it fails:** Load performance drops, mobile usability degrades, and the page spends its budget on decoration instead of clarity. **What to do instead:** Render the main heading, value proposition, and navigation first. Add motion only after the page is already fast and stable.
 
 ---
 

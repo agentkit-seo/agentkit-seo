@@ -21,39 +21,29 @@ Applicant Tracking Systems and resume parsers extract text from uploaded files a
 
 ## 2. Layout constraints
 
-**Recommendation:** Default to one page unless the profile clearly needs more space.
-This is mainly a recruiting and readability rule, not an ATS rule. For early-career candidates, one page is usually the strongest default.
+**Recommendation:** Default to one page unless the profile clearly needs more space. This is mainly a recruiting and readability rule, not an ATS rule. For early-career candidates, one page is usually the strongest default.
 
-**Rule:** Optimize horizontal space and eliminate orphan words.
-If a bullet point wraps to a new line leaving only one or two words on that line (an "orphan"), you are wasting an entire line of vertical space. Either prune filler words to pull the sentence back onto a single line, or expand the achievement with more metrics to fully utilize the second line.
+**Rule:** Optimize horizontal space and eliminate orphan words. If a bullet point wraps to a new line leaving only one or two words on that line (an "orphan"), you are wasting an entire line of vertical space. Either prune filler words to pull the sentence back onto a single line, or expand the achievement with more metrics to fully utilize the second line.
 
-**Rule:** Use a strict single-column layout.
-Multi-column layouts are still one of the most common causes of scrambled extraction. A single column is the safest default across parsers.
+**Rule:** Use a strict single-column layout. Multi-column layouts are still one of the most common causes of scrambled extraction. A single column is the safest default across parsers.
 
-**Rule:** Do not use tables, text boxes, or floating elements.
-Information placed inside tables or text boxes is more likely to be skipped, reordered, or appended incorrectly during extraction.
+**Rule:** Do not use tables, text boxes, or floating elements. Information placed inside tables or text boxes is more likely to be skipped, reordered, or appended incorrectly during extraction.
 
-**Rule:** Keep margins within standard limits (0.5" to 1").
-Set document margins between 0.5 inches (1.27 cm) and 1 inch (2.54 cm) on all sides. This ensures printing and PDF conversion do not clip text, while maintaining enough "white space" for OCR systems to distinguish between sections.
+**Rule:** Keep margins within standard limits (0.5" to 1"). Set document margins between 0.5 inches (1.27 cm) and 1 inch (2.54 cm) on all sides. This ensures printing and PDF conversion do not clip text, while maintaining enough "white space" for OCR systems to distinguish between sections.
 
 ## 3. Typography constraints
 
-**Rule:** Stick to standard system fonts and size.
-Use established system fonts (Arial, Calibri, Georgia, Helvetica, Times New Roman, or Tahoma). Do not use custom web fonts. Maintain a minimum font size of 10pt, with 11pt body text preferred in most cases.
+**Rule:** Stick to standard system fonts and size. Use established system fonts (Arial, Calibri, Georgia, Helvetica, Times New Roman, or Tahoma). Do not use custom web fonts. Maintain a minimum font size of 10pt, with 11pt body text preferred in most cases.
 
-**Recommendation:** Disable automatic hyphenation.
-Do not split words across lines with automatic hyphenation if the template can avoid it. Plain-text extraction is cleaner when keywords stay intact.
+**Recommendation:** Disable automatic hyphenation. Do not split words across lines with automatic hyphenation if the template can avoid it. Plain-text extraction is cleaner when keywords stay intact.
 
-**Rule:** Avoid graphics, icons, and non-standard bullets.
-Do not use SVG icons, PNG graphics, or custom bullet point shapes that can compile into garbled characters. Stick to simple hyphens or standard solid bullets.
+**Rule:** Avoid graphics, icons, and non-standard bullets. Do not use SVG icons, PNG graphics, or custom bullet point shapes that can compile into garbled characters. Stick to simple hyphens or standard solid bullets.
 
 ## 4. File format rules
 
-**Rule:** Submit CVs in `.docx` or text-based `.pdf` format only.
-If the employer does not specify a format, `.docx` and text-based `.pdf` are the safest options. If the employer specifies a format, follow the employer's instruction.
+**Rule:** Submit CVs in `.docx` or text-based `.pdf` format only. If the employer does not specify a format, `.docx` and text-based `.pdf` are the safest options. If the employer specifies a format, follow the employer's instruction.
 
-**Recommendation:** Use LaTeX (`.tex`) compiled to PDF for absolute layout control.
-LaTeX is a strong option for version-controlled, text-first workflows because the source file is plain text and layout is explicit. It is not magic: the exported PDF still needs to pass a plain-text extraction check.
+**Recommendation:** Use LaTeX (`.tex`) compiled to PDF for absolute layout control. LaTeX is a strong option for version-controlled, text-first workflows because the source file is plain text and layout is explicit. It is not magic: the exported PDF still needs to pass a plain-text extraction check.
 
 > Warning: Never submit an image-based PDF (a scanned document or a flat image saved as a PDF). The ATS may not read the text, resulting in a blank or incomplete profile.
 
@@ -71,11 +61,7 @@ Good example:
 Good example (LaTeX):
 ```latex
 <!-- CORRECT -->
-% Standard article class with clean Helvetica font
-\documentclass[a4paper,10pt]{article}
-\usepackage[scaled]{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage[left=1.4cm,right=1.4cm,top=1.2cm,bottom=1.2cm]{geometry}
+% Standard article class with clean Helvetica font \documentclass[a4paper,10pt]{article} \usepackage[scaled]{helvet} \renewcommand{\familydefault}{\sfdefault} \usepackage[left=1.4cm,right=1.4cm,top=1.2cm,bottom=1.2cm]{geometry}
 ```
 
 Bad example:

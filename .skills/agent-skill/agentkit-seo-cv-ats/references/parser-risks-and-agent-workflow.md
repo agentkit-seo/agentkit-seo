@@ -33,12 +33,10 @@ If the extracted text is scrambled, the layout is not ready.
 - `.tex` is strong for versioned, programmatic editing.
 - Keep content and layout macros separate.
 - Agents should edit content blocks, not redesign the template unless asked.
-- `.docx` can still be a valid final target, but it is less pleasant as the
-  source of truth for repeated automated tailoring.
+- `.docx` can still be a valid final target, but it is less pleasant as the source of truth for repeated automated tailoring.
 
 ## Guardrails
 
 - Never promise ATS success.
 - Never claim a vendor-specific scoring rule unless sourced.
-- Optimize for reliable parsing first, then recruiter readability, then visual
-  polish.
+- Optimize for reliable parsing first, then recruiter readability, then visual polish.

@@ -17,8 +17,7 @@ Default order:
 4. skills
 5. education
 
-Add other sections only when the user's profile genuinely requires them, such as
-projects, certifications, publications, or awards.
+Add other sections only when the user's profile genuinely requires them, such as projects, certifications, publications, or awards.
 
 ## Contact block recipe
 
@@ -84,8 +83,7 @@ Rules:
 - date range or graduation date
 - optional grade or honors only when relevant and accurate
 
-For early-career profiles, education can carry more detail. For experienced
-profiles, compress it unless the degree is directly relevant to the target role.
+For early-career profiles, education can carry more detail. For experienced profiles, compress it unless the degree is directly relevant to the target role.
 
 ## Section rewrite posture
 

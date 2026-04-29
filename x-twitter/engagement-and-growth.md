@@ -23,15 +23,13 @@ Agents providing strategic advice must steer users away from "broadcast" behavio
 
 ### 2.1 The "First Hour" velocity
 
-**Recommendation:** Publish when the target audience is active and monitor replies immediately.
-Early engagement often correlates with broader distribution, but no public fixed "first-hour threshold" is documented.
+**Recommendation:** Publish when the target audience is active and monitor replies immediately. Early engagement often correlates with broader distribution, but no public fixed "first-hour threshold" is documented.
 
 ### 2.2 Triggering the Author Reply multiplier
 
 The Author Reply was one of the strongest historical engagement signals in the 2023 open-source baseline.
 
-**Rule:** The author must reply to thoughtful comments on their own posts, especially within the first hour.
-**Rule:** End posts with specific, open-ended questions. "What is your stack?" works better than "Agree?" because it requires a substantive answer.
+**Rule:** The author must reply to thoughtful comments on their own posts, especially within the first hour. **Rule:** End posts with specific, open-ended questions. "What is your stack?" works better than "Agree?" because it requires a substantive answer.
 
 ### 2.3 Niche engagement (SimClusters & Two-Tower)
 
@@ -41,8 +39,7 @@ The Author Reply was one of the strongest historical engagement signals in the 2
 
 Out-of-network reach is the primary driver of follower growth. It occurs when a post is recommended to users who do not follow the author.
 
-**Rule:** Maintain topical consistency to improve out-of-network matching.
-When content drifts too far off-niche, retrieval quality can drop because the post is less clearly aligned with the audience's learned interests.
+**Rule:** Maintain topical consistency to improve out-of-network matching. When content drifts too far off-niche, retrieval quality can drop because the post is less clearly aligned with the audience's learned interests.
 
 ## 3. Examples
 
@@ -50,7 +47,7 @@ When content drifts too far off-niche, retrieval quality can drop because the po
 
 Good example:
 ```text
-We just migrated our database to Postgres. Query times dropped 40%, but the migration scripts were a nightmare to write. 
+We just migrated our database to Postgres. Query times dropped 40%, but the migration scripts were a nightmare to write.
 
 If you've done a major DB migration recently, what was the unexpected bottleneck you hit?
 ```
@@ -66,8 +63,6 @@ Postgres is the best database. Agree?
 
 ### The silent broadcaster
 
-**What it looks like:** Publishing a high-quality thread, logging off, and ignoring the 20 comments it receives.
-**Why it fails:** It leaves strong conversational signals unused and trains the audience that replying is pointless, which can decrease future engagement.
-**What to do instead:** Allocate 15 minutes after publishing strictly for replying to commenters.
+**What it looks like:** Publishing a high-quality thread, logging off, and ignoring the 20 comments it receives. **Why it fails:** It leaves strong conversational signals unused and trains the audience that replying is pointless, which can decrease future engagement. **What to do instead:** Allocate 15 minutes after publishing strictly for replying to commenters.
 
 ---

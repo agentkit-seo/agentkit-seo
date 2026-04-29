@@ -58,29 +58,13 @@ The `.skills/` directory is the machine-readable layer. It is structured as a co
         scripts/
 ```
 
-The shared source of truth lives in `.skills/agent-skill/`. Each folder there is
-an actual portable skill bundle with its own `SKILL.md`, local `references/`
-directory, and optional provider metadata such as `agents/openai.yaml`. The
-root `agentkit-seo` skill acts as an orchestrator, while the platform-specific
-skills keep context scoped to a single surface whenever possible.
+The shared source of truth lives in `.skills/agent-skill/`. Each folder there is an actual portable skill bundle with its own `SKILL.md`, local `references/` directory, and optional provider metadata such as `agents/openai.yaml`. The root `agentkit-seo` skill acts as an orchestrator, while the platform-specific skills keep context scoped to a single surface whenever possible.
 
-**Provider-agnostic and provider-specific:** The shared skills use a portable
-`SKILL.md` format and optional provider metadata such as `agents/openai.yaml`.
-The sibling provider folders are adapters only: they define install targets,
-wrapper commands, and provider-specific behavior without duplicating the core
-methodology.
+**Provider-agnostic and provider-specific:** The shared skills use a portable `SKILL.md` format and optional provider metadata such as `agents/openai.yaml`. The sibling provider folders are adapters only: they define install targets, wrapper commands, and provider-specific behavior without duplicating the core methodology.
 
-**Scoped invocation:** The stable cross-provider contract is the shared skill
-name, such as `agentkit-seo-linkedin` or `agentkit-seo-github`. Some providers
-can expose ergonomic wrapper commands on top of those skills. For example,
-Gemini CLI exposes `/agentkit-seo:linkedin` through the generated extension's
-namespaced command files, OpenCode uses flat wrappers such as
-`/agentkit-seo-linkedin`, Codex is better treated as explicit skill selection,
-and Claude Code needs either direct skill invocation or a later plugin wrapper
-for exact namespacing.
+**Scoped invocation:** The stable cross-provider contract is the shared skill name, such as `agentkit-seo-linkedin` or `agentkit-seo-github`. Some providers can expose ergonomic wrapper commands on top of those skills. For example, Gemini CLI exposes `/agentkit-seo:linkedin` through the generated extension's namespaced command files, OpenCode uses flat wrappers such as `/agentkit-seo-linkedin`, Codex is better treated as explicit skill selection, and Claude Code needs either direct skill invocation or a later plugin wrapper for exact namespacing.
 
-This architecture still solves the context window problem: a user who only wants
-LinkedIn help loads the LinkedIn skill instead of the whole system.
+This architecture still solves the context window problem: a user who only wants LinkedIn help loads the LinkedIn skill instead of the whole system.
 
 ---
 
@@ -88,20 +72,15 @@ LinkedIn help loads the LinkedIn skill instead of the whole system.
 
 Keeping the repository clean and well-structured from the start is critical. AI agents perform worse when fed chaotic file histories or unstructured data. The commit history itself is a signal of quality.
 
-- **Phase 1: The "Dirty" Beta**
-  Work in a private or local repository. Sketch the folder structure, test the Markdown formatting with a local agent, and validate that the agent can successfully read the rules and rewrite a sample CV or README.
+- **Phase 1: The "Dirty" Beta** Work in a private or local repository. Sketch the folder structure, test the Markdown formatting with a local agent, and validate that the agent can successfully read the rules and rewrite a sample CV or README.
 
-- **Phase 2: Architectural Lockdown (Current state)**
-  Finalize the folder hierarchy. Lock the schema boundaries defined in `.assets/docs/STYLEGUIDE.md`. Keep `.skills/agent-skill/` as the only portable source of truth. Keep `.skills/providers/` as adapter notes. Keep `.skills/export/` as the install/export implementation. Direct installs now work for Claude Code, Codex, OpenCode, and Gemini CLI.
+- **Phase 2: Architectural Lockdown (Current state)** Finalize the folder hierarchy. Lock the schema boundaries defined in `.assets/docs/STYLEGUIDE.md`. Keep `.skills/agent-skill/` as the only portable source of truth. Keep `.skills/providers/` as adapter notes. Keep `.skills/export/` as the install/export implementation. Direct installs now work for Claude Code, Codex, OpenCode, and Gemini CLI.
 
-- **Phase 3: The "Clean" Repository**
-  Create the official GitHub Organization and the final public repository. Commit the finalized structure from scratch to ensure a pristine commit history.
+- **Phase 3: The "Clean" Repository** Create the official GitHub Organization and the final public repository. Commit the finalized structure from scratch to ensure a pristine commit history.
 
-- **Phase 4: Prompt Engineering & Context Tuning**
-  Refine each shared skill in `.skills/agent-skill/` so the agent does not hallucinate. Write strict routing rules in the root `agentkit-seo` skill, for example: *"When optimizing a GitHub README, load `agentkit-seo-github` before generating any output."* Test the adapter commands and direct skill invocation end-to-end for each supported provider.
+- **Phase 4: Prompt Engineering & Context Tuning** Refine each shared skill in `.skills/agent-skill/` so the agent does not hallucinate. Write strict routing rules in the root `agentkit-seo` skill, for example: *"When optimizing a GitHub README, load `agentkit-seo-github` before generating any output."* Test the adapter commands and direct skill invocation end-to-end for each supported provider.
 
-- **Phase 5: Public Proof & Distribution**
-  Add scenario evals, public demos, provider-specific release artifacts, and a published `npx` package only after the shared source tree and direct installs are stable.
+- **Phase 5: Public Proof & Distribution** Add scenario evals, public demos, provider-specific release artifacts, and a published `npx` package only after the shared source tree and direct installs are stable.
 
 ---
 

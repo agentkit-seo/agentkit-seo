@@ -86,8 +86,7 @@ Built internal observability tooling in Go and Prometheus for a multi-service pl
 - use standard recognizable skill names
 - reorder the top skills to match current positioning
 - prefer a shorter credible list over a bloated weak one
-- make sure the top skills also appear in Experience, Education, Featured, or
-  credentials
+- make sure the top skills also appear in Experience, Education, Featured, or credentials
 - do not rely on discontinued Skill Assessments
 
 ## Featured section recipe
@@ -110,7 +109,5 @@ Rules:
 ## Section rewrite posture
 
 - preserve facts and upgrade structure
-- if a section lacks enough evidence, say what is missing instead of fabricating
-  stronger claims
-- keep section-level language consistent with the same target role across the
-  whole profile
+- if a section lacks enough evidence, say what is missing instead of fabricating stronger claims
+- keep section-level language consistent with the same target role across the whole profile

@@ -12,8 +12,7 @@
 2. state the task and hard constraints
 3. load the matching platform skill only if needed
 4. review the output against factual grounding
-5. revise the source context file if the task exposed missing or conflicting
-   facts
+5. revise the source context file if the task exposed missing or conflicting facts
 
 ## File discovery convention
 
@@ -29,15 +28,13 @@ If the user wants a default location, use:
 ~/.agentkit-seo/context.md
 ```
 
-Do not search the user's full filesystem for a context file. If no explicit path
-or confirmed default exists, ask for the path before using this skill.
+Do not search the user's full filesystem for a context file. If no explicit path or confirmed default exists, ask for the path before using this skill.
 
 ## Combination rule
 
 The context file supplies facts.
 
-The platform skill supplies formatting, discoverability, and channel-specific
-constraints.
+The platform skill supplies formatting, discoverability, and channel-specific constraints.
 
 Do not let the platform skill become the factual source of truth.
 
@@ -47,8 +44,7 @@ Do not let the platform skill become the factual source of truth.
 - do not add speculative future items
 - when adding new content, also update the `VERIFIED FACTS` anchor if relevant
 - keep a version history, ideally in Git
-- when a file is structurally weak, repair canonical structure before
-  downstream rewriting
+- when a file is structurally weak, repair canonical structure before downstream rewriting
 
 ## Token management
 
@@ -58,5 +54,4 @@ Do not let the platform skill become the factual source of truth.
 
 ## Agent editing rule
 
-When integrating new material, add or revise only the relevant entry and avoid
-gratuitous rewrites of unrelated sections.
+When integrating new material, add or revise only the relevant entry and avoid gratuitous rewrites of unrelated sections.

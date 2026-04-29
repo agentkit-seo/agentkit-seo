@@ -7,17 +7,13 @@ Install the shared skills into:
 - `.claude/skills/<skill-name>/SKILL.md` for project-local use
 - `~/.claude/skills/<skill-name>/SKILL.md` for personal global use
 
-Copy the whole self-contained shared skill folder, not only the root
-`SKILL.md`. The local `references/` directory is part of the runtime bundle.
+Copy the whole self-contained shared skill folder, not only the root `SKILL.md`. The local `references/` directory is part of the runtime bundle.
 
 ## Source-first workflow
 
-Do not treat `.claude/skills/` as the canonical authoring surface in this
-repository. The source of truth lives in `.skills/agent-skill/`, while Claude
-adapter notes live in `.skills/providers/claude-code/`.
+Do not treat `.claude/skills/` as the canonical authoring surface in this repository. The source of truth lives in `.skills/agent-skill/`, while Claude adapter notes live in `.skills/providers/claude-code/`.
 
-If you want a Claude-ready layout installed globally from the published
-package, use:
+If you want a Claude-ready layout installed globally from the published package, use:
 
 ```bash
 npx agentkit-seo install --provider claude-code
@@ -34,8 +30,7 @@ This installs the shared skills into:
 
 - `~/.claude/skills/`
 
-If you want a Claude-ready layout installed directly into a project, pass
-`--project-root`:
+If you want a Claude-ready layout installed directly into a project, pass `--project-root`:
 
 ```bash
 node .skills/export/scripts/agentkit-seo.mjs install \
@@ -43,16 +38,13 @@ node .skills/export/scripts/agentkit-seo.mjs install \
   --project-root .
 ```
 
-The repo also ships a minimal root `package.json` so the same CLI can later be
-published or invoked through `npx` without moving the source of truth out of
-`.skills/`.
+The repo also ships a minimal root `package.json` so the same CLI can later be published or invoked through `npx` without moving the source of truth out of `.skills/`.
 
 This installs the shared skills into:
 
 - `.claude/skills/`
 
-If you want a preview bundle instead of writing directly into the project, use
-the `export` command and send it to a staging directory such as `/tmp/`.
+If you want a preview bundle instead of writing directly into the project, use the `export` command and send it to a staging directory such as `/tmp/`.
 
 ## What works well
 
@@ -62,10 +54,7 @@ the `export` command and send it to a staging directory such as `/tmp/`.
 
 ## Important constraint
 
-The exact `/agentkit-seo:linkedin` syntax is not the normal project-skill path
-for Claude Code. Local project commands live in `.claude/commands/`, but
-subdirectories do not create namespaced command names. The clean
-`plugin-name:skill-name` namespace exists for plugin skills.
+The exact `/agentkit-seo:linkedin` syntax is not the normal project-skill path for Claude Code. Local project commands live in `.claude/commands/`, but subdirectories do not create namespaced command names. The clean `plugin-name:skill-name` namespace exists for plugin skills.
 
 ## Practical recommendation
 
@@ -78,6 +67,4 @@ Use the shared skills directly for the first version:
 - `agentkit-seo-x-twitter`
 - `agentkit-seo-agent-context-optimization`
 
-If you later want the exact `/agentkit-seo:linkedin` interface in Claude Code,
-package the provider adapter as a Claude plugin instead of relying only on local
-project commands.
+If you later want the exact `/agentkit-seo:linkedin` interface in Claude Code, package the provider adapter as a Claude plugin instead of relying only on local project commands.

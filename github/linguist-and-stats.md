@@ -24,8 +24,7 @@ Recruiters frequently glance at this bar to verify your primary skill set. Howev
 
 You can explicitly instruct Linguist to ignore specific files or directories by using a `.gitattributes` file in the root of your repository.
 
-**Rule:** Mark vendor, generated, and data files with the most accurate Linguist attribute.
-Use `linguist-vendored=true` for third-party dependencies, `linguist-generated=true` for generated output, and `linguist-documentation=true` for documentation-heavy folders. These attributes can remove files from language statistics and may affect code-search visibility, so use the narrowest truthful classification.
+**Rule:** Mark vendor, generated, and data files with the most accurate Linguist attribute. Use `linguist-vendored=true` for third-party dependencies, `linguist-generated=true` for generated output, and `linguist-documentation=true` for documentation-heavy folders. These attributes can remove files from language statistics and may affect code-search visibility, so use the narrowest truthful classification.
 
 ```text
 # Example .gitattributes file
@@ -47,8 +46,7 @@ docs/* linguist-documentation=true
 *.myextension linguist-detectable=true
 ```
 
-**Rule:** Force a specific language for ambiguous files.
-If Linguist misidentifies a file extension, you can force it to recognize the correct language.
+**Rule:** Force a specific language for ambiguous files. If Linguist misidentifies a file extension, you can force it to recognize the correct language.
 
 ```text
 # Treat all .h files as C++ instead of C
@@ -57,16 +55,13 @@ If Linguist misidentifies a file extension, you can force it to recognize the co
 
 ## 3. Impact on Search Indexing
 
-**Rule:** Understand that some Linguist overrides can affect code search visibility.
-GitHub code search excludes generated and vendored files from many search paths. This is generally the desired outcome for third-party bundles or generated artifacts, but do not mark first-party source code as vendored or generated just to change the language bar.
+**Rule:** Understand that some Linguist overrides can affect code search visibility. GitHub code search excludes generated and vendored files from many search paths. This is generally the desired outcome for third-party bundles or generated artifacts, but do not mark first-party source code as vendored or generated just to change the language bar.
 
 ## 4. Anti-Patterns
 
 ### The 99% HTML backend
 
-**What it looks like:** A complex Rust microservice repository where the language bar shows 95% HTML and 5% Rust because a large static documentation site is included in the `/docs` folder.
-**Why it fails:** A non-technical recruiter scanning your profile for Rust experience will see the HTML bar and assume this is a frontend web design project, potentially passing over your profile.
-**What to do instead:** Mark documentation as documentation with `docs/* linguist-documentation=true`, or mark generated documentation output as generated when that is accurate. Use Linguist overrides to describe the repository honestly, not to hide first-party source code.
+**What it looks like:** A complex Rust microservice repository where the language bar shows 95% HTML and 5% Rust because a large static documentation site is included in the `/docs` folder. **Why it fails:** A non-technical recruiter scanning your profile for Rust experience will see the HTML bar and assume this is a frontend web design project, potentially passing over your profile. **What to do instead:** Mark documentation as documentation with `docs/* linguist-documentation=true`, or mark generated documentation output as generated when that is accurate. Use Linguist overrides to describe the repository honestly, not to hide first-party source code.
 
 ---
 

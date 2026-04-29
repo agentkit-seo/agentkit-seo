@@ -46,10 +46,8 @@ Review the account in this order:
 
 - profile claims match LinkedIn, GitHub, portfolio, and CV where relevant
 - pinned assets and external links resolve cleanly
-- expertise claims are supported by shipped work, writing, demos, or public
-  proof
-- off-niche experiments do not dominate the recent feed if authority in one
-  domain is the goal
+- expertise claims are supported by shipped work, writing, demos, or public proof
+- off-niche experiments do not dominate the recent feed if authority in one domain is the goal
 
 ## Premium and capability checklist
 
@@ -59,8 +57,7 @@ Review the account in this order:
 
 ## Maintenance rules
 
-- refresh the pinned post when the main offer, flagship project, or best proof
-  changes
+- refresh the pinned post when the main offer, flagship project, or best proof changes
 - re-audit the bio when the user's niche or role shifts materially
 - review the last 20-30 posts periodically for topic drift and weak patterns
 - retire recurring low-signal formats instead of posting them out of habit

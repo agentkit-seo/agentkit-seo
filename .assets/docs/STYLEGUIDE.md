@@ -153,8 +153,7 @@ Do not use `---` as a visual decoration between sections. Use headings instead.
 
 ### 4.6 File classes and schema boundaries
 
-This repository contains several Markdown file classes. They do not all use the
-same schema.
+This repository contains several Markdown file classes. They do not all use the same schema.
 
 | File class | Examples | Required schema |
 |---|---|---|
@@ -166,9 +165,7 @@ same schema.
 | Local planning and status docs | `.assets/docs/*.md` | Practical maintainer notes; frontmatter optional |
 | Templates and examples | `templates/*.md`, `examples/*.md` | May intentionally contain multiple headings or placeholder structure needed by the artifact |
 
-Do not force runtime skill references into the editorial schema. Their purpose is
-to minimize context cost and provide procedural guidance at runtime. Do not put
-long-lived skill methodology in provider adapter notes.
+Do not force runtime skill references into the editorial schema. Their purpose is to minimize context cost and provide procedural guidance at runtime. Do not put long-lived skill methodology in provider adapter notes.
 
 ---
 
@@ -202,12 +199,16 @@ The headline should be written in the first person and
 
 ### 5.3 Code Blocks
 
-Use fenced code blocks (` ``` `) for:
+Use fenced code blocks (`
+```
+`) for:
 - Any text that should be copy-pasted verbatim (prompts, templates, config snippets).
 - Any example output that a tool or agent would produce.
 - Bad examples marked with `<!-- WRONG -->` alongside good examples marked with `<!-- CORRECT -->`.
 
-Always declare the language after the opening fence, even for plain text: ` ```text `.
+Always declare the language after the opening fence, even for plain text: `
+```text
+`.
 
 ### 5.4 Tables
 
@@ -220,6 +221,17 @@ Every table must have a header row. Column headers use sentence case. Tables mus
 Use inline links `[anchor text](url)` for external URLs. Use relative links such as `[README](../../README.md)` for internal cross-references from this file.
 
 Do not use bare URLs in prose. Bare URLs are allowed only inside code blocks or YAML frontmatter.
+
+### 5.6 Line Wrapping
+
+Do not hard-wrap normal prose, list items, or YAML descriptions at an arbitrary column. Keep each sentence, bullet, or field value on one source line unless a real Markdown structure requires a line break.
+
+Allowed exceptions:
+
+- fenced code blocks, templates, and verbatim examples
+- Markdown tables
+- blockquotes where each line is intentionally quoted
+- nested list items or continuation paragraphs where the indentation is semantic
 
 ---
 
@@ -326,21 +338,15 @@ Do not apply changes directly to user files without explicit confirmation.
 
 ### 7.5 Portfolio code-edit safety
 
-When asked to modify a user's portfolio code, default to a dry-run or review
-plan unless the user explicitly asks for direct edits. If direct edits are
-authorized:
+When asked to modify a user's portfolio code, default to a dry-run or review plan unless the user explicitly asks for direct edits. If direct edits are authorized:
 
 1. Identify the target files and intended SEO or accessibility outcome.
-2. Preserve existing visual design and application logic unless the user asks
-   for a redesign.
-3. Prefer metadata, structured data, crawlability, semantic HTML, and content
-   improvements before layout changes.
-4. Run the available build, lint, test, or preview command after edits when the
-   project provides one.
+2. Preserve existing visual design and application logic unless the user asks for a redesign.
+3. Prefer metadata, structured data, crawlability, semantic HTML, and content improvements before layout changes.
+4. Run the available build, lint, test, or preview command after edits when the project provides one.
 5. Report any command that could not be run and the remaining risk.
 
-For HTML, CSS, JavaScript, TypeScript, or framework templates, include this
-change summary:
+For HTML, CSS, JavaScript, TypeScript, or framework templates, include this change summary:
 
 ```text
 FILES CHANGED:

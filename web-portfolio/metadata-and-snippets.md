@@ -20,55 +20,41 @@ Metadata is the interface layer between a page and a search result. Title links,
 
 ## 2. Best practices for title links
 
-**Rule:** Give every indexable page a unique `<title>`.
-Each page must have a title that clearly names its subject. Reusing the same title pattern across every page weakens relevance and makes search results harder to distinguish.
+**Rule:** Give every indexable page a unique `<title>`. Each page must have a title that clearly names its subject. Reusing the same title pattern across every page weakens relevance and makes search results harder to distinguish.
 
-**Rule:** Keep the title under 60 characters to prevent truncation.
-Google does not enforce a fixed character limit for title links, but long titles are often truncated in search results. A portfolio title that is too long can hide its primary keywords and look unprofessional.
+**Rule:** Keep the title under 60 characters to prevent truncation. Google does not enforce a fixed character limit for title links, but long titles are often truncated in search results. A portfolio title that is too long can hide its primary keywords and look unprofessional.
 
-**Rule:** Put the page topic first and the site name second.
-For portfolios, the page subject should lead the title. A project page should begin with the project name or the core topic, not with the site name.
+**Rule:** Put the page topic first and the site name second. For portfolios, the page subject should lead the title. A project page should begin with the project name or the core topic, not with the site name.
 
-**Rule:** Avoid vague labels such as "Home", "Profile", or "Project".
-These labels do not help users or search engines understand what is unique about the page. The homepage should still name the person or brand and the professional focus.
+**Rule:** Avoid vague labels such as "Home", "Profile", or "Project". These labels do not help users or search engines understand what is unique about the page. The homepage should still name the person or brand and the professional focus.
 
-**Recommendation:** Keep the visible `h1` aligned with the title.
-Google can build title links from multiple sources, including the page title, headings, and other prominent text. When the title and `h1` point to the same topic, the signal is cleaner.
+**Recommendation:** Keep the visible `h1` aligned with the title. Google can build title links from multiple sources, including the page title, headings, and other prominent text. When the title and `h1` point to the same topic, the signal is cleaner.
 
 ## 3. Best practices for snippets
 
-**Recommendation:** Write a concise meta description for every important page.
-Use one or two sentences that summarize the actual content of the page. This is a hint, not a guarantee, but it improves the chance of a useful snippet when on-page text is not enough.
+**Recommendation:** Write a concise meta description for every important page. Use one or two sentences that summarize the actual content of the page. This is a hint, not a guarantee, but it improves the chance of a useful snippet when on-page text is not enough.
 
-**Rule:** Put the essential summary in the visible page copy.
-Google primarily builds snippets from page content itself. The first paragraph of a project page or About page should therefore carry the key facts in natural prose.
+**Rule:** Put the essential summary in the visible page copy. Google primarily builds snippets from page content itself. The first paragraph of a project page or About page should therefore carry the key facts in natural prose.
 
-**Rule:** Do not stuff keywords into descriptions.
-A list of repeated technologies or role titles looks manipulative and does not improve snippet quality.
+**Rule:** Do not stuff keywords into descriptions. A list of repeated technologies or role titles looks manipulative and does not improve snippet quality.
 
 ## 4. Best practices for Open Graph and social tags
 
 Open Graph (OG) tags do not directly impact Google rankings, but they control how a link appears when shared on LinkedIn, Slack, X, and other preview surfaces. Some crawlers and summarizers may also use them as lightweight page summaries.
 
-**Rule:** Provide `og:title`, `og:description`, `og:image`, and `og:url` on every public page.
-Without these tags, platforms may scrape the page unpredictably, resulting in broken or generic link previews that reduce click-through.
+**Rule:** Provide `og:title`, `og:description`, `og:image`, and `og:url` on every public page. Without these tags, platforms may scrape the page unpredictably, resulting in broken or generic link previews that reduce click-through.
 
-**Rule:** Set a high-quality `og:image` that represents the specific page.
-The `og:image` is often the first visual impression a recruiter or peer sees. It should be 1200 x 630 pixels. Do not use a generic site-wide logo for a specific project case study; use a screenshot of that specific project.
+**Rule:** Set a high-quality `og:image` that represents the specific page. The `og:image` is often the first visual impression a recruiter or peer sees. It should be 1200 x 630 pixels. Do not use a generic site-wide logo for a specific project case study; use a screenshot of that specific project.
 
-**Recommendation:** Include X (Twitter) Card tags as a fallback.
-Set `twitter:card` to `summary_large_image` to ensure the link unfurls into a full-width image preview on X, rather than a small thumbnail.
+**Recommendation:** Include X (Twitter) Card tags as a fallback. Set `twitter:card` to `summary_large_image` to ensure the link unfurls into a full-width image preview on X, rather than a small thumbnail.
 
 ## 5. Best practices for canonical identity
 
-**Rule:** Pick one canonical host and protocol.
-Choose the preferred public address of the site, such as `https://example.com/` or `https://www.example.com/`, and redirect all alternatives to it.
+**Rule:** Pick one canonical host and protocol. Choose the preferred public address of the site, such as `https://example.com/` or `https://www.example.com/`, and redirect all alternatives to it.
 
-**Rule:** Use `rel="canonical"` only to point at the true representative URL.
-Canonical tags help with duplicate clustering. They should not be used to push unrelated pages into the index or to mask weak pages that should instead be merged, redirected, or removed.
+**Rule:** Use `rel="canonical"` only to point at the true representative URL. Canonical tags help with duplicate clustering. They should not be used to push unrelated pages into the index or to mask weak pages that should instead be merged, redirected, or removed.
 
-**Recommendation:** Keep site identity signals consistent on the homepage.
-Use the same professional name in the homepage title, main heading, site branding, and `WebSite` structured data. If an alternate short name exists, provide it as an alternate site name rather than switching names page to page.
+**Recommendation:** Keep site identity signals consistent on the homepage. Use the same professional name in the homepage title, main heading, site branding, and `WebSite` structured data. If an alternate short name exists, provide it as an alternate site name rather than switching names page to page.
 
 ## 6. Examples
 

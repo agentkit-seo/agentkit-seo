@@ -20,19 +20,15 @@ External recruitment tools do not all work the same way. Some rely on browser au
 
 ## 2. Vector search readiness
 
-**Rule:** Use standard industry terminology.
-If the profile uses overly creative titles or uncommon names for common tools, external matching systems have less reliable text to work with. Standard role names and standard skill names are safer.
+**Rule:** Use standard industry terminology. If the profile uses overly creative titles or uncommon names for common tools, external matching systems have less reliable text to work with. Standard role names and standard skill names are safer.
 
-**Rule:** Explicitly state the "Ideal Role" and core competencies.
-Many AI-driven workflows compare profile text with a job description. If the About section explicitly names target roles and core competencies in clear language, the match is easier to justify.
+**Rule:** Explicitly state the "Ideal Role" and core competencies. Many AI-driven workflows compare profile text with a job description. If the About section explicitly names target roles and core competencies in clear language, the match is easier to justify.
 
 ## 3. Structured data completeness
 
-**Rule:** Fully populate all structured data fields.
-Do not rely entirely on the About section. Complete the Skills, Certifications, Education, Experience, and Featured sections so important facts are duplicated in the places parsers most often inspect first.
+**Rule:** Fully populate all structured data fields. Do not rely entirely on the About section. Complete the Skills, Certifications, Education, Experience, and Featured sections so important facts are duplicated in the places parsers most often inspect first.
 
-**Rule:** Add proof links where the claim is strongest.
-When a project, paper, repository, talk, or credential is public, link it in the most relevant section. Plain claims are weaker than claims with a visible proof source.
+**Rule:** Add proof links where the claim is strongest. When a project, paper, repository, talk, or credential is public, link it in the most relevant section. Plain claims are weaker than claims with a visible proof source.
 
 ## 4. Examples
 

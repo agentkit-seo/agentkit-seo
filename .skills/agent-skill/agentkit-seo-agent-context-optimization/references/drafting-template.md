@@ -29,13 +29,11 @@ Use one Markdown file with this fixed order:
 9. languages
 10. extracurricular and leadership if any
 
-Do not reorder sections for stylistic reasons. Stable order helps both human
-maintenance and agent retrieval.
+Do not reorder sections for stylistic reasons. Stable order helps both human maintenance and agent retrieval.
 
 ## QUICK REFERENCE template
 
-Write the section as YAML in a fenced block directly under the `QUICK REFERENCE`
-heading. Keep values flat. Omit empty fields.
+Write the section as YAML in a fenced block directly under the `QUICK REFERENCE` heading. Keep values flat. Omit empty fields.
 
 ```yaml
 name: Full Name
@@ -70,8 +68,7 @@ portfolio: https://example.com
 
 ## Scope declaration template
 
-Write one short third-person paragraph explaining what the file is for, then
-close it with a `VERIFIED FACTS` HTML comment.
+Write one short third-person paragraph explaining what the file is for, then close it with a `VERIFIED FACTS` HTML comment.
 
 ```markdown
 This file is a personal knowledge base documenting Full Name's academic and
@@ -87,23 +84,16 @@ verified.
 
 - Degrees: use `## [DEGREE] ...` headings and one sentence on relevance.
 - Courses: use `#### [COURSE] ...` plus one flat `Topics:` line.
-- Projects under courses: use `##### [PROJECT] ...` and include a required
-  `**TL;DR:**` line under 30 words.
-- Thesis: use `### [THESIS] ...` with `Full title`, `Supervisors`,
-  `Research area`, and `TL;DR`.
-- Roles: use `### [ROLE] ...` with `TL;DR` and quantified bullets, not prose
-  paragraphs.
-- Papers and preprints: use `### [PAPER] ...` or `### [PREPRINT] ...` with
-  authorship, venue or status, and `TL;DR`.
-- Skills index: use bold category labels with comma-separated terms on one
-  line; every skill must be evidenced elsewhere in the file.
+- Projects under courses: use `##### [PROJECT] ...` and include a required `**TL;DR:**` line under 30 words.
+- Thesis: use `### [THESIS] ...` with `Full title`, `Supervisors`, `Research area`, and `TL;DR`.
+- Roles: use `### [ROLE] ...` with `TL;DR` and quantified bullets, not prose paragraphs.
+- Papers and preprints: use `### [PAPER] ...` or `### [PREPRINT] ...` with authorship, venue or status, and `TL;DR`.
+- Skills index: use bold category labels with comma-separated terms on one line; every skill must be evidenced elsewhere in the file.
 - Languages: use a table, not prose.
 
 ## Drafting discipline
 
 - Prefer omission over guessing.
-- Keep descriptors specific to the user's actual positioning, not generic
-  aspirational branding.
+- Keep descriptors specific to the user's actual positioning, not generic aspirational branding.
 - Use exact dates, grades, rankings, IDs, and scores when known.
-- If the user provides raw material that lacks a needed field, mark the gap and
-  ask for that fact rather than inventing a filler value.
+- If the user provides raw material that lacks a needed field, mark the gap and ask for that fact rather than inventing a filler value.

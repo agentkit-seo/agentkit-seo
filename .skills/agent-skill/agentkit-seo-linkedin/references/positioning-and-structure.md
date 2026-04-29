@@ -12,18 +12,15 @@
 - optimize for two audiences at once:
   - LinkedIn's own search, recommendation, and relevance systems
   - external recruiters, parsers, enrichment tools, and AI agents
-- prefer standard job titles, standard skill names, and explicit scope over
-  novelty phrasing
+- prefer standard job titles, standard skill names, and explicit scope over novelty phrasing
 - keep factual alignment across LinkedIn, CV, GitHub, and portfolio
 - make the claimed positioning visible in both structured fields and prose
 
 ## Profile architecture rules
 
 - claim a clean public URL
-- use verification features when available; treat them as trust signals, not as
-  guaranteed ranking boosts
-- set location and job-preference fields explicitly instead of burying those
-  facts in prose
+- use verification features when available; treat them as trust signals, not as guaranteed ranking boosts
+- set location and job-preference fields explicitly instead of burying those facts in prose
 - use a professional banner that reinforces positioning
 - use the voice badge only if it adds clarity
 
@@ -33,8 +30,7 @@
 - lead with the target role or clearest current role
 - name the top two or three technologies only
 - use concrete impact or specialization in the last segment
-- avoid fluff such as `passionate`, `guru`, `ninja`, `results-driven`, and
-  similar filler
+- avoid fluff such as `passionate`, `guru`, `ninja`, `results-driven`, and similar filler
 
 ## About section rules
 
@@ -49,12 +45,9 @@
 ## Experience, skills, and Featured rules
 
 - keep titles, companies, and dates aligned with the CV and portfolio
-- prefer explicit ownership, scope, and outcomes over generic responsibility
-  lists
-- populate structured sections fully: Experience, Skills, Education,
-  Certifications, and Featured
-- add proof links where claims are strongest: project pages, GitHub repos,
-  talks, papers, demos, or articles
+- prefer explicit ownership, scope, and outcomes over generic responsibility lists
+- populate structured sections fully: Experience, Skills, Education, Certifications, and Featured
+- add proof links where claims are strongest: project pages, GitHub repos, talks, papers, demos, or articles
 - reorder top skills to match the profile's current positioning
 - use standard skill names and keep the top skills evidence-backed
 - treat Featured as proof of work, not as a generic link dump
@@ -63,7 +56,5 @@
 
 - do not invent employers, metrics, certifications, or dates
 - do not push novelty titles when standard titles are better for search
-- when the user's positioning is unclear, ask for or derive a single target role
-  before rewriting major sections
-- when a section lacks proof, weaken the claim or ask for evidence rather than
-  manufacturing certainty
+- when the user's positioning is unclear, ask for or derive a single target role before rewriting major sections
+- when a section lacks proof, weaken the claim or ask for evidence rather than manufacturing certainty

@@ -31,8 +31,7 @@ The primary audience for this file is an agent tasked with rewriting a user's X 
 
 The 160-character bio functions like a compact profile summary for people, search surfaces, and external previews. It should be keyword-rich without reading as spam.
 
-**Recommendation:** Structure the bio using this formula:
-`[Who I help] + [How I help] + [Social Proof] + [Call To Action]`
+**Recommendation:** Structure the bio using this formula: `[Who I help] + [How I help] + [Social Proof] + [Call To Action]`
 
 **Recommendation:** Place the most critical industry keywords within the first 80 characters.
 
@@ -40,9 +39,7 @@ The 160-character bio functions like a compact profile summary for people, searc
 
 Historical ranking snapshots suggest profile-click and downstream engagement are valuable signals, so the profile should immediately offer useful next-step content.
 
-**Recommendation:** Use a Pinned Post when the account has a strong evergreen asset.
-This acts as the top of the funnel (e.g., a lead magnet, a high-performing thread, or a newsletter link). If there is no strong evergreen asset yet, leave the pinned slot empty rather than pinning weak content.
-**Recommendation:** If the account has access to Highlights, curate testimonials, high-signal threads, and case studies to build authority for new visitors.
+**Recommendation:** Use a Pinned Post when the account has a strong evergreen asset. This acts as the top of the funnel (e.g., a lead magnet, a high-performing thread, or a newsletter link). If there is no strong evergreen asset yet, leave the pinned slot empty rather than pinning weak content. **Recommendation:** If the account has access to Highlights, curate testimonials, high-signal threads, and case studies to build authority for new visitors.
 
 ## 3. Examples
 
@@ -64,14 +61,10 @@ SEO Expert | Growth Hacker | Digital Marketing | Coffee Addict | Views are my ow
 
 ### The misleading bio
 
-**What it looks like:** A profile bio filled with provocative keywords outside the core professional niche, or a pattern of aggressive follow/unfollow behavior.
-**Why it fails:** Misleading positioning attracts the wrong audience and can lead to negative feedback events such as blocks, mutes, or reports.
-**What to do instead:** Ensure the bio accurately reflects the content to avoid misleading users who might otherwise mute or report the account.
+**What it looks like:** A profile bio filled with provocative keywords outside the core professional niche, or a pattern of aggressive follow/unfollow behavior. **Why it fails:** Misleading positioning attracts the wrong audience and can lead to negative feedback events such as blocks, mutes, or reports. **What to do instead:** Ensure the bio accurately reflects the content to avoid misleading users who might otherwise mute or report the account.
 
 ### Link-tree only bios
 
-**What it looks like:** A bio that only says "Links below 👇" pointing to a Linktree.
-**Why it fails:** It wastes the limited bio space that search surfaces and profile visitors use to understand the account.
-**What to do instead:** Use at least 120 characters to define the user's niche and expertise before deploying the CTA for the link.
+**What it looks like:** A bio that only says "Links below 👇" pointing to a Linktree. **Why it fails:** It wastes the limited bio space that search surfaces and profile visitors use to understand the account. **What to do instead:** Use at least 120 characters to define the user's niche and expertise before deploying the CTA for the link.
 
 ---

@@ -20,22 +20,17 @@ Many candidates are filtered out or slowed down not because they lack qualificat
 
 ## 2. Critical errors to avoid
 
-**Rule:** Do not use headers and footers for critical information.
-Keep contact information in the main document body. Many resume parsers and screening workflows handle headers and footers unreliably, so they are the wrong place for email addresses, phone numbers, or portfolio links.
+**Rule:** Do not use headers and footers for critical information. Keep contact information in the main document body. Many resume parsers and screening workflows handle headers and footers unreliably, so they are the wrong place for email addresses, phone numbers, or portfolio links.
 
-**Rule:** Do not embed hyperlinks in text.
-Write out URLs explicitly (e.g., `linkedin.com/in/username` or `github.com/username`). Do not rely on anchor text such as "Portfolio" or "Click here" as the only visible representation of the link.
+**Rule:** Do not embed hyperlinks in text. Write out URLs explicitly (e.g., `linkedin.com/in/username` or `github.com/username`). Do not rely on anchor text such as "Portfolio" or "Click here" as the only visible representation of the link.
 
-**Rule:** Avoid visual skill rating elements.
-Do not use progress bars, star ratings, or pie charts to represent your proficiency in a skill (e.g., "Python: 4/5 stars"). The parser cannot read the visual graphic, and the resulting text extraction will be gibberish.
+**Rule:** Avoid visual skill rating elements. Do not use progress bars, star ratings, or pie charts to represent your proficiency in a skill (e.g., "Python: 4/5 stars"). The parser cannot read the visual graphic, and the resulting text extraction will be gibberish.
 
-**Rule:** Avoid the "Trust Gap" (LinkedIn De-sync).
-Ensure the CV and public LinkedIn profile remain factually aligned. If dates, titles, or major claims differ across public materials, the candidate creates an avoidable credibility problem.
+**Rule:** Avoid the "Trust Gap" (LinkedIn De-sync). Ensure the CV and public LinkedIn profile remain factually aligned. If dates, titles, or major claims differ across public materials, the candidate creates an avoidable credibility problem.
 
 ## 3. Verification: The Copy-Paste-Friendly test
 
-**Rule:** Always verify the CV using a hard copy-paste into a plain text editor.
-Many modern ATS platforms parse PDFs well, but a plain-text check is still the cheapest way to catch missing text, reordered content, and broken layout before submission.
+**Rule:** Always verify the CV using a hard copy-paste into a plain text editor. Many modern ATS platforms parse PDFs well, but a plain-text check is still the cheapest way to catch missing text, reordered content, and broken layout before submission.
 
 1. Open the finalized PDF in a standard PDF viewer.
 2. Select all text (Ctrl+A / Cmd+A) and perform a hard copy.
@@ -48,9 +43,7 @@ If the text is out of order, missing entirely, or contains strange characters, t
 
 ### The hyperlink masking
 
-**What it looks like:** `[View my GitHub profile here](https://github.com/username)`
-**Why it fails:** When the ATS strips the formatting, the resulting text will just say "View my GitHub profile here," and the actual URL is lost.
-**What to do instead:** Write the URL directly into the text: `GitHub profile: github.com/username`.
+**What it looks like:** `[View my GitHub profile here](https://github.com/username)` **Why it fails:** When the ATS strips the formatting, the resulting text will just say "View my GitHub profile here," and the actual URL is lost. **What to do instead:** Write the URL directly into the text: `GitHub profile: github.com/username`.
 
 ---
 

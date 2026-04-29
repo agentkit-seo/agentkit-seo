@@ -45,8 +45,7 @@ If facts conflict, stop and surface the conflict explicitly.
 
 ## Activity review
 
-Check whether recent posts and comments reinforce the same topic pillars named
-in the profile. Flag these problems:
+Check whether recent posts and comments reinforce the same topic pillars named in the profile. Flag these problems:
 
 - generic praise comments
 - unrelated trend chasing
@@ -55,8 +54,7 @@ in the profile. Flag these problems:
 
 ## Maintenance rules
 
-- update sections when a real new credential, project, role, or public proof
-  exists
+- update sections when a real new credential, project, role, or public proof exists
 - rotate Featured items when newer and stronger proof becomes available
 - reorder skills when target positioning changes
 - keep profile prose current with the user's actual role goals

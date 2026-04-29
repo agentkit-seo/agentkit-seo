@@ -50,15 +50,12 @@ Case-study writing rules:
 
 ## AI retrieval layer
 
-- `llms.txt` is optional and should be treated as curated guidance, not as a
-  second sitemap.
-- `llms-full.txt` can be useful when the site intentionally publishes mirrored,
-  synchronized markdown for full-context retrieval.
+- `llms.txt` is optional and should be treated as curated guidance, not as a second sitemap.
+- `llms-full.txt` can be useful when the site intentionally publishes mirrored, synchronized markdown for full-context retrieval.
 - Keep canonical pages self-contained enough to summarize accurately.
 - If mirrored markdown exists, keep it synchronized with canonical HTML.
 - Separate retrieval policy from training policy where bot controls differ.
 
 ## Confidence rule
 
-Treat AI-discovery conventions such as `llms.txt` as emerging conventions, not
-as search-engine standards.
+Treat AI-discovery conventions such as `llms.txt` as emerging conventions, not as search-engine standards.

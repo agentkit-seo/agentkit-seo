@@ -19,8 +19,7 @@
 
 ## Homepage recipe
 
-The homepage should orient the visitor quickly and route them into deeper
-pages. Keep it concise.
+The homepage should orient the visitor quickly and route them into deeper pages. Keep it concise.
 
 Default structure:
 
@@ -34,13 +33,11 @@ Default writing posture:
 
 - Lead with who the person is and what kind of work they do.
 - Keep role, domain, and proof visible above the fold.
-- Link outward to the strongest supporting pages rather than overloading the
-  homepage with every detail.
+- Link outward to the strongest supporting pages rather than overloading the homepage with every detail.
 
 ## About page recipe
 
-The About page is the main identity page. It should support `ProfilePage` and
-`Person` markup cleanly.
+The About page is the main identity page. It should support `ProfilePage` and `Person` markup cleanly.
 
 Default structure:
 
@@ -52,15 +49,12 @@ Default structure:
 Default writing posture:
 
 - Use factual first-person or close third-person language.
-- Prefer specific domain, stack, and ownership statements over mission
-  language.
-- Keep the page self-contained enough that an agent or search system can
-  summarize the person without stitching together multiple pages.
+- Prefer specific domain, stack, and ownership statements over mission language.
+- Keep the page self-contained enough that an agent or search system can summarize the person without stitching together multiple pages.
 
 ## Project or case-study recipe
 
-Every serious project should have a dedicated detail page with enough depth to
-stand on its own.
+Every serious project should have a dedicated detail page with enough depth to stand on its own.
 
 Default structure:
 
@@ -77,8 +71,7 @@ Writing rules:
 - State exact ownership boundaries when the work was collaborative.
 - Name the intended audience or problem space early.
 - Use screenshots and demos as supporting proof, not as the only explanation.
-- If metrics are unavailable, describe concrete outputs or operational changes
-  instead of inventing impact numbers.
+- If metrics are unavailable, describe concrete outputs or operational changes instead of inventing impact numbers.
 
 ## Metadata recipe
 

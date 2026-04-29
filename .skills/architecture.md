@@ -1,7 +1,6 @@
 # Agent skill architecture
 
-This directory stores the portable skill bundles, provider adapters, and export
-tooling for `AgentKit SEO`.
+This directory stores the portable skill bundles, provider adapters, and export tooling for `AgentKit SEO`.
 
 ## Recommended structure
 
@@ -27,52 +26,34 @@ tooling for `AgentKit SEO`.
 
 ## Why the shared skills are namespaced
 
-The portable skill folders use names like `agentkit-seo-linkedin` instead of
-plain `linkedin` for three reasons:
+The portable skill folders use names like `agentkit-seo-linkedin` instead of plain `linkedin` for three reasons:
 
-1. They avoid collisions with unrelated skills in a user's global skill
-   directory.
-2. OpenCode documents a stricter contract where the skill `name` must match the
-   containing folder name.
-3. Provider adapters can still expose a cleaner command surface on top, such as
-   `/agentkit-seo:linkedin`, where that syntax is actually supported.
+1. They avoid collisions with unrelated skills in a user's global skill directory.
+2. OpenCode documents a stricter contract where the skill `name` must match the containing folder name.
+3. Provider adapters can still expose a cleaner command surface on top, such as `/agentkit-seo:linkedin`, where that syntax is actually supported.
 
 ## Four layers
 
-1. Repo hub:
-   Human-readable editorial docs at the repo root.
-2. Portable skill bundle:
-   Self-contained skills in `.skills/agent-skill/` using `SKILL.md`,
-   `references/`, and `agents/openai.yaml`.
-3. Provider adapter:
-   Install notes, wrappers, or provider-specific templates in
-   `.skills/providers/<provider>/`.
-4. Export layer:
-   Generated provider-facing layouts produced from `.skills/export/`.
+1. Repo hub: Human-readable editorial docs at the repo root.
+2. Portable skill bundle: Self-contained skills in `.skills/agent-skill/` using `SKILL.md`, `references/`, and `agents/openai.yaml`.
+3. Provider adapter: Install notes, wrappers, or provider-specific templates in `.skills/providers/<provider>/`.
+4. Export layer: Generated provider-facing layouts produced from `.skills/export/`.
 
 ## Design rules
 
 1. Keep one portable source of truth in `.skills/agent-skill/`.
 2. Treat provider folders as adapters, not as the canonical workflow logic.
-3. Keep `SKILL.md` lean and procedural; move durable factual guidance into the
-   local `references/` directory inside each skill.
+3. Keep `SKILL.md` lean and procedural; move durable factual guidance into the local `references/` directory inside each skill.
 4. Do not make shared skills depend on repo-root docs at runtime.
-5. Use provider-specific slash commands only as thin wrappers that point the
-   agent at the correct shared skill.
-6. Do not assume one invocation style works everywhere. The slash namespace
-   model is provider-dependent.
-7. Keep provider packaging generated wherever possible; do not hand-maintain a
-   second canonical copy of the skill tree at the repo root.
+5. Use provider-specific slash commands only as thin wrappers that point the agent at the correct shared skill.
+6. Do not assume one invocation style works everywhere. The slash namespace model is provider-dependent.
+7. Keep provider packaging generated wherever possible; do not hand-maintain a second canonical copy of the skill tree at the repo root.
 
 ## Packaging stance
 
-The shared skills should be installable on their own without requiring the
-entire repository checkout. The repo hub remains the editorial workspace, but
-the portable runtime artifact is the `.skills/agent-skill/` tree.
+The shared skills should be installable on their own without requiring the entire repository checkout. The repo hub remains the editorial workspace, but the portable runtime artifact is the `.skills/agent-skill/` tree.
 
-When a provider expects a different directory layout, install or export that
-layout from the canonical `.skills` source tree instead of editing provider
-folders by hand. The reference CLI lives at:
+When a provider expects a different directory layout, install or export that layout from the canonical `.skills` source tree instead of editing provider folders by hand. The reference CLI lives at:
 
 - `.skills/export/export-config.json`
 - `.skills/export/scripts/agentkit-seo.mjs`
@@ -84,17 +65,9 @@ Current supported direct install targets are:
 - `gemini-cli`
 - `opencode`
 
-Gemini CLI installs as an extension at `~/.gemini/extensions/agentkit-seo`.
-The extension includes `gemini-extension.json`, a `GEMINI.md` context file,
-shared skill folders under `skills/`, and namespaced command wrappers under
-`commands/agentkit-seo/`. Gemini exposes those wrappers as commands such as
-`/agentkit-seo:linkedin`. A `--project-root` install can still preview the same
-generated extension layout inside a repository, but the active Gemini extension
-discovery path is the user extension directory.
+Gemini CLI installs as an extension at `~/.gemini/extensions/agentkit-seo`. The extension includes `gemini-extension.json`, a `GEMINI.md` context file, shared skill folders under `skills/`, and namespaced command wrappers under `commands/agentkit-seo/`. Gemini exposes those wrappers as commands such as `/agentkit-seo:linkedin`. A `--project-root` install can still preview the same generated extension layout inside a repository, but the active Gemini extension discovery path is the user extension directory.
 
-OpenCode installs include both shared skill folders and thin flat command
-wrappers. The wrappers live in `.skills/providers/opencode/commands/` and map
-commands such as `/agentkit-seo-linkedin` to the corresponding shared skill.
+OpenCode installs include both shared skill folders and thin flat command wrappers. The wrappers live in `.skills/providers/opencode/commands/` and map commands such as `/agentkit-seo-linkedin` to the corresponding shared skill.
 
 Direct install example:
 
@@ -112,9 +85,7 @@ Current supported export targets are:
 - `gemini-cli`
 - `opencode`
 
-Keep Gemini extension files generated from `.skills/providers/gemini-cli/` and
-the canonical `.skills/agent-skill/` source tree. Do not maintain a second
-Gemini-specific copy of the skill methodology.
+Keep Gemini extension files generated from `.skills/providers/gemini-cli/` and the canonical `.skills/agent-skill/` source tree. Do not maintain a second Gemini-specific copy of the skill methodology.
 
 Preview export example:
 
@@ -126,16 +97,11 @@ node .skills/export/scripts/agentkit-seo.mjs export \
 
 ## Root files and distribution
 
-Keep the source of truth inside `.skills/`. Root-level packaging files should
-exist only when they unlock a real distribution channel.
+Keep the source of truth inside `.skills/`. Root-level packaging files should exist only when they unlock a real distribution channel.
 
 Today that means:
 
-- a minimal root `package.json` is justified if we want an `npx`-friendly CLI
-  for installing, exporting, or packaging the shared skills
-- provider manifests such as `gemini-extension.json` or
-  `.claude-plugin/plugin.json` do not need to live at the repo root while we
-  are still authoring the shared source tree
+- a minimal root `package.json` is justified if we want an `npx`-friendly CLI for installing, exporting, or packaging the shared skills
+- provider manifests such as `gemini-extension.json` or `.claude-plugin/plugin.json` do not need to live at the repo root while we are still authoring the shared source tree
 
-Generate provider-facing manifests only when we intentionally publish a
-provider-specific release artifact.
+Generate provider-facing manifests only when we intentionally publish a provider-specific release artifact.

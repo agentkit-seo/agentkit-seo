@@ -2,24 +2,19 @@
 
 ## What is safe to state
 
-- LinkedIn documents relevance signals tied to profile identity, content, and
-  recent activity.
-- LinkedIn documents that people search depends on the searcher context,
-  completeness, skills, connections, and recognizable job titles.
+- LinkedIn documents relevance signals tied to profile identity, content, and recent activity.
+- LinkedIn documents that people search depends on the searcher context, completeness, skills, connections, and recognizable job titles.
 - Clear positioning and topical consistency are durable bets.
 
 ## What to treat carefully
 
-Public commentary around `360Brew` is not stable enough to present as settled
-production truth.
+Public commentary around `360Brew` is not stable enough to present as settled production truth.
 
 Use this stance:
 
 - `360Brew` is useful as evidence of research direction.
-- It is not safe to describe it as the confirmed live rulebook for all LinkedIn
-  ranking behavior.
-- Creator and vendor claims about full deployment should be labeled as disputed
-  or secondary commentary.
+- It is not safe to describe it as the confirmed live rulebook for all LinkedIn ranking behavior.
+- Creator and vendor claims about full deployment should be labeled as disputed or secondary commentary.
 
 ## Practical inference allowed
 

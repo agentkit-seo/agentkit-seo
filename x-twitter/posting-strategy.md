@@ -29,22 +29,19 @@ There is no official public rule proving a deterministic "first 50 characters" r
 
 Visuals are critical, but AI models and accessibility tools need text context to interpret images reliably.
 
-**Rule:** Add descriptive Alt Text to every image or GIF when possible.
-**Recommendation:** Write Alt Text for accessibility first, then include relevant keywords naturally when accurate to the visual.
+**Rule:** Add descriptive Alt Text to every image or GIF when possible. **Recommendation:** Write Alt Text for accessibility first, then include relevant keywords naturally when accurate to the visual.
 
 ### 2.3 Media enrichment and Video
 
 Native media often improves engagement compared to text-only posts.
 
-**Recommendation:** Prioritize native video and image formats that are easy to consume on mobile.
-**Recommendation:** No official source currently documents a universal reach multiplier for a specific video duration range. Test duration and format against your own audience metrics.
+**Recommendation:** Prioritize native video and image formats that are easy to consume on mobile. **Recommendation:** No official source currently documents a universal reach multiplier for a specific video duration range. Test duration and format against your own audience metrics.
 
 ### 2.4 Thread structuring for dwell time
 
 Threads can increase reading time and create more reply opportunities.
 
-**Recommendation:** Start with 4-8 posts when a topic needs depth, then adjust based on completion and engagement data.
-**Rule:** Use line breaks every 1-2 sentences for mobile readability.
+**Recommendation:** Start with 4-8 posts when a topic needs depth, then adjust based on completion and engagement data. **Rule:** Use line breaks every 1-2 sentences for mobile readability.
 
 ## 3. Examples
 
@@ -66,14 +63,10 @@ Screenshot 2026-04-24
 
 ### Main-body external links
 
-**What it looks like:** Writing a short hook and immediately pasting a YouTube or Substack link.
-**Why it can fail:** A link-first post with low native value often gets weaker engagement. A universal platform-level link penalty is not publicly documented as a hard rule.
-**What to do instead:** Write a comprehensive, zero-click post or thread that delivers the core value natively. Place the external link in the first reply.
+**What it looks like:** Writing a short hook and immediately pasting a YouTube or Substack link. **Why it can fail:** A link-first post with low native value often gets weaker engagement. A universal platform-level link penalty is not publicly documented as a hard rule. **What to do instead:** Write a comprehensive, zero-click post or thread that delivers the core value natively. Place the external link in the first reply.
 
 ### High-frequency burst posting
 
-**What it looks like:** Publishing 4 separate posts within a 10-minute window to "flood the feed."
-**Why it can fail:** Author-diversity components are designed to avoid repetitive feed sessions, so rapid bursts from one account may compete with each other for visibility.
-**What to do instead:** Space out individual posts by several hours, or combine related thoughts into a single formatted thread.
+**What it looks like:** Publishing 4 separate posts within a 10-minute window to "flood the feed." **Why it can fail:** Author-diversity components are designed to avoid repetitive feed sessions, so rapid bursts from one account may compete with each other for visibility. **What to do instead:** Space out individual posts by several hours, or combine related thoughts into a single formatted thread.
 
 ---

@@ -9,10 +9,8 @@
 
 ## Premium rules
 
-- Verify whether the user actually has Premium before suggesting Premium-only
-  tactics.
-- Premium can change product capabilities such as longer posts, longer video,
-  and reply prioritization.
+- Verify whether the user actually has Premium before suggesting Premium-only tactics.
+- Premium can change product capabilities such as longer posts, longer video, and reply prioritization.
 - Treat Premium as additional leverage, not as a viral-growth guarantee.
 - Treat paid Boost tools as separate from organic ranking behavior.
 
@@ -26,8 +24,7 @@
 
 - Use any reply visibility advantage for high-value commentary.
 - Do not farm low-effort replies for exposure.
-- Apply reply-priority advantages to niche-relevant discussions, not random
-  high-volume threads.
+- Apply reply-priority advantages to niche-relevant discussions, not random high-volume threads.
 
 ## Confidence labeling
 

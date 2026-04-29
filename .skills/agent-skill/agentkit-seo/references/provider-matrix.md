@@ -11,15 +11,11 @@ This matrix captures the current adapter assumptions for April 28, 2026.
 
 ## Policy
 
-Do not force one command syntax across all providers. Keep the shared skill
-names stable and let adapters expose the cleanest native interface each provider
-actually supports.
+Do not force one command syntax across all providers. Keep the shared skill names stable and let adapters expose the cleanest native interface each provider actually supports.
 
 ## Packaging policy
 
-The provider-facing artifact should be the self-contained shared skill bundle.
-Provider adapters may add wrapper commands, installer metadata, or export
-layout, but they should not become alternate knowledge bases.
+The provider-facing artifact should be the self-contained shared skill bundle. Provider adapters may add wrapper commands, installer metadata, or export layout, but they should not become alternate knowledge bases.
 
 ## Current command wrapper status
 

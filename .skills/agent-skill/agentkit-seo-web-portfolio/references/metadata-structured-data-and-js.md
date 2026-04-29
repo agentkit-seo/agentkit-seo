@@ -16,8 +16,7 @@
 - Write a real meta description for important pages.
 - Keep visible copy aligned with metadata.
 - Choose one canonical host and protocol.
-- Keep the visible `h1` aligned with the page topic so titles and headings do
-  not send conflicting signals.
+- Keep the visible `h1` aligned with the page topic so titles and headings do not send conflicting signals.
 
 ## Social-preview rules
 
@@ -32,8 +31,7 @@
 - Homepage: `WebSite`
 - About/profile page: `ProfilePage` with `Person`
 - hierarchical pages: `BreadcrumbList`
-- software project pages: `SoftwareSourceCode` or `SoftwareApplication` when
-  the visible page actually supports that type
+- software project pages: `SoftwareSourceCode` or `SoftwareApplication` when the visible page actually supports that type
 - writing pages: article-type markup where appropriate
 - outbound identity links: `rel="me"` where useful
 
@@ -42,10 +40,8 @@ Keep markup aligned with visible content. Do not pile on unrelated schema types.
 ## JavaScript SEO rules
 
 - Prefer static generation, SSR, or hybrid rendering for core pages.
-- Ensure titles, headings, primary copy, canonical tags, structured data, and
-  important links exist in rendered HTML.
+- Ensure titles, headings, primary copy, canonical tags, structured data, and important links exist in rendered HTML.
 - Lazy-load media, not the main meaning of the page.
-- Provide lightweight fallback identity content when a strict environment may
-  skip JS entirely.
+- Provide lightweight fallback identity content when a strict environment may skip JS entirely.
 - Return real status codes for missing pages.
 - Treat dynamic rendering as a workaround, not the ideal default.

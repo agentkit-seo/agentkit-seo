@@ -1,72 +1,56 @@
 ---
 name: agentkit-seo-agent-context-optimization
-description: Build, normalize, and maintain the user's personal professional
-  source-of-truth context so downstream platform outputs stay factual and
-  consistent. Use when the user wants to consolidate CV data, LinkedIn exports,
-  GitHub history, project summaries, bio facts, achievements, or positioning
-  into a single agent-readable context file before editing platform-specific
-  assets.
+description: Build, normalize, and maintain the user's personal professional source-of-truth context so downstream platform outputs stay factual and consistent. Use when the user wants to consolidate CV data, LinkedIn exports, GitHub history, project summaries, bio facts, achievements, or positioning into a single agent-readable context file before editing platform-specific assets.
 ---
 
 # AgentKit SEO Agent Context Optimization
 
 ## Overview
 
-Use this skill before any cross-platform optimization pass that depends on a
-stable factual record. The goal is to turn scattered inputs into one reliable,
-agent-readable context file.
+Use this skill before any cross-platform optimization pass that depends on a stable factual record. The goal is to turn scattered inputs into one reliable, agent-readable context file.
 
 ## Workflow
 
-1. Read [references/why-and-when.md](references/why-and-when.md) when deciding
-   whether a context file is needed before other optimization work.
-2. Read [references/spec-and-structure.md](references/spec-and-structure.md)
-   before drafting, validating, or restructuring the file.
-3. Read [references/drafting-template.md](references/drafting-template.md)
-   when creating a new file or repairing a weak one into the canonical shape.
-4. Read [references/maintenance-and-validation.md](references/maintenance-and-validation.md)
-   when integrating new material, managing growth, or checking file integrity.
-5. Read [references/operating-workflow.md](references/operating-workflow.md)
-   when combining the context file with downstream platform skills.
-6. Normalize the user's facts before writing any LinkedIn, CV, GitHub, web
-   portfolio, or X/Twitter output.
+Load only the references needed for the task:
+
+- Need to decide whether a context file is needed: [references/why-and-when.md](references/why-and-when.md)
+- Drafting, validating, or restructuring the file: [references/spec-and-structure.md](references/spec-and-structure.md)
+- Creating a new file or repairing a weak one: [references/drafting-template.md](references/drafting-template.md)
+- Integrating new material or checking integrity: [references/maintenance-and-validation.md](references/maintenance-and-validation.md)
+- Combining the context file with platform skills: [references/operating-workflow.md](references/operating-workflow.md)
+
+Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfolio, or X/Twitter output.
+
+## Token discipline
+
+- Do not load all references by default.
+- Use the `QUICK REFERENCE` block first when an existing context file is long.
+- Read detailed entries only for claims used in the current output.
+- Ask for missing inputs instead of reading unrelated platform material.
 
 ## Intake workflow
 
 - If the user supplies an existing context file path, read it first.
-- If no path is supplied, ask whether to create or use the default
-  `~/.agentkit-seo/context.md` location.
-- If the user gives scattered material, normalize it into the canonical context
-  structure before platform rewriting.
-- Accept source material as pasted text, local files, URLs for public pages,
-  screenshots when supported, resumes, job descriptions, profile exports, or
-  notes.
-- Fetch public URLs when tools allow it. Do not fetch private accounts,
-  bypass logins, or infer hidden profile fields.
-- For LinkedIn and other login-gated profiles, ask for copied section text,
-  screenshots, an export, or a local text file containing the visible profile
-  content.
-- Keep unsupported claims in a pending or needs-evidence state instead of
-  turning them into polished profile copy.
+- If no path is supplied, ask whether to create or use the default `~/.agentkit-seo/context.md` location.
+- If the user gives scattered material, normalize it into the canonical context structure before platform rewriting.
+- Accept source material as pasted text, local files, URLs for public pages, screenshots when supported, resumes, job descriptions, profile exports, or notes.
+- Fetch public URLs when tools allow it. Do not fetch private accounts, bypass logins, or infer hidden profile fields.
+- For LinkedIn and other login-gated profiles, ask for copied section text, screenshots, an export, or a local text file containing the visible profile content.
+- Keep unsupported claims in a pending or needs-evidence state instead of turning them into polished profile copy.
 
 ## Rules
 
 - Preserve facts over polish.
 - Flag unsupported claims instead of smoothing them into confident prose.
-- Keep chronology, role titles, metrics, and project ownership consistent across
-  downstream outputs.
+- Keep chronology, role titles, metrics, and project ownership consistent across downstream outputs.
 - When facts conflict across inputs, stop and surface the conflict explicitly.
-- Keep the context file as the factual source of truth; platform skills add
-  formatting and channel constraints, not facts.
-- When drafting from scratch, produce the canonical section order first and
-  populate only verified material.
-- When updating an existing file, prefer targeted entry-level edits over
-  rewriting the whole document.
+- Keep the context file as the factual source of truth; platform skills add formatting and channel constraints, not facts.
+- When drafting from scratch, produce the canonical section order first and populate only verified material.
+- When updating an existing file, prefer targeted entry-level edits over rewriting the whole document.
 
 ## Handoff
 
-Once the context file is clean, hand off to exactly one target platform skill
-unless the user explicitly requests a multi-surface pass.
+Once the context file is clean, hand off to exactly one target platform skill unless the user explicitly requests a multi-surface pass.
 
 ## Response shape
 

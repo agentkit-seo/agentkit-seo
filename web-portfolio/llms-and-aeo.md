@@ -20,23 +20,17 @@ Traditional SEO is still the base layer of discoverability, but personal website
 
 ## 2. Best practices
 
-**Recommendation:** Publish `/llms.txt` if AI retrieval is part of the site's goals.
-`llms.txt` is not a Google or Bing indexing standard. It is a community proposal for inference-time guidance intended to help language models understand what a site contains and where the most useful pages live.
+**Recommendation:** Publish `/llms.txt` if AI retrieval is part of the site's goals. `llms.txt` is not a Google or Bing indexing standard. It is a community proposal for inference-time guidance intended to help language models understand what a site contains and where the most useful pages live.
 
-**Rule:** Treat `llms.txt` as a curated guide, not as a shadow sitemap.
-List the most important pages only: homepage, About page, Projects hub, best project-detail pages, writing hub, and selected articles or case studies. The file should stay short enough to be genuinely useful to a model with limited context.
+**Rule:** Treat `llms.txt` as a curated guide, not as a shadow sitemap. List the most important pages only: homepage, About page, Projects hub, best project-detail pages, writing hub, and selected articles or case studies. The file should stay short enough to be genuinely useful to a model with limited context.
 
-**Recommendation:** Publish `/llms-full.txt` to provide a complete context dump.
-While `llms.txt` serves as a lightweight index, the proposed `llms-full.txt` variant contains the full Markdown content of the most important pages on the site. For developer portfolios, a self-contained context file can help models summarize projects with fewer external fetch requests.
+**Recommendation:** Publish `/llms-full.txt` to provide a complete context dump. While `llms.txt` serves as a lightweight index, the proposed `llms-full.txt` variant contains the full Markdown content of the most important pages on the site. For developer portfolios, a self-contained context file can help models summarize projects with fewer external fetch requests.
 
-**Recommendation:** Keep canonical pages concise and self-contained.
-LLM retrieval works better when a project page can be summarized accurately from its own content. Do not force agents to reconstruct meaning by stitching together dozens of fragments across the site.
+**Recommendation:** Keep canonical pages concise and self-contained. LLM retrieval works better when a project page can be summarized accurately from its own content. Do not force agents to reconstruct meaning by stitching together dozens of fragments across the site.
 
-**Recommendation:** Make crawler policy explicit when AI search visibility matters.
-OpenAI's guidance for ChatGPT Search is clear: inclusion depends in part on allowing `OAI-Searchbot`. Other vendors also expose separate bots for different functions. Keep the site's `robots.txt` policy intentional instead of assuming every crawler behaves like Googlebot.
+**Recommendation:** Make crawler policy explicit when AI search visibility matters. OpenAI's guidance for ChatGPT Search is clear: inclusion depends in part on allowing `OAI-Searchbot`. Other vendors also expose separate bots for different functions. Keep the site's `robots.txt` policy intentional instead of assuming every crawler behaves like Googlebot.
 
-**Recommendation:** Separate retrieval policy from training policy when the provider supports distinct bots.
-Some vendors use one bot for search or user-directed retrieval and another for model training or general crawling. Treat these as separate policy decisions.
+**Recommendation:** Separate retrieval policy from training policy when the provider supports distinct bots. Some vendors use one bot for search or user-directed retrieval and another for model training or general crawling. Treat these as separate policy decisions.
 
 ## 3. Examples
 
@@ -62,9 +56,7 @@ Good example:
 
 ### The duplicate shadow site
 
-**What it looks like:** Separate AI-only markdown pages start to drift away from the canonical HTML pages, with different dates, claims, or project descriptions.
-**Why it fails:** Humans, search engines, and AI systems end up reading conflicting versions of the same site.
-**What to do instead:** Keep `llms.txt` lightweight and point back to the canonical public URLs. If markdown mirrors exist, treat them as synchronized derivatives, not alternative truth sources.
+**What it looks like:** Separate AI-only markdown pages start to drift away from the canonical HTML pages, with different dates, claims, or project descriptions. **Why it fails:** Humans, search engines, and AI systems end up reading conflicting versions of the same site. **What to do instead:** Keep `llms.txt` lightweight and point back to the canonical public URLs. If markdown mirrors exist, treat them as synchronized derivatives, not alternative truth sources.
 
 ---
 

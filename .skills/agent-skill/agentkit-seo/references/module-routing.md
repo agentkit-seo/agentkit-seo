@@ -13,8 +13,7 @@ Use this routing table when deciding which AgentKit SEO skill to load.
 
 ## Cross-platform sequence
 
-When a request spans multiple surfaces, use this order unless the user asks
-otherwise:
+When a request spans multiple surfaces, use this order unless the user asks otherwise:
 
 1. `agentkit-seo-agent-context-optimization`
 2. Target output surface, such as `agentkit-seo-linkedin`

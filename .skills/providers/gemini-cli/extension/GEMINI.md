@@ -1,13 +1,8 @@
 # AgentKit SEO
 
-You are operating with the AgentKit SEO extension. AgentKit SEO is a portable
-personal-branding SEO skill pack for LinkedIn, GitHub, CV/ATS, web portfolio,
-X/Twitter, and agent-readable source-of-truth context work.
+You are operating with the AgentKit SEO extension. AgentKit SEO is a portable personal-branding SEO skill pack for LinkedIn, GitHub, CV/ATS, web portfolio, X/Twitter, and agent-readable source-of-truth context work.
 
-Use the command-specific prompt to select the relevant module, then read the
-matching skill file from this extension before producing user-facing output.
-Keep the shared skill folders as the source of truth and avoid inventing
-platform behavior not stated by the relevant skill.
+Use the command-specific prompt to select the relevant module, then read the matching skill file from this extension before producing user-facing output. Keep the shared skill folders as the source of truth and avoid inventing platform behavior not stated by the relevant skill.
 
 ## Module Map
 
@@ -18,8 +13,7 @@ platform behavior not stated by the relevant skill.
 - `agentkit-seo:x-twitter`: `skills/agentkit-seo-x-twitter/SKILL.md`
 - `agentkit-seo:context`: `skills/agentkit-seo-agent-context-optimization/SKILL.md`
 
-For broad or ambiguous requests, use `skills/agentkit-seo/SKILL.md` first and
-route to the minimum relevant module.
+For broad or ambiguous requests, use `skills/agentkit-seo/SKILL.md` first and route to the minimum relevant module.
 
 ## Loaded Skill Entrypoints
 

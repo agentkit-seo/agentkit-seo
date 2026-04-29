@@ -20,32 +20,23 @@ Structured data does not replace good content or good architecture, but it gives
 
 ## 2. Best practices
 
-**Rule:** Put `WebSite` structured data on the homepage.
-Use the homepage to define the site's preferred name and canonical root URL. This supports site-name interpretation and creates a stable top-level identity signal.
+**Rule:** Put `WebSite` structured data on the homepage. Use the homepage to define the site's preferred name and canonical root URL. This supports site-name interpretation and creates a stable top-level identity signal.
 
-**Rule:** Use `ProfilePage` with a `Person` `mainEntity` on the About page or author page.
-Google explicitly supports `ProfilePage` for pages whose primary focus is a single person or organization. A personal About page is a valid use case when the visible content is genuinely centered on the person behind the site.
+**Rule:** Use `ProfilePage` with a `Person` `mainEntity` on the About page or author page. Google explicitly supports `ProfilePage` for pages whose primary focus is a single person or organization. A personal About page is a valid use case when the visible content is genuinely centered on the person behind the site.
 
-**Recommendation:** Use `BreadcrumbList` on nested project and writing pages.
-Breadcrumbs help reinforce hierarchy on pages that sit below a hub such as `/projects/` or `/writing/`.
+**Recommendation:** Use `BreadcrumbList` on nested project and writing pages. Breadcrumbs help reinforce hierarchy on pages that sit below a hub such as `/projects/` or `/writing/`.
 
-**Recommendation:** Use `SoftwareSourceCode` or `SoftwareApplication` on developer project pages.
-Generic `Article` schema is often incorrect for a deployed tool or a GitHub repository write-up. Use `SoftwareSourceCode` for open-source repositories and `SoftwareApplication` for deployed applications or SaaS projects to accurately describe the project's requirements, language, and operating system.
+**Recommendation:** Use `SoftwareSourceCode` or `SoftwareApplication` on developer project pages. Generic `Article` schema is often incorrect for a deployed tool or a GitHub repository write-up. Use `SoftwareSourceCode` for open-source repositories and `SoftwareApplication` for deployed applications or SaaS projects to accurately describe the project's requirements, language, and operating system.
 
-**Recommendation:** Use `Article` or `BlogPosting` only for real editorial pages.
-Case studies, technical essays, and blog posts can use article markup when they have visible headings, body copy, dates, and author information. A generic project landing page should not pretend to be an article if it is not written as one.
+**Recommendation:** Use `Article` or `BlogPosting` only for real editorial pages. Case studies, technical essays, and blog posts can use article markup when they have visible headings, body copy, dates, and author information. A generic project landing page should not pretend to be an article if it is not written as one.
 
-**Recommendation:** Link authors to a real author or About URL.
-When article markup includes an author, use `Person` and provide a valid `url` or `sameAs` value that points to a page or profile that identifies the author clearly.
+**Recommendation:** Link authors to a real author or About URL. When article markup includes an author, use `Person` and provide a valid `url` or `sameAs` value that points to a page or profile that identifies the author clearly.
 
-**Recommendation:** Use `rel="me"` for cross-platform identity verification.
-On outbound links to external profiles (e.g., GitHub, LinkedIn, Mastodon), include the `rel="me"` attribute. This serves as a decentralized identity-verification function, helping AI disambiguation systems and search engines confirm that the portfolio and the social profiles belong to the exact same entity.
+**Recommendation:** Use `rel="me"` for cross-platform identity verification. On outbound links to external profiles (e.g., GitHub, LinkedIn, Mastodon), include the `rel="me"` attribute. This serves as a decentralized identity-verification function, helping AI disambiguation systems and search engines confirm that the portfolio and the social profiles belong to the exact same entity.
 
-**Rule:** Keep markup aligned with visible page content.
-Structured data must describe what users can actually see on the page. Hidden, misleading, or generic markup can invalidate rich-result eligibility and weaken trust signals.
+**Rule:** Keep markup aligned with visible page content. Structured data must describe what users can actually see on the page. Hidden, misleading, or generic markup can invalidate rich-result eligibility and weaken trust signals.
 
-**Rule:** Do not expect blocked or `noindex` pages to yield rich-result benefits.
-If a page is blocked from Googlebot or marked `noindex`, search systems cannot reliably use the structured data on that page for search appearance.
+**Rule:** Do not expect blocked or `noindex` pages to yield rich-result benefits. If a page is blocked from Googlebot or marked `noindex`, search systems cannot reliably use the structured data on that page for search appearance.
 
 ## 3. Validation workflow
 
@@ -83,9 +74,7 @@ Good example:
 
 ### The fake rich-result stack
 
-**What it looks like:** Marking the homepage as a product, review, article, event, and FAQ page because a plugin suggested every available schema type.
-**Why it fails:** The markup no longer matches the visible focus of the page. At best it is ignored; at worst it becomes a quality problem.
-**What to do instead:** Mark up the primary purpose of each page only. Home page gets site identity. About page gets profile identity. Writing pages get article identity. Hierarchical pages get breadcrumbs.
+**What it looks like:** Marking the homepage as a product, review, article, event, and FAQ page because a plugin suggested every available schema type. **Why it fails:** The markup no longer matches the visible focus of the page. At best it is ignored; at worst it becomes a quality problem. **What to do instead:** Mark up the primary purpose of each page only. Home page gets site identity. About page gets profile identity. Writing pages get article identity. Hierarchical pages get breadcrumbs.
 
 ---
 

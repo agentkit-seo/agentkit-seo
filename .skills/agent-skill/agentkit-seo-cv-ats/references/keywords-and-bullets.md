@@ -10,8 +10,7 @@
 ## Keyword rules
 
 - prioritize hard skills, tools, platforms, and domain terms
-- mirror exact phrasing for important hard-skill terms where the job
-  description uses specific wording
+- mirror exact phrasing for important hard-skill terms where the job description uses specific wording
 - on first mention, include both the long form and acronym when useful
 - use transferable-skill translation carefully when the user is changing domain
 - do not keyword-stuff or hide text
@@ -21,8 +20,7 @@
 - put important keywords into context-rich bullet points
 - show how the skill was used, not just that it exists
 - weave key terms into the professional summary when they reflect real fit
-- balance tailoring with speed; do not miss the application window by
-  over-polishing
+- balance tailoring with speed; do not miss the application window by over-polishing
 
 ## Bullet formula
 
@@ -41,8 +39,7 @@ Good frameworks:
 - start with an action verb
 - use active voice
 - quantify outcomes when defensible
-- if exact numbers are unknown, use careful, defensible estimates only when the
-  wording makes that clear
+- if exact numbers are unknown, use careful, defensible estimates only when the wording makes that clear
 - translate duties into achievements
 - avoid repeating the same keyword in multiple trivial variants
 

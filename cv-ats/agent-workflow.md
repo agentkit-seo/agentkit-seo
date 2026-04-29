@@ -20,39 +20,30 @@ While word processors like Microsoft Word are standard for humans, they introduc
 
 ## 2. The LaTeX advantage
 
-**Rule:** Use `.tex` as the source of truth for programmatic CV generation.
-LaTeX files are pure plain text. This allows AI agents to directly inject keywords, rewrite bullet points, and reorder sections without ever breaking the visual layout. 
+**Rule:** Use `.tex` as the source of truth for programmatic CV generation. LaTeX files are pure plain text. This allows AI agents to directly inject keywords, rewrite bullet points, and reorder sections without ever breaking the visual layout.
 
-**Recommendation:** Compile `.tex` directly to PDF for the final ATS submission.
-A PDF generated from LaTeX gives strong control over layout, margins, and typography. Unlike Word-to-PDF exports that can scramble the underlying text layer with floating text boxes, `pdflatex` or `xelatex` usually produces a cleaner text layer. The exported PDF still needs to pass a plain-text extraction check before submission.
+**Recommendation:** Compile `.tex` directly to PDF for the final ATS submission. A PDF generated from LaTeX gives strong control over layout, margins, and typography. Unlike Word-to-PDF exports that can scramble the underlying text layer with floating text boxes, `pdflatex` or `xelatex` usually produces a cleaner text layer. The exported PDF still needs to pass a plain-text extraction check before submission.
 
 ## 3. Agent workflow constraints
 
-**Rule:** Maintain strict separation of content and styling macros.
-When an agent edits a `.tex` file, it must only modify the content strings within predefined macros (e.g., `\cventry{Role}{Date}`). Do not alter the document preamble (`\usepackage`, `\geometry`) unless explicitly directed to change the global design.
+**Rule:** Maintain strict separation of content and styling macros. When an agent edits a `.tex` file, it must only modify the content strings within predefined macros (e.g., `\cventry{Role}{Date}`). Do not alter the document preamble (`\usepackage`, `\geometry`) unless explicitly directed to change the global design.
 
-**Recommendation:** Use the provided templates as the baseline.
-The files in `cv-ats/examples/` are personal worked examples, not normative templates. Use them only to understand how real application artifacts can look in practice; apply the canonical rules from this workflow, the formatting rules, and the templates when generating or editing user-facing CVs.
+**Recommendation:** Use the provided templates as the baseline. The files in `cv-ats/examples/` are personal worked examples, not normative templates. Use them only to understand how real application artifacts can look in practice; apply the canonical rules from this workflow, the formatting rules, and the templates when generating or editing user-facing CVs.
 
 ## 4. Examples
 
 Good example:
 ```latex
 <!-- CORRECT -->
-% Clean, macro-driven content injection
-\mysection{Experience}
-\cventry{Security Engineer Intern, Tech Corp}{Feb 2026 - Present}
-\begin{itemize}
-    \item Architected a microservices backend...
-\end{itemize}
+% Clean, macro-driven content injection \mysection{Experience} \cventry{Security Engineer Intern, Tech Corp}{Feb 2026 - Present} \begin{itemize}
+    \item Architected a microservices backend... \end{itemize}
 ```
 *Why it works:* The agent can easily locate the `\cventry` and the `itemize` block using regex or basic parsing, safely injecting new bullet points tailored to a specific job description without affecting the alignment of the date.
 
 Bad example:
 ```latex
 <!-- WRONG -->
-% Hardcoded spatial formatting
-\noindent \textbf{Security Engineer Intern, Tech Corp} \hspace{4cm} \textbf{Feb 2026 - Present} \\
+% Hardcoded spatial formatting \noindent \textbf{Security Engineer Intern, Tech Corp} \hspace{4cm} \textbf{Feb 2026 - Present} \\
 Architected a microservices backend...
 ```
 *Why it fails:* Manual spacing (`\hspace`) and forced line breaks (`\\`) make the document fragile. If the agent changes the job title length, the date alignment will break.

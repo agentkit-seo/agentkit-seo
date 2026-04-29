@@ -15,15 +15,13 @@ Treat these as the stable signal groups that matter:
 - content: topic clarity, recency, usefulness
 - activity: recent engagement, recent conversations, recent interactions
 
-Do not frame LinkedIn visibility as a single global rank position. Relevance is
-contextual to the searcher and the session.
+Do not frame LinkedIn visibility as a single global rank position. Relevance is contextual to the searcher and the session.
 
 ## AI and parser readability rules
 
 - use standard terminology for roles and tools
 - explicitly state target role and core competencies
-- duplicate important facts in structured profile fields, not only in the About
-  section
+- duplicate important facts in structured profile fields, not only in the About section
 - keep claims easy to understand after plain-text extraction
 - prefer proof-backed claims over unsupported assertions
 
@@ -36,10 +34,8 @@ contextual to the searcher and the session.
 
 ## Commenting strategy
 
-- add real expertise in comments: examples, lessons, clarifications,
-  counterpoints
-- stay inside the professional topics the user wants associated with the
-  profile
+- add real expertise in comments: examples, lessons, clarifications, counterpoints
+- stay inside the professional topics the user wants associated with the profile
 - prioritize constructiveness over volume
 - avoid generic praise comments
 
@@ -58,5 +54,4 @@ When advising on activity, produce grounded recommendations such as:
 - comment style guidance
 - practical profile-field improvements
 
-Avoid folklore like fixed golden-hour rules or exact engagement thresholds
-unless the source is official.
+Avoid folklore like fixed golden-hour rules or exact engagement thresholds unless the source is official.

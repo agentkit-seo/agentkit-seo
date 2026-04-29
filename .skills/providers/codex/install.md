@@ -2,8 +2,7 @@
 
 ## Preferred install target
 
-Keep Codex compatibility centered on the shared `SKILL.md` folders and the
-`agents/openai.yaml` metadata already bundled in each shared skill.
+Keep Codex compatibility centered on the shared `SKILL.md` folders and the `agents/openai.yaml` metadata already bundled in each shared skill.
 
 In practice, the reusable source of truth is:
 
@@ -13,9 +12,7 @@ In practice, the reusable source of truth is:
 
 ## Source-first workflow
 
-Do not hand-maintain a second Codex skill tree in the repo root. Author in
-`.skills/agent-skill/`, keep Codex adapter notes in
-`.skills/providers/codex/`, then install a Codex-facing layout when needed.
+Do not hand-maintain a second Codex skill tree in the repo root. Author in `.skills/agent-skill/`, keep Codex adapter notes in `.skills/providers/codex/`, then install a Codex-facing layout when needed.
 
 For the published package, the default command is:
 
@@ -23,8 +20,7 @@ For the published package, the default command is:
 npx agentkit-seo install --provider codex
 ```
 
-This installs the shared skills into `CODEX_HOME/skills` when `CODEX_HOME` is
-set, otherwise into:
+This installs the shared skills into `CODEX_HOME/skills` when `CODEX_HOME` is set, otherwise into:
 
 - `~/.codex/skills/`
 
@@ -49,9 +45,7 @@ Use `export` only when you want a preview bundle or a packaging artifact.
 
 ## Invocation model
 
-Codex skills are better treated as explicit skills than as slash commands.
-Design the Codex experience around selecting or explicitly invoking the shared
-skill, for example:
+Codex skills are better treated as explicit skills than as slash commands. Design the Codex experience around selecting or explicitly invoking the shared skill, for example:
 
 - `$agentkit-seo-linkedin`
 - `$agentkit-seo-github`
@@ -59,6 +53,4 @@ skill, for example:
 
 ## Practical recommendation
 
-Do not force a slash-command abstraction onto Codex. Keep the core workflow in
-the shared skills and let Codex use them through its native skill selection
-flow.
+Do not force a slash-command abstraction onto Codex. Keep the core workflow in the shared skills and let Codex use them through its native skill selection flow.

@@ -68,8 +68,7 @@ For each URL, verify:
 - Every serious project has a dedicated detail page.
 - Case studies explain role, scope, constraints, and outcome.
 - Proof links resolve and point to real demos, repositories, or artifacts.
-- Stale or weak pages are updated, merged, redirected, or removed from the
-  canonical set.
+- Stale or weak pages are updated, merged, redirected, or removed from the canonical set.
 
 ## Metadata and schema checklist
 
@@ -85,8 +84,7 @@ For each URL, verify:
 - Mobile retains the same main content and metadata as desktop.
 - Main meaning is present in rendered HTML.
 - Images reserve dimensions and use meaningful alt text where appropriate.
-- Large media and ornamentation do not delay the main heading or first
-  paragraph.
+- Large media and ornamentation do not delay the main heading or first paragraph.
 - HTTPS is enforced consistently.
 
 ## Maintenance rules
@@ -94,8 +92,7 @@ For each URL, verify:
 - Re-audit the canonical pages after major design, routing, or CMS changes.
 - Recheck metadata and structured data after template edits.
 - Update `llms.txt` or mirrored markdown only when canonical pages also change.
-- Remove or repair broken proof links quickly; they age a portfolio faster than
-  modest design flaws do.
+- Remove or repair broken proof links quickly; they age a portfolio faster than modest design flaws do.
 
 ## Code-edit safety workflow
 
@@ -104,13 +101,11 @@ When the task requires changing portfolio source code:
 1. identify the exact pages, templates, or metadata files involved
 2. state the SEO, AEO, accessibility, or crawlability purpose of the edit
 3. preserve existing styling and behavior unless the user requests a redesign
-4. prefer metadata, structured data, semantic HTML, link, and copy fixes before
-   layout changes
+4. prefer metadata, structured data, semantic HTML, link, and copy fixes before layout changes
 5. run the available build, lint, test, or preview command when one exists
 6. report any verification step that could not be performed
 
-Default to a proposed diff or dry-run plan when the requested edit may affect
-layout, routing, hydration, or application logic.
+Default to a proposed diff or dry-run plan when the requested edit may affect layout, routing, hydration, or application logic.
 
 ## Output format for audits
 

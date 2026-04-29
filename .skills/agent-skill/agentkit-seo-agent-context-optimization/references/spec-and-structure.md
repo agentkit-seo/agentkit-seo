@@ -27,8 +27,7 @@ Recommended default location when the user wants a reusable path:
 ~/.agentkit-seo/context.md
 ```
 
-This path is a convention, not a requirement. An explicit path supplied by the
-user always wins.
+This path is a convention, not a requirement. An explicit path supplied by the user always wins.
 
 Required and conditional sections, in order:
 
@@ -43,8 +42,7 @@ Required and conditional sections, in order:
 9. languages
 10. extracurricular and leadership if any
 
-Do not move required sections for style reasons. The stable order is part of
-the interface the agent relies on.
+Do not move required sections for style reasons. The stable order is part of the interface the agent relies on.
 
 ## Title rule
 
@@ -54,8 +52,7 @@ Use one H1 in this form:
 # Full Name - positioning descriptor
 ```
 
-The descriptor should express current positioning, not merely the current job
-title.
+The descriptor should express current positioning, not merely the current job title.
 
 ## QUICK REFERENCE rules
 
@@ -90,18 +87,14 @@ The scope declaration is one short third-person paragraph stating:
 - what it is not
 - what it is for
 
-Close it with a `VERIFIED FACTS` HTML comment for atomic facts that must not be
-guessed.
+Close it with a `VERIFIED FACTS` HTML comment for atomic facts that must not be guessed.
 
 ## Body rules
 
-- use stable section tags like `[DEGREE]`, `[COURSE]`, `[PROJECT]`, `[THESIS]`,
-  `[ROLE]`, `[PAPER]`, `[PREPRINT]`, `[CERT]`, `[COMPETITION]`, `[AWARD]`, and
-  `[ORG]` when relevant
+- use stable section tags like `[DEGREE]`, `[COURSE]`, `[PROJECT]`, `[THESIS]`, `[ROLE]`, `[PAPER]`, `[PREPRINT]`, `[CERT]`, `[COMPETITION]`, `[AWARD]`, and `[ORG]` when relevant
 - include `TL;DR` lines where the structure requires them
 - keep project technologies and outcomes explicit
-- keep the skills index evidence-backed; each listed skill should be supported
-  somewhere else in the file
+- keep the skills index evidence-backed; each listed skill should be supported somewhere else in the file
 - write role detail as concise quantified bullets rather than narrative blocks
 - write the languages section as a table rather than prose
 
@@ -109,17 +102,14 @@ guessed.
 
 - Degrees: `## [DEGREE] ...` plus one sentence on focus and relevance
 - Courses: `#### [COURSE] ...` plus a flat `Topics:` line
-- Projects: `##### [PROJECT] ...` plus required `TL;DR`, `Description`,
-  `Technologies`, `Key areas`, and `Results`
-- Thesis: `### [THESIS] ...` plus `Full title`, `Supervisors`,
-  `Research area`, and `TL;DR`
+- Projects: `##### [PROJECT] ...` plus required `TL;DR`, `Description`, `Technologies`, `Key areas`, and `Results`
+- Thesis: `### [THESIS] ...` plus `Full title`, `Supervisors`, `Research area`, and `TL;DR`
 - Roles: `### [ROLE] ...` plus `TL;DR` and evidence-rich bullets
 - Papers/preprints: `### [PAPER] ...` or `### [PREPRINT] ...` plus `TL;DR`
 
 ## Integrity rule
 
-Keep a `VERIFIED FACTS` comment in the scope declaration for atomic facts that
-must not be guessed:
+Keep a `VERIFIED FACTS` comment in the scope declaration for atomic facts that must not be guessed:
 
 - dates
 - grades
@@ -130,5 +120,4 @@ must not be guessed:
 
 ## Validation mindset
 
-When validating an existing file, check structure first, then chronology, then
-evidence backing. A polished file with weak factual anchors is still invalid.
+When validating an existing file, check structure first, then chronology, then evidence backing. A polished file with weak factual anchors is still invalid.

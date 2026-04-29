@@ -16,8 +16,7 @@
 - Use `noindex` for deindexing, not `robots.txt`.
 - Publish `/robots.txt` and include the sitemap location.
 - Publish `/sitemap.xml` with canonical, index-worthy URLs only.
-- Do not rely on deprecated Google sitemap ping behavior; use Search Console,
-  `robots.txt`, and normal crawling.
+- Do not rely on deprecated Google sitemap ping behavior; use Search Console, `robots.txt`, and normal crawling.
 
 ## Submission workflow
 

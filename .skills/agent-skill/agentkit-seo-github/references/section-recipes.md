@@ -94,5 +94,4 @@ Topic tags:
 
 - preserve facts and sharpen packaging
 - when evidence is weak, say what documentation or structure is missing
-- keep the same repository positioning across name, About text, README, and
-  topics
+- keep the same repository positioning across name, About text, README, and topics
