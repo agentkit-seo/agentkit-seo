@@ -24,11 +24,24 @@ Load only the references needed for the task:
 - For a URL audit, inspect homepage, robots, sitemap, and only priority pages first.
 - For local source work, search for metadata, routes, layout, and structured data before opening broad files.
 - Do not load content-writing references for a technical crawlability fix.
+- Prefer rendered/public HTML, route metadata, sitemap, robots, and page templates before reading broad content files.
+- Keep source ledgers compact: list input groups, not every asset or route.
+- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+
+## Depth contract
+
+Use the smallest audit depth that can answer the request honestly:
+
+- `Quick scan`: homepage, robots, sitemap, title/meta/canonical basics, main navigation, and visible positioning.
+- `Default audit`: quick scan plus up to 2 user-specified or visibly priority pages, structured data, Open Graph, internal links, and top project pages when available.
+- `Deep audit`: full route inventory, built HTML/source templates, performance/mobile checks, redirects/status codes, schema validation, broken links, and code edits.
+
+Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an optional next step when the current answer would benefit from more evidence. Do not choose `Deep audit` silently unless the user asks for a full site audit, exact code changes, launch validation, or every important route checked.
 
 ## Intake workflow
 
 - If the user provides a public portfolio URL, fetch and inspect the homepage, important pages, metadata, canonicals, sitemap, robots, structured data, and visible copy when tools allow it.
-- If the portfolio source is available locally, inspect the source and prefer direct code edits for metadata, structured data, semantic HTML, links, and content.
+- If the portfolio source is available locally and the user asks for implementation, inspect the source and prefer direct code edits for metadata, structured data, semantic HTML, links, and content. For audit-only requests, return patch-ready recommendations unless the user asks to edit.
 - If public crawling is blocked or the site is not deployed, ask for local source paths, built HTML, screenshots, page inventory, or pasted page copy.
 - If the site copy depends on biography, project claims, or career facts, recommend using the agent context file before rewriting.
 - Do not invent projects, testimonials, metrics, employers, or credentials to fill portfolio pages.
@@ -36,6 +49,7 @@ Load only the references needed for the task:
 ## Rules
 
 - Separate documented standards from emerging conventions such as `llms.txt`.
+- Separate facts verified from public pages or local source, facts supplied by the user's context material, and recommendations inferred from those facts.
 - Prefer changes that improve crawlability, information scent, and snippet quality without adding hype.
 - Do not present unofficial AI or SEO proposals as universal standards.
 - Keep metadata, structured data, and visible copy aligned.
@@ -57,3 +71,5 @@ Return:
 3. direct code edits or page-ready copy
 4. verification run or checks still needed
 5. context-file gaps that affect public claims
+
+For audits, use concise labels such as `Verified`, `From source`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Mark unsupported responsibilities, metrics, seniority, clients, testimonials, or outcomes as gaps rather than turning them into metadata, schema, or copy. When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.

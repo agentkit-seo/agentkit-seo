@@ -8,6 +8,8 @@
 
 ## Audit workflow
 
+Use the full workflow only for broad profile audits, maintenance passes, or cross-platform consistency checks. For narrow section rewrites, inspect only the supplied section, target role, and proof needed to ground the edit.
+
 1. confirm the target role or positioning before editing major sections
 2. check profile architecture and structured fields first
 3. review headline and About for clarity and search alignment
@@ -70,3 +72,4 @@ When auditing a profile, organize findings into:
 4. activity recommendations
 
 Keep recommendations actionable and tied to visible profile sections.
+For bounded audits, include one `Depth note` naming the profile sections and activity sample inspected, what was unavailable, and what a deeper pass would add.

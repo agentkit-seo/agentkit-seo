@@ -74,8 +74,8 @@ Write one short third-person paragraph explaining what the file is for, then clo
 This file is a personal knowledge base documenting Full Name's academic and
 professional record. It is not intended for direct distribution to third
 parties. Its purpose is to serve as a structured source of truth from which
-career outputs can be generated. All facts, grades, dates, and names are
-verified.
+career outputs can be generated. Hard factual claims should be verified or
+marked as needing evidence before reuse.
 
 <!-- VERIFIED FACTS: graduation=YYYY-MM, final_grade=x/y, cert_id=XXXX -->
 ```

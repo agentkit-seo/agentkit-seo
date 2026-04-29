@@ -62,6 +62,7 @@ The descriptor should express current positioning, not merely the current job ti
 - omit empty fields instead of using `null`
 - list target roles, top skills, tools, and public links
 - treat it as the current positioning snapshot, not as full history
+- keep it selective: highest-signal current roles, skills, tools, credentials, and links only
 
 Recommended fields:
 
@@ -97,6 +98,7 @@ Close it with a `VERIFIED FACTS` HTML comment for atomic facts that must not be 
 - keep the skills index evidence-backed; each listed skill should be supported somewhere else in the file
 - write role detail as concise quantified bullets rather than narrative blocks
 - write the languages section as a table rather than prose
+- add a short `Source:` or `Evidence:` line only for entries whose facts may be reused downstream and are not obvious from nearby hard anchors
 
 ## Minimal entry patterns
 

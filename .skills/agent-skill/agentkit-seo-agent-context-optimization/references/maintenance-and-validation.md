@@ -47,6 +47,7 @@ A valid context file should satisfy all of the following:
 - Preserve the historical record in the body.
 - Compress peripheral detail instead of deleting important evidence.
 - Remove stale items from `top_skills` or the QUICK REFERENCE `professional` snapshot when they are no longer central to current positioning.
+- Keep source ledgers grouped by input type or file. Expand provenance only for conflicts, hard factual anchors, or claims likely to be reused in public copy.
 
 ## Editing posture for agents
 

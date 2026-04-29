@@ -35,6 +35,10 @@ Do not search the user's full filesystem for a context file. If no explicit path
 
 Do not assume the agent can write outside the current workspace. Before creating or overwriting a file, confirm the destination and respect the provider's permission model.
 
+## Source ingestion scope
+
+For default passes, use explicit inputs only: one existing context file, one CV or resume, one profile export, and at most 3 public links. Expand beyond that only when the user asks for full consolidation or confirms a deeper reconciliation pass.
+
 For large files, avoid dumping the full context file into chat by default. Prefer one of these outputs:
 
 1. write the file to a confirmed path
@@ -63,6 +67,7 @@ Do not let the platform skill become the factual source of truth.
 - keep the `QUICK REFERENCE` block current and selective
 - preserve the full historical record in the body
 - compress peripheral detail rather than deleting important evidence
+- keep source ledgers grouped and short; do not list every tiny note unless it affects a conflict or hard factual claim
 
 ## Agent editing rule
 

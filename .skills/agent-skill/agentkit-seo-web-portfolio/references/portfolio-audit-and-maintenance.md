@@ -21,6 +21,8 @@
 
 ## Audit workflow
 
+For default audits, sample only the bounded default scope from `SKILL.md`: homepage, robots, sitemap, and up to 2 user-specified or visibly priority pages. Use the full checklist only when the user asks for a full-site audit, launch or relaunch review, recurring maintenance, or exact code remediation.
+
 Review the site in this order:
 
 1. canonical host, protocol, and redirects
@@ -34,7 +36,7 @@ Review the site in this order:
 
 ## Core URL checklist
 
-Check at minimum:
+For full audits, check at minimum:
 
 - homepage
 - About page
@@ -130,3 +132,5 @@ When reporting code edits, include:
 - SEO or AEO purpose
 - behavioral risk level
 - verification performed
+
+For bounded audits, include one `Depth note` naming the URLs or templates inspected, what was not inspected, and what a deeper pass would add.

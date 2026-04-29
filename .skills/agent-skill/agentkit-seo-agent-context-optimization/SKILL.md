@@ -27,6 +27,19 @@ Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfoli
 - Use the `QUICK REFERENCE` block first when an existing context file is long.
 - Read detailed entries only for claims used in the current output.
 - Ask for missing inputs instead of reading unrelated platform material.
+- Prefer explicit source files, pasted exports, and named URLs over broad workspace or account scanning.
+- Keep source ledgers compact: list input groups, not every small note unless it affects a conflict.
+- If more inspection is needed, say what would be inspected next instead of silently expanding the pass.
+
+## Depth contract
+
+Use the smallest context pass that can answer the request honestly:
+
+- `Quick scan`: check whether a context file exists, read `QUICK REFERENCE`, and identify obvious structural gaps.
+- `Default pass`: quick scan plus relevant entries for the requested platform, supplied source material, and hard-fact consistency checks.
+- `Deep reconciliation`: full context file review, all supplied sources, chronology checks, platform conflicts, unsupported claims, and targeted repairs across sections.
+
+Default to `Default pass` for broad context-file work. Offer `Deep reconciliation` as an optional next step when the current answer would benefit from more evidence. Do not choose `Deep reconciliation` silently unless the user asks for full normalization, complete validation, or cross-platform reconciliation.
 
 ## Intake workflow
 
@@ -36,6 +49,7 @@ Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfoli
 - For large context files, prefer writing to a confirmed file path over returning the whole Markdown document in-chat. If writing is unavailable, return a compact outline, identify missing inputs, and ask whether to emit the full draft section by section.
 - If the user gives scattered material, normalize it into the canonical context structure before platform rewriting.
 - Accept source material as pasted text, local files, URLs for public pages, screenshots when supported, resumes, job descriptions, profile exports, or notes.
+- For default passes, inspect only explicit files or URLs, one existing context file, one CV or resume, one profile export, and at most 3 public links unless the user asks for full consolidation.
 - Fetch public URLs when tools allow it. Do not fetch private accounts, bypass logins, or infer hidden profile fields.
 - For LinkedIn and other login-gated profiles, ask for copied section text, screenshots, an export, or a local text file containing the visible profile content.
 - Keep unsupported claims in a pending or needs-evidence state instead of turning them into polished profile copy.
@@ -43,6 +57,7 @@ Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfoli
 ## Rules
 
 - Preserve facts over polish.
+- Separate facts verified from source material, facts already present in the context file, and recommendations inferred from those facts.
 - Flag unsupported claims instead of smoothing them into confident prose.
 - Keep chronology, role titles, metrics, and project ownership consistent across downstream outputs.
 - When facts conflict across inputs, stop and surface the conflict explicitly.
@@ -60,7 +75,9 @@ Return:
 
 1. whether a context file exists, was created, or needs user confirmation
 2. selected storage mode and path, or whether only an in-chat outline was returned
-3. source inputs used
+3. compact source ledger used, with unsupported claims separated
 4. normalized facts added or changed
 5. conflicts, gaps, or claims needing evidence
 6. the next platform skill to use, if any
+
+For audits or validation passes, use concise labels such as `Verified`, `In context`, `From source`, `Inference`, and `Needs evidence` when a claim could otherwise be ambiguous. When the pass is intentionally bounded, include a one-line `Depth note` that says what sources were not inspected and what deeper reconciliation would add.

@@ -11,4 +11,8 @@ as a URL, repo path, page path, target audience, or requested portfolio task:
 Preserve the existing application architecture and visual style unless the user
 explicitly asks for a redesign. Prioritize metadata, structure, content clarity,
 indexability, and agent-readable context.
+Use the skill's bounded default audit scope unless the user requests a full
+site audit. Preserve claim discipline: do not invent facts, metrics, roles,
+employers, testimonials, clients, or outcomes. Report audit depth and
+source/context gaps before expanding scope.
 """

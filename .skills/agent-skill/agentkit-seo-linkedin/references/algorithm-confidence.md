@@ -39,3 +39,5 @@ When the user asks why a LinkedIn tactic works, separate the answer into:
 1. documented platform guidance
 2. reasonable inference
 3. disputed or uncertain commentary
+
+Do not cite or imply official LinkedIn behavior unless the behavior is in supplied material, current official documentation, or this reference. Label secondary commentary, creator claims, and research-direction claims as uncertain.

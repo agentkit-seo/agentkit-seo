@@ -39,7 +39,7 @@ Good frameworks:
 - start with an action verb
 - use active voice
 - quantify outcomes when defensible
-- if exact numbers are unknown, use careful, defensible estimates only when the wording makes that clear
+- if exact numbers are unknown, use approximate estimates only when the source material provides enough basis, and label them clearly as approximate
 - translate duties into achievements
 - avoid repeating the same keyword in multiple trivial variants
 

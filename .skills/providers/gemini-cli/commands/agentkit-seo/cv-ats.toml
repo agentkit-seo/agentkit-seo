@@ -10,4 +10,8 @@ CV path, pasted CV text, job description, target role, or rewrite instruction:
 
 Preserve factual accuracy, keep unverifiable claims separate, and explain the
 highest-impact ATS and recruiter-facing changes.
+Default to the narrowest useful pass. For full audits, state the scope and
+materials used; do not add or verify claims outside supplied or explicitly
+requested sources. Include a depth note only when the pass is broad, bounded,
+or parser-focused.
 """

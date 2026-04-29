@@ -15,6 +15,8 @@ Use the command-specific prompt to select the relevant module, then read the mat
 
 For broad or ambiguous requests, use `skills/agentkit-seo/SKILL.md` first and route to the minimum relevant module.
 
+Even when multiple skill entrypoints are visible below, treat them as routing stubs. Load only the selected module's task-relevant references, keep default audits bounded, and add a depth note before expanding into full-file, full-account, or full-site review.
+
 ## Loaded Skill Entrypoints
 
 @./skills/agentkit-seo/SKILL.md

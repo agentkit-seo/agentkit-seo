@@ -9,6 +9,8 @@
 
 ## Audit workflow
 
+Use the full workflow only for broad account audits, posting-pattern reviews, or maintenance planning. For profile copy or pinned-post work, inspect profile fields, link path, pinned post, and up to 3-5 recent posts. For a standard audit, inspect up to 10 recent posts. Reserve 20-30 posts for deep account audits.
+
 Review the account in this order:
 
 1. profile identity and niche clarity
@@ -78,3 +80,5 @@ For each issue, name:
 - observed problem
 - why it matters
 - recommended fix
+
+For bounded audits, include one `Depth note` naming the profile and post scope inspected, what was unavailable, and what a deeper pass would add.

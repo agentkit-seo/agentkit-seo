@@ -9,6 +9,8 @@
 
 ## Audit workflow
 
+Use the full workflow only for broad CV audits, parser-safety reviews, or role-tailoring passes. For a single bullet, summary, section, or formatting question, inspect only the supplied material needed for that edit.
+
 1. confirm the target role and seniority
 2. check structural safety first
 3. review section order and header naming
@@ -77,3 +79,5 @@ When auditing a CV, organize findings into:
 2. factual consistency issues
 3. tailoring improvements
 4. recruiter-readability improvements
+
+For bounded audits, include one `Depth note` naming the document scope inspected, whether a job description/context file was used, and what a deeper pass would add.

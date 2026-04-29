@@ -11,4 +11,8 @@ section, or requested LinkedIn task:
 
 Stay grounded in supplied facts, separate profile edits from activity strategy,
 and label unverifiable ranking claims as confidence-scored rather than certain.
+Use the skill's bounded default scope unless the user asks for a full profile
+optimization. Include a depth note for broad or incomplete audits, load only
+task-relevant references, and ask for the smallest missing input before using
+screenshots or expanding scope.
 """

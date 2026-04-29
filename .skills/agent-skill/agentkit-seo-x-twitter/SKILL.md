@@ -22,8 +22,21 @@ Load only the references needed for the task:
 ## Token discipline
 
 - Do not analyze long posting history unless the user asks for an audit.
-- For profile copy, inspect bio, pinned post, proof links, and a small sample of recent posts first.
+- For profile copy, inspect bio, pinned post, proof links, and up to 3-5 recent posts first.
 - Read Premium or ranking references only when the user asks about those topics.
+- Prefer pasted profile text, public profile fields, pinned post, links, and a small recent-post sample before asking for analytics exports or screenshots.
+- Keep source ledgers compact: list input groups, not every post unless the post itself is discussed.
+- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+
+## Depth contract
+
+Use the smallest audit depth that can answer the request honestly:
+
+- `Quick scan`: display name, bio, link path, pinned post, and obvious niche/proof gaps.
+- `Default audit`: quick scan plus up to 10 recent posts, media/Alt Text when visible, proof-link alignment, and posting capacity assumptions.
+- `Deep audit`: last 20-30 posts, reply behavior, topic drift, analytics screenshots, Premium capabilities, and cross-platform proof consistency.
+
+Default to `Default audit` for broad account or profile requests. Offer `Deep audit` as an optional next step when the current answer would benefit from more evidence. Do not choose `Deep audit` silently unless the user asks for a full account audit, content system, analytics review, or recent-post history diagnosis.
 
 ## Intake workflow
 
@@ -36,7 +49,9 @@ Load only the references needed for the task:
 ## Rules
 
 - Treat Phoenix, Grok, and related architecture clues as design signals, not as a complete live-production contract.
+- Separate facts verified from public account material, facts supplied by the user's context material, and recommendations inferred from those facts.
 - Do not promise ranking outcomes.
+- Do not infer private analytics, Premium status, shadowban status, or ranking treatment from incomplete public views.
 - Keep recommendations aligned with the user's actual niche, expertise, and posting capacity.
 - Distinguish official product features from empirical tactics.
 - Keep profile positioning, pinned assets, posting topics, and linked external proof aligned around one clear niche.
@@ -48,10 +63,12 @@ Produce X/Twitter-ready bio, pinned-post, or posting recommendations that are pr
 
 ## Response shape
 
-Return:
+Return only the sections relevant to the user's requested task. Do not add cadence or engagement strategy unless requested or clearly necessary. For audits, return:
 
 1. public inputs inspected and any blocked inputs
 2. profile and content-positioning diagnosis
 3. ready-to-paste bio, pinned post, thread, or post drafts
 4. cadence and engagement recommendations sized to the user's capacity
 5. missing inputs needed for a stronger second pass
+
+For audits, use concise labels such as `Verified`, `Official feature`, `Historical/open-source inference`, `Empirical tactic`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. When the audit is intentionally bounded, include a one-line `Depth note` that says what profile/post scope was inspected, what was not inspected, and what deeper inspection would add.
