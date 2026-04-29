@@ -1,12 +1,13 @@
----
-title: "Why build a personal agent context file"
-platform: "general"
-objective: "Explains the problem that a personal agent context file solves and why it outperforms the alternatives a user would otherwise rely on."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["context-file", "motivation", "workflow", "productivity"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "Why build a personal agent context file"
+  platform: "general"
+  objective: "Explains the problem that a personal agent context file solves and why it outperforms the alternatives a user would otherwise rely on."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["context-file", "motivation", "workflow", "productivity"]
+  agent_priority: "low"
+-->
 
 # Why build a personal agent context file
 

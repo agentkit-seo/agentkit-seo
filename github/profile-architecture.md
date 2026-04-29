@@ -1,12 +1,13 @@
----
-title: "GitHub profile architecture"
-platform: "github"
-objective: "Rules for foundational profile settings, including the bio, pinned repositories, and the contribution graph."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["github", "profile", "bio", "contributions"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "GitHub profile architecture"
+  platform: "github"
+  objective: "Rules for foundational profile settings, including the bio, pinned repositories, and the contribution graph."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["github", "profile", "bio", "contributions"]
+  agent_priority: "medium"
+-->
 
 # GitHub profile architecture
 

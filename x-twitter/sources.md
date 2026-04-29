@@ -1,12 +1,13 @@
----
-title: "X optimization sources"
-platform: "x-twitter"
-objective: "Centralized citations for the X module, separating official source code analysis from empirical research."
-status: "review"
-last_updated: "2026-04-28"
-tags: ["x", "twitter", "sources", "research"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "X optimization sources"
+  platform: "x-twitter"
+  objective: "Centralized citations for the X module, separating official source code analysis from empirical research."
+  status: "review"
+  last_updated: "2026-04-28"
+  tags: ["x", "twitter", "sources", "research"]
+  agent_priority: "low"
+-->
 
 # X optimization sources
 

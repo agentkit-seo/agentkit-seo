@@ -1,12 +1,13 @@
----
-title: "Portfolio performance and mobile readiness"
-platform: "portfolio"
-objective: "Define the mobile, performance, image, and HTTPS rules that support search visibility and a strong page experience."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "performance", "mobile", "cwv"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "Portfolio performance and mobile readiness"
+  platform: "portfolio"
+  objective: "Define the mobile, performance, image, and HTTPS rules that support search visibility and a strong page experience."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "performance", "mobile", "cwv"]
+  agent_priority: "medium"
+-->
 
 # Portfolio performance and mobile readiness
 

@@ -1,12 +1,13 @@
----
-title: "CV core sections"
-platform: "cv-ats"
-objective: "Standardizes the required CV sections, their naming conventions, and correct chronological ordering."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["cv", "ats", "sections", "structure"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "CV core sections"
+  platform: "cv-ats"
+  objective: "Standardizes the required CV sections, their naming conventions, and correct chronological ordering."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["cv", "ats", "sections", "structure"]
+  agent_priority: "high"
+-->
 
 # CV core sections
 

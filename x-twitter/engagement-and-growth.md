@@ -1,12 +1,14 @@
----
-title: "X engagement and growth"
-platform: "x-twitter"
-objective: "Strategies for triggering historically high-weight signals and improving out-of-network discovery."
-status: "review"
-last_updated: "2026-04-24"
-tags: ["engagement", "growth", "replies", "velocity"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "X engagement and growth"
+  platform: "x-twitter"
+  objective: "Strategies for triggering historically high-weight signals and improving out-of-network discovery."
+  status: "review"
+  last_updated: "2026-04-24"
+  tags: ["engagement", "growth", "replies", "velocity"]
+  agent_priority: "medium"
+-->
+
 # X engagement and growth
 
 > This file defines tactical behaviors that improve conversation depth and out-of-network retrieval, while separating documented signals from field-tested heuristics.

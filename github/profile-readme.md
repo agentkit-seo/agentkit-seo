@@ -1,12 +1,13 @@
----
-title: "GitHub profile README"
-platform: "github"
-objective: "Strategy for the username/username repository, focusing on Markdown badges and token efficiency."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["github", "readme", "badges", "seo"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "GitHub profile README"
+  platform: "github"
+  objective: "Strategy for the username/username repository, focusing on Markdown badges and token efficiency."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["github", "readme", "badges", "seo"]
+  agent_priority: "high"
+-->
 
 # GitHub profile README
 

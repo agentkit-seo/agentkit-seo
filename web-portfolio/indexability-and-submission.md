@@ -1,12 +1,13 @@
----
-title: "Portfolio indexability and submission"
-platform: "portfolio"
-objective: "Define the technical requirements and submission workflow needed to get a personal website discovered and indexed."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "indexing", "sitemap", "robots"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio indexability and submission"
+  platform: "portfolio"
+  objective: "Define the technical requirements and submission workflow needed to get a personal website discovered and indexed."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "indexing", "sitemap", "robots"]
+  agent_priority: "high"
+-->
 
 # Portfolio indexability and submission
 

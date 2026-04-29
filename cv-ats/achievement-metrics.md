@@ -1,12 +1,13 @@
----
-title: "CV achievement metrics"
-platform: "cv-ats"
-objective: "Defines the syntactic formula for writing high-impact, easily parsed experience bullet points."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["cv", "ats", "metrics", "achievements"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "CV achievement metrics"
+  platform: "cv-ats"
+  objective: "Defines the syntactic formula for writing high-impact, easily parsed experience bullet points."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["cv", "ats", "metrics", "achievements"]
+  agent_priority: "medium"
+-->
 
 # CV achievement metrics
 

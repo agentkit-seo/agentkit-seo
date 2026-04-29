@@ -1,12 +1,13 @@
----
-title: "GitHub optimization sources"
-platform: "github"
-objective: "Centralized citations and research validating the mechanics of GitHub search and Copilot indexing."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["github", "sources", "research", "blackbird"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "GitHub optimization sources"
+  platform: "github"
+  objective: "Centralized citations and research validating the mechanics of GitHub search and Copilot indexing."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["github", "sources", "research", "blackbird"]
+  agent_priority: "low"
+-->
 
 # GitHub optimization sources
 

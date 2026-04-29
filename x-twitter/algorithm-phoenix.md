@@ -1,12 +1,14 @@
----
-title: "X algorithm and ranking signals"
-platform: "x-twitter"
-objective: "Explains what is officially documented in the X open-source code versus what is inferred about Grok and the Phoenix update."
-status: "review"
-last_updated: "2026-04-28"
-tags: ["algorithm", "open-source", "weights", "ranking"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "X algorithm and ranking signals"
+  platform: "x-twitter"
+  objective: "Explains what is officially documented in the X open-source code versus what is inferred about Grok and the Phoenix update."
+  status: "review"
+  last_updated: "2026-04-28"
+  tags: ["algorithm", "open-source", "weights", "ranking"]
+  agent_priority: "high"
+-->
+
 # X algorithm and ranking signals
 
 > This file separates confirmed X (Twitter) ranking behavior found in the open-source codebase from inferred behavior related to Grok and the "Phoenix" updates.

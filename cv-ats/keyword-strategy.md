@@ -1,12 +1,13 @@
----
-title: "CV keyword strategy"
-platform: "cv-ats"
-objective: "Methodology for extracting and integrating job description keywords effectively into a CV."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["cv", "ats", "keywords", "seo"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "CV keyword strategy"
+  platform: "cv-ats"
+  objective: "Methodology for extracting and integrating job description keywords effectively into a CV."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["cv", "ats", "keywords", "seo"]
+  agent_priority: "high"
+-->
 
 # CV keyword strategy
 

@@ -1,12 +1,13 @@
----
-title: "Portfolio metadata and snippets"
-platform: "portfolio"
-objective: "Define the metadata rules that shape how a personal website appears in search results and how canonical identity is established."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["portfolio", "metadata", "titles", "canonical"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio metadata and snippets"
+  platform: "portfolio"
+  objective: "Define the metadata rules that shape how a personal website appears in search results and how canonical identity is established."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["portfolio", "metadata", "titles", "canonical"]
+  agent_priority: "high"
+-->
 
 # Portfolio metadata and snippets
 

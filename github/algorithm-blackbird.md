@@ -1,12 +1,13 @@
----
-title: "GitHub code search and Blackbird"
-platform: "github"
-objective: "Practical guide to GitHub code search mechanics and the documented restrictions that affect repository discoverability."
-status: "draft"
-last_updated: "2026-04-29"
-tags: ["github", "algorithm", "blackbird", "search"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "GitHub code search and Blackbird"
+  platform: "github"
+  objective: "Practical guide to GitHub code search mechanics and the documented restrictions that affect repository discoverability."
+  status: "draft"
+  last_updated: "2026-04-29"
+  tags: ["github", "algorithm", "blackbird", "search"]
+  agent_priority: "medium"
+-->
 
 # GitHub code search and Blackbird
 

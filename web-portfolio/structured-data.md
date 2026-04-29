@@ -1,12 +1,13 @@
----
-title: "Portfolio structured data"
-platform: "portfolio"
-objective: "Define the schema strategy that helps search engines and AI systems understand a personal website without introducing misleading markup."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "schema", "structured-data", "person"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio structured data"
+  platform: "portfolio"
+  objective: "Define the schema strategy that helps search engines and AI systems understand a personal website without introducing misleading markup."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "schema", "structured-data", "person"]
+  agent_priority: "high"
+-->
 
 # Portfolio structured data
 

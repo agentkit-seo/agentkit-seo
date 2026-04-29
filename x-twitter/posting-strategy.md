@@ -1,12 +1,14 @@
----
-title: "X posting strategy and formats"
-platform: "x-twitter"
-objective: "Evidence-aligned guidelines for formatting posts, media, and Alt Text to maximize readability, accessibility, and discoverability."
-status: "review"
-last_updated: "2026-04-28"
-tags: ["posting", "media", "alt-text", "seo"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "X posting strategy and formats"
+  platform: "x-twitter"
+  objective: "Evidence-aligned guidelines for formatting posts, media, and Alt Text to maximize readability, accessibility, and discoverability."
+  status: "review"
+  last_updated: "2026-04-28"
+  tags: ["posting", "media", "alt-text", "seo"]
+  agent_priority: "high"
+-->
+
 # X posting strategy and formats
 
 > This file defines how an individual post should be formatted to capture search intent, increase readability, and improve accessibility.

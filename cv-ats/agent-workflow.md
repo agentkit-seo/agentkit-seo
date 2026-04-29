@@ -1,12 +1,13 @@
----
-title: "Agent workflow for CV optimization"
-platform: "cv-ats"
-objective: "Explains why LaTeX (.tex) is the superior format for AI agents automating CV tailoring."
-status: "draft"
-last_updated: "2026-04-29"
-tags: ["cv", "ats", "latex", "agents", "automation"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Agent workflow for CV optimization"
+  platform: "cv-ats"
+  objective: "Explains why LaTeX (.tex) is the superior format for AI agents automating CV tailoring."
+  status: "draft"
+  last_updated: "2026-04-29"
+  tags: ["cv", "ats", "latex", "agents", "automation"]
+  agent_priority: "high"
+-->
 
 # Agent workflow for CV optimization
 

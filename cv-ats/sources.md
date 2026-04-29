@@ -1,12 +1,13 @@
----
-title: "ATS optimization sources"
-platform: "cv-ats"
-objective: "Centralized credibility links and research on ATS algorithms and parsing logic."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["cv", "ats", "sources", "research"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "ATS optimization sources"
+  platform: "cv-ats"
+  objective: "Centralized credibility links and research on ATS algorithms and parsing logic."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["cv", "ats", "sources", "research"]
+  agent_priority: "low"
+-->
 
 # ATS optimization sources
 

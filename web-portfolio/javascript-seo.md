@@ -1,12 +1,13 @@
----
-title: "Portfolio JavaScript SEO"
-platform: "portfolio"
-objective: "Define the rendering and navigation constraints needed to make a JavaScript-heavy personal site indexable."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "javascript", "rendering", "spa"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio JavaScript SEO"
+  platform: "portfolio"
+  objective: "Define the rendering and navigation constraints needed to make a JavaScript-heavy personal site indexable."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "javascript", "rendering", "spa"]
+  agent_priority: "high"
+-->
 
 # Portfolio JavaScript SEO
 

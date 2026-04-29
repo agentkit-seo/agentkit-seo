@@ -1,12 +1,14 @@
----
-title: "X (Twitter) optimization"
-platform: "x-twitter"
-objective: "Index and overview for the X (Twitter) platform optimization module."
-status: "review"
-last_updated: "2026-04-24"
-tags: ["x", "twitter", "overview", "indexing"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "X (Twitter) optimization"
+  platform: "x-twitter"
+  objective: "Index and overview for the X (Twitter) platform optimization module."
+  status: "review"
+  last_updated: "2026-04-24"
+  tags: ["x", "twitter", "overview", "indexing"]
+  agent_priority: "high"
+-->
+
 # X (Twitter) optimization
 
 > This module contains source-grounded rules and best practices for optimizing personal profiles and content on X (formerly Twitter). It combines official documentation, open-source algorithm snapshots, and clearly labeled empirical guidance.

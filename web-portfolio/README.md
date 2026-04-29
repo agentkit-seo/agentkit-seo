@@ -1,12 +1,13 @@
----
-title: "Web portfolio SEO and indexing"
-platform: "portfolio"
-objective: "Master index and routing logic for making a personal website crawlable, indexable, and trustworthy in search and AI discovery systems."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "seo", "indexing", "aeo"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Web portfolio SEO and indexing"
+  platform: "portfolio"
+  objective: "Master index and routing logic for making a personal website crawlable, indexable, and trustworthy in search and AI discovery systems."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "seo", "indexing", "aeo"]
+  agent_priority: "high"
+-->
 
 # Web portfolio SEO and indexing
 

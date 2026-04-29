@@ -1,12 +1,13 @@
----
-title: "Agent context file specification"
-platform: "general"
-objective: "Defines the required structure, section order, formatting conventions, and agent-optimization rules for a personal agent context file."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["context-file", "specification", "agent-optimization", "formatting"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Agent context file specification"
+  platform: "general"
+  objective: "Defines the required structure, section order, formatting conventions, and agent-optimization rules for a personal agent context file."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["context-file", "specification", "agent-optimization", "formatting"]
+  agent_priority: "high"
+-->
 
 # Agent context file specification
 

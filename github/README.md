@@ -1,12 +1,13 @@
----
-title: "GitHub optimization"
-platform: "github"
-objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
-status: "draft"
-last_updated: "2026-04-29"
-tags: ["github", "index", "seo", "blackbird"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "GitHub optimization"
+  platform: "github"
+  objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
+  status: "draft"
+  last_updated: "2026-04-29"
+  tags: ["github", "index", "seo", "blackbird"]
+  agent_priority: "high"
+-->
 
 # GitHub optimization
 

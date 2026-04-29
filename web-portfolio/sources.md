@@ -1,12 +1,13 @@
----
-title: "Web portfolio optimization sources"
-platform: "portfolio"
-objective: "Centralized citations and official documentation validating the mechanics of portfolio indexing, metadata, structured data, and AI discovery."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "sources", "research", "indexing"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "Web portfolio optimization sources"
+  platform: "portfolio"
+  objective: "Centralized citations and official documentation validating the mechanics of portfolio indexing, metadata, structured data, and AI discovery."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "sources", "research", "indexing"]
+  agent_priority: "low"
+-->
 
 # Web portfolio optimization sources
 

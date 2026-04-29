@@ -1,12 +1,13 @@
----
-title: "Portfolio launch and monitoring"
-platform: "portfolio"
-objective: "Define the release checklist and monitoring workflow needed to keep a personal website indexed and healthy after launch."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "launch", "monitoring", "search-console"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio launch and monitoring"
+  platform: "portfolio"
+  objective: "Define the release checklist and monitoring workflow needed to keep a personal website indexed and healthy after launch."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "launch", "monitoring", "search-console"]
+  agent_priority: "high"
+-->
 
 # Portfolio launch and monitoring
 

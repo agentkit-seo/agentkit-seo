@@ -1,12 +1,13 @@
----
-title: "ATS formatting rules"
-platform: "cv-ats"
-objective: "Defines the hard technical constraints for ATS parsing to ensure a CV is machine-readable."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["cv", "ats", "formatting", "layout"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "ATS formatting rules"
+  platform: "cv-ats"
+  objective: "Defines the hard technical constraints for ATS parsing to ensure a CV is machine-readable."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["cv", "ats", "formatting", "layout"]
+  agent_priority: "high"
+-->
 
 # ATS formatting rules
 

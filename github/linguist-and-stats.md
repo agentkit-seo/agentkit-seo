@@ -1,12 +1,13 @@
----
-title: "GitHub Linguist and statistics"
-platform: "github"
-objective: "How to correct the repository language statistics bar using .gitattributes."
-status: "draft"
-last_updated: "2026-04-29"
-tags: ["github", "linguist", "gitattributes", "stats"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "GitHub Linguist and statistics"
+  platform: "github"
+  objective: "How to correct the repository language statistics bar using .gitattributes."
+  status: "draft"
+  last_updated: "2026-04-29"
+  tags: ["github", "linguist", "gitattributes", "stats"]
+  agent_priority: "medium"
+-->
 
 # GitHub Linguist and statistics
 

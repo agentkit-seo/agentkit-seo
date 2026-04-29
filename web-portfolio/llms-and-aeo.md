@@ -1,12 +1,13 @@
----
-title: "Portfolio LLMs and AEO"
-platform: "portfolio"
-objective: "Define the optional AI-discovery enhancements that make a personal website easier to retrieve and summarize accurately."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["portfolio", "llms", "aeo", "llms-txt"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "Portfolio LLMs and AEO"
+  platform: "portfolio"
+  objective: "Define the optional AI-discovery enhancements that make a personal website easier to retrieve and summarize accurately."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["portfolio", "llms", "aeo", "llms-txt"]
+  agent_priority: "medium"
+-->
 
 # Portfolio LLMs and AEO
 

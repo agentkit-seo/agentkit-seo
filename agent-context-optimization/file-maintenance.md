@@ -1,12 +1,13 @@
----
-title: "Context file maintenance"
-platform: "general"
-objective: "Explains when and how to update the personal agent context file, how to manage token growth, and how to keep the VERIFIED FACTS comment and version history accurate."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["context-file", "maintenance", "versioning", "token-efficiency"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "Context file maintenance"
+  platform: "general"
+  objective: "Explains when and how to update the personal agent context file, how to manage token growth, and how to keep the VERIFIED FACTS comment and version history accurate."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["context-file", "maintenance", "versioning", "token-efficiency"]
+  agent_priority: "low"
+-->
 
 # Context file maintenance
 

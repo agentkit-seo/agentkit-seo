@@ -1,12 +1,13 @@
----
-title: "Copilot and agent optimization"
-platform: "github"
-objective: "Guide to Agentic Engine Optimization (AEO) within GitHub, utilizing AGENTS.md and Copilot context."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["github", "copilot", "aeo", "agents"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Copilot and agent optimization"
+  platform: "github"
+  objective: "Guide to Agentic Engine Optimization (AEO) within GitHub, utilizing AGENTS.md and Copilot context."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["github", "copilot", "aeo", "agents"]
+  agent_priority: "high"
+-->
 
 # Copilot and agent optimization
 

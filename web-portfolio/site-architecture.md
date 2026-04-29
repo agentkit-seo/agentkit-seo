@@ -1,12 +1,13 @@
----
-title: "Portfolio site architecture"
-platform: "portfolio"
-objective: "Define the URL structure, page hierarchy, and internal linking patterns that make a personal website easy to crawl and easy to understand."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["portfolio", "architecture", "urls", "internal-links"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio site architecture"
+  platform: "portfolio"
+  objective: "Define the URL structure, page hierarchy, and internal linking patterns that make a personal website easy to crawl and easy to understand."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["portfolio", "architecture", "urls", "internal-links"]
+  agent_priority: "high"
+-->
 
 # Portfolio site architecture
 

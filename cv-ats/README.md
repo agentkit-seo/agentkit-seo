@@ -1,12 +1,13 @@
----
-title: "CV and ATS optimization"
-platform: "cv-ats"
-objective: "Master index and routing logic for formatting and optimizing CVs for Applicant Tracking Systems."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["cv", "ats", "resume", "index"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "CV and ATS optimization"
+  platform: "cv-ats"
+  objective: "Master index and routing logic for formatting and optimizing CVs for Applicant Tracking Systems."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["cv", "ats", "resume", "index"]
+  agent_priority: "high"
+-->
 
 # CV and ATS optimization
 

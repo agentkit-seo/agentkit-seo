@@ -1,12 +1,13 @@
----
-title: "Agent workflow for context file users"
-platform: "general"
-objective: "Explains how to invoke the context file in an agent session, how to combine it with Skill submodules, and what good output looks like for each major task type."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["context-file", "workflow", "prompting", "agent", "skill"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "Agent workflow for context file users"
+  platform: "general"
+  objective: "Explains how to invoke the context file in an agent session, how to combine it with Skill submodules, and what good output looks like for each major task type."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["context-file", "workflow", "prompting", "agent", "skill"]
+  agent_priority: "medium"
+-->
 
 # Agent workflow for context file users
 

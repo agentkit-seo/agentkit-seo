@@ -1,12 +1,13 @@
----
-title: "Agent context optimization"
-platform: "general"
-objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, template, and example file."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["context-file", "index", "navigation"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "Agent context optimization"
+  platform: "general"
+  objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, template, and example file."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["context-file", "index", "navigation"]
+  agent_priority: "medium"
+-->
 
 # Agent context optimization
 

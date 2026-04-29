@@ -1,12 +1,14 @@
----
-title: "X Premium strategies"
-platform: "x-twitter"
-objective: "Officially documented capabilities and practical tactics for X Premium users."
-status: "review"
-last_updated: "2026-04-24"
-tags: ["premium", "verified", "long-form", "monetization"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "X Premium strategies"
+  platform: "x-twitter"
+  objective: "Officially documented capabilities and practical tactics for X Premium users."
+  status: "review"
+  last_updated: "2026-04-24"
+  tags: ["premium", "verified", "long-form", "monetization"]
+  agent_priority: "medium"
+-->
+
 # X Premium strategies
 
 > This file outlines the documented product capabilities of X Premium and practical tactics that can improve outcomes for subscribed users.

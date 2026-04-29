@@ -1,12 +1,13 @@
----
-title: "Personal agent context file — guided template"
-platform: "general"
-objective: "A self-contained guided template for building a valid personal agent context file, with pre-filled examples and blank placeholders for every required section."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["context-file", "template", "guided", "career"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Personal agent context file — guided template"
+  platform: "general"
+  objective: "A self-contained guided template for building a valid personal agent context file, with pre-filled examples and blank placeholders for every required section."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["context-file", "template", "guided", "career"]
+  agent_priority: "high"
+-->
 
 # Personal agent context file — guided template
 

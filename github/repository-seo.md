@@ -1,12 +1,13 @@
----
-title: "GitHub repository SEO"
-platform: "github"
-objective: "Rules for optimizing individual projects for GitHub search, external search, and human evaluation."
-status: "draft"
-last_updated: "2026-04-29"
-tags: ["github", "repository", "seo", "topics"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "GitHub repository SEO"
+  platform: "github"
+  objective: "Rules for optimizing individual projects for GitHub search, external search, and human evaluation."
+  status: "draft"
+  last_updated: "2026-04-29"
+  tags: ["github", "repository", "seo", "topics"]
+  agent_priority: "high"
+-->
 
 # GitHub repository SEO
 

@@ -1,12 +1,13 @@
----
-title: "Portfolio content and case studies"
-platform: "portfolio"
-objective: "Define the content patterns that make a personal website useful, trustworthy, and capable of ranking beyond branded searches."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["portfolio", "content", "case-studies", "trust"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "Portfolio content and case studies"
+  platform: "portfolio"
+  objective: "Define the content patterns that make a personal website useful, trustworthy, and capable of ranking beyond branded searches."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["portfolio", "content", "case-studies", "trust"]
+  agent_priority: "high"
+-->
 
 # Portfolio content and case studies
 

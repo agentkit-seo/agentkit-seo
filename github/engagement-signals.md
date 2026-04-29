@@ -1,12 +1,13 @@
----
-title: "GitHub engagement and trust signals"
-platform: "github"
-objective: "How stars, forks, releases, maintenance signals, and external references affect repository trust and discovery."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["github", "engagement", "stars", "ranking"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "GitHub engagement and trust signals"
+  platform: "github"
+  objective: "How stars, forks, releases, maintenance signals, and external references affect repository trust and discovery."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["github", "engagement", "stars", "ranking"]
+  agent_priority: "low"
+-->
 
 # GitHub engagement and trust signals
 

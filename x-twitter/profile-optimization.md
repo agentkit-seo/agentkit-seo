@@ -1,12 +1,14 @@
----
-title: "X profile optimization and AI footprinting"
-platform: "x-twitter"
-objective: "Rules for structuring an X profile for search discoverability, profile conversion, and clear niche positioning."
-status: "review"
-last_updated: "2026-04-28"
-tags: ["profile", "bio", "seo", "footprint"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "X profile optimization and AI footprinting"
+  platform: "x-twitter"
+  objective: "Rules for structuring an X profile for search discoverability, profile conversion, and clear niche positioning."
+  status: "review"
+  last_updated: "2026-04-28"
+  tags: ["profile", "bio", "seo", "footprint"]
+  agent_priority: "high"
+-->
+
 # X profile optimization and AI footprinting
 
 > This file defines how to structure an X profile so it is easy to understand by people, searchable on-platform, and useful as a conversion point for profile visitors.
