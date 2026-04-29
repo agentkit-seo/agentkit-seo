@@ -31,7 +31,9 @@ Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfoli
 ## Intake workflow
 
 - If the user supplies an existing context file path, read it first.
-- If no path is supplied, ask whether to create or use the default `~/.agentkit-seo/context.md` location.
+- If no path is supplied, ask where the file should live before writing: in the current workspace, at an explicit user path, or at a portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
+- Do not assume the agent can write outside the current workspace. If writing requires permission, ask before writing.
+- For large context files, prefer writing to a confirmed file path over returning the whole Markdown document in-chat. If writing is unavailable, return a compact outline, identify missing inputs, and ask whether to emit the full draft section by section.
 - If the user gives scattered material, normalize it into the canonical context structure before platform rewriting.
 - Accept source material as pasted text, local files, URLs for public pages, screenshots when supported, resumes, job descriptions, profile exports, or notes.
 - Fetch public URLs when tools allow it. Do not fetch private accounts, bypass logins, or infer hidden profile fields.
@@ -57,7 +59,8 @@ Once the context file is clean, hand off to exactly one target platform skill un
 Return:
 
 1. whether a context file exists, was created, or needs user confirmation
-2. source inputs used
-3. normalized facts added or changed
-4. conflicts, gaps, or claims needing evidence
-5. the next platform skill to use, if any
+2. selected storage mode and path, or whether only an in-chat outline was returned
+3. source inputs used
+4. normalized facts added or changed
+5. conflicts, gaps, or claims needing evidence
+6. the next platform skill to use, if any

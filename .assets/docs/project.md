@@ -88,13 +88,13 @@ Keeping the repository clean and well-structured from the start is critical. AI 
 
 The foundational decisions below are now part of the project contract:
 
-1. **The Data Schema:** Editorial Knowledge Hub files follow the full YAML/frontmatter structure defined in `.assets/docs/STYLEGUIDE.md`. Runtime skill entrypoints use Agent Skills frontmatter with `name` and `description`. Runtime references and provider adapter notes use lean Markdown optimized for loading cost and operational clarity.
+1. **The Data Schema:** Editorial Knowledge Hub files use hidden metadata comments plus the visible structure defined in `.assets/docs/STYLEGUIDE.md`, so GitHub and VS Code render the page cleanly while agents still have routing metadata. Runtime skill entrypoints use Agent Skills frontmatter with `name` and `description`. Runtime references and provider adapter notes use lean Markdown optimized for loading cost and operational clarity.
 
 2. **The Scope of the MVP:** All seven shared skill bundles now exist, but launch readiness should be proven first with `cv-ats`, `github`, and `linkedin`. The remaining modules can ship as beta modules until scenario evals and demos exist.
 
 3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This avoids common Windows symlink failure modes and keeps installed bundles portable.
 
-4. **The Personal Context File schema:** The schema is defined in `agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional default path `~/.agentkit-seo/context.md`.
+4. **The Personal Context File schema:** The schema is defined in `agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional user-confirmed storage: in-chat draft, local workspace file, user-chosen path, or portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
 
 ---
 

@@ -35,11 +35,15 @@ Every session that uses the context file follows the same three-step pattern.
 
 The safest way to use a context file is to pass the path explicitly in the prompt. This avoids accidental use of an old or unrelated profile.
 
-**Rule:** Prefer an explicit path when invoking the skill, for example `Use the context file at ~/career/context.md`.
+**Rule:** Prefer an explicit path when invoking the skill, for example `Use the context file at ~/career/name-surname-seo-context.md`.
 
-**Recommendation:** If the user wants a default location, use `~/.agentkit-seo/context.md`. Agents may check this path only after the user asks to use the default context file or confirms that the default path is correct.
+**Recommendation:** If the user wants a portable default location, suggest `~/.agentkit-seo/<name-surname>-seo-context.md`. The generic fallback `~/.agentkit-seo/context.md` is acceptable only when the user prefers a neutral filename. Agents may check a default path only after the user asks to use it or confirms that the path is correct.
 
 **Rule:** Do not search the user's entire filesystem for a context file. If no explicit path or confirmed default exists, ask the user for the file path.
+
+**Rule:** Do not assume file-writing permission. Before creating or overwriting the context file, ask the user to choose a storage mode: local workspace file, explicit path, portable default, or in-chat draft.
+
+**Rule:** For large context files, prefer writing to a confirmed file path or producing targeted diffs. Use in-chat full drafts only when the user asks for them, and split long drafts by section.
 
 ### 2.3 What the agent can and cannot do without additional input
 

@@ -36,7 +36,7 @@ When all sections are filled and all example blocks are deleted, run the validat
 
 ## 3. Template
 
-The template begins here. Everything from this point forward is the content of the context file you will build. When you are ready to use the file with an agent, copy the filled content into a new file in your own file system and name it something memorable, for example `context.md` or `career-profile.md`.
+The template begins here. Everything from this point forward is the content of the context file you will build. When you are ready to use the file with an agent, save the filled content in your own file system and name it something memorable, for example `<name-surname>-seo-context.md`, `career-profile.md`, or `context.md`.
 
 ### Title
 

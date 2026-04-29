@@ -62,7 +62,7 @@ If you feel the urge to use an emoji to make a list item stand out, use **bold t
 Editorial Knowledge Hub files follow this exact structure. The sections must appear in this order. Optional sections may be omitted, but their position in the order must not shift.
 
 ```
-[YAML Frontmatter]          ← always required
+[Hidden metadata comment]   ← always required for editorial Knowledge Hub files
 # Title                     ← always required, H1, one per file
 > Summary blockquote        ← always required, 1-2 sentences max
 ---
@@ -75,20 +75,23 @@ Editorial Knowledge Hub files follow this exact structure. The sections must app
 [Footer note]               ← optional, for cross-links only
 ```
 
-### 4.1 YAML Frontmatter
+### 4.1 Hidden metadata
 
-Every editorial Knowledge Hub file begins with a YAML frontmatter block. All fields below are required unless marked optional.
+Every editorial Knowledge Hub file begins with an HTML comment containing YAML-like metadata. This keeps GitHub and VS Code Markdown previews focused on the visible document while preserving machine-readable routing metadata for agents and maintainers.
 
-```yaml
----
-title: "Human-readable title of this file"
-platform: linkedin | github | portfolio | cv-ats | general
-objective: "One sentence: what this file teaches or enforces."
-status: draft | review | stable
-last_updated: YYYY-MM-DD
-tags: [keyword1, keyword2]        # optional, max 5 tags
-agent_priority: high | medium | low   # how critical this file is for agent context
----
+All fields below are required unless marked optional.
+
+```markdown
+<!--
+metadata:
+  title: "Human-readable title of this file"
+  platform: linkedin | github | portfolio | cv-ats | general
+  objective: "One sentence: what this file teaches or enforces."
+  status: draft | review | stable
+  last_updated: YYYY-MM-DD
+  tags: [keyword1, keyword2]        # optional, max 5 tags
+  agent_priority: high | medium | low   # how critical this file is for agent context
+-->
 ```
 
 **Field definitions:**
@@ -104,7 +107,7 @@ agent_priority: high | medium | low   # how critical this file is for agent cont
 
 ### 4.2 Title (H1)
 
-One H1 per file. It must be identical to the `title` field in the frontmatter. Do not use title case for heading levels H2 and below — use sentence case.
+One H1 per file. It must be identical to the `title` field in the metadata comment. Do not use title case for heading levels H2 and below — use sentence case.
 
 ```markdown
 <!-- CORRECT -->
@@ -146,7 +149,7 @@ Rename the section labels to fit the file's content, but keep the numbering:
 ### 4.5 Horizontal Rules
 
 Use `---` only in two places:
-1. To separate the frontmatter from the body.
+1. After the summary blockquote, before the first H2 section.
 2. As a footer separator, before any cross-link notes at the end of the file.
 
 Do not use `---` as a visual decoration between sections. Use headings instead.
@@ -157,7 +160,7 @@ This repository contains several Markdown file classes. They do not all use the 
 
 | File class | Examples | Required schema |
 |---|---|---|
-| Editorial Knowledge Hub docs | `linkedin/*.md`, `github/*.md`, `cv-ats/*.md`, `web-portfolio/*.md`, `x-twitter/*.md`, `agent-context-optimization/*.md` | Full Universal Template from section 4 |
+| Editorial Knowledge Hub docs | `linkedin/*.md`, `github/*.md`, `cv-ats/*.md`, `web-portfolio/*.md`, `x-twitter/*.md`, `agent-context-optimization/*.md` | Full Universal Template from section 4 with hidden metadata comments |
 | Runtime skill entrypoints | `.skills/agent-skill/*/SKILL.md` | Agent Skills frontmatter with `name` and `description`, followed by concise procedural instructions |
 | Runtime skill references | `.skills/agent-skill/*/references/*.md` | Lean Markdown optimized for agent loading; H1 plus focused procedural sections |
 | Provider adapter notes | `.skills/providers/*/install.md` | Lean Markdown describing install targets and provider-specific behavior |
@@ -220,11 +223,11 @@ Every table must have a header row. Column headers use sentence case. Tables mus
 
 Use inline links `[anchor text](url)` for external URLs. Use relative links such as `[README](../../README.md)` for internal cross-references from this file.
 
-Do not use bare URLs in prose. Bare URLs are allowed only inside code blocks or YAML frontmatter.
+Do not use bare URLs in prose. Bare URLs are allowed only inside code blocks or metadata examples.
 
 ### 5.6 Line Wrapping
 
-Do not hard-wrap normal prose, list items, or YAML descriptions at an arbitrary column. Keep each sentence, bullet, or field value on one source line unless a real Markdown structure requires a line break.
+Do not hard-wrap normal prose, list items, or metadata descriptions at an arbitrary column. Keep each sentence, bullet, or field value on one source line unless a real Markdown structure requires a line break.
 
 Allowed exceptions:
 
@@ -308,7 +311,7 @@ Before performing any task:
 When generating or editing a `.md` file in this repository:
 
 - Match the Universal Template in section 4 exactly for editorial Knowledge Hub files.
-- Populate the YAML frontmatter completely for editorial Knowledge Hub files. Set `status: draft` unless explicitly told otherwise.
+- Populate the hidden metadata comment completely for editorial Knowledge Hub files. Set `status: draft` unless explicitly told otherwise.
 - For `.skills/agent-skill/*/SKILL.md`, use Agent Skills frontmatter with `name` and `description`.
 - For `.skills/agent-skill/*/references/*.md`, keep files lean, procedural, and self-contained.
 - Use `last_updated` set to the current date.
@@ -384,7 +387,7 @@ This guide is binding for both contributors.
 
 Before opening a pull request or committing a file:
 
-1. Verify the YAML frontmatter is complete and valid.
+1. Verify the hidden metadata comment is complete and valid for editorial Knowledge Hub files, and verify Agent Skills frontmatter is complete for runtime `SKILL.md` files.
 2. Verify the file follows the Universal Template (section 4) in the correct order.
 3. Run a self-check against the prohibited patterns in section 2.3.
 4. If the file makes factual claims, verify at least one source is listed.

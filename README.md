@@ -18,7 +18,10 @@
 
 <p align="center">
   <a href="#what-it-is">What It Is</a> •
-  <a href="#example">Example</a> •
+  <a href="#agent-context-file">Agent Context File</a> •
+  <a href="#how-it-works">How It Works</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#what-you-get">What You Get</a> •
   <a href="#who-its-for">Who It's For</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
@@ -42,13 +45,81 @@ Most agents rewrite career material generically because they lack durable person
 
 The goal is simple: make agent output for profiles, resumes, portfolios, and personal-branding workflows more structured, more evidence-based, and less generic.
 
-## Example
+## Agent Context File
 
-Ask your agent:
+The central concept behind AgentKit SEO is the **agent-context-file**: a private, structured Markdown file that acts as the user's professional source of truth.
+
+Instead of pasting a CV, LinkedIn export, GitHub bio, project list, and job target into every new chat, the user maintains one reusable file containing:
+
+- verified identity, positioning, and target roles
+- education, experience, projects, publications, certifications, and languages
+- proof points, metrics, links, constraints, and preferred tone
+- reusable facts that agents can cite when rewriting public material
+
+This file does not belong in this repository. It lives in the user's own workspace and can be reused by any agent that can read local files. A good portable convention is `~/.agentkit-seo/<name-surname>-seo-context.md`, but the user can also keep a draft in the current project, choose another private directory, or ask the agent to return the file content in-chat when file writing is not available. The repository provides the schema, template, maintenance workflow, and platform-specific skills that know how to use it.
+
+The practical workflow is:
+
+1. Build or update the agent-context-file using [agent-context-optimization](./agent-context-optimization/README.md).
+2. Load the relevant platform skill, such as LinkedIn, GitHub, CV/ATS, portfolio, or X.
+3. Ask the agent to audit or rewrite a specific asset using the context file as the factual source of truth.
+4. Keep public outputs grounded in verified facts instead of generic personal-branding language.
+
+This is the main architectural bet of the project: better agent outputs come less from longer prompts and more from a durable, well-structured personal context layer.
+
+## How It Works
+
+AgentKit SEO is built around a two-layer workflow:
 
 ```text
-Use AgentKit SEO to audit my GitHub profile and portfolio for hiring visibility.
-Use my personal context file at ~/.agentkit-seo/context.md.
+Raw user material
+  CVs, profile URLs, LinkedIn exports, screenshots, portfolio code, project notes
+        |
+        v
+Agent context file
+  one private, structured source of truth for verified career facts
+        |
+        v
+Platform skill
+  LinkedIn, GitHub, CV/ATS, web portfolio, X, or cross-platform audit rules
+        |
+        v
+Grounded output
+  audit, rewrite, prioritized action plan, patch proposal, or maintenance checklist
+```
+
+The human-readable folders explain the reasoning. The `.skills/agent-skill/` folders are the runtime bundles that agents actually install. The export CLI turns the same shared source into provider-specific layouts, so the methodology can travel across Claude Code, Codex, Gemini CLI, OpenCode, and generic agents.
+
+This is not a prompt collection. It is closer to an operating manual for agents working on professional identity: gather inputs, verify facts, route to the right platform rules, produce an evidence-linked answer, and avoid inventing claims that are not present in the user's material.
+
+## Quick Start
+
+First choose the invocation style for the agent provider you are using. The stable cross-provider contract is the shared skill name; slash-command wrappers exist only where the provider supports them.
+
+| Provider | Preferred invocation |
+| --- | --- |
+| Codex | Select or mention the installed skill directly, for example `$agentkit-seo-agent-context-optimization` or `$agentkit-seo-github` |
+| Claude Code | Use the installed skill by name; Claude may auto-select from the skill description, but explicit skill naming is safer |
+| Gemini CLI | Use namespaced commands such as `/agentkit-seo:context`, `/agentkit-seo:github`, or `/agentkit-seo:linkedin` |
+| OpenCode | Use native skill loading or flat commands such as `/agentkit-seo-context`, `/agentkit-seo-github`, or `/agentkit-seo-linkedin` |
+
+If you do not have an agent-context-file yet, start with the context optimization skill:
+
+```text
+Use agentkit-seo-agent-context-optimization to create my agent-context-file.
+I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
+screenshots, or any other career material you need.
+Before writing a file, ask me where to store it: in this workspace, at a path I choose,
+or at a portable default such as ~/.agentkit-seo/<name-surname>-seo-context.md.
+If you cannot write files, return a compact outline first and ask whether I want the full
+Markdown draft split into sections.
+```
+
+Once the context file exists, call the relevant platform skill directly:
+
+```text
+Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
+Use my personal context file at the path I provide.
 ```
 
 The agent can return a focused action plan covering:
@@ -63,6 +134,21 @@ The agent can return a focused action plan covering:
 The deeper workflow is the personal agent context file: a structured career source of truth that lives outside this repository and can be reused across agents, profiles, CVs, portfolios, and job applications.
 
 The files inside module-level `examples/` folders are personal working examples, not normative fixtures. They reflect material used during real application workflows, including interviews and applications with companies such as Anthropic, Apple, and Bending Spoons, and the personal context example supported cover-letter and application drafting. Treat them as practical reference artifacts rather than strict implementations of the current best-practice architecture; the canonical rules live in the module docs, templates, and runtime skill references.
+
+## What You Get
+
+| Capability | What the agent receives | Typical output |
+| --- | --- | --- |
+| Personal context architecture | Raw career facts, existing CVs, profile dumps, project notes, or screenshots | A structured `agent-context-file` that becomes the reusable source of truth |
+| LinkedIn optimization | Public profile URL when available, copied section text, exported data, or screenshots | Section-by-section audit, headline/About rewrites, Featured strategy, and activity suggestions |
+| GitHub optimization | Public GitHub URL, repository URLs, profile README, pinned repositories, and repo metadata | Profile and repository discoverability audit with README, topic, naming, and proof-point fixes |
+| CV/ATS optimization | Existing CV text, job description, target role, and context file | ATS-safe rewrite plan, keyword alignment, bullet improvements, and formatting risks |
+| Web portfolio optimization | Portfolio URL or local source code, metadata, pages, and case studies | SEO/AEO audit, structured-data recommendations, indexability checks, and content improvements |
+| X optimization | Public account URL, bio, pinned post, recent posts, or copied analytics | Bio, pinned-post, posting strategy, and engagement loop recommendations |
+
+Every platform skill should first determine which inputs are available, ask for missing private material when it cannot be fetched publicly, and recommend creating or updating the agent-context-file before making major rewrites.
+
+---
 
 ## Who It's For
 
@@ -95,6 +181,8 @@ Browse the editorial hub directly from the repo root:
 - [x-twitter](./x-twitter/README.md)
 
 Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
+
+---
 
 ## Install
 
@@ -178,6 +266,8 @@ The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other mo
 | Marketplace / registry distribution | Not shipped yet |
 
 Current internal implementation notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release scenario checks are drafted in [.assets/docs/evaluation-plan.md](./.assets/docs/evaluation-plan.md).
+
+---
 
 ## Authors
 

@@ -16,19 +16,31 @@
 
 ## File discovery convention
 
-Prefer an explicit path supplied by the user, such as:
+Prefer an explicit path supplied by the user. Good options include:
 
 ```text
-Use the context file at ~/career/context.md.
+Use the context file at ~/career/name-surname-seo-context.md.
+Create a draft in this workspace at ./name-surname-seo-context.md.
 ```
 
-If the user wants a default location, use:
+If the user wants a portable default, suggest:
 
 ```text
-~/.agentkit-seo/context.md
+~/.agentkit-seo/<name-surname>-seo-context.md
 ```
+
+The generic fallback `~/.agentkit-seo/context.md` is acceptable only when the user prefers it.
 
 Do not search the user's full filesystem for a context file. If no explicit path or confirmed default exists, ask for the path before using this skill.
+
+Do not assume the agent can write outside the current workspace. Before creating or overwriting a file, confirm the destination and respect the provider's permission model.
+
+For large files, avoid dumping the full context file into chat by default. Prefer one of these outputs:
+
+1. write the file to a confirmed path
+2. return a concise outline plus gaps to fill
+3. return a targeted diff or patch for an existing file
+4. emit the full Markdown draft section by section only after the user asks for it
 
 ## Combination rule
 

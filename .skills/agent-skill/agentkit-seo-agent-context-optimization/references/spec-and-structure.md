@@ -21,13 +21,13 @@
 
 The context file is one Markdown document with a fixed, stable structure.
 
-Recommended default location when the user wants a reusable path:
+Recommended portable location when the user wants a reusable path:
 
 ```text
-~/.agentkit-seo/context.md
+~/.agentkit-seo/<name-surname>-seo-context.md
 ```
 
-This path is a convention, not a requirement. An explicit path supplied by the user always wins.
+This path is a convention, not a requirement. An explicit path supplied by the user always wins. A local workspace draft such as `./<name-surname>-seo-context.md` is also valid when the user wants to iterate inside the active project before moving the file to a private reusable location.
 
 Required and conditional sections, in order:
 
