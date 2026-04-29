@@ -79,7 +79,22 @@ function expandUserPath(targetPath) {
   return targetPath;
 }
 
-function copySkillFolders(repoRoot, skills, targetRoot) {
+function normalizeRelativePath(filePath) {
+  return filePath.split(path.sep).join("/");
+}
+
+function shouldCopySkillPath(skillRoot, sourcePath, excludedPaths) {
+  if (!excludedPaths || excludedPaths.length === 0) {
+    return true;
+  }
+
+  const relativePath = normalizeRelativePath(path.relative(skillRoot, sourcePath));
+  return !excludedPaths.some(
+    (excludedPath) => relativePath === excludedPath || relativePath.startsWith(`${excludedPath}/`)
+  );
+}
+
+function copySkillFolders(repoRoot, skills, targetRoot, excludedPaths = []) {
   const exported = [];
 
   for (const skill of skills) {
@@ -88,7 +103,10 @@ function copySkillFolders(repoRoot, skills, targetRoot) {
     if (!fs.existsSync(source)) {
       throw new Error(`Skill source does not exist: ${source}`);
     }
-    fs.cpSync(source, destination, { recursive: true });
+    fs.cpSync(source, destination, {
+      recursive: true,
+      filter: (sourcePath) => shouldCopySkillPath(source, sourcePath, excludedPaths)
+    });
     exported.push(skill.name);
   }
 
@@ -156,7 +174,7 @@ function copyCommandFiles(repoRoot, commands, targetRoot, force) {
   return copied;
 }
 
-function installSkillFolders(repoRoot, skills, targetRoot, force) {
+function installSkillFolders(repoRoot, skills, targetRoot, force, excludedPaths = []) {
   const installed = [];
 
   fs.mkdirSync(targetRoot, { recursive: true });
@@ -175,7 +193,10 @@ function installSkillFolders(repoRoot, skills, targetRoot, force) {
       }
       removeIfExists(destination);
     }
-    fs.cpSync(source, destination, { recursive: true });
+    fs.cpSync(source, destination, {
+      recursive: true,
+      filter: (sourcePath) => shouldCopySkillPath(source, sourcePath, excludedPaths)
+    });
     installed.push(skill.name);
   }
 
@@ -212,7 +233,12 @@ function exportProvider(repoRoot, outputRoot, provider, config, force) {
       : path.join(bundleRoot, providerSpec.target);
   fs.mkdirSync(targetRoot, { recursive: true });
 
-  const exportedSkills = copySkillFolders(repoRoot, config.skills, targetRoot);
+  const exportedSkills = copySkillFolders(
+    repoRoot,
+    config.skills,
+    targetRoot,
+    providerSpec.skillExcludes
+  );
   if (providerSpec.commandTarget && providerSpec.commands) {
     const commandRoot = path.join(bundleRoot, providerSpec.commandTarget);
     copyCommandFiles(repoRoot, providerSpec.commands, commandRoot, force);
@@ -286,7 +312,8 @@ function installProvider(repoRoot, provider, config, flags) {
     repoRoot,
     config.skills,
     skillTargetRoot,
-    Boolean(flags.force)
+    Boolean(flags.force),
+    providerSpec.skillExcludes
   );
   const commandTargetRoot =
     providerSpec.layout === "gemini-extension"

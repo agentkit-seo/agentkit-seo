@@ -37,12 +37,18 @@
   "providers": {
     "shared": {
       "layout": "shared",
-      "target": "skills"
+      "target": "skills",
+      "skillExcludes": [
+        "agents"
+      ]
     },
     "claude-code": {
       "layout": "skill-folders",
       "target": ".claude/skills",
-      "globalTarget": "~/.claude/skills"
+      "globalTarget": "~/.claude/skills",
+      "skillExcludes": [
+        "agents"
+      ]
     },
     "codex": {
       "layout": "skill-folders",
@@ -55,6 +61,9 @@
       "target": ".gemini/extensions/agentkit-seo",
       "globalTarget": "~/.gemini/extensions/agentkit-seo",
       "skillTarget": "skills",
+      "skillExcludes": [
+        "agents"
+      ],
       "commandTarget": "commands/agentkit-seo",
       "files": [
         {
@@ -95,6 +104,9 @@
       "layout": "skill-folders",
       "target": ".opencode/skills",
       "globalTarget": "~/.config/opencode/skills",
+      "skillExcludes": [
+        "agents"
+      ],
       "commandTarget": ".opencode/commands",
       "globalCommandTarget": "~/.config/opencode/commands",
       "commands": [

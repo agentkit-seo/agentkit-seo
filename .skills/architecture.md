@@ -35,7 +35,7 @@ The portable skill folders use names like `agentkit-seo-linkedin` instead of pla
 ## Four layers
 
 1. Repo hub: Human-readable editorial docs at the repo root.
-2. Portable skill bundle: Self-contained skills in `.skills/agent-skill/` using `SKILL.md`, `references/`, and `agents/openai.yaml`.
+2. Portable skill bundle: Self-contained skills in `.skills/agent-skill/` using `SKILL.md` and `references/`, with optional agent-specific metadata such as `agents/openai.yaml` for OpenAI/Codex interfaces.
 3. Provider adapter: Install notes, wrappers, or provider-specific templates in `.skills/providers/<provider>/`.
 4. Export layer: Generated provider-facing layouts produced from `.skills/export/`.
 
@@ -48,6 +48,7 @@ The portable skill folders use names like `agentkit-seo-linkedin` instead of pla
 5. Use provider-specific slash commands only as thin wrappers that point the agent at the correct shared skill.
 6. Do not assume one invocation style works everywhere. The slash namespace model is provider-dependent.
 7. Keep provider packaging generated wherever possible; do not hand-maintain a second canonical copy of the skill tree at the repo root.
+8. Exclude provider-specific metadata from provider bundles that do not use it. For example, Gemini CLI, Claude Code, OpenCode, and the generic shared export should not receive OpenAI-only `agents/` metadata.
 
 ## Packaging stance
 

@@ -14,6 +14,8 @@ The extension contains:
 - shared skills copied into `skills/<skill-name>/`
 - commands copied into `commands/agentkit-seo/<module>.toml`
 
+OpenAI/Codex-only metadata from `agents/` is excluded from generated Gemini CLI installs.
+
 Gemini CLI exposes the nested command files as namespaced commands:
 
 - `/agentkit-seo:context`

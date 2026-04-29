@@ -7,7 +7,7 @@ Install the shared skills into:
 - `.claude/skills/<skill-name>/SKILL.md` for project-local use
 - `~/.claude/skills/<skill-name>/SKILL.md` for personal global use
 
-Copy the whole self-contained shared skill folder, not only the root `SKILL.md`. The local `references/` directory is part of the runtime bundle.
+Copy the self-contained shared skill runtime files, not only the root `SKILL.md`. The local `references/` directory is part of the runtime bundle. OpenAI/Codex-only metadata from `agents/` is excluded from generated Claude Code installs.
 
 ## Source-first workflow
 
