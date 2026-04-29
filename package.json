@@ -6,6 +6,14 @@
   "bin": {
     "agentkit-seo": ".skills/export/scripts/agentkit-seo.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentkit-seo/agentkit-seo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agentkit-seo/agentkit-seo/issues"
+  },
+  "homepage": "https://github.com/agentkit-seo/agentkit-seo#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -14,7 +22,8 @@
     ".skills/export",
     ".skills/providers",
     ".assets/docs/current-status.md",
-    ".assets/docs/evaluation-plan.md",
+    ".assets/docs/npm-publishing-process.md",
+    ".assets/docs/release-plan.md",
     ".assets/docs/STYLEGUIDE.md",
     "README.md"
   ],

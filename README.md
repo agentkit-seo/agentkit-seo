@@ -25,7 +25,7 @@
   <a href="#who-its-for">Who It's For</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
-  <a href="#quality-gate">Quality Gate</a> •
+  <a href="#release-readiness">Release Readiness</a> •
   <a href="#support">Support</a> •
   <a href="#authors">Authors</a>
 </p>
@@ -241,16 +241,17 @@ node .skills/export/scripts/agentkit-seo.mjs export \
 | OpenCode | Ready | Global or project-local skill install plus flat commands such as `/agentkit-seo-linkedin` |
 | Generic agents | Partial | Read the repo or reuse the portable `SKILL.md` files manually |
 
-## Quality Gate
+## Release Readiness
 
-Before public release, each launch-ready module should include:
+Before public release, the project should have:
 
-- one reproducible scenario
-- expected output shape
-- hallucination and overclaim guardrails
-- verification checklist
+- verified install/export behavior for every supported provider
+- a successful package dry run
+- clear root skill routing into the focused modules
+- grounded skill instructions that avoid unsupported ranking, ATS, or algorithm promises
+- a README that lets a new user install and try the project quickly
 
-The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other modules can remain beta until their scenarios and demos are executable.
+The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
 
 ## Support
 
@@ -265,7 +266,7 @@ The first launch-readiness focus is `cv-ats`, `github`, and `linkedin`. Other mo
 | Published `npx agentkit-seo ...` package | Not shipped yet |
 | Marketplace / registry distribution | Not shipped yet |
 
-Current internal implementation notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md). Public-release scenario checks are drafted in [.assets/docs/evaluation-plan.md](./.assets/docs/evaluation-plan.md).
+Current internal implementation notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md). The current release process lives in [.assets/docs/release-plan.md](./.assets/docs/release-plan.md).
 
 ---
 

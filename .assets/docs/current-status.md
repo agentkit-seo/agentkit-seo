@@ -49,11 +49,7 @@ Not shipped yet:
 
 - published npm package for public `npx agentkit-seo ...`
 - marketplace / registry distribution
-- executable public demos/evals
-
-Drafted but not executable yet:
-
-- public evaluation plan in `.assets/docs/evaluation-plan.md`
+- public demo assets such as GIFs or before/after examples
 
 Last verified locally on April 28, 2026:
 
@@ -81,3 +77,7 @@ Use this document for:
 - implementation-state reminders
 - near-term packaging gaps
 - decisions that matter to maintainers but should not dominate the public README
+
+### Current process decision
+
+The project is not treating an `evals/` folder, fake benchmark suite, or public showcase directory as a current requirement. Testing and demo assets can be added later if they help launch communication, but the active process is packaging, provider install reliability, skill quality, and README clarity.

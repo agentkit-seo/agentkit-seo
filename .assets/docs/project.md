@@ -80,7 +80,7 @@ Keeping the repository clean and well-structured from the start is critical. AI 
 
 - **Phase 4: Prompt Engineering & Context Tuning** Refine each shared skill in `.skills/agent-skill/` so the agent does not hallucinate. Write strict routing rules in the root `agentkit-seo` skill, for example: *"When optimizing a GitHub README, load `agentkit-seo-github` before generating any output."* Test the adapter commands and direct skill invocation end-to-end for each supported provider.
 
-- **Phase 5: Public Proof & Distribution** Add scenario evals, public demos, provider-specific release artifacts, and a published `npx` package only after the shared source tree and direct installs are stable.
+- **Phase 5: Public Packaging & Distribution** Publish the `npx` package, tighten the public README, add provider-specific release artifacts, and prepare launch communication only after the shared source tree and direct installs are stable. GIFs, demos, showcase examples, or manual test scenarios can be added later if they help explain the project, but they are not a current process requirement.
 
 ---
 
@@ -90,7 +90,7 @@ The foundational decisions below are now part of the project contract:
 
 1. **The Data Schema:** Editorial Knowledge Hub files use hidden metadata comments plus the visible structure defined in `.assets/docs/STYLEGUIDE.md`, so GitHub and VS Code render the page cleanly while agents still have routing metadata. Runtime skill entrypoints use Agent Skills frontmatter with `name` and `description`. Runtime references and provider adapter notes use lean Markdown optimized for loading cost and operational clarity.
 
-2. **The Scope of the MVP:** All seven shared skill bundles now exist, but launch readiness should be proven first with `cv-ats`, `github`, and `linkedin`. The remaining modules can ship as beta modules until scenario evals and demos exist.
+2. **The Scope of the MVP:** All seven shared skill bundles now exist, but launch polish should focus first on `cv-ats`, `github`, and `linkedin`. The remaining modules can ship as beta modules while the install flow, package distribution, and main README narrative are completed.
 
 3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This avoids common Windows symlink failure modes and keeps installed bundles portable.
 
@@ -104,13 +104,13 @@ The foundational decisions below are now part of the project contract:
 - **Marketplace Publishing:** Listing on official provider hubs (Claude's MCP marketplace, Gemini extensions, and equivalents).
 - **Organization Website:** A public-facing landing page explaining the project to non-developer users. Non-developer users can already use the Knowledge Hub by reading the repo directly on GitHub, or by pasting the repository URL into any LLM chat interface that can fetch web content.
 - **Multi-user / Team support:** Allowing a team (e.g., a startup founding team) to share a base Skill while each member maintains their own personal context file independently.
-- **Scenario Evals and Demos:** Add small reproducible scenarios for CV tailoring, GitHub README optimization, LinkedIn section rewriting, and portfolio metadata audits before marketplace publication.
+- **Demos or Showcase Assets:** Add GIFs, before/after examples, or small manual examples only when they support public communication. They are useful later, but not a current blocker.
 
 ---
 
 ### **6. Open Doubts & Questions**
 
-- *"How strict should the public release gate be? Should marketplace publication require passing scenario evals for every module, or only the launch-ready MVP modules?"*
+- *"Which minimum manual release checks are enough before publishing the first public `npx` package?"*
 
 - *"How are we managing context window limits at the submodule level? If a single platform's submodule (e.g., `linkedin/`) grows large enough, does it need its own lite version for agents with smaller context windows?"*
 
