@@ -1,4 +1,66 @@
+# Local agent/runtime files
+/.codex
+/.codex/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Node dependencies and package-manager caches
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/sdks/
+!.yarn/versions/
+
+# Build, export, and generated output
+dist/
+build/
+out/
+coverage/
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
 # LaTeX compilation artifacts
 *.aux
-*.log
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
 *.out
+*.synctex.gz
+*.toc
