@@ -1,12 +1,13 @@
----
-title: "LinkedIn experience and skills"
-platform: "linkedin"
-objective: "Rules for keeping experience credible, making skills easy to validate, and using current LinkedIn profile features well."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["linkedin", "experience", "skills", "credibility"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "LinkedIn experience and skills"
+  platform: "linkedin"
+  objective: "Rules for keeping experience credible, making skills easy to validate, and using current LinkedIn profile features well."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["linkedin", "experience", "skills", "credibility"]
+  agent_priority: "high"
+-->
 
 # LinkedIn experience and skills
 

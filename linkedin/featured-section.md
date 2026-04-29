@@ -1,12 +1,13 @@
----
-title: "LinkedIn Featured section"
-platform: "linkedin"
-objective: "Guidelines for structuring the Featured carousel to act as visual 'Proof of Work' for tech professionals."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["linkedin", "featured", "portfolio", "visual"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "LinkedIn Featured section"
+  platform: "linkedin"
+  objective: "Guidelines for structuring the Featured carousel to act as visual 'Proof of Work' for tech professionals."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["linkedin", "featured", "portfolio", "visual"]
+  agent_priority: "medium"
+-->
 
 # LinkedIn Featured section
 

@@ -1,12 +1,13 @@
----
-title: "LinkedIn profile optimization"
-platform: "linkedin"
-objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["linkedin", "360Brew", "search", "ai"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "LinkedIn profile optimization"
+  platform: "linkedin"
+  objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["linkedin", "360Brew", "search", "ai"]
+  agent_priority: "high"
+-->
 
 # LinkedIn profile optimization
 

@@ -1,12 +1,13 @@
----
-title: "LinkedIn engagement strategy"
-platform: "linkedin"
-objective: "Evidence-based guidance for posting and commenting on LinkedIn without relying on folklore timing rules."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["linkedin", "engagement", "comments", "content"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "LinkedIn engagement strategy"
+  platform: "linkedin"
+  objective: "Evidence-based guidance for posting and commenting on LinkedIn without relying on folklore timing rules."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["linkedin", "engagement", "comments", "content"]
+  agent_priority: "medium"
+-->
 
 # LinkedIn engagement strategy
 

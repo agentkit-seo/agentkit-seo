@@ -1,12 +1,13 @@
----
-title: "LinkedIn headline strategy"
-platform: "linkedin"
-objective: "Strict formulas and constraints for writing highly discoverable, keyword-rich LinkedIn headlines."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["linkedin", "headline", "seo", "keywords"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "LinkedIn headline strategy"
+  platform: "linkedin"
+  objective: "Strict formulas and constraints for writing highly discoverable, keyword-rich LinkedIn headlines."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["linkedin", "headline", "seo", "keywords"]
+  agent_priority: "high"
+-->
 
 # LinkedIn headline strategy
 

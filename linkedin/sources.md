@@ -1,12 +1,13 @@
----
-title: "LinkedIn optimization sources"
-platform: "linkedin"
-objective: "Centralized citations for the LinkedIn module, separating official platform guidance from public research and limited external examples."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["linkedin", "sources", "research", "360Brew"]
-agent_priority: "low"
----
+<!--
+metadata:
+  title: "LinkedIn optimization sources"
+  platform: "linkedin"
+  objective: "Centralized citations for the LinkedIn module, separating official platform guidance from public research and limited external examples."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["linkedin", "sources", "research", "360Brew"]
+  agent_priority: "low"
+-->
 
 # LinkedIn optimization sources
 

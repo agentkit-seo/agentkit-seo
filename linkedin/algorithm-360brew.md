@@ -1,12 +1,13 @@
----
-title: "360Brew and LinkedIn ranking signals"
-platform: "linkedin"
-objective: "Explains what is officially documented about LinkedIn ranking, what the public 360Brew debate adds, and which conclusions remain inferred."
-status: "draft"
-last_updated: "2026-04-28"
-tags: ["linkedin", "360Brew", "ranking", "search"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "360Brew and LinkedIn ranking signals"
+  platform: "linkedin"
+  objective: "Explains what is officially documented about LinkedIn ranking, what the public 360Brew debate adds, and which conclusions remain inferred."
+  status: "draft"
+  last_updated: "2026-04-28"
+  tags: ["linkedin", "360Brew", "ranking", "search"]
+  agent_priority: "medium"
+-->
 
 # 360Brew and LinkedIn ranking signals
 

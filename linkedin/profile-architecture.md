@@ -1,12 +1,13 @@
----
-title: "LinkedIn profile architecture"
-platform: "linkedin"
-objective: "Rules for the visual and structural basics of a LinkedIn profile, including URLs, location SEO, verification, and profile settings."
-status: "draft"
-last_updated: "2026-04-29"
-tags: ["linkedin", "architecture", "seo", "setup"]
-agent_priority: "medium"
----
+<!--
+metadata:
+  title: "LinkedIn profile architecture"
+  platform: "linkedin"
+  objective: "Rules for the visual and structural basics of a LinkedIn profile, including URLs, location SEO, verification, and profile settings."
+  status: "draft"
+  last_updated: "2026-04-29"
+  tags: ["linkedin", "architecture", "seo", "setup"]
+  agent_priority: "medium"
+-->
 
 # LinkedIn profile architecture
 

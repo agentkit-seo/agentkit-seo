@@ -1,13 +1,13 @@
----
-title: "LinkedIn About section"
-platform: "linkedin"
-objective: "Constraints for writing the About section with clear positioning, readable evidence, and explicit next steps."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["linkedin", "about", "storytelling", "llm"]
-agent_priority: "high"
----
-
+<!--
+metadata:
+  title: "LinkedIn About section"
+  platform: "linkedin"
+  objective: "Constraints for writing the About section with clear positioning, readable evidence, and explicit next steps."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["linkedin", "about", "storytelling", "llm"]
+  agent_priority: "high"
+-->
 # LinkedIn About section
 
 > This file defines the constraints for the About section, which must function as a readable positioning statement for humans and a clean evidence block for search and AI tools.

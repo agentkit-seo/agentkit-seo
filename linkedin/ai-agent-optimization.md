@@ -1,12 +1,13 @@
----
-title: "AI agent and LLM optimization"
-platform: "linkedin"
-objective: "Recommendations for making a LinkedIn profile easy for external AI tools, parsers, and enrichment workflows to understand."
-status: "draft"
-last_updated: "2026-04-24"
-tags: ["linkedin", "ai-agents", "llm", "parsing"]
-agent_priority: "high"
----
+<!--
+metadata:
+  title: "AI agent and LLM optimization"
+  platform: "linkedin"
+  objective: "Recommendations for making a LinkedIn profile easy for external AI tools, parsers, and enrichment workflows to understand."
+  status: "draft"
+  last_updated: "2026-04-24"
+  tags: ["linkedin", "ai-agents", "llm", "parsing"]
+  agent_priority: "high"
+-->
 
 # AI agent and LLM optimization
 
