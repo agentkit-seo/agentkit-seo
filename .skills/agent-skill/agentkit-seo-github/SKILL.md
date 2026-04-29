@@ -22,8 +22,22 @@ Load only the references needed for the task:
 ## Token discipline
 
 - Do not load every repository README unless the user asks for a full profile audit.
-- For profile work, inspect profile metadata, pinned repos, and only the highest-signal repositories first.
+- For profile work, inspect profile metadata, pinned repos, and at most 3 highest-signal repositories by default.
 - For one repository, stay inside that repository unless cross-profile positioning is explicitly requested.
+- Prefer repository metadata, About text, topics, pinned status, README opening sections, and visible language signals before loading entire files.
+- Keep source ledgers compact: list input groups, not every minor fetched page.
+- Do not restate full checklists in the final output. Report only findings that change the user's next action.
+- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+
+## Depth contract
+
+Use the smallest audit depth that can answer the request honestly:
+
+- `Quick scan`: profile fields, profile README opening, pinned repositories, and obvious metadata gaps.
+- `Default audit`: quick scan plus up to 3 highest-signal repositories, using repository metadata, README openings, topics, and language signals.
+- `Deep audit`: full README/file inspection, `.gitattributes`, setup paths, CI, licenses, social previews, and repo-by-repo consistency.
+
+Default to `Default audit` for broad profile requests. Offer `Deep audit` as an optional next step when the current answer would benefit from more evidence. Do not choose `Deep audit` silently unless the user asks for a complete audit, every repository, exact file changes, or repository-level remediation.
 
 ## Intake workflow
 
@@ -37,12 +51,16 @@ Load only the references needed for the task:
 ## Rules
 
 - Distinguish documented GitHub behavior from inference.
+- Separate facts verified on GitHub, facts supplied by the user's context files, and recommendations inferred from those facts.
 - Optimize for search clarity, repository comprehension, and maintainer trust.
 - Do not promise hidden ranking boosts from stars, forks, or activity patterns.
+- Do not invent numbers, percentiles, ranking mechanics, vulnerability impact, award scope, repository health, or pinned-repository status.
+- Avoid hype language unless the user provided evidence that supports it. Prefer precise proof over louder branding.
 - Keep examples factual to the user's real projects.
 - Keep recommendations scoped to the user's actual repositories and public goals.
 - Keep profile metadata, pinned repositories, README copy, and repository structure aligned around the same public positioning.
 - For rewrites, improve clarity, proof, and discoverability before inventing a more aggressive branding angle.
+- Recommend `AGENTS.md` or Copilot instruction files only when the repository is agent-facing, complex enough to need operational guidance, or the user explicitly asks for agent-readiness work.
 
 ## Output expectation
 
@@ -52,8 +70,11 @@ Produce GitHub-specific edits or recommendations that improve profile clarity, r
 
 Return:
 
-1. public inputs inspected and any inaccessible inputs
+1. source ledger: public inputs inspected, context files used, and inaccessible inputs
 2. priority issues by profile, pinned repos, and repositories
 3. ready-to-apply copy or file changes
-4. confidence notes where advice is inferred rather than documented
+4. confidence notes that label each major recommendation as verified, context-derived, or inferred
 5. next actions, including context-file creation when profile facts are weak
+
+For audits, make the output feel like a grounded review rather than a generic marketing report. Use concise labels such as `Verified`, `From context`, and `Inference` when a claim could otherwise be ambiguous.
+When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.

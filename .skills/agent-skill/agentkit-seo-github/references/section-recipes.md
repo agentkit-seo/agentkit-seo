@@ -95,3 +95,26 @@ Topic tags:
 - preserve facts and sharpen packaging
 - when evidence is weak, say what documentation or structure is missing
 - keep the same repository positioning across name, About text, README, and topics
+- write credible technical copy before writing promotional copy
+- avoid adjectives like `elite`, `top-tier`, `world-class`, or `top-1%` unless the user provides verifiable evidence
+- keep security, research, and vulnerability claims precise; do not amplify impact beyond the supplied evidence
+
+## Audit copy pattern
+
+When turning an audit into user-facing output, prefer:
+
+```text
+Evidence: <verified/context/inferred observation>
+Why it matters: <reader, recruiter, maintainer, or search effect>
+Change: <exact copy, metadata, README edit, or next action>
+```
+
+Use short ready-to-apply blocks for:
+
+- profile bio
+- repository About text
+- topic tags
+- pinned repository ordering
+- README section snippets
+
+Before recommending an `AGENTS.md`, ask whether the repository actually needs agent-facing instructions. If the repository is not agent-facing, suggest README and metadata improvements first.
