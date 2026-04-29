@@ -4,18 +4,20 @@ metadata:
   platform: "linkedin"
   objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
   status: "draft"
-  last_updated: "2026-04-28"
+  last_updated: "2026-04-29"
   tags: ["linkedin", "360Brew", "search", "ai"]
   agent_priority: "high"
 -->
 
 # LinkedIn profile optimization
 
-> This directory contains the rules and strategies for engineering a LinkedIn profile that performs well in LinkedIn search and recommendations while remaining easy for external AI tools to interpret.
+> This directory helps turn a LinkedIn profile from a generic professional summary into a searchable, evidence-backed profile that recruiters and AI tools can understand.
 
 ---
 
 ## 1. Overview: The dual-audience problem
+
+Most LinkedIn profiles sound polished and say very little. They use broad claims, vague titles, and soft skills that are hard to verify.
 
 Optimizing a LinkedIn profile is no longer just about adding keywords for a human recruiter to skim. You are now optimizing for two distinct, machine-driven audiences simultaneously.
 
@@ -27,7 +29,30 @@ As of April 28, 2026, public commentary around 360Brew is disputed. Some creator
 
 This module provides the structural rules, formatting constraints, and content formulas needed to satisfy both audiences while maintaining an engaging narrative for the human reader who ultimately makes the hiring decision.
 
-## 2. Module index
+```text
+Weak headline:
+"Student | Developer | Tech enthusiast"
+
+Stronger headline:
+"Cybersecurity engineering student | Security research, Python, Linux, network security"
+```
+
+## 2. Use this module when
+
+- A LinkedIn profile needs clearer positioning for recruiters, search, or external AI tools.
+- The headline, About section, Experience, Featured section, or Skills list feels generic.
+- Public profile claims need to stay aligned with the CV, GitHub, portfolio, and context file.
+- The user wants activity and engagement advice without relying on algorithm folklore.
+
+## 3. Fast path
+
+1. For a full profile audit, start with [Profile architecture](./profile-architecture.md).
+2. For visible positioning, use [Headline strategy](./headline-strategy.md) and [About section](./about-section.md).
+3. For proof of work, use [Experience and skills](./experience-and-skills.md) and [Featured section](./featured-section.md).
+4. For AI-readable structure, use [AI agent optimization](./ai-agent-optimization.md).
+5. For posting and commenting, use [Engagement strategy](./engagement-strategy.md).
+
+## 4. Module index
 
 The optimization logic is divided into the following documents, ordered from foundational algorithms to specific section strategies:
 
@@ -41,14 +66,14 @@ The optimization logic is divided into the following documents, ordered from fou
 - **[Engagement strategy](./engagement-strategy.md):** Evidence-based posting and commenting practices that align with documented relevance and quality signals.
 - **[Sources](./sources.md):** Official help pages, the 360Brew paper, and limited external sources used in this module.
 
-## 3. Reference profiles
+## 5. Reference profiles
 
 The following LinkedIn profiles are actively maintained using the strategies defined in this module and serve as real-world examples of dual-audience optimization:
 
 - **Renato Mignone**: [linkedin.com/in/renato-mignone](https://www.linkedin.com/in/renato-mignone/)
 - **Elia Innocenti**: [linkedin.com/in/eliainnocenti](https://www.linkedin.com/in/eliainnocenti/)
 
-## 4. Usage for agents
+## 6. Usage for agents
 
 When an AI agent is tasked with optimizing a user's LinkedIn profile:
 

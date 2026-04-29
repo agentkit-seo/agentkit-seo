@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <em>Agent skills that help AI tools audit, rewrite, and maintain your professional presence across CVs, LinkedIn, GitHub, portfolios, and X.</em>
+  <em>Stop giving career agents the same context again and again. Give them a source of truth, platform rules, and a repeatable workflow.</em>
 </p>
 
 <p align="center">
@@ -17,20 +17,52 @@
 </p>
 
 <p align="center">
+  <a href="#start-here">Start Here</a> •
   <a href="#what-it-is">What It Is</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#modules">Modules</a> •
   <a href="#agent-context-file">Agent Context File</a> •
   <a href="#how-it-works">How It Works</a> •
-  <a href="#quick-start">Quick Start</a> •
   <a href="#what-you-get">What You Get</a> •
-  <a href="#who-its-for">Who It's For</a> •
-  <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
-  <a href="#release-readiness">Release Readiness</a> •
-  <a href="#support">Support</a> •
-  <a href="#authors">Authors</a>
+  <a href="#support">Support</a>
 </p>
 
 ---
+
+## Start Here
+
+Most AI agents can rewrite a CV, LinkedIn bio, or GitHub README. The problem is that they usually rewrite from whatever context happens to be in the chat.
+
+AgentKit SEO changes the starting point. It gives the agent a reusable personal context file, platform-specific rules, and installable skills for CVs, LinkedIn, GitHub, portfolios, and X.
+
+The fastest useful path is:
+
+1. Create a private agent-context-file with the `agentkit-seo-agent-context-optimization` skill.
+2. Pick one platform module, usually `cv-ats`, `github`, or `linkedin`.
+3. Ask the agent for an audit, rewrite, or prioritized action plan using the context file as the source of truth.
+
+If you are only browsing, start with the module that matches the thing you want to improve:
+
+| Goal | Start here |
+| --- | --- |
+| Build the reusable personal context layer | [agent-context-optimization](./agent-context-optimization/README.md) |
+| Improve a GitHub profile or repository | [github](./github/README.md) |
+| Rewrite a LinkedIn profile | [linkedin](./linkedin/README.md) |
+| Tailor a CV for ATS parsing | [cv-ats](./cv-ats/README.md) |
+| Fix portfolio SEO and indexability | [web-portfolio](./web-portfolio/README.md) |
+| Improve X profile and posting strategy | [x-twitter](./x-twitter/README.md) |
+
+Small example of the difference:
+
+```text
+Weak agent output:
+"I am a passionate developer with experience in many technologies."
+
+AgentKit SEO-style output:
+"Security-focused software engineer building verified, search-ready career systems
+across GitHub, CVs, LinkedIn, and portfolio sites."
+```
 
 ## What It Is
 
@@ -44,6 +76,65 @@ Most agents rewrite career material generically because they lack durable person
 - one human-readable repo hub for research and maintenance
 
 The goal is simple: make agent output for profiles, resumes, portfolios, and personal-branding workflows more structured, more evidence-based, and less generic.
+
+## Quick Start
+
+First choose the invocation style for the agent provider you are using. The stable cross-provider contract is the shared skill name; slash-command wrappers exist only where the provider supports them.
+
+| Provider | Preferred invocation |
+| --- | --- |
+| Codex | Select or mention the installed skill directly, for example `$agentkit-seo-agent-context-optimization` or `$agentkit-seo-github` |
+| Claude Code | Use the installed skill by name; Claude may auto-select from the skill description, but explicit skill naming is safer |
+| Gemini CLI | Use namespaced commands such as `/agentkit-seo:context`, `/agentkit-seo:github`, or `/agentkit-seo:linkedin` |
+| OpenCode | Use native skill loading or flat commands such as `/agentkit-seo-context`, `/agentkit-seo-github`, or `/agentkit-seo-linkedin` |
+
+If you do not have an agent-context-file yet, start with the context optimization skill:
+
+```text
+Use agentkit-seo-agent-context-optimization to create my agent-context-file.
+I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
+screenshots, or any other career material you need.
+Before writing a file, ask me where to store it: in this workspace, at a path I choose,
+or at a portable default such as ~/.agentkit-seo/<name-surname>-seo-context.md.
+If you cannot write files, return a compact outline first and ask whether I want the full
+Markdown draft split into sections.
+```
+
+Once the context file exists, call the relevant platform skill directly:
+
+```text
+Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
+Use my personal context file at the path I provide.
+```
+
+The agent can return a focused action plan covering:
+
+- weak project positioning and missing proof points
+- missing GitHub repository topics, metadata, or README structure
+- portfolio title, description, canonical, schema.org, and indexability gaps
+- CV/ATS keyword alignment risks
+- LinkedIn headline, About, Experience, Featured, and Skills improvements
+- next actions ranked by impact and evidence
+
+## Modules
+
+| Module | Use it for |
+| --- | --- |
+| `agent-context-optimization` | Build the structured personal context file the other modules rely on. |
+| `linkedin` | Headline, About, Experience, Skills, Featured, activity, and profile audits. |
+| `github` | Profile metadata, pinned repositories, README positioning, topics, and repo hygiene. |
+| `cv-ats` | ATS-safe resume structure, keyword alignment, bullet writing, and CV audits. |
+| `web-portfolio` | Portfolio architecture, metadata, structured data, indexability, and AEO signals. |
+| `x-twitter` | Bio, pinned post, threads, posting strategy, and account audits. |
+
+Browse the editorial hub directly from the repo root:
+
+- [agent-context-optimization](./agent-context-optimization/README.md)
+- [linkedin](./linkedin/README.md)
+- [github](./github/README.md)
+- [cv-ats](./cv-ats/README.md)
+- [web-portfolio](./web-portfolio/README.md)
+- [x-twitter](./x-twitter/README.md)
 
 ## Agent Context File
 
@@ -92,45 +183,6 @@ The human-readable folders explain the reasoning. The `.skills/agent-skill/` fol
 
 This is not a prompt collection. It is closer to an operating manual for agents working on professional identity: gather inputs, verify facts, route to the right platform rules, produce an evidence-linked answer, and avoid inventing claims that are not present in the user's material.
 
-## Quick Start
-
-First choose the invocation style for the agent provider you are using. The stable cross-provider contract is the shared skill name; slash-command wrappers exist only where the provider supports them.
-
-| Provider | Preferred invocation |
-| --- | --- |
-| Codex | Select or mention the installed skill directly, for example `$agentkit-seo-agent-context-optimization` or `$agentkit-seo-github` |
-| Claude Code | Use the installed skill by name; Claude may auto-select from the skill description, but explicit skill naming is safer |
-| Gemini CLI | Use namespaced commands such as `/agentkit-seo:context`, `/agentkit-seo:github`, or `/agentkit-seo:linkedin` |
-| OpenCode | Use native skill loading or flat commands such as `/agentkit-seo-context`, `/agentkit-seo-github`, or `/agentkit-seo-linkedin` |
-
-If you do not have an agent-context-file yet, start with the context optimization skill:
-
-```text
-Use agentkit-seo-agent-context-optimization to create my agent-context-file.
-I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes,
-screenshots, or any other career material you need.
-Before writing a file, ask me where to store it: in this workspace, at a path I choose,
-or at a portable default such as ~/.agentkit-seo/<name-surname>-seo-context.md.
-If you cannot write files, return a compact outline first and ask whether I want the full
-Markdown draft split into sections.
-```
-
-Once the context file exists, call the relevant platform skill directly:
-
-```text
-Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
-Use my personal context file at the path I provide.
-```
-
-The agent can return a focused action plan covering:
-
-- weak project positioning and missing proof points
-- missing GitHub repository topics, metadata, or README structure
-- portfolio title, description, canonical, schema.org, and indexability gaps
-- CV/ATS keyword alignment risks
-- LinkedIn headline, About, Experience, Featured, and Skills improvements
-- next actions ranked by impact and evidence
-
 The deeper workflow is the personal agent context file: a structured career source of truth that lives outside this repository and can be reused across agents, profiles, CVs, portfolios, and job applications.
 
 The files inside module-level `examples/` folders are personal working examples, not normative fixtures. They reflect material used during real application workflows, including interviews and applications with companies such as Anthropic, Apple, and Bending Spoons, and the personal context example supported cover-letter and application drafting. Treat them as practical reference artifacts rather than strict implementations of the current best-practice architecture; the canonical rules live in the module docs, templates, and runtime skill references.
@@ -159,26 +211,6 @@ AgentKit SEO is designed for:
 - founders and freelancers improving public trust signals
 - agents that need structured personal context before editing public profiles
 - maintainers building portable skills for more than one coding agent
-
-## Modules
-
-| Module | Focus |
-| --- | --- |
-| `agent-context-optimization` | Build the structured personal context file the other modules rely on. |
-| `linkedin` | Headline, About, Experience, Skills, Featured, activity, and profile audits. |
-| `github` | Profile metadata, pinned repositories, README positioning, topics, and repo hygiene. |
-| `cv-ats` | ATS-safe resume structure, keyword alignment, bullet writing, and CV audits. |
-| `web-portfolio` | Portfolio architecture, metadata, structured data, indexability, and AEO signals. |
-| `x-twitter` | Bio, pinned post, threads, posting strategy, and account audits. |
-
-Browse the editorial hub directly from the repo root:
-
-- [agent-context-optimization](./agent-context-optimization/README.md)
-- [linkedin](./linkedin/README.md)
-- [github](./github/README.md)
-- [cv-ats](./cv-ats/README.md)
-- [web-portfolio](./web-portfolio/README.md)
-- [x-twitter](./x-twitter/README.md)
 
 Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
 

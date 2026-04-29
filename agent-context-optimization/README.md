@@ -4,24 +4,49 @@ metadata:
   platform: "general"
   objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, template, and example file."
   status: "draft"
-  last_updated: "2026-04-24"
+  last_updated: "2026-04-29"
   tags: ["context-file", "index", "navigation"]
   agent_priority: "medium"
 -->
 
 # Agent context optimization
 
-> This folder defines the standard for building and maintaining a personal agent context file. It is the source-of-truth module for grounding career-focused AI work in verified facts.
+> This folder defines the standard for building and maintaining a personal agent context file: the private source of truth that keeps career-focused AI work grounded in verified facts.
 
 ---
 
 ## 1. Overview
 
-This directory contains the architecture, workflow, and maintenance rules for a personal agent context file. The file itself is a structured Markdown knowledge base describing a person's academic and professional record in a format that both humans and AI agents can navigate reliably.
+The fastest way to get generic career output is to give an agent scattered context. A CV in one message, a LinkedIn profile in another, a GitHub URL later, and a few corrections after the first bad draft.
+
+This module fixes that by turning professional history into one structured Markdown file. The file describes a person's academic and professional record in a format that both humans and AI agents can navigate reliably.
 
 The intended use is simple: keep one canonical context file up to date, load it into an agent session, and combine it with the platform-specific modules in this repository when generating CVs, LinkedIn text, portfolio copy, or interview prep.
 
-## 2. Directory contents
+```text
+Before:
+"Here is my CV. Also my GitHub is different now. Actually ignore that old project."
+
+After:
+"Use my agent-context-file as the source of truth, then audit my LinkedIn profile."
+```
+
+## 2. Use this module when
+
+- A user does not yet have an agent-context-file.
+- Existing career material is scattered across CVs, LinkedIn, GitHub, notes, and portfolio pages.
+- An agent needs one verified source of truth before rewriting public career material.
+- A context file already exists but has become stale, too long, or inconsistent.
+
+## 3. Fast path
+
+1. Read [why-context-files.md](./why-context-files.md) to understand the purpose.
+2. Use [templates/context-file-template.md](./templates/context-file-template.md) to create the first draft.
+3. Check the draft against [context-file-spec.md](./context-file-spec.md).
+4. Use [agent-workflow.md](./agent-workflow.md) when loading the file into an agent session.
+5. Return to [file-maintenance.md](./file-maintenance.md) whenever new facts need to be added.
+
+## 4. Directory contents
 
 - [context-file-spec.md](./context-file-spec.md): The authoritative specification for structure, section order, semantic tags, and validation.
 - [why-context-files.md](./why-context-files.md): The motivation document explaining why a context file outperforms copy-pasted raw text or agent memory.
@@ -30,17 +55,7 @@ The intended use is simple: keep one canonical context file up to date, load it 
 - [templates/context-file-template.md](./templates/context-file-template.md): A guided template for building a new personal context file.
 - [examples/renato-mignone-context-file.md](./examples/renato-mignone-context-file.md): A full worked example showing how the spec looks in practice.
 
-## 3. Recommended reading order
-
-Read the files in this order when onboarding a new user or agent:
-
-- Start with [why-context-files.md](./why-context-files.md) if the reader does not yet understand the purpose.
-- Read [context-file-spec.md](./context-file-spec.md) before authoring or editing any real file.
-- Use [templates/context-file-template.md](./templates/context-file-template.md) to draft a new file.
-- Use [agent-workflow.md](./agent-workflow.md) when operating with the file in live sessions.
-- Use [file-maintenance.md](./file-maintenance.md) whenever new achievements, grades, roles, or certifications need to be added.
-
-## 4. Usage for agents
+## 5. Usage for agents
 
 When an AI agent is asked to work with a personal context file:
 

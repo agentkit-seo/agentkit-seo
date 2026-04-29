@@ -11,11 +11,13 @@ metadata:
 
 # GitHub optimization
 
-> This directory contains the rules and strategies for making a GitHub profile and repositories easier to find, inspect, and understand through GitHub search, external search, GitHub Copilot, and other AI agents.
+> This directory helps turn a GitHub profile from a code dump into a searchable proof-of-work system for humans, GitHub search, Copilot, and other AI agents.
 
 ---
 
 ## 1. Overview: The internal ecosystem
+
+Most GitHub profiles show activity. Fewer explain why the work matters, what the developer can actually build, and which repositories deserve attention.
 
 Optimizing for GitHub is fundamentally different from optimizing for Google or a traditional ATS. You are optimizing for an ecosystem that combines repository metadata, exact-match code queries, contribution visibility, human trust signals, and semantic indexing for Copilot.
 
@@ -23,7 +25,30 @@ The first audience is GitHub's internal code search engine, known as **Blackbird
 
 The second audience consists of **AI Agents and Copilot**. Copilot uses a sophisticated semantic search index that updates in the background. Ensuring your documentation and codebase are structured to feed this index correctly is the foundation of Agentic Engine Optimization (AEO) for code.
 
-## 2. Module index
+```text
+Weak signal:
+"Backend server"
+
+Stronger signal:
+"FastAPI authentication service with JWT, PostgreSQL, rate limiting, and Docker deployment"
+```
+
+## 2. Use this module when
+
+- A GitHub profile does not clearly explain who the developer is and what they build.
+- Pinned repositories, topics, descriptions, or READMEs do not show the strongest proof of work.
+- A project should be easier to find through GitHub search, external search, or AI tools.
+- A repository needs cleaner instructions for Copilot, code agents, or future maintainers.
+
+## 3. Fast path
+
+1. For the profile page, start with [Profile architecture](./profile-architecture.md) and [Profile README](./profile-readme.md).
+2. For an individual project, start with [Repository SEO](./repository-seo.md).
+3. If language stats look wrong, use [Linguist and statistics](./linguist-and-stats.md).
+4. If the repository is meant to work well with code agents, use [Copilot and agents](./copilot-and-agents.md).
+5. Use [Engagement signals](./engagement-signals.md) after the basic profile and repository structure are already clear.
+
+## 4. Module index
 
 The optimization logic is divided into the following documents, ordered from foundational algorithms to specific technical configurations:
 
@@ -36,7 +61,7 @@ The optimization logic is divided into the following documents, ordered from fou
 - **[Copilot and agents](./copilot-and-agents.md):** The definitive guide to AEO within GitHub, including Copilot indexing, repository instructions, and `AGENTS.md` precedence.
 - **[Sources](./sources.md):** Citations and research validating the internal mechanics of GitHub search and Copilot indexing.
 
-## 3. Usage for agents
+## 5. Usage for agents
 
 When an AI agent is tasked with optimizing a user's GitHub presence:
 

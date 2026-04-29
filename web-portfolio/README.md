@@ -4,22 +4,47 @@ metadata:
   platform: "portfolio"
   objective: "Master index and routing logic for making a personal website crawlable, indexable, and trustworthy in search and AI discovery systems."
   status: "draft"
-  last_updated: "2026-04-24"
+  last_updated: "2026-04-29"
   tags: ["portfolio", "seo", "indexing", "aeo"]
   agent_priority: "high"
 -->
 
 # Web portfolio SEO and indexing
 
-> This directory contains the rules and strategies for making a personal portfolio website discoverable, crawlable, and legible to both search engines and AI agents.
+> This directory helps make a personal portfolio discoverable, crawlable, and persuasive instead of just visually polished.
 
 ---
 
 ## 1. Overview
 
+A portfolio can look finished and still be invisible. If project pages cannot be crawled, metadata is generic, or case studies do not explain the work, search engines and AI tools have little to surface.
+
 A personal website is the only professional surface fully controlled by its owner. That control is useful only if the site can be discovered, rendered, and trusted by Google, Bing, and modern AI retrieval systems. This module defines the technical and editorial rules that make a portfolio indexable, understandable, and worth surfacing for both branded and non-branded queries.
 
-## 2. Module index
+```text
+Weak project page:
+"Project One - React app"
+
+Stronger project page:
+"AgentKit SEO - installable AI skill package for career profile optimization"
+```
+
+## 2. Use this module when
+
+- A portfolio is live but not appearing in search results.
+- Pages exist but metadata, structured data, or canonical URLs are weak or missing.
+- A React, SPA, or static site needs crawlability and rendering checks.
+- Project pages need clearer case-study structure for humans, search engines, and AI tools.
+
+## 3. Fast path
+
+1. If the site is not indexed, start with [Indexability and submission](./indexability-and-submission.md).
+2. If the site has too few real pages, use [Site architecture](./site-architecture.md).
+3. If search snippets or link previews are weak, use [Metadata and snippets](./metadata-and-snippets.md).
+4. If the site is JavaScript-heavy, use [JavaScript SEO](./javascript-seo.md).
+5. If project pages feel thin, use [Content and case studies](./content-and-case-studies.md).
+
+## 4. Module index
 
 The optimization logic is divided into the following documents, ordered from crawlability fundamentals to AI-readable enhancements:
 
@@ -34,7 +59,7 @@ The optimization logic is divided into the following documents, ordered from cra
 - **[Launch and monitoring](./launch-and-monitoring.md):** Deployment checklist, indexing workflow, and ongoing monitoring routine.
 - **[Sources](./sources.md):** Official documentation and standards that validate the rules in this module.
 
-## 3. Usage for agents
+## 5. Usage for agents
 
 When an AI agent is tasked with optimizing a user's personal website:
 
