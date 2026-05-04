@@ -11,8 +11,6 @@ Use only the LinkedIn module unless the user explicitly asks for cross-platform 
 
 ## Reference selection
 
-Load only the references needed for the task:
-
 - Headline, About, Experience, Skills, Featured, profile architecture: [references/positioning-and-structure.md](references/positioning-and-structure.md)
 - Ready-to-paste section rewrites: [references/section-recipes.md](references/section-recipes.md)
 - Search visibility, activity, comments, AI readability: [references/discoverability-and-activity.md](references/discoverability-and-activity.md)
@@ -26,11 +24,11 @@ Load only the references needed for the task:
 - Read algorithm-confidence material only when explaining why a tactic works.
 - Prefer supplied section text, public fields, Featured links, and a small recent-activity sample before asking for screenshots or exports.
 - Keep source ledgers compact: list input groups, not every minor profile element.
-- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+- Name next inspection if bounded.
 
 ## Depth contract
 
-Use the smallest audit depth that can answer the request honestly:
+Use the smallest honest audit depth:
 
 - `Quick scan`: headline, About opening, current role, Featured/link path, and obvious positioning gaps.
 - `Default audit`: quick scan plus Experience summary, Skills/top proof, Featured items, and up to 5 recent activity items when available.
@@ -61,7 +59,7 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 
 ## Response shape
 
-Return only the sections relevant to the user's requested task. For audits, return:
+Return only requested-relevant sections. For audits, return:
 
 1. profile inputs used and missing sections
 2. positioning diagnosis

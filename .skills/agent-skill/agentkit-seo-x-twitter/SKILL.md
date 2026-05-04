@@ -11,8 +11,6 @@ Use the X/Twitter hub to improve profile clarity and posting structure while avo
 
 ## Reference selection
 
-Load only the references needed for the task:
-
 - Bio, profile, pinned post, media, thread structure: [references/profile-and-posts.md](references/profile-and-posts.md)
 - Ready-to-post display name, bio, pinned post, post, thread, Alt Text: [references/section-recipes.md](references/section-recipes.md)
 - Growth strategy, replies, ranking-signal explanations: [references/engagement-and-ranking.md](references/engagement-and-ranking.md)
@@ -26,11 +24,11 @@ Load only the references needed for the task:
 - Read Premium or ranking references only when the user asks about those topics.
 - Prefer pasted profile text, public profile fields, pinned post, links, and a small recent-post sample before asking for analytics exports or screenshots.
 - Keep source ledgers compact: list input groups, not every post unless the post itself is discussed.
-- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+- Name next inspection if bounded.
 
 ## Depth contract
 
-Use the smallest audit depth that can answer the request honestly:
+Use the smallest honest audit depth:
 
 - `Quick scan`: display name, bio, link path, pinned post, and obvious niche/proof gaps.
 - `Default audit`: quick scan plus up to 10 recent posts, media/Alt Text when visible, proof-link alignment, and posting capacity assumptions.
@@ -59,7 +57,7 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 
 ## Response shape
 
-Return only the sections relevant to the user's requested task. Do not add cadence or engagement strategy unless requested or clearly necessary. For audits, return:
+Return only requested-relevant sections. Do not add cadence or engagement strategy unless requested or clearly necessary. For audits, return:
 
 1. public inputs inspected and any blocked inputs
 2. profile and content-positioning diagnosis

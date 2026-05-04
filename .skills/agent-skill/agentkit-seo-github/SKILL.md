@@ -11,8 +11,6 @@ Use this skill to improve GitHub discoverability, comprehension, and trust witho
 
 ## Reference selection
 
-Load only the references needed for the task:
-
 - Bio, pinned repos, repo naming, About text, README packaging: [references/profile-and-repo-structure.md](references/profile-and-repo-structure.md)
 - Copy blocks for bios, READMEs, About text, topics, pins: [references/section-recipes.md](references/section-recipes.md)
 - Code search, indexing limits, Linguist, language stats: [references/search-indexing-and-linguist.md](references/search-indexing-and-linguist.md)
@@ -27,11 +25,11 @@ Load only the references needed for the task:
 - Prefer repository metadata, About text, topics, pinned status, README opening sections, and visible language signals before loading entire files.
 - Keep source ledgers compact: list input groups, not every minor fetched page.
 - Do not restate full checklists in the final output. Report only findings that change the user's next action.
-- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+- Name next inspection if bounded.
 
 ## Depth contract
 
-Use the smallest audit depth that can answer the request honestly:
+Use the smallest honest audit depth:
 
 - `Quick scan`: profile fields, profile README opening, pinned repositories, and obvious metadata gaps.
 - `Default audit`: quick scan plus up to 3 highest-signal repositories, using repository metadata, README openings, topics, and language signals.

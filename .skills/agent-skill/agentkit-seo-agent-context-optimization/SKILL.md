@@ -11,8 +11,6 @@ Use this skill before any cross-platform optimization pass that depends on a sta
 
 ## Workflow
 
-Load only the references needed for the task:
-
 - Need to decide whether a context file is needed: [references/why-and-when.md](references/why-and-when.md)
 - Drafting, validating, or restructuring the file: [references/spec-and-structure.md](references/spec-and-structure.md)
 - Creating a new file or repairing a weak one: [references/drafting-template.md](references/drafting-template.md)
@@ -29,11 +27,11 @@ Normalize the user's facts before writing any LinkedIn, CV, GitHub, web portfoli
 - Ask for missing inputs instead of reading unrelated platform material.
 - Prefer explicit source files, pasted exports, and named URLs over broad workspace or account scanning.
 - Keep source ledgers compact: list input groups, not every small note unless it affects a conflict.
-- If more inspection is needed, say what would be inspected next instead of silently expanding the pass.
+- Name next inspection if bounded.
 
 ## Depth contract
 
-Use the smallest context pass that can answer the request honestly:
+Use the smallest honest context pass:
 
 - `Quick scan`: check whether a context file exists, read `QUICK REFERENCE`, and identify obvious structural gaps.
 - `Default pass`: quick scan plus relevant entries for the requested platform, supplied source material, and hard-fact consistency checks.

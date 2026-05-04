@@ -11,8 +11,6 @@ Use only the CV and ATS guidance relevant to the requested deliverable. Keep the
 
 ## Reference selection
 
-Load only the references needed for the task:
-
 - Layout, section order, file type, ATS-safe structure: [references/structure-and-formatting.md](references/structure-and-formatting.md)
 - Summary, experience, skills, and education rewrites: [references/section-recipes.md](references/section-recipes.md)
 - Job-description tailoring and bullet rewrites: [references/keywords-and-bullets.md](references/keywords-and-bullets.md)
@@ -29,11 +27,11 @@ Load only the references needed for the task:
 - After creating or editing a LaTeX CV with a rendered PDF, run the compact post-build QA in the parser workflow; do not expand into a full visual redesign unless asked.
 - For large context files, verify only CV-relevant hard anchors first: current role, education, dates, flagship projects, certifications, awards, and metrics that appear in the CV.
 - Keep source ledgers compact: list input groups, not every bullet or section.
-- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+- Name next inspection if bounded.
 
 ## Depth contract
 
-Use the smallest audit depth that can answer the request honestly:
+Use the smallest honest audit depth:
 
 - `Quick scan`: contact block, summary, target role, recent experience, skills, and obvious parser risks.
 - `Default audit`: quick scan plus core sections, target job description alignment when provided, and fact consistency against supplied context.
@@ -66,7 +64,7 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 
 ## Response shape
 
-Return only the sections relevant to the user's requested task. For full CV audits or broad tailoring passes, return:
+Return only requested-relevant sections. For full CV audits or broad tailoring passes, return:
 
 1. inputs used and target role assumptions
 2. parser and structure issues

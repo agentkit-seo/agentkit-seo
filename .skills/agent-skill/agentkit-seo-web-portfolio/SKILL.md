@@ -11,8 +11,6 @@ Use this skill to improve how a personal site is crawled, rendered, summarized, 
 
 ## Reference selection
 
-Load only the references needed for the task:
-
 - Crawlability, sitemaps, robots, launch, URL structure: [references/indexing-and-architecture.md](references/indexing-and-architecture.md)
 - Titles, canonicals, schema, JavaScript rendering: [references/metadata-structured-data-and-js.md](references/metadata-structured-data-and-js.md)
 - Homepage, About, project page, metadata, `llms.txt` copy: [references/section-recipes.md](references/section-recipes.md)
@@ -26,11 +24,11 @@ Load only the references needed for the task:
 - Do not load content-writing references for a technical crawlability fix.
 - Prefer rendered/public HTML, route metadata, sitemap, robots, and page templates before reading broad content files.
 - Keep source ledgers compact: list input groups, not every asset or route.
-- If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
+- Name next inspection if bounded.
 
 ## Depth contract
 
-Use the smallest audit depth that can answer the request honestly:
+Use the smallest honest audit depth:
 
 - `Quick scan`: homepage, robots, sitemap, title/meta/canonical basics, main navigation, and visible positioning.
 - `Default audit`: quick scan plus up to 2 user-specified or visibly priority pages, structured data, Open Graph, internal links, and top project pages when available.
