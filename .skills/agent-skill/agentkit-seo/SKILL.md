@@ -1,6 +1,6 @@
 ---
 name: agentkit-seo
-description: Route personal-branding optimization work to the correct AgentKit SEO sub-skill and keep the agent scoped to the minimum relevant context. Use when the request spans multiple surfaces, when the correct platform is ambiguous, or when the user asks for overall digital presence, indexing, discoverability, portfolio, ATS, LinkedIn, GitHub, web portfolio, X/Twitter, or agent-context optimization strategy.
+description: Route broad or ambiguous AgentKit SEO work to the right module while keeping context scoped. Use when a request spans multiple surfaces, asks for overall digital-presence strategy, involves provider or install architecture, needs agent-context planning, or the correct platform skill is unclear.
 ---
 
 # AgentKit SEO
@@ -15,6 +15,14 @@ Use this skill as the orchestrator for the whole repository. Its main job is to 
 2. Load only the matching module skill unless the user explicitly asks for a cross-platform pass.
 3. If the request spans multiple surfaces, start with `agentkit-seo-agent-context-optimization` so the factual source of truth is stable before editing platform outputs.
 4. If the request is only about the skill system itself, read the references in this skill before changing provider adapters or install instructions.
+
+For broad requests with no clear surface:
+
+- Active applications or job-description tailoring: route to `agentkit-seo-cv-ats`.
+- Recruiter discovery or profile search: route to `agentkit-seo-linkedin`.
+- Proof-of-work, repositories, or developer credibility: route to `agentkit-seo-github` or `agentkit-seo-web-portfolio`, based on the supplied asset.
+- Audience building, posting strategy, or public conversation loops: route to `agentkit-seo-x-twitter`.
+- Conflicting, scattered, or cross-platform facts: route to `agentkit-seo-agent-context-optimization` first.
 
 ## Token discipline
 
@@ -47,6 +55,8 @@ Use this skill as the orchestrator for the whole repository. Its main job is to 
 - Do not load every module by default.
 - Do not invent platform behavior that the hub has explicitly marked as uncertain or disputed.
 - Do not rewrite the shared methodology in provider adapter folders. Keep the portable source of truth in `.skills/agent-skill/`.
+- When advice depends on current platform capabilities, paid tiers, ranking behavior, product limits, or provider support, verify with current official sources when tools allow it or label the claim as historical, disputed, or inferred.
+- For cross-platform outputs, label major claims as `Verified`, `From context`, `From supplied source`, `Official/current source`, `Inference`, `Needs evidence`, or `Inaccessible` when the source status could affect the recommendation.
 
 ## Response shape
 

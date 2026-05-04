@@ -1,6 +1,6 @@
 # Provider matrix
 
-This matrix captures the current adapter assumptions for April 28, 2026.
+This matrix captures adapter assumptions as of April 28, 2026. Verify current provider docs before changing install behavior, command syntax, or marketplace guidance.
 
 | Provider | Shared skill-bundle fit | Custom command fit | Best user-facing module trigger |
 | --- | --- | --- | --- |

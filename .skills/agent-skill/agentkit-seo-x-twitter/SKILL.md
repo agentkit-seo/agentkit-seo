@@ -3,7 +3,7 @@ name: agentkit-seo-x-twitter
 description: Optimize X and Twitter profile positioning, pinned post strategy, posting structure, and discoverability using conservative platform guidance. Use when the user asks about X or Twitter bio copy, pinned posts, content cadence, profile optimization, engagement strategy, premium tactics, or feed/search discoverability.
 ---
 
-# AgentKit SEO X Twitter
+# AgentKit SEO X/Twitter
 
 ## Overview
 
@@ -49,6 +49,7 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 ## Rules
 
 - Treat Phoenix, Grok, and related architecture clues as design signals, not as a complete live-production contract.
+- Verify current official X product documentation before giving paid-tier, Premium, post-length, media-length, monetization, or account-capability advice. If verification is unavailable, label the guidance as historical or inferred.
 - Separate facts verified from public account material, facts supplied by the user's context material, and recommendations inferred from those facts.
 - Do not promise ranking outcomes.
 - Do not infer private analytics, Premium status, shadowban status, or ranking treatment from incomplete public views.

@@ -58,3 +58,10 @@
 - do not push novelty titles when standard titles are better for search
 - when the user's positioning is unclear, ask for or derive a single target role before rewriting major sections
 - when a section lacks proof, weaken the claim or ask for evidence rather than manufacturing certainty
+
+## Output validation
+
+- Check generated headline, About, Experience, and Featured copy against current LinkedIn UI limits before claiming a hard character cap.
+- Front-load the strongest searchable terms and proof because previews and search snippets may truncate.
+- Confirm each proof link, Featured item, and named credential is supplied or publicly visible before using it in paste-ready copy.
+- Mark any exact field-limit or preview-length advice as current-source verified, UI-observed, or inferred.

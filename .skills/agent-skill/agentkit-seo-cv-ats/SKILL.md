@@ -16,7 +16,7 @@ Load only the references needed for the task:
 - Layout, section order, file type, ATS-safe structure: [references/structure-and-formatting.md](references/structure-and-formatting.md)
 - Summary, experience, skills, and education rewrites: [references/section-recipes.md](references/section-recipes.md)
 - Job-description tailoring and bullet rewrites: [references/keywords-and-bullets.md](references/keywords-and-bullets.md)
-- Parser-failure diagnosis or plain-text extraction: [references/parser-risks-and-agent-workflow.md](references/parser-risks-and-agent-workflow.md)
+- Parser-failure diagnosis, LaTeX/PDF post-build QA, or plain-text extraction: [references/parser-risks-and-agent-workflow.md](references/parser-risks-and-agent-workflow.md)
 - Full-document review, consistency checks, maintenance: [references/cv-audit-and-maintenance.md](references/cv-audit-and-maintenance.md)
 
 ## Token discipline
@@ -25,6 +25,9 @@ Load only the references needed for the task:
 - For long CVs, inspect contact, summary, target role, recent experience, and only sections relevant to the user's request first.
 - Summarize missing inputs instead of asking for the whole career history when a narrow edit can proceed.
 - Prefer text extraction, Markdown, LaTeX, or DOCX text before screenshots when parser behavior matters.
+- When both an editable source file and rendered PDF are supplied, use the editable source as the primary content source and the PDF only for render or extraction sanity checks unless the user asks for PDF debugging.
+- After creating or editing a LaTeX CV with a rendered PDF, run the compact post-build QA in the parser workflow; do not expand into a full visual redesign unless asked.
+- For large context files, verify only CV-relevant hard anchors first: current role, education, dates, flagship projects, certifications, awards, and metrics that appear in the CV.
 - Keep source ledgers compact: list input groups, not every bullet or section.
 - If more inspection is needed, say what would be inspected next instead of silently expanding the audit.
 
@@ -43,6 +46,7 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 - Ask for the current resume or CV, target role, and job description before doing role-specific optimization.
 - If the user supplies only a resume, perform a general parser-safety and recruiter-readability pass and identify the missing target-role inputs.
 - If the user supplies a context file, use it to verify facts before rewriting bullets, summaries, projects, or skills.
+- If the user supplies a large context file, do not fully reconcile every section by default. Use targeted fact checks against claims visible in the CV, then offer a deeper consistency pass if conflicts or gaps remain.
 - If the user has no context file and the CV conflicts with LinkedIn, GitHub, or portfolio facts, recommend creating or repairing the context file first.
 - Do not fetch or infer LinkedIn, GitHub, portfolio, or public-profile facts unless the user supplies them or explicitly asks for lookup.
 - Accept source material as pasted text, PDF text extraction, LaTeX, Markdown, DOCX text, screenshots when supported, or local files.
@@ -52,6 +56,7 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 
 - Do not claim guaranteed ATS success or exact ranking behavior.
 - Separate facts visible in the CV, facts supplied by the user's context material, job-description requirements, and recommendations inferred from those inputs.
+- Avoid absolute alignment claims such as "perfectly aligned" unless every relevant claim was checked. Prefer "no conflict found in the inspected inputs" for bounded audits.
 - Prefer simple structure, plain section names, and measurable outcomes.
 - Tailor wording to the target role, but do not fabricate tools, metrics, or employers.
 - If the user supplies a job description, align terminology to that role while preserving the user's real experience.

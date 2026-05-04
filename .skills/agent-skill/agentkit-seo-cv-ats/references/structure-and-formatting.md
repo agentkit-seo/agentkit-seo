@@ -34,6 +34,7 @@ Keep Experience and Education in reverse chronological order. Use standard secti
 - use standard bullets or hyphens only
 - avoid graphics, icons, and non-standard bullets
 - avoid automatic hyphenation when the template allows it
+- in LaTeX CV content, avoid em dashes; prefer commas, colons, parentheses, or a simple hyphen when punctuation is needed
 
 ## File-type rules
 

@@ -18,3 +18,16 @@ When a request spans multiple surfaces, use this order unless the user asks othe
 1. `agentkit-seo-agent-context-optimization`
 2. Target output surface, such as `agentkit-seo-linkedin`
 3. Supporting surfaces that must align with the same positioning
+
+## Ambiguity tie-breakers
+
+Use these defaults when the user asks for broad improvement without naming a platform:
+
+- Job search, applications, recruiter screens, or a specific job description: start with `agentkit-seo-cv-ats`.
+- Recruiter discovery, profile search, or professional positioning: start with `agentkit-seo-linkedin`.
+- Developer credibility, proof-of-work, repositories, README quality, or technical trust: start with `agentkit-seo-github`.
+- Personal site, Google snippets, crawlability, structured data, or portfolio pages: start with `agentkit-seo-web-portfolio`.
+- Audience building, posting, niche, pinned post, or engagement loop: start with `agentkit-seo-x-twitter`.
+- Mixed facts, inconsistent claims, or more than one public surface: start with `agentkit-seo-agent-context-optimization`.
+
+If two routes remain plausible, state the assumption and proceed with the route that can produce the smallest useful next action.

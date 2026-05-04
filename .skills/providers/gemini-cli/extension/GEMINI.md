@@ -15,20 +15,8 @@ Use the command-specific prompt to select the relevant module, then read the mat
 
 For broad or ambiguous requests, use `skills/agentkit-seo/SKILL.md` first and route to the minimum relevant module.
 
-Even when multiple skill entrypoints are visible below, treat them as routing stubs. Load only the selected module's task-relevant references, keep default audits bounded, and add a depth note before expanding into full-file, full-account, or full-site review.
+Load only the selected module's task-relevant references, keep default audits bounded, and add a depth note before expanding into full-file, full-account, or full-site review.
 
-## Loaded Skill Entrypoints
+## Runtime Loading
 
-@./skills/agentkit-seo/SKILL.md
-
-@./skills/agentkit-seo-agent-context-optimization/SKILL.md
-
-@./skills/agentkit-seo-cv-ats/SKILL.md
-
-@./skills/agentkit-seo-github/SKILL.md
-
-@./skills/agentkit-seo-linkedin/SKILL.md
-
-@./skills/agentkit-seo-web-portfolio/SKILL.md
-
-@./skills/agentkit-seo-x-twitter/SKILL.md
+The extension bundles shared skills under `skills/`. Do not import every skill entrypoint into the base context. Command wrappers and native skill loading should select the matching `SKILL.md`, then load only task-relevant references.

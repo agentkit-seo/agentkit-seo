@@ -7,7 +7,9 @@ OpenCode can discover skills from multiple compatible locations, including:
 - `.opencode/skills/<skill-name>/SKILL.md`
 - `~/.config/opencode/skills/<skill-name>/SKILL.md`
 - `.claude/skills/<skill-name>/SKILL.md`
+- `~/.claude/skills/<skill-name>/SKILL.md`
 - `.agents/skills/<skill-name>/SKILL.md`
+- `~/.agents/skills/<skill-name>/SKILL.md`
 
 Copy the shared skill runtime files so the local `references/` directory remains available at runtime. OpenAI/Codex-only metadata from `agents/` is excluded from generated OpenCode installs.
 

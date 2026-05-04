@@ -11,6 +11,14 @@
 
 Use the full workflow only for broad CV audits, parser-safety reviews, or role-tailoring passes. For a single bullet, summary, section, or formatting question, inspect only the supplied material needed for that edit.
 
+When the user supplies multiple document forms, choose the cheapest reliable source first:
+
+- editable source such as LaTeX, Markdown, or DOCX text for content and rewrite recommendations
+- rendered PDF for visual/render checks and plain-text extraction sanity checks
+- large context files only for targeted verification of claims already visible in the CV
+
+Do not turn a normal audit into full context reconciliation just because a comprehensive context file is available.
+
 1. confirm the target role and seniority
 2. check structural safety first
 3. review section order and header naming
@@ -30,6 +38,7 @@ Check the following:
 - one consistent date format
 - text-based export, not image-only PDF
 - plain-text extraction reads in the correct order
+- for generated LaTeX PDFs, post-build layout QA catches excessive whitespace, bad line wraps, one-word final lines, clipped text, and spacing inconsistencies
 
 ## Content checklist
 
@@ -53,6 +62,8 @@ The CV should align with the user's context file, LinkedIn, and public work on:
 - major outcomes
 
 If facts conflict, stop and surface the conflict.
+
+For bounded audits, report "no conflict found in inspected inputs" instead of implying complete verification across every source.
 
 ## Tailoring workflow
 

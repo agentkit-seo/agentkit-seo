@@ -27,6 +27,18 @@ Use this cheap validation loop:
 
 If the extracted text is scrambled, the layout is not ready.
 
+## LaTeX PDF post-build QA
+
+When the agent creates or edits a LaTeX CV and renders a PDF, run this compact check before calling it done:
+
+1. confirm the PDF compiles without errors and review warnings that affect visible layout
+2. run the plain-text test for reading order, missing text, ligature/character issues, and explicit URLs
+3. visually inspect each page for wasted space, excessive blank lines, awkward section breaks, widows/orphans, one-word final lines, overfull text, clipped content, and inconsistent spacing
+4. fix wording first when a small rewrite removes a bad line wrap; adjust layout only when content edits cannot solve the issue cleanly
+5. keep ATS safety ahead of page filling; do not use fragile spacing hacks, hidden text, tiny fonts, or multi-column tricks to force density
+
+Also check that generated LaTeX content avoids em dashes unless the user explicitly requested that style.
+
 ## Agent-friendly source workflow
 
 - Prefer plain-text source when the user supports it.
