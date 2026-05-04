@@ -1,22 +1,5 @@
 # Context file spec and structure
 
-## Use this reference for
-
-- drafting a new context file
-- validating an existing context file
-- restructuring a noisy file
-
-## Contents
-
-- Required shape
-- Title rule
-- QUICK REFERENCE rules
-- Scope declaration rules
-- Body rules
-- Minimal entry patterns
-- Integrity rule
-- Validation mindset
-
 ## Required shape
 
 The context file is one Markdown document with a fixed, stable structure.

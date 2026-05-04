@@ -1,13 +1,5 @@
 # GitHub section recipes
 
-## Use this reference for
-
-- profile bio rewrites
-- pinned repository selection
-- profile README drafting
-- repository README structure
-- About text and topic-tag recommendations
-
 ## Profile bio recipe
 
 Use the 160-character bio as a compact role summary:

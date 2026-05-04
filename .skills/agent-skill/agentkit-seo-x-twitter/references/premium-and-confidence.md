@@ -1,12 +1,5 @@
 # X Premium and confidence rules
 
-## Use this reference for
-
-- Premium-specific advice
-- long-form strategy
-- confidence labeling for X claims
-- capability checks
-
 ## Premium rules
 
 - Verify current official X documentation or visible account settings before giving paid-tier or capability-specific advice.

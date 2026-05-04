@@ -59,10 +59,6 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 - Keep structured profile fields, prose sections, proof links, and recent activity aligned around the same positioning.
 - For section rewrites, preserve factual claims and improve only structure, clarity, and discoverability unless the user asks for strategic repositioning.
 
-## Output expectation
-
-Produce LinkedIn-ready copy or restructuring recommendations that improve clarity, keyword alignment, and profile completeness without overstating algorithm certainty.
-
 ## Response shape
 
 Return only the sections relevant to the user's requested task. For audits, return:

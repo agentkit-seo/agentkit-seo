@@ -1,12 +1,5 @@
 # CV ATS structure and formatting
 
-## Use this reference for
-
-- new CV drafts
-- ATS-safe formatting checks
-- section-order reviews
-- parser-risk fixes
-
 ## Core section order
 
 Use these standard sections unless the user's background truly requires something different:

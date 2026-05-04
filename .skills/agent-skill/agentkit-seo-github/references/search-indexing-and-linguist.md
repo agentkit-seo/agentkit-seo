@@ -1,12 +1,5 @@
 # GitHub search, indexing, and Linguist
 
-## Use this reference for
-
-- searchability issues
-- GitHub code-search repository reviews
-- code-search limitations
-- language-bar fixes
-
 ## Code-search basics
 
 - public code search depends on the default branch

@@ -1,13 +1,5 @@
 # GitHub profile and repository structure
 
-## Use this reference for
-
-- GitHub profile reviews
-- bio rewrites
-- pinned repo selection
-- repository naming and metadata work
-- README and About section improvements
-
 ## Profile rules
 
 - keep the username aligned with other public surfaces when possible

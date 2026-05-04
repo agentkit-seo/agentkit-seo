@@ -1,13 +1,5 @@
 # X engagement and ranking
 
-## Use this reference for
-
-- growth strategy
-- reply strategy
-- thread endings
-- ranking-signal explanations
-- posting-rhythm reviews
-
 ## What is grounded
 
 Historical open-source snapshots of X's recommendation stack support these directional priors:

@@ -1,11 +1,5 @@
 # LinkedIn profile audit and maintenance
 
-## Use this reference for
-
-- full-profile optimization reviews
-- consistency checks against the context file, CV, or portfolio
-- ongoing maintenance of the profile over time
-
 ## Audit workflow
 
 Use the full workflow only for broad profile audits, maintenance passes, or cross-platform consistency checks. For narrow section rewrites, inspect only the supplied section, target role, and proof needed to ground the edit.

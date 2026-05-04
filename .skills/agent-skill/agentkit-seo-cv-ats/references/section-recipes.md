@@ -1,12 +1,5 @@
 # CV section recipes
 
-## Use this reference for
-
-- drafting a CV from scratch
-- rewriting summary sections
-- improving experience bullets
-- structuring skills and education cleanly
-
 ## Core section order
 
 Default order:

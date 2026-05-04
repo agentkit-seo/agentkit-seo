@@ -58,10 +58,6 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 - When editing portfolio code, preserve existing styling and application logic unless the user explicitly asks for a redesign. Prefer metadata, structured data, semantic HTML, crawlability, and content changes before layout changes.
 - For direct code edits, run the available build, lint, test, or preview command when the project provides one, and report any verification that could not run.
 
-## Output expectation
-
-Return web-ready changes or recommendations tied to real pages, metadata, and site structure rather than vague SEO advice.
-
 ## Response shape
 
 Return:

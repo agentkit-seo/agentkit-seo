@@ -44,7 +44,6 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 - If public access is blocked, stale, or incomplete, ask for screenshots, pasted bio and pinned post, recent post examples, analytics summaries, or a local text file export.
 - Ask for the target audience, niche, posting capacity, proof links, and topics the user can credibly discuss before building a posting strategy.
 - If the account strategy depends on professional facts or cross-platform consistency, recommend creating or updating the agent context file first.
-- Do not infer private analytics, Premium status, shadowban status, or ranking treatment from incomplete public views.
 
 ## Rules
 
@@ -57,10 +56,6 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 - Distinguish official product features from empirical tactics.
 - Keep profile positioning, pinned assets, posting topics, and linked external proof aligned around one clear niche.
 - When profile proof, audience, or posting history is missing, ask for it before inventing claims or forcing a content strategy.
-
-## Output expectation
-
-Produce X/Twitter-ready bio, pinned-post, or posting recommendations that are practical, specific, and scoped to the user's real goals.
 
 ## Response shape
 

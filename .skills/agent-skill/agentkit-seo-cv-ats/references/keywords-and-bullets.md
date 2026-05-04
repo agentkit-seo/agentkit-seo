@@ -1,12 +1,5 @@
 # CV ATS keywords and bullet writing
 
-## Use this reference for
-
-- job-description tailoring
-- keyword extraction
-- experience bullet rewrites
-- summary rewrites
-
 ## Keyword rules
 
 - prioritize hard skills, tools, platforms, and domain terms

@@ -1,11 +1,5 @@
 # CV parser risks and agent workflow
 
-## Use this reference for
-
-- diagnosing ATS breakage
-- agent-driven CV tailoring
-- LaTeX-source workflows
-
 ## Common parser risks
 
 - critical info in headers or footers

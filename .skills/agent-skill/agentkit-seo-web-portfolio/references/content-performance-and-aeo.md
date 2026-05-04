@@ -1,13 +1,5 @@
 # Web portfolio content, performance, and AI retrieval
 
-## Use this reference for
-
-- About-page rewrites
-- case-study design
-- performance reviews
-- `llms.txt` and AI-retrieval planning
-- content-quality reviews
-
 ## Content rules
 
 - Give the site a clear professional focus.

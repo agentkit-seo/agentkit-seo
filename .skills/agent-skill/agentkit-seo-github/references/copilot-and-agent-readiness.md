@@ -1,12 +1,5 @@
 # GitHub Copilot and agent readiness
 
-## Use this reference for
-
-- AI-readable repo structure
-- Copilot instruction design
-- AGENTS.md planning
-- repository context hygiene
-
 ## Officially grounded rules
 
 - Use `.github/copilot-instructions.md` for repo-wide Copilot guidance.

@@ -64,10 +64,6 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 - Preserve factual alignment with the user's context file, LinkedIn, and public portfolio.
 - For rewrites, improve section clarity and evidence density before changing the user's positioning strategy.
 
-## Output expectation
-
-Return edits that are specific to the user's target role and easy to apply to a real resume or CV draft.
-
 ## Response shape
 
 Return only the sections relevant to the user's requested task. For full CV audits or broad tailoring passes, return:

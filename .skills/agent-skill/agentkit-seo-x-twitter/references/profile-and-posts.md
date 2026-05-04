@@ -1,13 +1,5 @@
 # X profile and post structure
 
-## Use this reference for
-
-- profile rewrites
-- bio rewrites
-- pinned-post advice
-- tweet and thread drafting
-- profile structure reviews
-
 ## Profile rules
 
 - Keep handle and identity aligned with the user's other public surfaces.

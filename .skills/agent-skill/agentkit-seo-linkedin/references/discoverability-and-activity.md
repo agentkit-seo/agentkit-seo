@@ -1,12 +1,5 @@
 # LinkedIn discoverability and activity
 
-## Use this reference for
-
-- search visibility advice
-- activity strategy
-- posting and commenting recommendations
-- AI readability checks
-
 ## Official-signal posture
 
 Treat these as the stable signal groups that matter:

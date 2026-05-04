@@ -1,19 +1,5 @@
 # Drafting template and authoring rules
 
-## Use this reference for
-
-- creating a new context file from scratch
-- repairing a messy file into the canonical layout
-- checking that each section uses the right local format
-
-## Contents
-
-- Canonical file skeleton
-- QUICK REFERENCE template
-- Scope declaration template
-- Section authoring rules
-- Drafting discipline
-
 ## Canonical file skeleton
 
 Use one Markdown file with this fixed order:

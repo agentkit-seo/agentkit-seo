@@ -1,11 +1,5 @@
 # Context file operating workflow
 
-## Use this reference for
-
-- loading the context file into agent sessions
-- combining the file with platform modules
-- updating it safely over time
-
 ## Session workflow
 
 1. load the context file first

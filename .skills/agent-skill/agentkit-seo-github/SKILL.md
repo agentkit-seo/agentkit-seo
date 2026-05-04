@@ -62,10 +62,6 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 - For rewrites, improve clarity, proof, and discoverability before inventing a more aggressive branding angle.
 - Recommend `AGENTS.md` or Copilot instruction files only when the repository is agent-facing, complex enough to need operational guidance, or the user explicitly asks for agent-readiness work.
 
-## Output expectation
-
-Produce GitHub-specific edits or recommendations that improve profile clarity, repository packaging, or discoverability while staying within documented platform behavior.
-
 ## Response shape
 
 Return:

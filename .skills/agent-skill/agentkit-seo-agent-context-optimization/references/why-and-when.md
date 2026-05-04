@@ -1,11 +1,5 @@
 # Why and when to use a context file
 
-## Use this reference for
-
-- deciding whether a context file is needed
-- explaining the purpose to a user
-- scoping when to start with context optimization before platform work
-
 ## Core purpose
 
 A personal context file is the factual source of truth for career-oriented agent work. It prevents the agent from starting from zero on every session and keeps outputs grounded in one maintained record.

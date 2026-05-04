@@ -1,22 +1,5 @@
 # LinkedIn section recipes
 
-## Use this reference for
-
-- headline rewrites
-- About section drafting
-- Experience entry rewrites
-- Skills ordering
-- Featured section recommendations
-
-## Contents
-
-- Headline recipe
-- About section recipe
-- Experience entry recipe
-- Skills recipe
-- Featured section recipe
-- Section rewrite posture
-
 ## Headline recipe
 
 Default pattern:

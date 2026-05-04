@@ -1,12 +1,5 @@
 # LinkedIn positioning and structure
 
-## Use this reference for
-
-- headline rewrites
-- About section rewrites
-- profile architecture reviews
-- experience and skills alignment work
-
 ## Stable principles
 
 - optimize for two audiences at once:

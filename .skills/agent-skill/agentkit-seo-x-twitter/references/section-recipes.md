@@ -1,23 +1,5 @@
 # X profile and post recipes
 
-## Use this reference for
-
-- display-name rewrites
-- bio drafting
-- pinned-post drafting
-- single-post and thread drafting
-- Alt Text drafting
-
-## Contents
-
-- Display-name recipe
-- Bio recipe
-- Pinned-post recipe
-- Single-post recipe
-- Thread recipe
-- Alt Text recipe
-- Rewrite posture
-
 ## Display-name recipe
 
 Use the display name to improve immediate clarity when it helps the account's real positioning.

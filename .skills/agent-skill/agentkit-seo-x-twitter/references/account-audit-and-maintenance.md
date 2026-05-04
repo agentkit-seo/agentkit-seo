@@ -1,12 +1,5 @@
 # X account audit and maintenance
 
-## Use this reference for
-
-- full account audits
-- profile-positioning reviews
-- posting-pattern reviews
-- ongoing maintenance planning
-
 ## Audit workflow
 
 Use the full workflow only for broad account audits, posting-pattern reviews, or maintenance planning. For profile copy or pinned-post work, inspect profile fields, link path, pinned post, and up to 3-5 recent posts. For a standard audit, inspect up to 10 recent posts. Reserve 20-30 posts for deep account audits.

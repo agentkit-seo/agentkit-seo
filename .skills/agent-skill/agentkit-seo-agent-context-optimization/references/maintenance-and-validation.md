@@ -1,11 +1,5 @@
 # Maintenance and validation
 
-## Use this reference for
-
-- integrating new material into an existing file
-- validating whether a context file is structurally sound
-- keeping the file current without bloating it
-
 ## When to update
 
 Update only when a real-world fact is verifiable, such as:

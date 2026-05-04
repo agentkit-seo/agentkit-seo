@@ -1,24 +1,5 @@
 # Web portfolio audit and maintenance
 
-## Use this reference for
-
-- full-site audits
-- launch and relaunch reviews
-- indexability triage
-- recurring portfolio maintenance
-
-## Contents
-
-- Audit workflow
-- Core URL checklist
-- Technical checklist
-- Content and proof checklist
-- Metadata and schema checklist
-- Performance and mobile checklist
-- Maintenance rules
-- Code-edit safety workflow
-- Output format for audits
-
 ## Audit workflow
 
 For default audits, sample only the bounded default scope from `SKILL.md`: homepage, robots, sitemap, and up to 2 user-specified or visibly priority pages. Use the full checklist only when the user asks for a full-site audit, launch or relaunch review, recurring maintenance, or exact code remediation.

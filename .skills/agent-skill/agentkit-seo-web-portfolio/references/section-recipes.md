@@ -1,22 +1,5 @@
 # Web portfolio section recipes
 
-## Use this reference for
-
-- homepage rewrites
-- About page rewrites
-- project and case-study page drafting
-- metadata drafting
-- `llms.txt` planning
-
-## Contents
-
-- Homepage recipe
-- About page recipe
-- Project or case-study recipe
-- Metadata recipe
-- `llms.txt` recipe
-- Rewrite posture
-
 ## Homepage recipe
 
 The homepage should orient the visitor quickly and route them into deeper pages. Keep it concise.

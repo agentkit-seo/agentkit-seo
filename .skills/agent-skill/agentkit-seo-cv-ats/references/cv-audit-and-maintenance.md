@@ -1,12 +1,5 @@
 # CV audit and maintenance
 
-## Use this reference for
-
-- full CV reviews
-- ATS safety audits
-- tailoring passes against a target job description
-- keeping the CV current over time
-
 ## Audit workflow
 
 Use the full workflow only for broad CV audits, parser-safety reviews, or role-tailoring passes. For a single bullet, summary, section, or formatting question, inspect only the supplied material needed for that edit.

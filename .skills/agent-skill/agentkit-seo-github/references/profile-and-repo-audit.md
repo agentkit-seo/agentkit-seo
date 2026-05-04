@@ -1,12 +1,5 @@
 # GitHub profile and repository audit
 
-## Use this reference for
-
-- full GitHub profile reviews
-- repository discoverability audits
-- consistency checks across profile and projects
-- maintenance recommendations over time
-
 ## Audit workflow
 
 1. confirm the user's target role, stack, or public positioning
@@ -23,14 +16,6 @@ Default scope:
 - Repository audit: inspect that repository only unless cross-profile positioning is requested.
 - Full audit: expand beyond the default scope only when the user explicitly asks for every repository or a complete inventory.
 - If a finding would require broader inspection, label it as `Needs inspection` and keep the current answer bounded.
-
-Depth ladder:
-
-- `Quick scan`: useful for first-pass positioning, obvious metadata gaps, and bio/About copy.
-- `Default audit`: useful for most profile audits; balances coverage and token cost by inspecting profile-level inputs plus a small set of showcase repositories.
-- `Deep audit`: useful when the user wants exact file edits, repository remediation, `.gitattributes` changes, setup validation, social preview checks, CI/license/security checks, or every repository reviewed.
-
-If using `Quick scan` or `Default audit`, include a short `Depth note` in the answer. Say what was intentionally not inspected and ask before expanding to `Deep audit`.
 
 ## Source ledger
 
@@ -121,12 +106,6 @@ Keep audits short by default:
 - one-line confidence notes
 - next actions limited to the next 3 to 5 moves
 - one `Depth note` when the audit did not inspect every relevant repository or file
-
-Use this pattern for bounded audits:
-
-```text
-Depth note: I inspected <scope>. I did not inspect <deeper scope>. If you want a deep audit, the next pass should check <specific files/settings>.
-```
 
 ## Claim discipline
 

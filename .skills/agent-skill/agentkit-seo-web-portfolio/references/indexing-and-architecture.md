@@ -1,13 +1,5 @@
 # Web portfolio indexing and architecture
 
-## Use this reference for
-
-- crawlability reviews
-- launch checklists
-- sitemap and robots guidance
-- page hierarchy and internal-linking decisions
-- production release reviews
-
 ## Indexability rules
 
 - Important public pages must return HTTP `200`.

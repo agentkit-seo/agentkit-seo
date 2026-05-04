@@ -1,13 +1,5 @@
 # Web portfolio metadata, structured data, and JavaScript SEO
 
-## Use this reference for
-
-- title and description rewrites
-- canonical checks
-- schema planning
-- SPA or SSR rendering reviews
-- social preview reviews
-
 ## Metadata rules
 
 - Every indexable page needs a unique title.
