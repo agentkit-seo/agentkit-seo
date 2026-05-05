@@ -1,0 +1,4 @@
+# Keep GitHub's language bar focused on the package/runtime code.
+# LaTeX files are CV examples/templates, not the implementation language.
+cv-ats/**/*.tex linguist-documentation
+

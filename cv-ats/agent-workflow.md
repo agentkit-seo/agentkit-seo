@@ -29,7 +29,7 @@ While word processors like Microsoft Word are standard for humans, they introduc
 
 **Rule:** Maintain strict separation of content and styling macros. When an agent edits a `.tex` file, it must only modify the content strings within predefined macros (e.g., `\cventry{Role}{Date}`). Do not alter the document preamble (`\usepackage`, `\geometry`) unless explicitly directed to change the global design.
 
-**Recommendation:** Use the provided templates as the baseline. The files in `cv-ats/examples/` are personal worked examples, not normative templates. Use them only to understand how real application artifacts can look in practice; apply the canonical rules from this workflow, the formatting rules, and the templates when generating or editing user-facing CVs.
+**Recommendation:** Use the provided templates as the baseline. Keep personal CV examples outside the public repository unless they are fully anonymized. Apply the canonical rules from this workflow, the formatting rules, and the templates when generating or editing user-facing CVs.
 
 ## 4. Examples
 

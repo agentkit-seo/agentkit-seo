@@ -22,17 +22,17 @@ The architecture serves two distinct users simultaneously: the Human and the AI 
 
 The repository is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `.assets/docs/STYLEGUIDE.md`. That file is the single source of truth for editorial Knowledge Hub files, runtime skill files, provider adapter notes, examples, and templates. Contributors and agents alike must read it before authoring content.
 
-Content is organized by platform or output type. Each platform directory contains the rules, best practices, templates, and real examples relevant to that platform, as well as a `sources.md` file listing the credibility links, research, and algorithm documentation specific to it. Current platforms include:
+Content is organized by platform or output type. Each platform directory contains the rules, best practices, templates, and optional anonymized examples relevant to that platform, as well as a `sources.md` file listing the credibility links, research, and algorithm documentation specific to it. Current platforms include:
 
 - `/linkedin/` — Headline, Featured section, About, Experience entries
 - `/github/` — Profile README, repository READMEs, pinned repo structuring
 - `/web-portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
-- `/cv-ats/` — Keyword optimization, formatting rules, personal examples, and templates for ATS-safe CV workflows
+- `/cv-ats/` — Keyword optimization, formatting rules, and templates for ATS-safe CV workflows
 - `/x-twitter/` — Bio, pinned post strategy, content positioning
 
 More platform directories will be added as the project grows. The structure is designed to be extended without breaking existing conventions.
 
-All working templates, personal examples, sample READMEs, and before/after comparisons live inside their respective hub directories (e.g., `/cv-ats/templates/`, `/github/examples/`). Files under `examples/` are practical reference artifacts, not canonical fixtures; the canonical rules live in the module docs, templates, and runtime skill references. The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
+Working templates live inside their respective hub directories, such as `/cv-ats/templates/`. Public examples must be fictional or fully anonymized. The canonical rules live in the module docs, templates, and runtime skill references. The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
 
 **B. The Agent Skill System (The Engine)**
 

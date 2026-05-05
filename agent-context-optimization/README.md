@@ -2,7 +2,7 @@
 metadata:
   title: "Agent context optimization"
   platform: "general"
-  objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, template, and example file."
+  objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, and template."
   status: "draft"
   last_updated: "2026-04-29"
   tags: ["context-file", "index", "navigation"]
@@ -53,7 +53,6 @@ After:
 - [agent-workflow.md](./agent-workflow.md): The operational guide for loading the file into agent sessions and combining it with other modules.
 - [file-maintenance.md](./file-maintenance.md): The maintenance lifecycle for updates, token growth, verified facts, and version history.
 - [templates/context-file-template.md](./templates/context-file-template.md): A guided template for building a new personal context file.
-- [examples/renato-mignone-context-file.md](./examples/renato-mignone-context-file.md): A full worked example showing how the spec looks in practice.
 
 ## 5. Usage for agents
 
