@@ -35,7 +35,7 @@ Most AI agents can rewrite a CV, LinkedIn bio, GitHub README, or portfolio page.
 
 The problem is that they usually rewrite from whatever context happens to be in the chat. That produces generic personal-branding copy, missing facts, repeated questions, and platform advice that does not travel from one agent to another.
 
-AgentKit SEO fixes the starting point:
+AgentKit SEO fixes the starting point with agent context optimization:
 
 - a private **agent-context-file** for verified career facts
 - focused skills for **LinkedIn profile optimization**, **GitHub SEO**, **CV/ATS resume optimization**, **portfolio SEO**, and **X/Twitter profile optimization**
@@ -75,6 +75,22 @@ Typical outputs:
 - GitHub README, topic, pin, and proof-point fixes
 - LinkedIn headline, About, Experience, Featured, and Skills recommendations
 - next actions ranked by impact and missing evidence
+
+## Agent Context Optimization
+
+Agent context optimization is the layer that keeps agentic AI work from drifting into generic or inconsistent personal-branding output.
+
+Instead of asking every agent to rebuild the user's professional history from scattered prompts, AgentKit SEO starts from a private Markdown context file. That file stores verified facts, links, achievements, constraints, target roles, and positioning notes in a structure that both humans and agents can inspect.
+
+The platform skills then apply surface-specific rules on top of that source of truth:
+
+- LinkedIn gets searchable, recruiter-readable profile structure
+- GitHub gets clearer repository metadata, READMEs, topics, and proof links
+- CV/ATS gets parser-safe structure and evidence-backed bullets
+- portfolio pages get crawlable metadata, structured data, and useful snippets
+- X gets bio, pinned-post, and content-positioning guidance
+
+The practical goal is simple: make professional context reusable by agents, while keeping public outputs grounded in facts the user controls.
 
 ## Modules
 
