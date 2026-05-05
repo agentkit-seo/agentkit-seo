@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Portable agent skills for LinkedIn profile optimization, GitHub SEO, ATS resume optimization, portfolio SEO, X/Twitter strategy, and career context files.",
   "type": "module",
   "bin": {
