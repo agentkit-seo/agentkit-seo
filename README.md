@@ -227,6 +227,19 @@ Current project notes live in [.assets/docs/current-status.md](./.assets/docs/cu
 
 Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
 
+## Releasing
+
+Npm is the canonical package registry for AgentKit SEO. GitHub releases mirror npm versions with matching `v*` tags.
+
+Before the first automated publish, add an `NPM_TOKEN` repository secret in GitHub with permission to publish `agentkit-seo`.
+
+```bash
+npm version patch
+git push origin main --tags
+```
+
+Pushing a version tag such as `v0.1.1` runs the npm publish workflow and creates the matching GitHub release.
+
 ## Who It's For
 
 - developers preparing for job search or promotion cycles
