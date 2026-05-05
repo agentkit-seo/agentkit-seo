@@ -2,13 +2,13 @@
 
 ### **1. Executive Summary & Vision**
 
-**The Project:** A dual-purpose repository that serves as a centralized, human-readable Knowledge Hub for personal branding, SEO, and ATS optimization, and simultaneously acts as an installable "Skill" for coding AI agents (Claude, Gemini, Codex).
+**The Project:** AgentKit SEO is now a two-surface system: a public, human-readable website and a published installable skill package for coding agents. It covers personal branding, SEO/AEO, ATS-safe resume workflows, and agent-readable career context.
 
-**The Two Scopes of This Repository:**
-- **Online Knowledge Hub.** Users read the repository directly on GitHub, navigating the `.md` files in each platform folder to learn best practices, consult templates, and reference working examples. No local installation required.
-- **Agent Skill.** Users install the Skill into their coding agent of choice and invoke it from any working directory to let the agent actively optimize their digital presence, using their own files as input.
+**The Two Public Surfaces:**
+- **Human-readable hub.** The public website at `https://agentkit-seo.github.io/` exposes the project, skills, playbooks, providers, and docs in a crawlable static form.
+- **Agent skill package.** The npm package `agentkit-seo` exposes install and export flows for supported providers, with the main source hosted at `https://github.com/agentkit-seo/agentkit-seo`.
 
-**The Ultimate Goal:** To allow a user to plug this repository into their local AI agent, point it at their existing GitHub profile, website, LinkedIn export, or CV, and say: *"Optimize my digital presence based on the best practices in the Skill."*
+**The Operational Goal:** Let a user install the skill into their preferred coding agent, point it at their LinkedIn profile, GitHub profile, portfolio, CV, or raw career materials, and produce grounded optimization work from a reusable source of truth.
 
 **The Core Best Practice — The Personal Agent Context File:** Beyond platform-specific optimization, the deepest use of this repo is enabling users to build and maintain a **personal agent context file**: a single, structured document containing all the relevant information about a user's career, skills, projects, and positioning. This file becomes the user's portable professional identity, readable by any agent, and lives entirely outside of this repository in the user's own environment. The best workflow is to use this repo and its Skill to let the agent help build and refine that context file incrementally. The user feeds new material whenever it becomes available (PDF exports, raw text, LinkedIn data dumps, GitHub activity summaries) and the agent, using its own native tool capabilities, handles parsing and structuring into the context file automatically.
 
@@ -68,19 +68,32 @@ This architecture still solves the context window problem: a user who only wants
 
 ---
 
-### **3. Development Strategy & Workflow**
+### **3. Current State And Workflow**
 
-Keeping the repository clean and well-structured from the start is critical. AI agents perform worse when fed chaotic file histories or unstructured data. The commit history itself is a signal of quality.
+The foundation work is now done. The project is no longer in the planning-only phase.
 
-- **Phase 1: The "Dirty" Beta** Work in a private or local repository. Sketch the folder structure, test the Markdown formatting with a local agent, and validate that the agent can successfully read the rules and rewrite a sample CV or README.
+**What is already live:**
+- the GitHub organization
+- the main source repo
+- the public website on GitHub Pages
+- the npm package `agentkit-seo`
+- GitHub releases aligned with npm versions
+- the npm publish pipeline
+- the site deploy pipeline
 
-- **Phase 2: Architectural Lockdown (Current state)** Finalize the folder hierarchy. Lock the schema boundaries defined in `.assets/docs/STYLEGUIDE.md`. Keep `.skills/agent-skill/` as the only portable source of truth. Keep `.skills/providers/` as adapter notes. Keep `.skills/export/` as the install/export implementation. Direct installs now work for Claude Code, Codex, OpenCode, and Gemini CLI.
+**What the current workflow looks like:**
+- edit shared skill logic in `.skills/agent-skill/`
+- keep provider-specific behavior in `.skills/providers/`
+- use `.skills/export/` as the install/export layer
+- keep the root docs and site aligned with the runtime skill behavior
+- publish new package versions through tags
+- let the site deploy automatically from `main`
 
-- **Phase 3: The "Clean" Repository** Create the official GitHub Organization and the final public repository. Commit the finalized structure from scratch to ensure a pristine commit history.
-
-- **Phase 4: Prompt Engineering & Context Tuning** Refine each shared skill in `.skills/agent-skill/` so the agent does not hallucinate. Write strict routing rules in the root `agentkit-seo` skill, for example: *"When optimizing a GitHub README, load `agentkit-seo-github` before generating any output."* Test the adapter commands and direct skill invocation end-to-end for each supported provider.
-
-- **Phase 5: Public Packaging & Distribution** Publish the `npx` package, tighten the public README, add provider-specific release artifacts, and prepare launch communication only after the shared source tree and direct installs are stable. GIFs, demos, showcase examples, or manual test scenarios can be added later if they help explain the project, but they are not a current process requirement.
+**What users currently do:**
+- read the hub on the website or in the repo
+- install the package with `npx agentkit-seo install --provider <provider>`
+- invoke the matching skill inside their coding agent
+- use a private context file to keep outputs fact-based across platforms
 
 ---
 
@@ -90,31 +103,48 @@ The foundational decisions below are now part of the project contract:
 
 1. **The Data Schema:** Editorial Knowledge Hub files use hidden metadata comments plus the visible structure defined in `.assets/docs/STYLEGUIDE.md`, so GitHub and VS Code render the page cleanly while agents still have routing metadata. Runtime skill entrypoints use Agent Skills frontmatter with `name` and `description`. Runtime references and provider adapter notes use lean Markdown optimized for loading cost and operational clarity.
 
-2. **The Scope of the MVP:** All seven shared skill bundles now exist, but launch polish should focus first on `cv-ats`, `github`, and `linkedin`. The remaining modules can ship as beta modules while the install flow, package distribution, and main README narrative are completed.
+2. **The Scope of the current release:** All seven shared skill bundles now exist. `cv-ats`, `github`, and `linkedin` remain the strongest launch modules, while the other modules are already part of the public package and website.
 
-3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This avoids common Windows symlink failure modes and keeps installed bundles portable.
+3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This keeps installed bundles portable and predictable.
 
 4. **The Personal Context File schema:** The schema is defined in `agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional user-confirmed storage: in-chat draft, local workspace file, user-chosen path, or portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
 
 ---
 
-### **5. Important to Define LATER (Post-MVP)**
+### **5. Automation And Distribution**
 
-- **Marketplace Publishing:** Listing on official provider hubs (Claude's MCP marketplace, Gemini extensions, and equivalents).
-- **Organization Website:** A public-facing landing page explaining the project to non-developer users. Non-developer users can already use the Knowledge Hub by reading the repo directly on GitHub, or by pasting the repository URL into any LLM chat interface that can fetch web content.
-- **Multi-user / Team support:** Allowing a team (e.g., a startup founding team) to share a base Skill while each member maintains their own personal context file independently.
-- **Demos or Showcase Assets:** Add GIFs, before/after examples, or small manual examples only when they support public communication. They are useful later, but not a current blocker.
+Two main automation paths now exist:
+
+- **Website deploy pipeline.** The site repo deploys to GitHub Pages from `main` through `.github/workflows/deploy-pages.yml`.
+- **Package publish pipeline.** The main repo publishes `agentkit-seo` to npm on pushed tags matching `v*` through `.github/workflows/npm-publish.yml`, then creates the matching GitHub release.
+
+Important operational note:
+
+- npm publishing in CI depends on a valid `NPM_TOKEN` that supports non-interactive publish
+
+The current release model is:
+
+- npm is the canonical package registry
+- GitHub releases mirror npm versions
+- the website is the public human-readable hub
+- the source repo remains the canonical authoring and packaging repo
 
 ---
 
-### **6. Open Doubts & Questions**
+### **6. Important to Define Later**
 
-- *"Which minimum manual release checks are enough before publishing the first public `npx` package?"*
+- **Marketplace Publishing:** Listing on official provider hubs (Claude's MCP marketplace, Gemini extensions, and equivalents).
+- **GitHub repo social preview:** A separate custom social preview for the main source repo.
+- **Multi-user / Team support:** Allowing a team (e.g., a startup founding team) to share a base Skill while each member maintains their own personal context file independently.
+- **Demos or Showcase Assets:** Add GIFs, before/after examples, or small manual examples only when they support public communication. They are useful later, but not a current blocker.
+- **Installed-version visibility:** A command or metadata layer that lets users compare local installed skill version against the latest npm version.
 
-- *"How are we managing context window limits at the submodule level? If a single platform's submodule (e.g., `linkedin/`) grows large enough, does it need its own lite version for agents with smaller context windows?"*
+---
 
-- *"For the subcommand routing (e.g., `/agentkit-seo:linkedin`), how much is implemented natively by each provider's CLI versus by our adapter layer, and what is the fallback when a provider does not support namespaced slash commands?"*
+### **7. Open Operational Questions**
 
-- *"How do we handle the provider-specific Skill publications in parallel with the provider-agnostic core? Is there a single source of truth that gets compiled into provider-specific formats, or does each provider version get maintained separately?"*
+- *"Do we want a dedicated `doctor` or `version` command to show whether installed skills are behind npm latest?"*
 
-- *"Should the Gemini CLI extension remain generated by `.skills/export/`, or should it later become a dedicated provider-facing release artifact once public demand justifies it?"*
+- *"When marketplace distribution starts, do we keep every provider artifact generated from the same shared source tree, or does one provider need a dedicated release artifact?"*
+
+- *"How far do we want to push public showcase assets before they become maintenance overhead instead of launch support?"*

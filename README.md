@@ -233,7 +233,7 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 
 First launch focus: `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
 
-Current project notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md). The release process lives in [.assets/docs/release-plan.md](./.assets/docs/release-plan.md).
+Current project notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md) and [.assets/docs/project.md](./.assets/docs/project.md).
 
 Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
 
