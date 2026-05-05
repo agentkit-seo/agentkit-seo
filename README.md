@@ -89,16 +89,26 @@ Typical outputs:
 
 ## Install
 
-Install from npm:
+The canonical install path uses the published npm package:
 
 ```bash
 npx agentkit-seo install --provider codex
 ```
 
-From a local checkout for development:
+Replace `codex` with any supported provider.
+
+Run it directly from the GitHub repository without a local clone:
 
 ```bash
-node .skills/export/scripts/agentkit-seo.mjs install --provider codex
+npx github:agentkit-seo/agentkit-seo install --provider codex
+```
+
+For maintainers testing unpublished changes from a local checkout:
+
+```bash
+git clone https://github.com/agentkit-seo/agentkit-seo.git
+cd agentkit-seo
+npx . install --provider codex
 ```
 
 Supported install targets:
@@ -111,7 +121,7 @@ Supported install targets:
 | Gemini CLI | `~/.gemini/extensions/agentkit-seo/` | Namespaced commands such as `/agentkit-seo:linkedin` |
 | OpenCode | `~/.config/opencode/skills/` plus command wrappers | Native skill loading plus flat commands such as `/agentkit-seo-linkedin` |
 
-Project-local install:
+Project-local install from a local checkout:
 
 ```bash
 npm exec --package ./. -- agentkit-seo install \
