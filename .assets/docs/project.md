@@ -100,7 +100,6 @@ The foundational decisions below are now part of the project contract:
 
 ### **5. Important to Define LATER (Post-MVP)**
 
-- **Published CLI Installer:** Publish the existing CLI as an npm package so users can run `npx agentkit-seo ...` without cloning the repository.
 - **Marketplace Publishing:** Listing on official provider hubs (Claude's MCP marketplace, Gemini extensions, and equivalents).
 - **Organization Website:** A public-facing landing page explaining the project to non-developer users. Non-developer users can already use the Knowledge Hub by reading the repo directly on GitHub, or by pasting the repository URL into any LLM chat interface that can fetch web content.
 - **Multi-user / Team support:** Allowing a team (e.g., a startup founding team) to share a base Skill while each member maintains their own personal context file independently.

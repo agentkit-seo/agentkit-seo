@@ -43,11 +43,11 @@ Working today:
 - global user-level install for supported providers when `--project-root` is omitted
 - shared bundle export
 - provider-shaped export bundles
+- published npm package usage through `npx agentkit-seo ...`
 - local `npm exec --package ./. -- agentkit-seo ...` usage
 
 Not shipped yet:
 
-- published npm package for public `npx agentkit-seo ...`
 - marketplace / registry distribution
 - public demo assets such as GIFs or before/after examples
 

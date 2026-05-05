@@ -1,7 +1,7 @@
 {
   "name": "agentkit-seo",
-  "version": "0.1.0-dev",
-  "description": "Portable skill bundle and export CLI for AgentKit SEO.",
+  "version": "0.1.0",
+  "description": "Portable agent skills for LinkedIn profile optimization, GitHub SEO, ATS resume optimization, portfolio SEO, X/Twitter strategy, and career context files.",
   "type": "module",
   "bin": {
     "agentkit-seo": ".skills/export/scripts/agentkit-seo.mjs"
@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/agentkit-seo/agentkit-seo/issues"
   },
-  "homepage": "https://github.com/agentkit-seo/agentkit-seo#readme",
+  "homepage": "https://agentkit-seo.github.io/",
   "publishConfig": {
     "access": "public"
   },
@@ -35,11 +35,21 @@
   },
   "keywords": [
     "agent-skills",
+    "ai-agents",
     "seo",
+    "personal-branding",
+    "profile-optimization",
+    "linkedin-profile-optimization",
     "linkedin",
+    "github-seo",
     "github",
+    "resume-optimization",
     "cv",
-    "ats"
+    "ats",
+    "portfolio-seo",
+    "twitter",
+    "x-twitter",
+    "career-context"
   ],
   "license": "MIT"
 }

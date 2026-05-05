@@ -21,6 +21,7 @@
   <a href="#quick-start">Quick Start</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
+  <a href="https://agentkit-seo.github.io/">Website</a> •
   <a href="#how-it-works">How It Works</a> •
   <a href="#status">Status</a>
 </p>
@@ -36,7 +37,7 @@ The problem is that they usually rewrite from whatever context happens to be in 
 AgentKit SEO fixes the starting point:
 
 - a private **agent-context-file** for verified career facts
-- focused skills for **CV/ATS**, **GitHub**, **LinkedIn**, **portfolio SEO**, and **X**
+- focused skills for **LinkedIn profile optimization**, **GitHub SEO**, **CV/ATS resume optimization**, **portfolio SEO**, and **X/Twitter profile optimization**
 - one export/install CLI for Claude Code, Codex, Gemini CLI, OpenCode, and portable `SKILL.md` usage
 
 ```text
@@ -79,21 +80,21 @@ Typical outputs:
 | Goal | Start here |
 | --- | --- |
 | Build the reusable personal context layer | [agent-context-optimization](./agent-context-optimization/README.md) |
-| Improve a GitHub profile or repository | [github](./github/README.md) |
-| Rewrite a LinkedIn profile | [linkedin](./linkedin/README.md) |
-| Tailor a CV for ATS parsing | [cv-ats](./cv-ats/README.md) |
+| Improve GitHub profile and repository SEO | [github](./github/README.md) |
+| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./linkedin/README.md) |
+| Tailor a CV or resume for ATS parsing | [cv-ats](./cv-ats/README.md) |
 | Fix portfolio SEO and indexability | [web-portfolio](./web-portfolio/README.md) |
-| Improve X profile and posting strategy | [x-twitter](./x-twitter/README.md) |
+| Improve X/Twitter profile and posting strategy | [x-twitter](./x-twitter/README.md) |
 
 ## Install
 
-After the npm package is published:
+Install from npm:
 
 ```bash
 npx agentkit-seo install --provider codex
 ```
 
-From a local checkout today:
+From a local checkout for development:
 
 ```bash
 node .skills/export/scripts/agentkit-seo.mjs install --provider codex
@@ -216,7 +217,7 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 | Codex direct install | Ready |
 | OpenCode direct install | Ready |
 | Gemini CLI extension install | Ready locally |
-| Published `npx agentkit-seo ...` package | Not shipped yet |
+| Published `npx agentkit-seo ...` package | Shipped |
 | Marketplace / registry distribution | Not shipped yet |
 
 First launch focus: `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
