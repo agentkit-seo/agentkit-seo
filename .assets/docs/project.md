@@ -128,6 +128,9 @@ The current release model is:
 - GitHub releases mirror npm versions
 - the website is the public human-readable hub
 - the source repo remains the canonical authoring and packaging repo
+- the package CLI exposes `version`, `doctor`, `template context`, and install-manifest metadata for release and install hygiene
+- push and pull request validation checks run the CLI doctor, provider export smoke tests, install smoke tests, and package dry-run
+- `CHANGELOG.md` tracks public release history and unreleased package changes
 
 ---
 
@@ -137,13 +140,11 @@ The current release model is:
 - **GitHub repo social preview:** A separate custom social preview for the main source repo.
 - **Multi-user / Team support:** Allowing a team (e.g., a startup founding team) to share a base Skill while each member maintains their own personal context file independently.
 - **Demos or Showcase Assets:** Add GIFs, before/after examples, or small manual examples only when they support public communication. They are useful later, but not a current blocker.
-- **Installed-version visibility:** A command or metadata layer that lets users compare local installed skill version against the latest npm version.
+- **Latest-version visibility:** Local installs now include package metadata; an online npm latest comparison can be added later if it becomes useful.
 
 ---
 
 ### **7. Open Operational Questions**
-
-- *"Do we want a dedicated `doctor` or `version` command to show whether installed skills are behind npm latest?"*
 
 - *"When marketplace distribution starts, do we keep every provider artifact generated from the same shared source tree, or does one provider need a dedicated release artifact?"*
 

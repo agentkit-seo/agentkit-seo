@@ -1,7 +1,7 @@
 {
   "package": {
     "name": "agentkit-seo",
-    "version": "0.1.0",
+    "version": "from-package-json",
     "description": "Portable AgentKit SEO skill bundle generated from the canonical .skills source tree."
   },
   "skills": [
@@ -67,7 +67,8 @@
       "commandTarget": "commands/agentkit-seo",
       "files": [
         {
-          "source": ".skills/providers/gemini-cli/extension/gemini-extension.json"
+          "source": ".skills/providers/gemini-cli/extension/gemini-extension.json",
+          "syncPackageVersion": true
         },
         {
           "source": ".skills/providers/gemini-cli/extension/GEMINI.md"

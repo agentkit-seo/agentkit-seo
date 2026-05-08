@@ -1,0 +1,43 @@
+name: Validate package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate package layout
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate CLI package layout
+        run: npm run validate
+
+      - name: Check CLI version command
+        run: node .skills/export/scripts/agentkit-seo.mjs version
+
+      - name: Export provider bundles
+        run: node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-export-check --force
+
+      - name: Smoke install Codex bundle
+        run: node .skills/export/scripts/agentkit-seo.mjs install --provider codex --target-dir /tmp/agentkit-seo-codex-install-check --force
+
+      - name: Smoke install Gemini CLI bundle
+        run: node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --target-dir /tmp/agentkit-seo-gemini-install-check --force
+
+      - name: Verify package contents
+        run: npm pack --dry-run

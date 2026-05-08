@@ -23,6 +23,33 @@ jobs:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
 
+      - name: Verify tag matches package version
+        run: |
+          package_version="$(node -p "require('./package.json').version")"
+          tag_version="${GITHUB_REF_NAME#v}"
+          if [ "$tag_version" != "$package_version" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match package.json version ${package_version}."
+            exit 1
+          fi
+
+      - name: Verify provider metadata versions
+        run: |
+          node --input-type=module -e '
+            import fs from "node:fs";
+            const packageVersion = JSON.parse(fs.readFileSync("package.json", "utf8")).version;
+            const files = [".skills/providers/gemini-cli/extension/gemini-extension.json"];
+            for (const file of files) {
+              const version = JSON.parse(fs.readFileSync(file, "utf8")).version;
+              if (version !== packageVersion) {
+                console.error(`${file} version ${version} does not match package.json version ${packageVersion}.`);
+                process.exit(1);
+              }
+            }
+          '
+
+      - name: Validate package layout
+        run: npm run validate
+
       - name: Verify package contents
         run: npm pack --dry-run
 

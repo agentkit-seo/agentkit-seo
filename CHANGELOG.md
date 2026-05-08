@@ -1,0 +1,44 @@
+# Changelog
+
+All notable changes to AgentKit SEO are documented here.
+
+This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
+
+## Unreleased
+
+### Added
+
+- Added `agentkit-seo version` for quick package identity checks.
+- Added `agentkit-seo doctor` and `npm run validate` for package layout validation.
+- Added `agentkit-seo template context` to scaffold the guided private context-file template.
+- Added `agentkit-seo-install.json` manifests during provider installs.
+- Added push and pull request validation through `.github/workflows/validate.yml`.
+
+### Changed
+
+- Synced provider metadata versions from `package.json` during export and install.
+- Updated npm publish automation to validate the package layout before packaging.
+- Included the guided context-file template in the npm package.
+
+## 0.1.2 - 2026-05-05
+
+### Changed
+
+- Strengthened launch positioning and public README language.
+- Added a complete agent-context-file example to support context-first workflows.
+- Consolidated maintainer status notes for release and distribution tracking.
+
+## 0.1.1 - 2026-05-05
+
+### Changed
+
+- Aligned install documentation with the published npm package.
+- Documented direct npm, GitHub, and local maintainer install flows.
+
+## 0.1.0 - 2026-05-05
+
+### Added
+
+- Published the initial npm package for AgentKit SEO.
+- Added tag-based npm publish automation with GitHub release creation.
+- Added repository policy files including `SECURITY.md` and `.github/CODEOWNERS`.

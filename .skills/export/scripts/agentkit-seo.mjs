@@ -10,9 +10,12 @@ function usage() {
   console.log(`AgentKit SEO CLI
 
 Usage:
+  agentkit-seo version
+  agentkit-seo doctor
   agentkit-seo export --provider <provider|all> --output <dir> [--force]
   agentkit-seo install --provider <provider> [--project-root <dir>|--target-dir <dir>] [--commands-target-dir <dir>] [--force]
   agentkit-seo install --provider shared --target-dir <dir> [--force]
+  agentkit-seo template context [--output <file>] [--force]
   agentkit-seo list providers
   agentkit-seo list skills
   agentkit-seo list commands --provider <provider>
@@ -48,9 +51,27 @@ function repoRootFromScript() {
   return path.resolve(path.dirname(scriptPath), "..", "..", "..");
 }
 
+function loadPackageMetadata(repoRoot) {
+  const packagePath = path.join(repoRoot, "package.json");
+  const packageJson = JSON.parse(fs.readFileSync(packagePath, "utf8"));
+  return {
+    name: packageJson.name,
+    version: packageJson.version,
+    description: packageJson.description
+  };
+}
+
 function loadConfig(repoRoot) {
   const configPath = path.join(repoRoot, ".skills", "export", "export-config.json");
-  return JSON.parse(fs.readFileSync(configPath, "utf8"));
+  const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+  const packageMetadata = loadPackageMetadata(repoRoot);
+  return {
+    ...config,
+    package: {
+      ...config.package,
+      ...packageMetadata
+    }
+  };
 }
 
 function ensureCleanDirectory(targetPath, force) {
@@ -83,6 +104,28 @@ function normalizeRelativePath(filePath) {
   return filePath.split(path.sep).join("/");
 }
 
+function readJsonFile(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function writeJsonFile(filePath, value) {
+  fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+}
+
+function semverish(version) {
+  return /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(version);
+}
+
+function readSkillName(skillFilePath) {
+  const content = fs.readFileSync(skillFilePath, "utf8");
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) {
+    return null;
+  }
+  const nameMatch = match[1].match(/^name:\s*(.+)$/m);
+  return nameMatch ? nameMatch[1].trim() : null;
+}
+
 function shouldCopySkillPath(skillRoot, sourcePath, excludedPaths) {
   if (!excludedPaths || excludedPaths.length === 0) {
     return true;
@@ -113,7 +156,13 @@ function copySkillFolders(repoRoot, skills, targetRoot, excludedPaths = []) {
   return exported;
 }
 
-function copyProviderFiles(repoRoot, files, targetRoot, force) {
+function syncJsonPackageVersion(targetPath, packageMetadata) {
+  const json = readJsonFile(targetPath);
+  json.version = packageMetadata.version;
+  writeJsonFile(targetPath, json);
+}
+
+function copyProviderFiles(repoRoot, files, targetRoot, force, packageMetadata) {
   const copied = [];
 
   if (!files || files.length === 0) {
@@ -138,6 +187,9 @@ function copyProviderFiles(repoRoot, files, targetRoot, force) {
     }
     fs.mkdirSync(path.dirname(destination), { recursive: true });
     fs.cpSync(source, destination, { recursive: true });
+    if (file.syncPackageVersion) {
+      syncJsonPackageVersion(destination, packageMetadata);
+    }
     copied.push(path.relative(targetRoot, destination));
   }
 
@@ -214,7 +266,32 @@ function writeBundleManifest(bundleRoot, provider, config, exportedSkills) {
     layout: providerSpec.layout
   };
   const manifestPath = path.join(bundleRoot, "agentkit-seo-export.json");
-  fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+  writeJsonFile(manifestPath, manifest);
+}
+
+function writeInstallManifest(
+  targetRoot,
+  provider,
+  config,
+  installedSkills,
+  installedCommands,
+  skillTargetRoot,
+  commandTargetRoot
+) {
+  const providerSpec = config.providers[provider];
+  const manifest = {
+    package: config.package,
+    provider,
+    installed_at: new Date().toISOString(),
+    skills: installedSkills,
+    commands: installedCommands,
+    layout: providerSpec.layout,
+    skill_target: skillTargetRoot,
+    command_target: commandTargetRoot
+  };
+  const manifestPath = path.join(targetRoot, "agentkit-seo-install.json");
+  writeJsonFile(manifestPath, manifest);
+  return manifestPath;
 }
 
 function exportProvider(repoRoot, outputRoot, provider, config, force) {
@@ -223,7 +300,7 @@ function exportProvider(repoRoot, outputRoot, provider, config, force) {
   ensureCleanDirectory(bundleRoot, force);
 
   if (providerSpec.files) {
-    copyProviderFiles(repoRoot, providerSpec.files, bundleRoot, force);
+    copyProviderFiles(repoRoot, providerSpec.files, bundleRoot, force, config.package);
   }
 
   const skillTarget = providerSpec.skillTarget ?? ".";
@@ -302,7 +379,7 @@ function installProvider(repoRoot, provider, config, flags) {
   const providerSpec = config.providers[provider];
   const targetRoot = resolveInstallRoot(flags, providerSpec, provider);
   if (providerSpec.files) {
-    copyProviderFiles(repoRoot, providerSpec.files, targetRoot, Boolean(flags.force));
+    copyProviderFiles(repoRoot, providerSpec.files, targetRoot, Boolean(flags.force), config.package);
   }
   const skillTargetRoot =
     providerSpec.layout === "gemini-extension"
@@ -322,6 +399,15 @@ function installProvider(repoRoot, provider, config, flags) {
   const installedCommands = commandTargetRoot
     ? copyCommandFiles(repoRoot, providerSpec.commands, commandTargetRoot, Boolean(flags.force))
     : [];
+  const manifestPath = writeInstallManifest(
+    targetRoot,
+    provider,
+    config,
+    installedSkills,
+    installedCommands,
+    skillTargetRoot,
+    commandTargetRoot
+  );
 
   console.log(`Installed ${installedSkills.length} skill folder(s) for ${provider}`);
   console.log(`- target: ${skillTargetRoot}`);
@@ -329,9 +415,157 @@ function installProvider(repoRoot, provider, config, flags) {
     console.log(`Installed ${installedCommands.length} command file(s) for ${provider}`);
     console.log(`- commands target: ${commandTargetRoot}`);
   }
+  console.log(`- manifest: ${manifestPath}`);
   if (providerSpec.layout === "gemini-extension") {
     console.log(`- extension target: ${targetRoot}`);
   }
+}
+
+function showVersion(config) {
+  console.log(`${config.package.name} ${config.package.version}`);
+  if (config.package.description) {
+    console.log(config.package.description);
+  }
+}
+
+function validateProvider(repoRoot, provider, providerSpec, packageMetadata, errors) {
+  if (!providerSpec.layout) {
+    errors.push(`provider '${provider}' is missing layout`);
+  }
+  if (!providerSpec.target) {
+    errors.push(`provider '${provider}' is missing target`);
+  }
+
+  for (const file of providerSpec.files ?? []) {
+    const source = path.join(repoRoot, file.source);
+    if (!fs.existsSync(source)) {
+      errors.push(`provider '${provider}' file source does not exist: ${file.source}`);
+      continue;
+    }
+    if (file.syncPackageVersion) {
+      try {
+        const json = readJsonFile(source);
+        if (json.version !== packageMetadata.version) {
+          errors.push(
+            `${file.source} version ${json.version} does not match package.json version ${packageMetadata.version}`
+          );
+        }
+      } catch (error) {
+        errors.push(`provider '${provider}' file is not valid JSON: ${file.source}`);
+      }
+    }
+  }
+
+  for (const command of providerSpec.commands ?? []) {
+    const source = path.join(repoRoot, command.source);
+    if (!fs.existsSync(source)) {
+      errors.push(`provider '${provider}' command source does not exist: ${command.source}`);
+    }
+  }
+
+  if (providerSpec.commandTarget && !providerSpec.commands) {
+    errors.push(`provider '${provider}' has commandTarget but no commands`);
+  }
+}
+
+function doctor(repoRoot, config) {
+  const errors = [];
+  const packageMetadata = config.package;
+  const seenSkills = new Set();
+  const contextTemplate = path.join(
+    repoRoot,
+    "agent-context-optimization",
+    "templates",
+    "context-file-template.md"
+  );
+
+  if (!packageMetadata.name) {
+    errors.push("package name is missing");
+  }
+  if (!semverish(packageMetadata.version)) {
+    errors.push(`package version is not semver-like: ${packageMetadata.version}`);
+  }
+  if (!packageMetadata.description) {
+    errors.push("package description is missing");
+  }
+
+  if (!Array.isArray(config.skills) || config.skills.length === 0) {
+    errors.push("no skills configured");
+  }
+  if (!fs.existsSync(contextTemplate)) {
+    errors.push("context template is missing: agent-context-optimization/templates/context-file-template.md");
+  }
+
+  for (const skill of config.skills ?? []) {
+    if (seenSkills.has(skill.name)) {
+      errors.push(`duplicate skill configured: ${skill.name}`);
+    }
+    seenSkills.add(skill.name);
+
+    const source = path.join(repoRoot, skill.source);
+    const skillFile = path.join(source, "SKILL.md");
+    if (!fs.existsSync(source)) {
+      errors.push(`skill source does not exist: ${skill.source}`);
+      continue;
+    }
+    if (!fs.existsSync(skillFile)) {
+      errors.push(`skill is missing SKILL.md: ${skill.source}`);
+      continue;
+    }
+
+    const frontmatterName = readSkillName(skillFile);
+    if (frontmatterName !== skill.name) {
+      errors.push(
+        `${skill.source}/SKILL.md name '${frontmatterName ?? "missing"}' does not match config '${skill.name}'`
+      );
+    }
+  }
+
+  if (!config.providers || Object.keys(config.providers).length === 0) {
+    errors.push("no providers configured");
+  }
+
+  for (const [provider, providerSpec] of Object.entries(config.providers ?? {})) {
+    validateProvider(repoRoot, provider, providerSpec, packageMetadata, errors);
+  }
+
+  if (errors.length > 0) {
+    for (const error of errors) {
+      console.error(`error: ${error}`);
+    }
+    throw new Error(`doctor found ${errors.length} issue(s)`);
+  }
+
+  console.log(`ok: package ${packageMetadata.name}@${packageMetadata.version}`);
+  console.log(`ok: ${config.skills.length} skill source(s)`);
+  console.log(`ok: ${Object.keys(config.providers).length} provider adapter(s)`);
+  console.log("ok: context template available");
+  console.log("ok: provider metadata versions match package.json");
+}
+
+function templateContext(repoRoot, flags) {
+  const source = path.join(
+    repoRoot,
+    "agent-context-optimization",
+    "templates",
+    "context-file-template.md"
+  );
+  if (!fs.existsSync(source)) {
+    throw new Error(`Context template does not exist: ${source}`);
+  }
+
+  if (!flags.output) {
+    process.stdout.write(fs.readFileSync(source, "utf8"));
+    return;
+  }
+
+  const destination = path.resolve(expandUserPath(flags.output));
+  if (fs.existsSync(destination) && !flags.force) {
+    throw new Error(`Template output already exists: ${destination}. Use --force to replace it.`);
+  }
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.cpSync(source, destination);
+  console.log(`Wrote context template to ${destination}`);
 }
 
 function listProviders(config) {
@@ -366,6 +600,27 @@ function run() {
 
   const repoRoot = repoRootFromScript();
   const config = loadConfig(repoRoot);
+
+  if (command === "version") {
+    showVersion(config);
+    return;
+  }
+
+  if (command === "doctor") {
+    parseFlags(rest);
+    doctor(repoRoot, config);
+    return;
+  }
+
+  if (command === "template") {
+    const subject = rest[0];
+    const flags = parseFlags(rest.slice(1));
+    if (subject === "context") {
+      templateContext(repoRoot, flags);
+      return;
+    }
+    throw new Error("Usage: agentkit-seo template context [--output <file>] [--force]");
+  }
 
   if (command === "list") {
     const subject = rest[0];

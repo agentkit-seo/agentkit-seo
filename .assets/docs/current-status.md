@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
 
-## As of 2026-05-05
+## As of 2026-05-08
 
 ### Public surfaces
 
@@ -17,12 +17,13 @@ The npm package is live at:
 
 Current published version:
 
-- `agentkit-seo@0.1.1`
+- `agentkit-seo@0.1.2`
 
 GitHub releases currently published:
 
 - `v0.1.0`
 - `v0.1.1`
+- `v0.1.2`
 
 ### Core architecture
 
@@ -64,6 +65,9 @@ Working today:
 - published npm package usage through `npx agentkit-seo ...`
 - direct GitHub install through `npx github:agentkit-seo/agentkit-seo ...`
 - local maintainer execution through `npx . ...` and `npm exec --package ./. -- ...`
+- CLI diagnostics through `agentkit-seo version` and `agentkit-seo doctor`
+- guided context-file scaffolding through `agentkit-seo template context`
+- local install manifests through `agentkit-seo-install.json`
 
 Provider-facing command shapes available today:
 
@@ -99,7 +103,7 @@ The OG preview asset for the site was corrected and regenerated to fix layout ov
 
 ### Automation status
 
-Two main GitHub Actions pipelines now exist:
+Three main GitHub Actions pipelines now exist:
 
 #### 1. Site deployment pipeline
 
@@ -132,6 +136,8 @@ Workflow:
 Current behavior:
 
 - triggers on tags matching `v*`
+- verifies the pushed tag matches `package.json`
+- validates package layout through `npm run validate`
 - runs `npm pack --dry-run`
 - publishes to npm with provenance
 - creates the matching GitHub release on success
@@ -143,6 +149,25 @@ Required secret:
 Important note:
 
 - the token must work for non-interactive CI publishing; earlier failures were caused by npm `EOTP` until the token setup was corrected
+
+#### 3. Package validation pipeline
+
+Repo:
+
+- `agentkit-seo/agentkit-seo`
+
+Workflow:
+
+- `.github/workflows/validate.yml`
+
+Current behavior:
+
+- triggers on pushes and pull requests targeting `main`
+- runs `npm run validate`
+- checks the CLI `version` command
+- exports all provider bundles
+- smoke-installs Codex and Gemini CLI bundles into `/tmp`
+- runs `npm pack --dry-run`
 
 ### Repo and docs work already completed
 
@@ -156,6 +181,11 @@ Completed repository work includes:
 - `SECURITY.md` added
 - `.github/CODEOWNERS` added
 - GitHub release flow created and verified
+- npm publish workflow now verifies that pushed `v*` tags match `package.json`
+- npm publish workflow now runs the CLI doctor before packaging
+- push and pull request validation workflow added
+- `CHANGELOG.md` added for public release tracking
+- CLI version, doctor, context template, and install manifest support added
 - GitHub organization profile README updated with clickable maintainer badges
 
 ### Current process boundaries
@@ -173,7 +203,7 @@ This project is not currently prioritizing:
 - marketplace / registry distribution
 - benchmark or eval suites
 - polished showcase/demo assets
-- installed-version update detection inside Codex itself
+- online latest-version update detection inside Codex itself
 
 ### Remaining gaps
 
@@ -181,5 +211,5 @@ Important gaps still open:
 
 - marketplace / registry distribution is not shipped
 - the main repo does not yet have a separately configured custom GitHub social preview
-- installed skills do not yet expose a local-vs-latest version check
+- installed skills expose local package metadata, but do not yet compare against npm latest
 - demo assets and before/after public examples are still missing

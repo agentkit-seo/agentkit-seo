@@ -113,6 +113,19 @@ npx agentkit-seo install --provider codex
 
 Replace `codex` with any supported provider.
 
+Check the package version and local package layout:
+
+```bash
+npx agentkit-seo version
+npx agentkit-seo doctor
+```
+
+Create a guided private context-file template before asking an agent to rewrite public profiles:
+
+```bash
+npx agentkit-seo template context --output ~/.agentkit-seo/my-context.md
+```
+
 Run it directly from the GitHub repository without a local clone:
 
 ```bash
@@ -144,6 +157,8 @@ npm exec --package ./. -- agentkit-seo install \
   --provider codex \
   --project-root .
 ```
+
+Each install writes an `agentkit-seo-install.json` manifest in the install root so maintainers and users can inspect the installed package version, provider, skills, commands, and target paths.
 
 ## How It Works
 
@@ -240,6 +255,8 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 | --- | --- |
 | Shared skill source | Ready |
 | Install/export CLI | Ready |
+| CLI diagnostics and context template command | Ready |
+| Push and pull request validation workflow | Ready |
 | Claude Code direct install | Ready |
 | Codex direct install | Ready |
 | OpenCode direct install | Ready |
@@ -253,18 +270,21 @@ Current project notes live in [.assets/docs/current-status.md](./.assets/docs/cu
 
 Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
 
+Release history is tracked in [CHANGELOG.md](./CHANGELOG.md).
+
 ## Releasing
 
 Npm is the canonical package registry for AgentKit SEO. GitHub releases mirror npm versions with matching `v*` tags.
 
-Before the first automated publish, add an `NPM_TOKEN` repository secret in GitHub with permission to publish `agentkit-seo`.
+Automated publishing requires an `NPM_TOKEN` repository secret in GitHub with permission to publish `agentkit-seo`.
 
 ```bash
+npm run validate
 npm version patch
 git push origin main --tags
 ```
 
-Pushing a version tag such as `v0.1.1` runs the npm publish workflow and creates the matching GitHub release.
+Pushing a version tag such as `vX.Y.Z` runs the npm publish workflow, verifies the tag matches `package.json`, validates the package layout, and creates the matching GitHub release after npm publish succeeds.
 
 ## Who It's For
 
