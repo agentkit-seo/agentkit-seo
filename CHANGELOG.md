@@ -6,6 +6,10 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## 0.1.3 - 2026-05-08
+
 ### Added
 
 - Added `agentkit-seo version` for quick package identity checks.
