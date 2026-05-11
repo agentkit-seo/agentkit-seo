@@ -170,8 +170,8 @@ Each install writes an `agentkit-seo-install.json` manifest in the install root 
 The workflow moves from scattered raw material to consistent public results in four stages:
 
 1. **Raw material:** Gather your existing CV, LinkedIn exports, GitHub profile, portfolio URLs, screenshots, and raw project notes.
-2. **Agent context file:** Distill that raw material into one private, structured source of truth. This file stores your verified identity, target roles, education, experience, projects, metrics, links, constraints, and preferred tone.
-3. **Platform skills:** Route the context file through a focused agent skill (such as LinkedIn, GitHub, CV/ATS, or Portfolio). The agent loads only the rules for that specific platform.
+2. **Agent context file:** Load your agent with the **agent-context-optimization** skill and provide your raw material. The agent will distill this into one private, structured source of truth. This file stores your verified identity, target roles, education, experience, projects, metrics, links, constraints, and preferred tone.
+3. **Platform skills:** Provide the resulting context file to an agent loaded with a focused platform skill (such as LinkedIn, GitHub, CV/ATS, or Portfolio).
 4. **Grounded output:** The agent produces an audit, rewrite, patch proposal, or action plan that is consistent across all surfaces and backed by the verified facts in your context file.
 
 It should not be committed to this repository. A portable convention is:
