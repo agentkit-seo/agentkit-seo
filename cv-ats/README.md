@@ -4,7 +4,7 @@ metadata:
   platform: "cv-ats"
   objective: "Master index and routing logic for formatting and optimizing CVs for Applicant Tracking Systems."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-05-11"
   tags: ["cv", "ats", "resume", "index"]
   agent_priority: "high"
 -->
@@ -12,6 +12,7 @@ metadata:
 # CV and ATS optimization
 
 > This directory helps turn a CV into a document that parsers can extract, recruiters can scan, and agents can safely tailor without breaking the layout.
+> Public web page: [CV and ATS optimization playbook](https://agentkit-seo.github.io/playbooks/cv-ats/).
 
 ---
 

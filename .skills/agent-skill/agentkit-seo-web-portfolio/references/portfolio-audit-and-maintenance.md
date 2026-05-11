@@ -60,7 +60,11 @@ For each URL, verify:
 - Canonicals point to the representative URL only.
 - Open Graph tags exist on public pages.
 - Structured data matches visible content and page type.
+- JSON-LD URL, name or headline, description, and image align with canonical, title, meta description, Open Graph, and X/Twitter tags.
+- Article-like schema has visible author, publisher, published date, modified date when used, and representative image support.
+- Page-specific preview images are used for important project, article, playbook, or skill pages when possible.
 - Home identity, About identity, and external profile names do not conflict.
+- External profile links use `rel="me"` when they represent the same public identity.
 
 ## Performance and mobile checklist
 

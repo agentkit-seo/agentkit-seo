@@ -4,7 +4,7 @@ metadata:
   platform: "x-twitter"
   objective: "Index and overview for the X (Twitter) platform optimization module."
   status: "review"
-  last_updated: "2026-04-29"
+  last_updated: "2026-05-11"
   tags: ["x", "twitter", "overview", "indexing"]
   agent_priority: "high"
 -->
@@ -12,6 +12,7 @@ metadata:
 # X (Twitter) optimization
 
 > This module helps make an X profile and posting loop easier to understand, easier to follow, and less dependent on vague growth advice.
+> Public web page: [X/Twitter optimization playbook](https://agentkit-seo.github.io/playbooks/x-twitter/).
 
 ---
 

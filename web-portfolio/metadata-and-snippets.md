@@ -4,7 +4,7 @@ metadata:
   platform: "portfolio"
   objective: "Define the metadata rules that shape how a personal website appears in search results and how canonical identity is established."
   status: "draft"
-  last_updated: "2026-04-28"
+  last_updated: "2026-05-11"
   tags: ["portfolio", "metadata", "titles", "canonical"]
   agent_priority: "high"
 -->
@@ -49,6 +49,10 @@ Open Graph (OG) tags do not directly impact Google rankings, but they control ho
 
 **Recommendation:** Include X (Twitter) Card tags as a fallback. Set `twitter:card` to `summary_large_image` to ensure the link unfurls into a full-width image preview on X, rather than a small thumbnail.
 
+**Recommendation:** Reuse the same representative image across social metadata and structured data when it describes the same page. The image referenced by `og:image`, `twitter:image`, and JSON-LD `image` should usually match for article, project, playbook, and skill pages. Use a page-specific 1200 x 630 image when possible.
+
+**Recommendation:** Prefer visual specificity over generic branding. A project page should use a screenshot or composed preview of that project. A technical playbook should use a preview image that names the topic. A generic logo is acceptable as a fallback, but it weakens page-level distinction when many pages share it.
+
 ## 5. Best practices for canonical identity
 
 **Rule:** Pick one canonical host and protocol. Choose the preferred public address of the site, such as `https://example.com/` or `https://www.example.com/`, and redirect all alternatives to it.
@@ -57,7 +61,21 @@ Open Graph (OG) tags do not directly impact Google rankings, but they control ho
 
 **Recommendation:** Keep site identity signals consistent on the homepage. Use the same professional name in the homepage title, main heading, site branding, and `WebSite` structured data. If an alternate short name exists, provide it as an alternate site name rather than switching names page to page.
 
-## 6. Examples
+## 6. Best practices for signal consistency
+
+Search engines, social platforms, and AI search systems read several signals from the same page. The signals do not need identical wording, but they should describe the same entity and page purpose.
+
+**Rule:** Align the page identity across visible and machine-readable signals. The HTML `<title>`, meta description, canonical URL, Open Graph URL/title/description/image, X card image, and JSON-LD `url`, `name` or `headline`, `description`, and `image` should all point to the same page concept.
+
+**Rule:** Do not let structured data make claims that visible content does not support. If JSON-LD names an author, publisher, date, project type, or representative image, the page should provide visible or clearly linked support for that value.
+
+**Recommendation:** Make freshness visible on article-like pages. If `datePublished` or `dateModified` appears in structured data, show the publish date, updated date, or last-reviewed date in the page content.
+
+**Recommendation:** Keep author and publisher identity stable. Article-like pages should connect to real author and publisher identities through author URLs, About pages, profile links, or `sameAs` values. External links to the same public identity can use `rel="me"`.
+
+**Recommendation:** Treat metadata work as classification, not ranking manipulation. Consistent metadata makes a page easier to classify and preview. It does not guarantee exact snippets, rich results, rankings, thumbnails, or immediate indexing.
+
+## 7. Examples
 
 Good example:
 

@@ -51,6 +51,9 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 - Prefer changes that improve crawlability, information scent, and snippet quality without adding hype.
 - Do not present unofficial AI or SEO proposals as universal standards.
 - Keep metadata, structured data, and visible copy aligned.
+- Keep title, description, canonical URL, Open Graph, X/Twitter card, JSON-LD URL, JSON-LD name or headline, JSON-LD description, and representative image consistent for the same page.
+- Match structured data to page purpose. Use article-like schema only for visible article-like pages with supported author, date, and body content.
+- Treat rankings, rich results, image thumbnails, snippets, and indexing speed as eligibility outcomes, not guarantees.
 - Keep page purpose, URL structure, internal links, and proof assets aligned so every important claim resolves to a crawlable page.
 - When facts are missing, ask for the canonical URL, page inventory, or source content before inventing portfolio copy or structured data.
 - When editing portfolio code, preserve existing styling and application logic unless the user explicitly asks for a redesign. Prefer metadata, structured data, semantic HTML, crawlability, and content changes before layout changes.

@@ -16,6 +16,7 @@
 - Use page-specific preview images where possible.
 - Add X card tags as a fallback.
 - Prefer a project screenshot over a generic site logo on project pages.
+- Keep `og:image`, `twitter:image`, and JSON-LD `image` aligned when one image represents the page.
 
 ## Structured-data rules
 
@@ -23,11 +24,19 @@
 - Homepage: `WebSite`
 - About/profile page: `ProfilePage` with `Person`
 - hierarchical pages: `BreadcrumbList`
+- index/listing pages: `CollectionPage`
+- contact pages: `ContactPage`
 - software project pages: `SoftwareSourceCode` or `SoftwareApplication` when the visible page actually supports that type
-- writing pages: article-type markup where appropriate
+- writing pages: `Article`, `BlogPosting`, or `TechArticle` only when visible content supports article fields
 - outbound identity links: `rel="me"` where useful
 
 Keep markup aligned with visible content. Do not pile on unrelated schema types.
+
+For article-like pages, only emit `headline`, `description`, `url`, `mainEntityOfPage`, `image`, `author`, `publisher`, `datePublished`, `dateModified`, `keywords`, and `inLanguage` when the page or source has real values. Make update dates visible when using freshness fields.
+
+Schema quality matters more than schema quantity. Do not mark contact pages, index pages, provider pages, or simple project landing pages as articles unless they are genuinely written and presented as articles.
+
+Structured data can make pages clearer and eligible for enhanced presentation. It does not guarantee rankings, rich results, image thumbnails, snippets, indexing, or traffic.
 
 ## JavaScript SEO rules
 

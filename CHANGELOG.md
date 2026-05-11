@@ -8,6 +8,18 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 No unreleased changes yet.
 
+## 0.1.4 - 2026-05-11
+
+### Added
+
+- Added a maintainer architecture map for scoped edits, validation, provider boundaries, and release workflow.
+- Added public playbook links to the root module table and human-readable module README files.
+
+### Changed
+
+- Strengthened the web portfolio skill and playbook guidance for JSON-LD, page-type schema accuracy, article freshness signals, metadata consistency, social preview images, author and publisher identity, breadcrumbs, and realistic SEO expectations.
+- Included additional maintainer docs in the npm package file list.
+
 ## 0.1.3 - 2026-05-08
 
 ### Added

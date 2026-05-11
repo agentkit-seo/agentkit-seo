@@ -20,7 +20,7 @@ The architecture serves two distinct users simultaneously: the Human and the AI 
 
 **A. The Knowledge Hub (Human & AI Context)**
 
-The repository is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `.assets/docs/STYLEGUIDE.md`. That file is the single source of truth for editorial Knowledge Hub files, runtime skill files, provider adapter notes, examples, and templates. Contributors and agents alike must read it before authoring content.
+The repository is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `.assets/docs/STYLEGUIDE.md`. That file is the single source of truth for editorial Knowledge Hub files, runtime skill files, provider adapter notes, examples, and templates. Contributors and agents alike must read it before authoring content. Maintainers and agents should also read `.assets/docs/architecture-map.md` before changing skills, provider adapters, package commands, release automation, or cross-cutting docs.
 
 Content is organized by platform or output type. Each platform directory contains the rules, best practices, templates, and optional anonymized examples relevant to that platform, as well as a `sources.md` file listing the credibility links, research, and algorithm documentation specific to it. Current platforms include:
 

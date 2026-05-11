@@ -4,7 +4,7 @@ metadata:
   platform: "general"
   objective: "Navigation index for the agent-context-optimization folder, including the specification, workflow, maintenance guide, and template."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-05-11"
   tags: ["context-file", "index", "navigation"]
   agent_priority: "medium"
 -->
@@ -12,6 +12,7 @@ metadata:
 # Agent context optimization
 
 > This folder defines the standard for building and maintaining a personal agent context file: the private source of truth that keeps career-focused AI work grounded in verified facts.
+> Public web page: [Agent context optimization playbook](https://agentkit-seo.github.io/playbooks/agent-context-optimization/).
 
 ---
 

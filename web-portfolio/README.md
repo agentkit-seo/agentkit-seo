@@ -4,7 +4,7 @@ metadata:
   platform: "portfolio"
   objective: "Master index and routing logic for making a personal website crawlable, indexable, and trustworthy in search and AI discovery systems."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-05-11"
   tags: ["portfolio", "seo", "indexing", "aeo"]
   agent_priority: "high"
 -->
@@ -12,6 +12,7 @@ metadata:
 # Web portfolio SEO and indexing
 
 > This directory helps make a personal portfolio discoverable, crawlable, and persuasive instead of just visually polished.
+> Public web page: [Web portfolio SEO playbook](https://agentkit-seo.github.io/playbooks/web-portfolio/).
 
 ---
 
@@ -40,9 +41,10 @@ Stronger project page:
 
 1. If the site is not indexed, start with [Indexability and submission](./indexability-and-submission.md).
 2. If the site has too few real pages, use [Site architecture](./site-architecture.md).
-3. If search snippets or link previews are weak, use [Metadata and snippets](./metadata-and-snippets.md).
+3. If search snippets, link previews, or page-image signals are weak, use [Metadata and snippets](./metadata-and-snippets.md).
 4. If the site is JavaScript-heavy, use [JavaScript SEO](./javascript-seo.md).
 5. If project pages feel thin, use [Content and case studies](./content-and-case-studies.md).
+6. If schema exists but page types are unclear, use [Structured data](./structured-data.md).
 
 ## 4. Module index
 
@@ -50,8 +52,8 @@ The optimization logic is divided into the following documents, ordered from cra
 
 - **[Indexability and submission](./indexability-and-submission.md):** The hard requirements for getting a portfolio crawled and indexed, including `robots.txt`, `sitemap.xml`, Search Console, Bing Webmaster Tools, and IndexNow.
 - **[Site architecture](./site-architecture.md):** Recommended page hierarchy, URL design, internal linking, breadcrumbs, and why a portfolio needs dedicated project URLs.
-- **[Metadata and snippets](./metadata-and-snippets.md):** Rules for page titles, meta descriptions, canonical URLs, site identity signals, and search-result presentation.
-- **[Structured data](./structured-data.md):** Practical schema strategy for personal sites, including `WebSite`, `ProfilePage`, `Person`, `BreadcrumbList`, and article markup.
+- **[Metadata and snippets](./metadata-and-snippets.md):** Rules for page titles, meta descriptions, canonical URLs, social previews, representative images, site identity signals, and search-result presentation.
+- **[Structured data](./structured-data.md):** Practical schema strategy for personal sites, including page-type matching, `WebSite`, `ProfilePage`, `Person`, `BreadcrumbList`, `CollectionPage`, `ContactPage`, software markup, and article markup.
 - **[JavaScript SEO](./javascript-seo.md):** Rendering constraints for React, SPA, and hybrid stacks, including crawlable links, lazy loading, and soft-404 avoidance.
 - **[Performance and mobile](./performance-and-mobile.md):** Mobile-first indexing, Core Web Vitals, image handling, HTTPS, and practical performance hygiene.
 - **[Content and case studies](./content-and-case-studies.md):** How to write portfolio pages that satisfy people-first quality expectations and demonstrate real expertise.

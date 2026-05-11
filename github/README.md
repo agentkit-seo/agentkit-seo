@@ -4,7 +4,7 @@ metadata:
   platform: "github"
   objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-05-11"
   tags: ["github", "index", "seo", "blackbird"]
   agent_priority: "high"
 -->
@@ -12,6 +12,7 @@ metadata:
 # GitHub optimization
 
 > This directory helps turn a GitHub profile from a code dump into a searchable proof-of-work system for humans, GitHub search, Copilot, and other AI agents.
+> Public web page: [GitHub optimization playbook](https://agentkit-seo.github.io/playbooks/github/).
 
 ---
 

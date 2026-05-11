@@ -4,7 +4,7 @@ metadata:
   platform: "linkedin"
   objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-05-11"
   tags: ["linkedin", "360Brew", "search", "ai"]
   agent_priority: "high"
 -->
@@ -12,6 +12,7 @@ metadata:
 # LinkedIn profile optimization
 
 > This directory helps turn a LinkedIn profile from a generic professional summary into a searchable, evidence-backed profile that recruiters and AI tools can understand.
+> Public web page: [LinkedIn optimization playbook](https://agentkit-seo.github.io/playbooks/linkedin/).
 
 ---
 

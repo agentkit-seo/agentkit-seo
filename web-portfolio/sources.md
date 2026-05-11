@@ -4,7 +4,7 @@ metadata:
   platform: "portfolio"
   objective: "Centralized citations and official documentation validating the mechanics of portfolio indexing, metadata, structured data, and AI discovery."
   status: "draft"
-  last_updated: "2026-04-24"
+  last_updated: "2026-05-11"
   tags: ["portfolio", "sources", "research", "indexing"]
   agent_priority: "low"
 -->
@@ -37,13 +37,22 @@ The rules in this module are based primarily on Google Search Central, Google Se
 - [Mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) — Confirms that Google indexes with the mobile crawler and explains mobile parity requirements.
 - [Link best practices for Google](https://developers.google.com/search/docs/crawling-indexing/links-crawlable) — Validates the requirement for crawlable `<a href>` links and meaningful anchor text.
 - [Provide a site name to Google Search](https://developers.google.com/search/docs/appearance/site-names) — Explains homepage site-name signals and the role of `WebSite` structured data.
+- [Understand how structured data works](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) — Explains the purpose of structured data, supported formats, and why JSON-LD is usually the easiest format to maintain.
 - [ProfilePage (Schema.org)](https://schema.org/ProfilePage) — The authoritative spec for `ProfilePage` markup.
 - [Profile page structured data (Google)](https://developers.google.com/search/docs/appearance/structured-data/profile-page) — Confirms `ProfilePage` support and explicitly includes About-style profile pages as valid use cases.
 - [Person (Schema.org)](https://schema.org/Person) — The authoritative spec for `Person` markup used inside the `ProfilePage` `mainEntity` or `Article` `author`.
+- [WebSite (Schema.org)](https://schema.org/WebSite) — The authoritative spec for site-level identity markup.
+- [Organization (Schema.org)](https://schema.org/Organization) — The authoritative spec for organization and publisher identity markup.
 - [SoftwareSourceCode (Schema.org)](https://schema.org/SoftwareSourceCode) — The authoritative spec for developer project markup covering languages, code repository links, and application architecture.
+- [SoftwareApplication (Schema.org)](https://schema.org/SoftwareApplication) — The authoritative spec for deployed software, tools, and application pages.
+- [CollectionPage (Schema.org)](https://schema.org/CollectionPage) — The authoritative spec for index and collection pages.
+- [ContactPage (Schema.org)](https://schema.org/ContactPage) — The authoritative spec for contact routes.
+- [TechArticle (Schema.org)](https://schema.org/TechArticle) — The authoritative spec for technical article pages, including procedural and specification-style content.
+- [BreadcrumbList (Schema.org)](https://schema.org/BreadcrumbList) — The authoritative spec for breadcrumb hierarchy markup.
 - [Breadcrumb structured data (Google)](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) — Validates breadcrumb markup and the recommendation to support site hierarchy with structured data.
 - [Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article) — Documents article markup and author markup best practices relevant to writing and case-study pages.
 - [General structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) — Confirms that structured data must match visible content and must not be blocked if rich-result eligibility is desired.
+- [JSON-LD structured data implementation reference](https://didof.dev/en/blog/json-ld-structured-data/) — Practical implementation walkthrough for adding JSON-LD to a web project; use as an implementation reference, not as a substitute for Google policy or Schema.org vocabulary.
 - [Understanding Core Web Vitals and Google search results](https://developers.google.com/search/docs/appearance/core-web-vitals) — Defines the current performance metrics Google recommends monitoring for page experience.
 - [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) — Provides the quality framework for people-first portfolio content and the "Who, How, and Why" self-assessment.
 - [IndexNow documentation](https://www.indexnow.org/documentation) — Defines the official protocol for notifying participating search engines about added, updated, or deleted URLs.

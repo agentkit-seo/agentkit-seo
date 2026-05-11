@@ -94,14 +94,14 @@ The practical goal is simple: make professional context reusable by agents, whil
 
 ## Modules
 
-| Goal | Start here |
-| --- | --- |
-| Build the reusable personal context layer | [agent-context-optimization](./agent-context-optimization/README.md) |
-| Improve GitHub profile and repository SEO | [github](./github/README.md) |
-| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./linkedin/README.md) |
-| Tailor a CV or resume for ATS parsing | [cv-ats](./cv-ats/README.md) |
-| Fix portfolio SEO and indexability | [web-portfolio](./web-portfolio/README.md) |
-| Improve X/Twitter profile and posting strategy | [x-twitter](./x-twitter/README.md) |
+| Goal | Start here | Public playbook |
+| --- | --- | --- |
+| Build the reusable personal context layer | [agent-context-optimization](./agent-context-optimization/README.md) | [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/) |
+| Improve GitHub profile and repository SEO | [github](./github/README.md) | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/) |
+| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./linkedin/README.md) | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/) |
+| Tailor a CV or resume for ATS parsing | [cv-ats](./cv-ats/README.md) | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/) |
+| Fix portfolio SEO and indexability | [web-portfolio](./web-portfolio/README.md) | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/) |
+| Improve X/Twitter profile and posting strategy | [x-twitter](./x-twitter/README.md) | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/) |
 
 ## Install
 
@@ -266,7 +266,7 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 
 First launch focus: `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
 
-Current project notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md) and [.assets/docs/project.md](./.assets/docs/project.md).
+Current project notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md), [.assets/docs/project.md](./.assets/docs/project.md), and [.assets/docs/architecture-map.md](./.assets/docs/architecture-map.md).
 
 Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
 

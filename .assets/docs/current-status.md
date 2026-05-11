@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
 
-## As of 2026-05-08
+## As of 2026-05-11
 
 ### Public surfaces
 
@@ -17,7 +17,7 @@ The npm package is live at:
 
 Current published version:
 
-- `agentkit-seo@0.1.3`
+- `agentkit-seo@0.1.4`
 
 GitHub releases currently published:
 
@@ -25,6 +25,7 @@ GitHub releases currently published:
 - `v0.1.1`
 - `v0.1.2`
 - `v0.1.3`
+- `v0.1.4`
 
 ### Core architecture
 
@@ -34,6 +35,7 @@ GitHub releases currently published:
 - the repo root and module folders remain the human-readable editorial layer
 - the public site mirrors the human-readable layer for crawlability, indexing, and public navigation
 - `.assets/docs/STYLEGUIDE.md` remains the schema reference for repo Markdown authoring
+- `.assets/docs/architecture-map.md` is the maintainer and agent work map for where to edit, validate, and release changes
 
 ### Skill coverage
 
@@ -175,6 +177,9 @@ Current behavior:
 Completed repository work includes:
 
 - npm badge/link added to the main `README.md`
+- maintainer architecture map added for agents working across skills, providers, docs, package metadata, and release automation
+- public playbook links added to the root module table and module README files
+- web portfolio runtime and hub guidance expanded for structured-data accuracy, metadata consistency, preview images, author identity, and realistic SEO expectations
 - install docs aligned with the published package
 - canonical `npx agentkit-seo install --provider codex` flow documented
 - direct GitHub invocation documented
