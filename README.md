@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <em>Give your career agents a source of truth, platform rules, and a repeatable workflow.</em>
+  <em>An AI-powered personal branding toolkit for developers. Give your career agents a source of truth, platform rules, and a repeatable workflow.</em>
 </p>
 
 <p align="center">
@@ -39,7 +39,7 @@ The problem is that they usually rewrite from whatever context happens to be in 
 AgentKit SEO fixes the starting point with agent context optimization:
 
 - a private **agent-context-file** for verified career facts
-- focused skills for **LinkedIn profile optimization**, **GitHub SEO**, **CV/ATS resume optimization**, **portfolio SEO**, and **X/Twitter profile optimization**
+- focused skills for **LinkedIn profile optimization**, **GitHub SEO**, **CV/ATS resume optimization**, **portfolio SEO and AEO**, and **X/Twitter profile optimization**
 - one export/install CLI for Claude Code, Codex, Gemini CLI, OpenCode, and portable `SKILL.md` usage
 
 ```text
@@ -47,7 +47,7 @@ Weak agent output:
 "I am a passionate developer with experience in many technologies."
 
 AgentKit SEO-style output:
-"Security-focused software engineer building verified, search-ready career systems
+"Security-focused software engineer building verified, search-ready developer personal branding systems
 across GitHub, CVs, LinkedIn, and portfolio sites."
 ```
 
@@ -85,11 +85,11 @@ Instead of asking every agent to rebuild the user's professional history from sc
 
 The platform skills then apply surface-specific rules on top of that source of truth:
 
-- LinkedIn gets searchable, recruiter-readable profile structure
-- GitHub gets clearer repository metadata, READMEs, topics, and proof links
+- LinkedIn gets searchable, recruiter-readable profile structure for job search
+- GitHub gets clearer repository metadata, READMEs, topics, and Copilot-readable proof links
 - CV/ATS gets parser-safe structure and evidence-backed bullets
-- portfolio pages get crawlable metadata, structured data, and useful snippets
-- X gets bio, pinned-post, and content-positioning guidance
+- portfolio pages get crawlable metadata, structured data, llms.txt, and useful snippets for AEO (Answer Engine Optimization)
+- X gets bio, pinned-post, and content-positioning guidance for technical creators
 
 The practical goal is simple: make professional context reusable by agents, while keeping public outputs grounded in facts the user controls.
 
@@ -101,8 +101,8 @@ The practical goal is simple: make professional context reusable by agents, whil
 | Improve GitHub profile and repository SEO | [github](./github/README.md) | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/) |
 | Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./linkedin/README.md) | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/) |
 | Tailor a CV or resume for ATS parsing | [cv-ats](./cv-ats/README.md) | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/) |
-| Fix portfolio SEO and indexability | [web-portfolio](./web-portfolio/README.md) | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/) |
-| Improve X/Twitter profile and posting strategy | [x-twitter](./x-twitter/README.md) | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/) |
+| Fix portfolio SEO and AEO (AI search visibility) | [web-portfolio](./web-portfolio/README.md) | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/) |
+| Improve X/Twitter profile and technical creator posting strategy | [x-twitter](./x-twitter/README.md) | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/) |
 
 ## Install
 
@@ -244,11 +244,11 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 | Capability | Typical output |
 | --- | --- |
 | Personal context architecture | Structured `agent-context-file` that becomes the reusable source of truth |
-| LinkedIn optimization | Section audit, headline/About rewrites, Featured strategy, and activity suggestions |
-| GitHub optimization | Profile and repository discoverability audit with README, topic, naming, and proof-point fixes |
+| LinkedIn optimization | Section audit, headline/About rewrites, Featured strategy, and activity suggestions for job search |
+| GitHub optimization | Profile and repository discoverability audit with README, topic, naming, and Copilot proof-point fixes |
 | CV/ATS optimization | ATS-safe rewrite plan, keyword alignment, bullet improvements, and formatting risks |
-| Web portfolio optimization | SEO/AEO audit, structured-data recommendations, indexability checks, and content improvements |
-| X optimization | Bio, pinned-post, posting strategy, and engagement loop recommendations |
+| Web portfolio optimization | SEO/AEO audit, structured-data recommendations, indexability checks, and AI search content improvements |
+| X optimization | Bio, pinned-post, posting strategy, and engagement loop recommendations for technical creators |
 
 ## Status
 
