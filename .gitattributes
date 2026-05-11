@@ -1,4 +1,15 @@
-# Keep GitHub's language bar focused on the package/runtime code.
-# LaTeX files are CV examples/templates, not the implementation language.
-cv-ats/**/*.tex linguist-documentation
+# Keep GitHub's language bar focused on implementation files.
+# The project methodology lives in Markdown docs, portable skills, and provider notes.
+*.md linguist-documentation=true
+.assets/docs/** linguist-documentation=true
+.skills/agent-skill/** linguist-documentation=true
+.skills/providers/**/*.md linguist-documentation=true
+agent-context-optimization/** linguist-documentation=true
+cv-ats/** linguist-documentation=true
+github/** linguist-documentation=true
+linkedin/** linguist-documentation=true
+web-portfolio/** linguist-documentation=true
+x-twitter/** linguist-documentation=true
 
+# LaTeX files are CV examples/templates, not the implementation language.
+cv-ats/**/*.tex linguist-documentation=true
