@@ -167,7 +167,12 @@ Each install writes an `agentkit-seo-install.json` manifest in the install root 
   <img src=".assets/image/workflow.png" alt="AgentKit SEO Workflow: One source of truth, many optimized surfaces" width="100%" />
 </p>
 
-The **agent-context-file** is the core concept. It is a private Markdown file that stores verified identity, target roles, education, experience, projects, metrics, links, constraints, and preferred tone.
+The workflow moves from scattered raw material to consistent public results in four stages:
+
+1. **Raw material:** Gather your existing CV, LinkedIn exports, GitHub profile, portfolio URLs, screenshots, and raw project notes.
+2. **Agent context file:** Distill that raw material into one private, structured source of truth. This file stores your verified identity, target roles, education, experience, projects, metrics, links, constraints, and preferred tone.
+3. **Platform skills:** Route the context file through a focused agent skill (such as LinkedIn, GitHub, CV/ATS, or Portfolio). The agent loads only the rules for that specific platform.
+4. **Grounded output:** The agent produces an audit, rewrite, patch proposal, or action plan that is consistent across all surfaces and backed by the verified facts in your context file.
 
 It should not be committed to this repository. A portable convention is:
 
@@ -177,7 +182,7 @@ It should not be committed to this repository. A portable convention is:
 
 The human-readable folders explain the methodology. The runtime skill source lives in `.skills/agent-skill/`. The export CLI turns that shared source into provider-specific layouts.
 
-This is not a prompt collection. It is an operating manual for agents working on professional identity: gather inputs, verify facts, route to the right platform rules, produce grounded output, and avoid inventing unsupported claims.
+This is not a prompt collection. It is an operating manual for agents working on professional identity: verify facts first, then optimize the surface.
 
 ## Invocation
 
