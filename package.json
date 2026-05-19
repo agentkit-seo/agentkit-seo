@@ -27,6 +27,7 @@
     ".assets/docs/architecture-map.md",
     ".assets/docs/STYLEGUIDE.md",
     "CHANGELOG.md",
+    "PRIVACY.md",
     "README.md"
   ],
   "scripts": {

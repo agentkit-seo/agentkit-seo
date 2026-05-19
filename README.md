@@ -281,6 +281,8 @@ Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./
 
 Release history is tracked in [CHANGELOG.md](./CHANGELOG.md).
 
+Privacy and security policies are tracked in [PRIVACY.md](./PRIVACY.md) and [SECURITY.md](./SECURITY.md).
+
 ## Releasing
 
 Npm is the canonical package registry for AgentKit SEO. GitHub releases mirror npm versions with matching `v*` tags.
