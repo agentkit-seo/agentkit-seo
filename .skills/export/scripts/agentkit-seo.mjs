@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
+
+const PACKAGE_NAME = "agentkit-seo";
 
 function usage() {
   console.log(`AgentKit SEO CLI
@@ -47,8 +50,29 @@ function parseFlags(args) {
 }
 
 function repoRootFromScript() {
-  const scriptPath = fileURLToPath(import.meta.url);
-  return path.resolve(path.dirname(scriptPath), "..", "..", "..");
+  let currentDirectory = path.dirname(fileURLToPath(import.meta.url));
+
+  while (true) {
+    const packagePath = path.join(currentDirectory, "package.json");
+    if (fs.existsSync(packagePath)) {
+      try {
+        const packageJson = readJsonFile(packagePath);
+        if (packageJson.name === PACKAGE_NAME) {
+          return currentDirectory;
+        }
+      } catch {
+        // Ignore invalid JSON outside the package root and keep walking upward.
+      }
+    }
+
+    const parentDirectory = path.dirname(currentDirectory);
+    if (parentDirectory === currentDirectory) {
+      throw new Error(
+        `Could not locate the ${PACKAGE_NAME} package root from script path ${fileURLToPath(import.meta.url)}`
+      );
+    }
+    currentDirectory = parentDirectory;
+  }
 }
 
 function loadPackageMetadata(repoRoot) {
@@ -104,6 +128,10 @@ function normalizeRelativePath(filePath) {
   return filePath.split(path.sep).join("/");
 }
 
+function trimTrailingSlash(filePath) {
+  return normalizeRelativePath(filePath).replace(/\/+$/, "");
+}
+
 function readJsonFile(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -114,6 +142,177 @@ function writeJsonFile(filePath, value) {
 
 function semverish(version) {
   return /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(version);
+}
+
+function packageFileIncludes(packageFiles, requiredPath) {
+  const normalizedRequired = trimTrailingSlash(requiredPath);
+  return packageFiles.some((entry) => {
+    const normalizedEntry = trimTrailingSlash(entry);
+    return (
+      normalizedRequired === normalizedEntry ||
+      normalizedRequired.startsWith(`${normalizedEntry}/`)
+    );
+  });
+}
+
+function executableExists(candidate) {
+  if (!candidate) {
+    return false;
+  }
+
+  const pathEntries = (process.env.PATH ?? "").split(path.delimiter).filter(Boolean);
+  const pathext =
+    process.platform === "win32"
+      ? (process.env.PATHEXT ?? ".EXE;.CMD;.BAT;.COM")
+        .split(";")
+        .filter(Boolean)
+      : [""];
+
+  if (path.isAbsolute(candidate)) {
+    const absoluteCandidates =
+      process.platform === "win32" && path.extname(candidate) === ""
+        ? pathext.map((extension) => `${candidate}${extension.toLowerCase()}`)
+        : [candidate];
+    return absoluteCandidates.some((filePath) => {
+      try {
+        return fs.statSync(filePath).isFile();
+      } catch {
+        return false;
+      }
+    });
+  }
+
+  return pathEntries.some((entry) =>
+    pathext.some((extension) => {
+      const filePath = path.join(
+        entry,
+        process.platform === "win32" ? `${candidate}${extension.toLowerCase()}` : candidate
+      );
+      try {
+        return fs.statSync(filePath).isFile();
+      } catch {
+        return false;
+      }
+    })
+  );
+}
+
+function detectProviderExecutable(commands = []) {
+  for (const command of commands) {
+    if (executableExists(command)) {
+      return command;
+    }
+  }
+  return null;
+}
+
+function detectProviderBinaryOnPath(commands = []) {
+  for (const command of commands) {
+    const result = spawnSync(command, ["--version"], { stdio: "ignore" });
+    if (!result.error) {
+      return command;
+    }
+  }
+  return null;
+}
+
+function getProviderRuntimeHints(provider, providerSpec) {
+  const globalTarget = providerSpec.globalTarget
+    ? path.resolve(expandUserPath(providerSpec.globalTarget))
+    : null;
+
+  const hints = {
+    "claude-code": {
+      displayName: "Claude Code",
+      commands: ["claude"],
+      configRoots: [path.join(os.homedir(), ".claude")],
+      installHint:
+        "Install Claude Code first or use --project-root/--target-dir to preview the skill bundle in a custom location."
+    },
+    codex: {
+      displayName: "Codex",
+      commands: ["codex"],
+      configRoots: [
+        process.env.CODEX_HOME ? path.resolve(process.env.CODEX_HOME) : null,
+        path.join(os.homedir(), ".codex")
+      ].filter(Boolean),
+      installHint:
+        "Install Codex first or set CODEX_HOME/--target-dir if this machine uses a non-default skills location."
+    },
+    "gemini-cli": {
+      displayName: "Gemini CLI",
+      commands: ["gemini"],
+      configRoots: [path.join(os.homedir(), ".gemini")],
+      installHint:
+        "Install Gemini CLI first or rerun with --target-dir to generate the extension bundle in a custom location."
+    },
+    opencode: {
+      displayName: "OpenCode",
+      commands: ["opencode"],
+      configRoots: [path.join(os.homedir(), ".config", "opencode"), path.join(os.homedir(), ".opencode")],
+      installHint:
+        "Install OpenCode first or rerun with --project-root/--target-dir if this machine uses a different skills directory."
+    }
+  };
+
+  const providerHints = hints[provider];
+  if (!providerHints) {
+    return null;
+  }
+
+  return {
+    ...providerHints,
+    globalTarget
+  };
+}
+
+function warnIfProviderRuntimeLooksMissing(provider, providerSpec, flags, targetRoot) {
+  const hints = getProviderRuntimeHints(provider, providerSpec);
+  if (!hints) {
+    return;
+  }
+
+  const foundExecutable = detectProviderExecutable(hints.commands) ?? detectProviderBinaryOnPath(hints.commands);
+  const foundConfigRoot = hints.configRoots.find((root) => root && fs.existsSync(root)) ?? null;
+  const explicitTarget = Boolean(flags["target-dir"] || flags["project-root"]);
+
+  if (!foundExecutable && !foundConfigRoot) {
+    console.warn(
+      `warning: ${hints.displayName} was not detected on this machine. AgentKit SEO will still install files to ${targetRoot}. ${hints.installHint}`
+    );
+    return;
+  }
+
+  if (!explicitTarget && !foundConfigRoot && hints.globalTarget) {
+    console.warn(
+      `warning: ${hints.displayName} was not detected in its usual config location. AgentKit SEO is creating ${hints.globalTarget}. If this machine uses a different location, rerun with --target-dir or --project-root.`
+    );
+  }
+}
+
+function formatFilesystemInstallError(error, provider, targetRoot, commandTargetRoot) {
+  if (!error || typeof error !== "object" || !("code" in error)) {
+    return error;
+  }
+
+  const commandTargetSuffix =
+    commandTargetRoot && commandTargetRoot !== targetRoot
+      ? ` Command target: ${commandTargetRoot}.`
+      : "";
+
+  if (error.code === "EACCES" || error.code === "EPERM") {
+    return new Error(
+      `Install failed for ${provider} because the target path is not writable: ${targetRoot}.${commandTargetSuffix} Try --project-root for a local install, choose a writable --target-dir, or rerun with permissions that allow writes to the provider directory.`
+    );
+  }
+
+  if (error.code === "ENOENT") {
+    return new Error(
+      `Install failed for ${provider} because a required source or parent directory was not found. Install root: ${targetRoot}.${commandTargetSuffix} Run 'agentkit-seo doctor' to verify the package contents, then rerun with an explicit --target-dir if needed.`
+    );
+  }
+
+  return error;
 }
 
 function readSkillName(skillFilePath) {
@@ -378,36 +577,47 @@ function resolveCommandInstallRoot(flags, providerSpec) {
 function installProvider(repoRoot, provider, config, flags) {
   const providerSpec = config.providers[provider];
   const targetRoot = resolveInstallRoot(flags, providerSpec, provider);
-  if (providerSpec.files) {
-    copyProviderFiles(repoRoot, providerSpec.files, targetRoot, Boolean(flags.force), config.package);
-  }
   const skillTargetRoot =
     providerSpec.layout === "gemini-extension"
       ? path.join(targetRoot, providerSpec.skillTarget ?? "skills")
       : targetRoot;
-  const installedSkills = installSkillFolders(
-    repoRoot,
-    config.skills,
-    skillTargetRoot,
-    Boolean(flags.force),
-    providerSpec.skillExcludes
-  );
   const commandTargetRoot =
     providerSpec.layout === "gemini-extension"
       ? path.join(targetRoot, providerSpec.commandTarget)
       : resolveCommandInstallRoot(flags, providerSpec);
-  const installedCommands = commandTargetRoot
-    ? copyCommandFiles(repoRoot, providerSpec.commands, commandTargetRoot, Boolean(flags.force))
-    : [];
-  const manifestPath = writeInstallManifest(
-    targetRoot,
-    provider,
-    config,
-    installedSkills,
-    installedCommands,
-    skillTargetRoot,
-    commandTargetRoot
-  );
+
+  warnIfProviderRuntimeLooksMissing(provider, providerSpec, flags, targetRoot);
+
+  let installedSkills = [];
+  let installedCommands = [];
+  let manifestPath = null;
+
+  try {
+    if (providerSpec.files) {
+      copyProviderFiles(repoRoot, providerSpec.files, targetRoot, Boolean(flags.force), config.package);
+    }
+    installedSkills = installSkillFolders(
+      repoRoot,
+      config.skills,
+      skillTargetRoot,
+      Boolean(flags.force),
+      providerSpec.skillExcludes
+    );
+    installedCommands = commandTargetRoot
+      ? copyCommandFiles(repoRoot, providerSpec.commands, commandTargetRoot, Boolean(flags.force))
+      : [];
+    manifestPath = writeInstallManifest(
+      targetRoot,
+      provider,
+      config,
+      installedSkills,
+      installedCommands,
+      skillTargetRoot,
+      commandTargetRoot
+    );
+  } catch (error) {
+    throw formatFilesystemInstallError(error, provider, targetRoot, commandTargetRoot);
+  }
 
   console.log(`Installed ${installedSkills.length} skill folder(s) for ${provider}`);
   console.log(`- target: ${skillTargetRoot}`);
@@ -468,9 +678,65 @@ function validateProvider(repoRoot, provider, providerSpec, packageMetadata, err
   }
 }
 
+function validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors) {
+  const providerSpec = config.providers?.["gemini-cli"];
+  if (!providerSpec) {
+    return;
+  }
+
+  const manifestPath = path.join(repoRoot, "gemini-extension.json");
+  if (!fs.existsSync(manifestPath)) {
+    errors.push("root Gemini extension manifest is missing: gemini-extension.json");
+    return;
+  }
+
+  let manifest;
+  try {
+    manifest = readJsonFile(manifestPath);
+  } catch {
+    errors.push("root Gemini extension manifest is not valid JSON: gemini-extension.json");
+    return;
+  }
+
+  if (manifest.name !== packageMetadata.name) {
+    errors.push(
+      `root gemini-extension.json name '${manifest.name ?? "missing"}' does not match package.json name '${packageMetadata.name}'`
+    );
+  }
+  if (manifest.version !== packageMetadata.version) {
+    errors.push(
+      `root gemini-extension.json version '${manifest.version ?? "missing"}' does not match package.json version '${packageMetadata.version}'`
+    );
+  }
+  if (!manifest.description) {
+    errors.push("root gemini-extension.json description is missing");
+  }
+
+  const contextFileName = manifest.contextFileName ?? "GEMINI.md";
+  const contextPath = path.join(repoRoot, contextFileName);
+  if (!fs.existsSync(contextPath)) {
+    errors.push(`root Gemini extension context file is missing: ${contextFileName}`);
+  }
+
+  for (const command of providerSpec.commands ?? []) {
+    const relativeCommandPath = path.join("commands", "agentkit-seo", path.basename(command.source));
+    if (!fs.existsSync(path.join(repoRoot, relativeCommandPath))) {
+      errors.push(`root Gemini extension command is missing: ${normalizeRelativePath(relativeCommandPath)}`);
+    }
+  }
+
+  for (const skill of config.skills ?? []) {
+    const skillFile = path.join(repoRoot, "skills", skill.name, "SKILL.md");
+    if (!fs.existsSync(skillFile)) {
+      errors.push(`root Gemini extension skill is missing: skills/${skill.name}/SKILL.md`);
+    }
+  }
+}
+
 function doctor(repoRoot, config) {
   const errors = [];
   const packageMetadata = config.package;
+  const packageJson = readJsonFile(path.join(repoRoot, "package.json"));
   const seenSkills = new Set();
   const contextTemplate = path.join(
     repoRoot,
@@ -487,6 +753,21 @@ function doctor(repoRoot, config) {
   }
   if (!packageMetadata.description) {
     errors.push("package description is missing");
+  }
+  if (!Array.isArray(packageJson.files) || packageJson.files.length === 0) {
+    errors.push("package.json files array is missing or empty");
+  } else {
+    const requiredPackagePaths = [
+      ".skills/agent-skill",
+      ".skills/export",
+      ".skills/providers",
+      "agent-context-optimization/templates/context-file-template.md"
+    ];
+    for (const requiredPath of requiredPackagePaths) {
+      if (!packageFileIncludes(packageJson.files, requiredPath)) {
+        errors.push(`package.json files does not include required runtime path: ${requiredPath}`);
+      }
+    }
   }
 
   if (!Array.isArray(config.skills) || config.skills.length === 0) {
@@ -528,6 +809,7 @@ function doctor(repoRoot, config) {
   for (const [provider, providerSpec] of Object.entries(config.providers ?? {})) {
     validateProvider(repoRoot, provider, providerSpec, packageMetadata, errors);
   }
+  validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors);
 
   if (errors.length > 0) {
     for (const error of errors) {

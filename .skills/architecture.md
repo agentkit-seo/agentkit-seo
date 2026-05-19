@@ -103,6 +103,6 @@ Keep the source of truth inside `.skills/`. Root-level packaging files should ex
 Today that means:
 
 - a minimal root `package.json` is justified if we want an `npx`-friendly CLI for installing, exporting, or packaging the shared skills
-- provider manifests such as `gemini-extension.json` or `.claude-plugin/plugin.json` do not need to live at the repo root while we are still authoring the shared source tree
+- a root `gemini-extension.json`, `GEMINI.md`, `commands/`, and `skills/` layout is justified when publishing the repository itself as a Gemini CLI gallery extension
 
 Generate provider-facing manifests only when we intentionally publish a provider-specific release artifact.

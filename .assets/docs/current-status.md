@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
 
-## As of 2026-05-11
+## As of 2026-05-19
 
 ### Public surfaces
 
@@ -15,17 +15,18 @@ The npm package is live at:
 
 - `https://www.npmjs.com/package/agentkit-seo`
 
-Current published version:
+Current release candidate:
 
-- `agentkit-seo@0.1.4`
+- `agentkit-seo@1.5.0`
 
-GitHub releases currently published:
+GitHub release state:
 
 - `v0.1.0`
 - `v0.1.1`
 - `v0.1.2`
 - `v0.1.3`
 - `v0.1.4`
+- `v1.5.0` is pending tag push and release automation
 
 ### Core architecture
 
@@ -62,6 +63,7 @@ Working today:
 - direct install for `codex`
 - direct install for `claude-code`
 - direct extension install for `gemini-cli`
+- repository-root Gemini CLI extension layout for gallery discovery and direct GitHub installs
 - direct install for `opencode`
 - shared bundle export
 - provider-shaped export bundles
@@ -69,6 +71,7 @@ Working today:
 - direct GitHub install through `npx github:agentkit-seo/agentkit-seo ...`
 - local maintainer execution through `npx . ...` and `npm exec --package ./. -- ...`
 - CLI diagnostics through `agentkit-seo version` and `agentkit-seo doctor`
+- install-time provider detection warnings for clean-machine setups
 - guided context-file scaffolding through `agentkit-seo template context`
 - local install manifests through `agentkit-seo-install.json`
 
@@ -76,6 +79,14 @@ Provider-facing command shapes available today:
 
 - Gemini CLI namespaced commands such as `/agentkit-seo:linkedin`
 - OpenCode flat wrappers such as `/agentkit-seo-linkedin`
+
+Gemini marketplace preparation now includes:
+
+- `gemini-extension.json` at the repository root
+- `GEMINI.md` at the repository root
+- root `commands/agentkit-seo/` wrappers
+- root `skills/` bundles that match the generated Gemini extension layout
+- the required GitHub topic `gemini-cli-extension`
 
 ### Website status
 
@@ -192,6 +203,7 @@ Completed repository work includes:
 - push and pull request validation workflow added
 - `CHANGELOG.md` added for public release tracking
 - CLI version, doctor, context template, and install manifest support added
+- package validation now checks that runtime skill and provider assets are included in the npm `files` list
 - GitHub organization profile README updated with clickable maintainer badges
 
 ### Current process boundaries
@@ -206,7 +218,6 @@ This project is still prioritizing:
 
 This project is not currently prioritizing:
 
-- marketplace / registry distribution
 - benchmark or eval suites
 - polished showcase/demo assets
 - online latest-version update detection inside Codex itself
@@ -215,7 +226,7 @@ This project is not currently prioritizing:
 
 Important gaps still open:
 
-- marketplace / registry distribution is not shipped
+- Gemini CLI gallery listing is pending crawler detection after the tagged release
 - the main repo does not yet have a separately configured custom GitHub social preview
 - installed skills expose local package metadata, but do not yet compare against npm latest
 - demo assets and before/after public examples are still missing

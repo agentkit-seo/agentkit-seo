@@ -121,6 +121,8 @@ npx agentkit-seo version
 npx agentkit-seo doctor
 ```
 
+`agentkit-seo install` now warns when the target provider CLI or its usual config directory cannot be detected. The installer still writes the bundle to the standard target so clean-machine or first-time setups can proceed, but the warning tells users when to switch to `--project-root` or `--target-dir`.
+
 Create a guided private context-file template before asking an agent to rewrite public profiles:
 
 ```bash
@@ -157,6 +159,12 @@ Project-local install from a local checkout:
 npm exec --package ./. -- agentkit-seo install \
   --provider codex \
   --project-root .
+```
+
+If a machine uses a non-default provider location, override the destination explicitly:
+
+```bash
+npx agentkit-seo install --provider gemini-cli --target-dir /custom/path/agentkit-seo
 ```
 
 Each install writes an `agentkit-seo-install.json` manifest in the install root so maintainers and users can inspect the installed package version, provider, skills, commands, and target paths.
@@ -217,6 +225,13 @@ Use the namespaced commands shipped with the Gemini extension bundle:
 /agentkit-seo:linkedin
 ```
 
+The repository root now also exposes a Gemini-compatible extension layout for gallery and direct GitHub installs:
+
+- `gemini-extension.json` at the repo root for crawler and installer discovery
+- `GEMINI.md` at the repo root for extension context loading
+- `commands/agentkit-seo/*.toml` for namespaced Gemini commands
+- `skills/*` for bundled agent skills
+
 **OpenCode**
 
 Use native skill loading or the flat command wrappers:
@@ -244,18 +259,19 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 
 ## Status
 
-| Target                                       | Status          |
-| -------------------------------------------- | --------------- |
-| Shared skill source                          | Ready           |
-| Install/export CLI                           | Ready           |
-| CLI diagnostics and context template command | Ready           |
-| Push and pull request validation workflow    | Ready           |
-| Claude Code direct install                   | Ready           |
-| Codex direct install                         | Ready           |
-| OpenCode direct install                      | Ready           |
-| Gemini CLI extension install                 | Ready locally   |
-| Published `npx agentkit-seo ...` package     | Shipped         |
-| Marketplace / registry distribution          | Not shipped yet |
+| Target                                       | Status                                               |
+| -------------------------------------------- | ---------------------------------------------------- |
+| Shared skill source                          | Ready                                                |
+| Install/export CLI                           | Ready                                                |
+| CLI diagnostics and context template command | Ready                                                |
+| Push and pull request validation workflow    | Ready                                                |
+| Claude Code direct install                   | Ready                                                |
+| Codex direct install                         | Ready                                                |
+| OpenCode direct install                      | Ready                                                |
+| Gemini CLI extension install                 | Ready locally                                        |
+| Gemini CLI gallery root manifest             | Ready for crawler                                    |
+| Published `npx agentkit-seo ...` package     | Shipped                                              |
+| Marketplace / registry distribution          | npm shipped; Gemini gallery pending crawler detection |
 
 First launch focus: `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
 

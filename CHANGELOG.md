@@ -4,9 +4,14 @@ All notable changes to AgentKit SEO are documented here.
 
 This project follows npm package versions and mirrors them with matching GitHub `v*` tags.
 
-## Unreleased
+## 1.5.0 - 2026-05-19
 
-No unreleased changes yet.
+### Changed
+
+- Hardened `agentkit-seo install` with provider detection warnings for clean-machine installs and clearer permission or missing-path failure messages.
+- Extended `agentkit-seo doctor` to verify that the npm `files` list still includes the runtime skills, export CLI, provider adapters, and context template required for external installs.
+- Added a repository-root Gemini CLI extension layout with `gemini-extension.json`, `GEMINI.md`, root `commands/`, and root `skills/` so gallery discovery and direct GitHub installs can use the repository as the extension root.
+- Extended `agentkit-seo doctor` to verify the repository-root Gemini extension manifest, context file, commands, and bundled skills required for Gemini gallery distribution.
 
 ## 0.1.4 - 2026-05-11
 
