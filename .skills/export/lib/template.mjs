@@ -7,6 +7,7 @@ import { expandUserPath } from "./filesystem.mjs";
 export function templateContext(repoRoot, flags) {
   const source = path.join(
     repoRoot,
+    "hub",
     "agent-context-optimization",
     "templates",
     "context-file-template.md"

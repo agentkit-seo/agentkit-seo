@@ -160,7 +160,7 @@ This repository contains several Markdown file classes. They do not all use the 
 
 | File class | Examples | Required schema |
 |---|---|---|
-| Editorial Knowledge Hub docs | `linkedin/*.md`, `github/*.md`, `cv-ats/*.md`, `web-portfolio/*.md`, `x-twitter/*.md`, `agent-context-optimization/*.md` | Full Universal Template from section 4 with hidden metadata comments |
+| Editorial Knowledge Hub docs | `hub/linkedin/*.md`, `hub/github/*.md`, `hub/cv-ats/*.md`, `hub/web-portfolio/*.md`, `hub/x-twitter/*.md`, `hub/agent-context-optimization/*.md` | Full Universal Template from section 4 with hidden metadata comments |
 | Runtime skill entrypoints | `.skills/agent-skill/*/SKILL.md` | Agent Skills frontmatter with `name` and `description`, followed by concise procedural instructions |
 | Runtime skill references | `.skills/agent-skill/*/references/*.md` | Lean Markdown optimized for agent loading; H1 plus focused procedural sections |
 | Provider adapter notes | `.skills/providers/*/install.md` | Lean Markdown describing install targets and provider-specific behavior |
@@ -322,7 +322,7 @@ When generating or editing a `.md` file in this repository:
 
 - **Do not modify** any file with `status: stable` unless the user explicitly authorizes it.
 - **Do not infer** platform-specific rules. If a rule is not in the relevant subdirectory file, ask before applying it.
-- **Do not generate** content that cannot be verified against a source when working in the `cv-ats/` or `sources/` directories.
+- **Do not generate** content that cannot be verified against a source when working in the `hub/cv-ats/` directory or any `hub/<module>/sources.md` file.
 - When in doubt about scope, output a diff or a proposed change summary instead of writing directly.
 
 ### 7.4 Dry-run output
@@ -371,11 +371,11 @@ VERIFICATION:
 
 | Directory | Naming pattern | Example |
 |---|---|---|
-| `/linkedin/` | `[section-name].md` | `headline.md`, `about.md` |
-| `/github/` | `[asset-type].md` | `profile-readme.md`, `repo-readme.md` |
-| `/portfolio/` | `[concern].md` | `seo-tags.md`, `performance.md` |
-| `/cv-ats/` | `[topic].md` | `keyword-strategy.md`, `formatting-rules.md` |
-| `/sources/` | `[platform]-sources.md` | `linkedin-sources.md` |
+| `/hub/linkedin/` | `[section-name].md` | `headline.md`, `about.md` |
+| `/hub/github/` | `[asset-type].md` | `profile-readme.md`, `repo-readme.md` |
+| `/hub/web-portfolio/` | `[concern].md` | `metadata-and-snippets.md`, `performance-and-mobile.md` |
+| `/hub/cv-ats/` | `[topic].md` | `keyword-strategy.md`, `formatting-rules.md` |
+| `/hub/<module>/sources.md` | `sources.md` | `sources.md` |
 
 All filenames are lowercase, hyphen-separated. No spaces, no underscores, no camelCase.
 

@@ -6,6 +6,19 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## 1.5.2 - 2026-05-22
+
+### Added
+
+- Added native `--provider antigravity` install and export support using the Antigravity CLI plugin staging path under `~/.gemini/antigravity-cli/plugins/agentkit-seo/`.
+
+### Changed
+
+- Moved the human-readable playbook folders under `hub/` so the repository root stays focused on project metadata and provider distribution artifacts.
+- Included the full `hub/` tree in the npm package so README module links and human-readable playbooks remain available from packed releases.
+
 ## 1.5.1 - 2026-05-19
 
 ### Changed

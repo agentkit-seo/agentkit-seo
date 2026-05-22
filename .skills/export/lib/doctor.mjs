@@ -111,6 +111,7 @@ export function doctor(repoRoot, config) {
   const seenSkills = new Set();
   const contextTemplate = path.join(
     repoRoot,
+    "hub",
     "agent-context-optimization",
     "templates",
     "context-file-template.md"
@@ -132,7 +133,7 @@ export function doctor(repoRoot, config) {
       ".skills/agent-skill",
       ".skills/export",
       ".skills/providers",
-      "agent-context-optimization/templates/context-file-template.md"
+      "hub/agent-context-optimization/templates/context-file-template.md"
     ];
     for (const requiredPath of requiredPackagePaths) {
       if (!packageFileIncludes(packageJson.files, requiredPath)) {
@@ -145,7 +146,7 @@ export function doctor(repoRoot, config) {
     errors.push("no skills configured");
   }
   if (!fs.existsSync(contextTemplate)) {
-    errors.push("context template is missing: agent-context-optimization/templates/context-file-template.md");
+    errors.push("context template is missing: hub/agent-context-optimization/templates/context-file-template.md");
   }
 
   for (const skill of config.skills ?? []) {

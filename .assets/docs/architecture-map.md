@@ -32,6 +32,7 @@ Do not load every skill module by default. Route to one module unless the task i
 | Layer | Canonical path | Purpose | Edit when |
 | --- | --- | --- | --- |
 | Project overview | `README.md` | Public GitHub overview, install commands, module list, and release summary | Public package behavior, install flow, or project positioning changes |
+| Human-readable hub | `hub/` | Editorial playbooks, templates, examples, and source-traceable methodology for humans | Public playbook content, examples, templates, or source notes change |
 | Maintainer docs | `.assets/docs/` | Internal project notes, status, style rules, and this architecture map | Maintainer-facing process or architecture changes |
 | Runtime skills | `.skills/agent-skill/` | Portable skill source shipped to users | Skill behavior, routing, references, or module methodology changes |
 | Provider adapters | `.skills/providers/` | Provider-specific install notes, wrappers, manifests, and command templates | A provider needs different activation, layout, metadata, or wrapper commands |
@@ -43,6 +44,8 @@ Do not load every skill module by default. Route to one module unless the task i
 ## 4. Source-of-truth rules
 
 Runtime methodology belongs in `.skills/agent-skill/`.
+
+Human-readable methodology belongs in `hub/`. Keep the root directory focused on project metadata and distribution entrypoints.
 
 Provider folders are adapters. Keep them thin. Do not copy full methodology into provider wrappers or install notes.
 
@@ -59,6 +62,7 @@ Use this table to decide what to edit for common tasks.
 | Task | Primary files | Usually also update | Validation |
 | --- | --- | --- | --- |
 | Change a platform skill workflow | `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`, `.skills/agent-skill/agentkit-seo-<module>/references/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
+| Change a human-readable playbook | `hub/<module>/` | Related runtime skill reference if behavior changes, `README.md`, `.assets/docs/current-status.md` | Link/path smoke check, `npm run validate` if runtime behavior changes |
 | Add a new skill module | `.skills/agent-skill/agentkit-seo-<module>/` | `.skills/export/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
 | Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/agentkit-seo.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |
 | Change CLI commands | `.skills/export/scripts/agentkit-seo.mjs` | `README.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | CLI command smoke test, `npm pack --dry-run` |
@@ -75,6 +79,7 @@ Use this table to decide what to edit for common tasks.
 | Claude Code | `.skills/agent-skill/` | `.skills/providers/claude-code/install.md` | Skills under `~/.claude/skills/` |
 | Codex | `.skills/agent-skill/` | `.skills/providers/codex/install.md` | Skills under `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` |
 | Gemini CLI | `.skills/agent-skill/` | `.skills/providers/gemini-cli/` | Extension under `~/.gemini/extensions/agentkit-seo/` |
+| Antigravity CLI | `.skills/agent-skill/` | `.skills/providers/antigravity/` | Plugin under `~/.gemini/antigravity-cli/plugins/agentkit-seo/` |
 | OpenCode | `.skills/agent-skill/` | `.skills/providers/opencode/` | Skills plus flat command wrappers |
 
 Provider wrappers must route to the shared skill names:
@@ -129,5 +134,6 @@ node .skills/export/scripts/agentkit-seo.mjs doctor
 node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-export --force
 node .skills/export/scripts/agentkit-seo.mjs install --provider codex --target-dir /tmp/agentkit-seo-codex --force
 node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --target-dir /tmp/agentkit-seo-gemini --force
+node .skills/export/scripts/agentkit-seo.mjs install --provider antigravity --target-dir /tmp/agentkit-seo-antigravity --force
 npm pack --dry-run
 ```

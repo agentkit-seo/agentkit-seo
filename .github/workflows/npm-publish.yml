@@ -37,7 +37,10 @@ jobs:
           node --input-type=module -e '
             import fs from "node:fs";
             const packageVersion = JSON.parse(fs.readFileSync("package.json", "utf8")).version;
-            const files = [".skills/providers/gemini-cli/extension/gemini-extension.json"];
+            const files = [
+              ".skills/providers/gemini-cli/extension/gemini-extension.json",
+              ".skills/providers/antigravity/extension/gemini-extension.json"
+            ];
             for (const file of files) {
               const version = JSON.parse(fs.readFileSync(file, "utf8")).version;
               if (version !== packageVersion) {

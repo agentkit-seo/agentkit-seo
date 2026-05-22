@@ -29,7 +29,7 @@ The CLI may read files that are part of the installed package, including:
 - `.skills/export/export-config.json`
 - bundled skill folders under `.skills/agent-skill/`
 - bundled provider files under `.skills/providers/`
-- the context-file template under `agent-context-optimization/templates/`
+- the context-file template under `hub/agent-context-optimization/templates/`
 
 When commands use explicit flags such as `--output`, `--target-dir`, `--commands-target-dir`, or `--project-root`, the CLI uses the paths supplied by the user to write exported or installed files.
 

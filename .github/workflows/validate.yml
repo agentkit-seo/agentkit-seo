@@ -39,5 +39,8 @@ jobs:
       - name: Smoke install Gemini CLI bundle
         run: node .skills/export/scripts/agentkit-seo.mjs install --provider gemini-cli --target-dir /tmp/agentkit-seo-gemini-install-check --force
 
+      - name: Smoke install Antigravity CLI bundle
+        run: node .skills/export/scripts/agentkit-seo.mjs install --provider antigravity --target-dir /tmp/agentkit-seo-antigravity-install-check --force
+
       - name: Verify package contents
         run: npm pack --dry-run

@@ -98,6 +98,16 @@ function getProviderRuntimeHints(provider, providerSpec) {
       installHint:
         "Install Gemini CLI first or rerun with --target-dir to generate the extension bundle in a custom location."
     },
+    antigravity: {
+      displayName: "Antigravity CLI",
+      commands: ["agy"],
+      configRoots: [
+        path.join(os.homedir(), ".gemini", "antigravity-cli"),
+        path.join(os.homedir(), ".gemini", "antigravity-cli", "plugins")
+      ],
+      installHint:
+        "Install Antigravity CLI first or rerun with --target-dir to generate the plugin bundle in a custom location."
+    },
     opencode: {
       displayName: "OpenCode",
       commands: ["opencode"],

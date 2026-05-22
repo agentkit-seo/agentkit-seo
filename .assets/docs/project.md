@@ -20,19 +20,19 @@ The architecture serves two distinct users simultaneously: the Human and the AI 
 
 **A. The Knowledge Hub (Human & AI Context)**
 
-The repository is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `.assets/docs/STYLEGUIDE.md`. That file is the single source of truth for editorial Knowledge Hub files, runtime skill files, provider adapter notes, examples, and templates. Contributors and agents alike must read it before authoring content. Maintainers and agents should also read `.assets/docs/architecture-map.md` before changing skills, provider adapters, package commands, release automation, or cross-cutting docs.
+The `hub/` directory is the human-readable reference layer. It is dense, well-hyperlinked, and written in clean Markdown following the conventions defined in `.assets/docs/STYLEGUIDE.md`. That file is the single source of truth for editorial Knowledge Hub files, runtime skill files, provider adapter notes, examples, and templates. Contributors and agents alike must read it before authoring content. Maintainers and agents should also read `.assets/docs/architecture-map.md` before changing skills, provider adapters, package commands, release automation, or cross-cutting docs.
 
 Content is organized by platform or output type. Each platform directory contains the rules, best practices, templates, and optional anonymized examples relevant to that platform, as well as a `sources.md` file listing the credibility links, research, and algorithm documentation specific to it. Current platforms include:
 
-- `/linkedin/` — Headline, Featured section, About, Experience entries
-- `/github/` — Profile README, repository READMEs, pinned repo structuring
-- `/web-portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
-- `/cv-ats/` — Keyword optimization, formatting rules, and templates for ATS-safe CV workflows
-- `/x-twitter/` — Bio, pinned post strategy, content positioning
+- `hub/linkedin/` — Headline, Featured section, About, Experience entries
+- `hub/github/` — Profile README, repository READMEs, pinned repo structuring
+- `hub/web-portfolio/` — SEO meta tags, accessibility, performance metrics, copywriting
+- `hub/cv-ats/` — Keyword optimization, formatting rules, and templates for ATS-safe CV workflows
+- `hub/x-twitter/` — Bio, pinned post strategy, content positioning
 
 More platform directories will be added as the project grows. The structure is designed to be extended without breaking existing conventions.
 
-Working templates live inside their respective hub directories, such as `/cv-ats/templates/`. Public examples must be fictional or fully anonymized. The canonical rules live in the module docs, templates, and runtime skill references. The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
+Working templates live inside their respective hub directories, such as `hub/cv-ats/templates/`. Public examples must be fictional or fully anonymized. The canonical rules live in the module docs, templates, and runtime skill references. The repo hub remains the human-editing and source-traceability layer. The portable runtime layer lives in `.skills/agent-skill/`, where each skill carries its own compressed local references.
 
 **B. The Agent Skill System (The Engine)**
 
@@ -52,6 +52,7 @@ The `.skills/` directory is the machine-readable layer. It is structured as a co
         claude-code/
         codex/
         gemini-cli/
+        antigravity/
         opencode/
     export/
         export-config.json
@@ -62,7 +63,7 @@ The shared source of truth lives in `.skills/agent-skill/`. Each folder there is
 
 **Provider-agnostic and provider-specific:** The shared skills use a portable `SKILL.md` format and optional provider metadata such as `agents/openai.yaml`. The sibling provider folders are adapters only: they define install targets, wrapper commands, and provider-specific behavior without duplicating the core methodology.
 
-**Scoped invocation:** The stable cross-provider contract is the shared skill name, such as `agentkit-seo-linkedin` or `agentkit-seo-github`. Some providers can expose ergonomic wrapper commands on top of those skills. For example, Gemini CLI exposes `/agentkit-seo:linkedin` through the generated extension's namespaced command files, OpenCode uses flat wrappers such as `/agentkit-seo-linkedin`, Codex is better treated as explicit skill selection, and Claude Code needs either direct skill invocation or a later plugin wrapper for exact namespacing.
+**Scoped invocation:** The stable cross-provider contract is the shared skill name, such as `agentkit-seo-linkedin` or `agentkit-seo-github`. Some providers can expose ergonomic wrapper commands on top of those skills. For example, Gemini CLI exposes `/agentkit-seo:linkedin` through the generated extension's namespaced command files, Antigravity CLI imports the Gemini-compatible layout as a plugin but still needs command syntax confirmation, OpenCode uses flat wrappers such as `/agentkit-seo-linkedin`, Codex is better treated as explicit skill selection, and Claude Code needs either direct skill invocation or a later plugin wrapper for exact namespacing.
 
 This architecture still solves the context window problem: a user who only wants LinkedIn help loads the LinkedIn skill instead of the whole system.
 
@@ -107,7 +108,7 @@ The foundational decisions below are now part of the project contract:
 
 3. **The Install Strategy:** Copy/export install is the default. The CLI copies self-contained skill folders into provider-specific targets instead of relying on symlinks. Published-package installs default to the user's global agent skills folder, such as `~/.agents/skills` plus `CODEX_HOME/skills` or `~/.codex/skills` for Codex. Project-local installs remain available through `--project-root`. This keeps installed bundles portable and predictable.
 
-4. **The Personal Context File schema:** The schema is defined in `agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional user-confirmed storage: in-chat draft, local workspace file, user-chosen path, or portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
+4. **The Personal Context File schema:** The schema is defined in `hub/agent-context-optimization/context-file-spec.md` and mirrored in the context optimization runtime references. The discovery convention is explicit path first, then optional user-confirmed storage: in-chat draft, local workspace file, user-chosen path, or portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
 
 ---
 

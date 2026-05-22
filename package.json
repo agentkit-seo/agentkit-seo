@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.",
   "type": "module",
   "bin": {
@@ -21,7 +21,7 @@
     ".skills/agent-skill",
     ".skills/export",
     ".skills/providers",
-    "agent-context-optimization/templates/context-file-template.md",
+    "hub",
     ".assets/docs/current-status.md",
     ".assets/docs/project.md",
     ".assets/docs/architecture-map.md",
@@ -45,6 +45,7 @@
   "keywords": [
     "agent-skills",
     "ai-agents",
+    "antigravity-cli",
     "seo",
     "personal-branding",
     "profile-optimization",

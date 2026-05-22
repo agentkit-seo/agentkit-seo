@@ -7,7 +7,7 @@ Follow the repository map in `.assets/docs/architecture-map.md` before suggestin
 - `.skills/agent-skill/` is the canonical portable skill source.
 - `.skills/providers/` contains provider adapters only.
 - `.skills/export/` contains the CLI used for export, install, doctor, version, and template commands.
-- Root module folders such as `github/`, `linkedin/`, `cv-ats/`, `web-portfolio/`, and `x-twitter/` are human-readable Knowledge Hub docs.
+- Human-readable Knowledge Hub docs live under `hub/`, such as `hub/github/`, `hub/linkedin/`, `hub/cv-ats/`, `hub/web-portfolio/`, and `hub/x-twitter/`.
 - `.assets/docs/STYLEGUIDE.md` defines Markdown conventions for docs, examples, templates, and references.
 
 ## Coding and documentation rules

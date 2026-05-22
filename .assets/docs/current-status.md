@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
 
-## As of 2026-05-19
+## As of 2026-05-22
 
 ### Public surfaces
 
@@ -15,9 +15,9 @@ The npm package is live at:
 
 - `https://www.npmjs.com/package/agentkit-seo`
 
-Current release candidate:
+Current package version:
 
-- `agentkit-seo@1.5.1`
+- `agentkit-seo@1.5.2`
 
 GitHub releases currently published or pending:
 
@@ -27,14 +27,16 @@ GitHub releases currently published or pending:
 - `v0.1.3`
 - `v0.1.4`
 - `v1.5.0`
-- `v1.5.1` pending release
+- `v1.5.1`
+- `v1.5.2`
 
 ### Core architecture
 
 - `.skills/agent-skill/` is the canonical source of truth for the runtime skill system.
 - `.skills/providers/` contains provider-specific adapter notes and install shapes.
 - `.skills/export/` contains the install/export CLI.
-- the repo root and module folders remain the human-readable editorial layer
+- `hub/` contains the human-readable editorial playbooks, templates, examples, and source notes.
+- the repo root is reserved for project metadata, maintainer entrypoints, and provider distribution artifacts
 - the public site mirrors the human-readable layer for crawlability, indexing, and public navigation
 - `.assets/docs/STYLEGUIDE.md` remains the schema reference for repo Markdown authoring
 - `.assets/docs/architecture-map.md` is the maintainer and agent work map for where to edit, validate, and release changes
@@ -66,6 +68,7 @@ Working today:
 - direct install for `claude-code`
 - direct extension install for `gemini-cli`
 - repository-root Gemini CLI extension layout for gallery discovery and direct GitHub installs
+- direct plugin install for `antigravity`
 - direct install for `opencode`
 - shared bundle export
 - provider-shaped export bundles
@@ -80,6 +83,7 @@ Working today:
 Provider-facing command shapes available today:
 
 - Gemini CLI namespaced commands such as `/agentkit-seo:linkedin`
+- Antigravity CLI plugin install from the Gemini-compatible layout, with exact imported command syntax still pending confirmation
 - OpenCode flat wrappers such as `/agentkit-seo-linkedin`
 
 Gemini marketplace preparation now includes:
@@ -182,7 +186,7 @@ Current behavior:
 - runs `npm run validate`
 - checks the CLI `version` command
 - exports all provider bundles
-- smoke-installs Codex and Gemini CLI bundles into `/tmp`
+- smoke-installs Codex, Gemini CLI, and Antigravity CLI bundles into `/tmp`
 - runs `npm pack --dry-run`
 
 ### Repo and docs work already completed
@@ -229,6 +233,7 @@ This project is not currently prioritizing:
 Important gaps still open:
 
 - Gemini CLI gallery listing is pending crawler detection after the tagged release
+- Antigravity CLI command syntax needs a live `agy` confirmation after direct plugin install or `agy plugin import gemini`
 - the main repo does not yet have a separately configured custom GitHub social preview
 - installed skills expose local package metadata, but do not yet compare against npm latest
 - demo assets and before/after public examples are still missing

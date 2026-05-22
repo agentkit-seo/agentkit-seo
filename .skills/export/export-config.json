@@ -107,6 +107,51 @@
         }
       ]
     },
+    "antigravity": {
+      "layout": "gemini-extension",
+      "target": ".gemini/antigravity-cli/plugins/agentkit-seo",
+      "globalTarget": "~/.gemini/antigravity-cli/plugins/agentkit-seo",
+      "skillTarget": "skills",
+      "skillExcludes": [
+        "agents"
+      ],
+      "commandTarget": "commands/agentkit-seo",
+      "files": [
+        {
+          "source": ".skills/providers/antigravity/extension/gemini-extension.json",
+          "syncPackageVersion": true
+        },
+        {
+          "source": ".skills/providers/antigravity/extension/GEMINI.md"
+        }
+      ],
+      "commands": [
+        {
+          "name": "agentkit-seo:context",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/context.toml"
+        },
+        {
+          "name": "agentkit-seo:cv-ats",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/cv-ats.toml"
+        },
+        {
+          "name": "agentkit-seo:github",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/github.toml"
+        },
+        {
+          "name": "agentkit-seo:linkedin",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/linkedin.toml"
+        },
+        {
+          "name": "agentkit-seo:portfolio",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/portfolio.toml"
+        },
+        {
+          "name": "agentkit-seo:x-twitter",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/x-twitter.toml"
+        }
+      ]
+    },
     "opencode": {
       "layout": "skill-folders",
       "target": ".opencode/skills",

@@ -189,6 +189,12 @@ export function installProvider(repoRoot, provider, config, flags) {
   }
   console.log(`- manifest: ${manifestPath}`);
   if (providerSpec.layout === "gemini-extension") {
-    console.log(`- extension target: ${targetRoot}`);
+    if (provider === "antigravity") {
+      // TBD: confirm whether Antigravity CLI surfaces imported plugin commands
+      // with Gemini-style slash names, converted skill names, or another syntax.
+      console.log(`- plugin target: ${targetRoot}`);
+    } else {
+      console.log(`- extension target: ${targetRoot}`);
+    }
   }
 }

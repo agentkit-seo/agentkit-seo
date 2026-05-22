@@ -40,7 +40,7 @@ AgentKit SEO fixes the starting point with agent context optimization:
 
 - a private **agent-context-file** for verified career facts
 - focused skills for **LinkedIn profile optimization**, **GitHub SEO**, **CV/ATS resume optimization**, **portfolio SEO**, and **X/Twitter profile optimization**
-- one export/install CLI for Claude Code, Codex, Gemini CLI, OpenCode, and portable `SKILL.md` usage
+- one export/install CLI for Claude Code, Codex, Gemini CLI, Antigravity CLI, OpenCode, and portable `SKILL.md` usage
 
 ```text
 Weak agent output:
@@ -97,12 +97,20 @@ The practical goal is simple: make professional context reusable by agents, whil
 
 | Goal                                                                     | Start here                                                           | Public playbook                                                                                    |
 | ------------------------------------------------------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Build the reusable personal context layer                                | [agent-context-optimization](./agent-context-optimization/README.md) | [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/) |
-| Improve GitHub profile and repository SEO                                | [github](./github/README.md)                                         | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/)                            |
-| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./linkedin/README.md)                                     | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/)                        |
-| Tailor a CV or resume for ATS parsing                                    | [cv-ats](./cv-ats/README.md)                                         | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/)                        |
-| Fix portfolio SEO and indexability                                       | [web-portfolio](./web-portfolio/README.md)                           | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/)                       |
-| Improve X/Twitter profile and posting strategy                           | [x-twitter](./x-twitter/README.md)                                   | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/)                      |
+| Build the reusable personal context layer                                | [agent-context-optimization](./hub/agent-context-optimization/README.md) | [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/) |
+| Improve GitHub profile and repository SEO                                | [github](./hub/github/README.md)                                         | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/)                            |
+| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./hub/linkedin/README.md)                                     | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/)                        |
+| Tailor a CV or resume for ATS parsing                                    | [cv-ats](./hub/cv-ats/README.md)                                         | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/)                        |
+| Fix portfolio SEO and indexability                                       | [web-portfolio](./hub/web-portfolio/README.md)                           | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/)                       |
+| Improve X/Twitter profile and posting strategy                           | [x-twitter](./hub/x-twitter/README.md)                                   | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/)                      |
+
+## Repository layout
+
+The project keeps human-readable methodology separate from provider-facing runtime artifacts:
+
+- `hub/` contains the editorial playbooks, templates, examples, and source notes.
+- `.skills/` contains the canonical portable skill source, provider adapters, and export/install CLI.
+- `commands/`, `skills/`, `GEMINI.md`, and `gemini-extension.json` are Gemini-compatible distribution artifacts kept at the repository root for gallery and direct GitHub installs.
 
 ## Install
 
@@ -151,6 +159,7 @@ Supported install targets:
 | Claude Code   | `~/.claude/skills/`                                | Skill selection depends on Claude Code's skill loading; explicit skill naming is safest                  |
 | Codex         | `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` | Use installed skills by name when available; behavior depends on Codex skill support and workspace setup |
 | Gemini CLI    | `~/.gemini/extensions/agentkit-seo/`               | Namespaced commands such as `/agentkit-seo:linkedin`                                                     |
+| Antigravity CLI | `~/.gemini/antigravity-cli/plugins/agentkit-seo/` | Plugin imported from Gemini-compatible layout; command syntax is TBD until `agy` confirms imported command names |
 | OpenCode      | `~/.config/opencode/skills/` plus command wrappers | Native skill loading plus flat commands such as `/agentkit-seo-linkedin`                                 |
 
 Project-local install from a local checkout:
@@ -188,7 +197,7 @@ It should not be committed to this repository. A portable convention is:
 ~/.agentkit-seo/<name-surname>-seo-context.md
 ```
 
-The human-readable folders explain the methodology. The runtime skill source lives in `.skills/agent-skill/`. The export CLI turns that shared source into provider-specific layouts.
+The human-readable hub folders under `hub/` explain the methodology. The runtime skill source lives in `.skills/agent-skill/`. The export CLI turns that shared source into provider-specific layouts.
 
 This is not a prompt collection. It is an operating manual for agents working on professional identity: verify facts first, then optimize the surface.
 
@@ -232,6 +241,22 @@ The repository root now also exposes a Gemini-compatible extension layout for ga
 - `commands/agentkit-seo/*.toml` for namespaced Gemini commands
 - `skills/*` for bundled agent skills
 
+**Antigravity CLI**
+
+Install the Antigravity plugin bundle directly:
+
+```bash
+npx agentkit-seo install --provider antigravity
+```
+
+Antigravity CLI migrates Gemini CLI extensions into plugins with:
+
+```bash
+agy plugin import gemini
+```
+
+AgentKit SEO installs the same Gemini-compatible layout to `~/.gemini/antigravity-cli/plugins/agentkit-seo/`. The exact imported command syntax in `agy` is still TBD, so use native skill/plugin discovery first and verify slash-command names inside Antigravity before relying on them.
+
 **OpenCode**
 
 Use native skill loading or the flat command wrappers:
@@ -269,9 +294,10 @@ Install or copy the portable `SKILL.md` folders, then follow that agent's rule o
 | Codex direct install                         | Ready                                                |
 | OpenCode direct install                      | Ready                                                |
 | Gemini CLI extension install                 | Ready locally                                        |
+| Antigravity CLI plugin install               | Ready locally; command syntax pending confirmation   |
 | Gemini CLI gallery root manifest             | Ready for crawler                                    |
 | Published `npx agentkit-seo ...` package     | Shipped                                              |
-| Marketplace / registry distribution          | npm shipped; Gemini gallery pending crawler detection |
+| Marketplace / registry distribution          | npm shipped; Gemini gallery and Antigravity plugin distribution pending crawler or registry detection |
 
 First launch focus: `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
 
