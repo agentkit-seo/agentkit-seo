@@ -6,7 +6,13 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
-No unreleased changes yet.
+### Added
+
+- Added LLM wiki entries for all AgentKit SEO runtime modules and root `llms.txt` / `llms-full.txt` maps for LLM-readable project discovery.
+
+### Changed
+
+- Updated provider skill copying to preserve `wiki/` support folders alongside `references/` during install and export.
 
 ## 1.5.3 - 2026-05-26
 

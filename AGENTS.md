@@ -26,6 +26,7 @@ These instructions apply to the whole repository.
 - Separate documented platform behavior from inference.
 - Do not invent SEO, ATS, GitHub, LinkedIn, X, or provider ranking guarantees.
 - Update dependent docs when package behavior, provider behavior, or public workflows change.
+- When writing or updating `wiki/` entries inside `.skills/agent-skill/`, keep them factual, compact, and runtime-oriented. Each wiki file must start with the AgentKit SEO wiki metadata block, use only the allowed confidence values, update `last_reviewed` when claims are meaningfully checked, and mark stale, disputed, or source-dependent claims instead of presenting them as stable facts.
 
 ## Validation
 

@@ -17,6 +17,12 @@ Use the X/Twitter hub to improve profile clarity and posting structure while avo
 - Premium-specific advice and confidence labeling: [references/premium-and-confidence.md](references/premium-and-confidence.md)
 - Existing-account audit or maintenance: [references/account-audit-and-maintenance.md](references/account-audit-and-maintenance.md)
 
+## Wiki context
+
+- Read [wiki/index.md](wiki/index.md) when the task asks about X/Twitter ranking explanations, Premium or paid-tier capabilities, external-link claims, confidence labels, platform constraints, known agent failure modes, or full audit source discipline.
+- Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
+- If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Token discipline
 
 - Do not analyze long posting history unless the user asks for an audit.

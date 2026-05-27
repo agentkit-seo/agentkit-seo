@@ -1,0 +1,22 @@
+# AgentKit SEO
+
+AgentKit SEO is a portable Markdown-first skill bundle for agent-assisted professional discoverability work. It gives LLM agents a private context-file workflow, platform-specific optimization methods, evidence labels, and provider-aware install layouts for Claude Code, Codex, Gemini CLI, Antigravity, OpenCode, and shared skill-folder use.
+
+## Root
+
+- [AgentKit SEO self-description](.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md): Authoritative definition of AgentKit SEO, ACO, runtime architecture, install behavior, and shared evidence labels.
+
+## Module wikis
+
+- [Agent context optimization](.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/index.md): Source-of-truth context-file structure, maintenance, validation, and handoff rules.
+- [CV ATS](.skills/agent-skill/agentkit-seo-cv-ats/wiki/index.md): ATS-safe CV structure, parser constraints, tailoring, and audit rules.
+- [GitHub](.skills/agent-skill/agentkit-seo-github/wiki/index.md): GitHub profile, repository, search, Linguist, and agent-readiness rules.
+- [LinkedIn](.skills/agent-skill/agentkit-seo-linkedin/wiki/index.md): LinkedIn profile architecture, search visibility, activity, and algorithm-confidence rules.
+- [Web portfolio](.skills/agent-skill/agentkit-seo-web-portfolio/wiki/index.md): Portfolio SEO, metadata, structured data, AI retrieval, and `llms.txt` rules.
+- [X/Twitter](.skills/agent-skill/agentkit-seo-x-twitter/wiki/index.md): X/Twitter profile, post, engagement, Premium, and ranking-confidence rules.
+
+## Public surfaces
+
+- Website: https://agentkit-seo.github.io/
+- npm package: https://www.npmjs.com/package/agentkit-seo
+- GitHub repository: https://github.com/agentkit-seo/agentkit-seo

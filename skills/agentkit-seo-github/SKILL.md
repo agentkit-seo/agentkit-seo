@@ -17,6 +17,12 @@ Use this skill to improve GitHub discoverability, comprehension, and trust witho
 - Full-profile or repository audit: [references/profile-and-repo-audit.md](references/profile-and-repo-audit.md)
 - `AGENTS.md`, Copilot instructions, AI-readable repo structure: [references/copilot-and-agent-readiness.md](references/copilot-and-agent-readiness.md)
 
+## Wiki context
+
+- Read [wiki/index.md](wiki/index.md) when the task asks about GitHub searchability, Linguist, `.gitattributes`, AI-readable repository structure, agent-readiness, confidence labels, platform constraints, known agent failure modes, or full audit source discipline.
+- Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
+- If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Token discipline
 
 - Do not load every repository README unless the user asks for a full profile audit.

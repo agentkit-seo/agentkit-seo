@@ -1,0 +1,102 @@
+<!--
+metadata:
+  wiki: agentkit-seo
+  module: agentkit-seo
+  title: "AgentKit SEO"
+  status: stable
+  confidence: stable
+  last_reviewed: 2026-05-27
+  review_by: 2026-11-27
+  source_status: repo
+  agent_priority: high
+-->
+
+# AgentKit SEO
+
+> AgentKit SEO is a portable skill bundle for agent-assisted professional discoverability work. It gives agents a context-first workflow, platform-specific methods, and provider-aware install layouts.
+
+## 1. Load contract
+
+Read this file when the user asks what AgentKit SEO is, what ACO means, how the skill system works, what the installer deploys, or how the repository's runtime architecture is organized.
+
+If this file is unavailable in an older install, use `SKILL.md`, `references/installation-strategy.md`, and the installed `agentkit-seo-install.json` manifest when present. State that the wiki entry is unavailable before making architecture claims that depend on it.
+
+## 2. Canonical definition
+
+AgentKit SEO is an installable set of Markdown-first agent skills for improving public professional surfaces:
+
+- Agent context files
+- LinkedIn profiles
+- GitHub profiles and repositories
+- CV and resume material for ATS-safe parsing
+- Web portfolios
+- X/Twitter profiles and posting surfaces
+
+The package is distributed as `agentkit-seo` on npm. Its stable runtime unit is a folder containing `SKILL.md` plus supporting references. Provider adapters copy or wrap those shared skill folders for different agent environments.
+
+## 3. Agent context optimization
+
+Agent context optimization, or ACO, is the process of building and maintaining a private, structured Markdown source of truth for a person's professional facts.
+
+The resulting agent-context-file stores verified identity, education, experience, projects, achievements, links, target roles, constraints, and positioning notes. Platform skills use that file as factual input. They should not invent missing credentials, metrics, projects, employers, testimonials, or responsibilities.
+
+The context file is private user material. Do not commit it to this repository or include it in public generated docs.
+
+## 4. Runtime architecture
+
+AgentKit SEO uses four runtime-facing layers:
+
+- `hub/`: human-readable playbooks, examples, templates, and source notes.
+- `.skills/agent-skill/`: canonical portable runtime skills.
+- `.skills/providers/`: provider-specific install notes, manifests, command wrappers, and extension metadata.
+- `.skills/export/`: CLI code for install, export, doctor, list, version, and template commands.
+
+The root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` files are distribution artifacts for Gemini-compatible installs and gallery discovery. They are not the primary source of runtime methodology.
+
+## 5. Skill behavior
+
+`SKILL.md` files define when a skill should be used, what workflow to follow, and which supporting files to read. They should stay concise.
+
+Runtime `references/` files contain focused procedural guidance for a task. Runtime `wiki/` files contain durable definitions, constraints, confidence labels, and failure modes that the agent loads only when the task needs them.
+
+Agents should route to one module by default. Cross-platform work should usually start with the agent-context-optimization skill so user facts are normalized before public outputs are rewritten.
+
+## 6. Install behavior
+
+The CLI installs or exports the same shared skills into provider-specific layouts. Supported providers include:
+
+- Shared bundle
+- Claude Code
+- Codex
+- Gemini CLI
+- Antigravity CLI
+- OpenCode
+
+Provider behavior is not identical. Some environments use native skill loading. Some expose slash commands. Some require explicit skill names in the prompt. The shared skill folder names are the portable contract.
+
+## 7. Boundaries
+
+AgentKit SEO does not guarantee rankings, recruiter attention, ATS scores, rich results, snippets, indexing speed, AI citations, or platform distribution.
+
+Agents using AgentKit SEO must separate:
+
+- Verified facts from the user's supplied context
+- Facts observed in public pages or local files
+- Documented platform behavior
+- Inference from those facts
+- Disputed or unstable claims that need review
+
+When a claim depends on current platform behavior, paid-tier behavior, provider support, or search and ranking systems, verify with current sources when tools allow it or mark the claim as source-dependent.
+
+## 8. Shared evidence labels
+
+Use these labels when source status could affect a recommendation:
+
+- `Verified`: Observed directly in inspected public material, local files, rendered output, supplied screenshots, extracted text, or a supplied source-of-truth file.
+- `From context`: Taken from the user's agent-context-file.
+- `From source`: Taken from supplied source material such as pasted text, exports, screenshots, public URLs, local files, or job descriptions.
+- `Inference`: Reasoned from inspected evidence, but not directly observed as a fact.
+- `Inaccessible`: Could not be inspected because the surface is private, login-gated, unavailable, blocked, or outside the task scope.
+- `Needs evidence`: A claim that should not be reused publicly until the user supplies support or it is verified in source material.
+
+Do not turn `Inference`, `Inaccessible`, or `Needs evidence` claims into confident public copy.

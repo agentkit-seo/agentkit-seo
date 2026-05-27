@@ -29,6 +29,21 @@ function shouldCopySkillPath(skillRoot, sourcePath, excludedPaths) {
   );
 }
 
+function assertCopiedSkillSupportFolders(source, destination, skillName) {
+  for (const folderName of ["references", "wiki"]) {
+    const sourceFolder = path.join(source, folderName);
+    if (!fs.existsSync(sourceFolder)) {
+      continue;
+    }
+    const destinationFolder = path.join(destination, folderName);
+    if (!fs.existsSync(destinationFolder)) {
+      throw new Error(
+        `Skill support folder was not copied for ${skillName}: ${folderName}`
+      );
+    }
+  }
+}
+
 export function copySkillFolders(repoRoot, skills, targetRoot, excludedPaths = []) {
   const exported = [];
 
@@ -42,6 +57,7 @@ export function copySkillFolders(repoRoot, skills, targetRoot, excludedPaths = [
       recursive: true,
       filter: (sourcePath) => shouldCopySkillPath(source, sourcePath, excludedPaths)
     });
+    assertCopiedSkillSupportFolders(source, destination, skill.name);
     exported.push(skill.name);
   }
 
@@ -141,6 +157,7 @@ export function installSkillFolders(repoRoot, skills, targetRoot, force, exclude
       recursive: true,
       filter: (sourcePath) => shouldCopySkillPath(source, sourcePath, excludedPaths)
     });
+    assertCopiedSkillSupportFolders(source, destination, skill.name);
     installed.push(skill.name);
   }
 

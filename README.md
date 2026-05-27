@@ -20,27 +20,31 @@
 
 <p align="center">
   <a href="#why-it-exists">Why</a> •
+  <a href="#who-its-for">Who It's For</a> •
   <a href="#quick-start">Quick Start</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
-  <a href="https://agentkit-seo.github.io/">Website</a> •
-  <a href="#how-it-works">How It Works</a> •
-  <a href="#status">Status</a>
+  <a href="https://agentkit-seo.github.io/">Website</a>
 </p>
 
 ---
 
 ## Why It Exists
 
-Most AI agents can rewrite a CV, LinkedIn bio, GitHub README, or portfolio page.
+Developers already understand `CLAUDE.md`, `AGENTS.md`, and repo-level context files: put one in a project, and an AI agent can understand the codebase before it edits anything.
 
-The problem is that they usually rewrite from whatever context happens to be in the chat. That produces generic personal-branding copy, missing facts, repeated questions, and platform advice that does not travel from one agent to another.
+AgentKit SEO applies that same pattern to a career.
 
-AgentKit SEO fixes the starting point with agent context optimization:
+It gives agents a private Markdown source of truth called an **agent-context-file**. That file stores verified facts about experience, projects, metrics, target roles, constraints, links, and positioning. Every platform skill then works from the same context instead of rebuilding professional history from scratch in every chat.
 
-- a private **agent-context-file** for verified career facts
-- focused skills for **LinkedIn profile optimization**, **GitHub SEO**, **CV/ATS resume optimization**, **portfolio SEO**, and **X/Twitter profile optimization**
-- one export/install CLI for Claude Code, Codex, Gemini CLI, Antigravity CLI, OpenCode, and portable `SKILL.md` usage
+Most AI agents can rewrite a CV, LinkedIn bio, GitHub README, or portfolio page. The hard part is making the output factual, consistent, platform-aware, and reusable across tools.
+
+AgentKit SEO provides:
+
+- A private career context file that agents can read before writing.
+- Portable `SKILL.md` modules for LinkedIn, GitHub, CV/ATS, web portfolios, X/Twitter, and context optimization.
+- Curated wiki knowledge for platform constraints, canonical definitions, and known agent failure modes.
+- An install CLI for Claude Code, Codex, Gemini CLI, Antigravity CLI, OpenCode, and portable skill bundles.
 
 ```text
 Weak agent output:
@@ -51,9 +55,29 @@ AgentKit SEO-style output:
 across GitHub, CVs, LinkedIn, and portfolio sites."
 ```
 
+## Who It's For
+
+- Developers preparing for job search, promotion, or public credibility work.
+- Students turning projects into credible portfolio proof.
+- Founders and freelancers improving trust signals across public profiles.
+- Agents that need structured personal context before editing public career assets.
+- Maintainers building portable skills for more than one AI coding environment.
+
 ## Quick Start
 
-Start with the context file, then send one platform through the right skill.
+Install the skills for an agent provider:
+
+```bash
+npx agentkit-seo install --provider codex
+```
+
+Create a private context-file template:
+
+```bash
+npx agentkit-seo template context --output ~/.agentkit-seo/my-context.md
+```
+
+Ask an agent to fill it from trusted material:
 
 ```text
 Use agentkit-seo-agent-context-optimization to create my agent-context-file.
@@ -61,122 +85,42 @@ I can provide my CV, LinkedIn sections, GitHub URL, portfolio URL, project notes
 screenshots, or any other career material you need.
 ```
 
-Then use a platform skill:
+Then use the right platform skill:
 
 ```text
 Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
-Use my personal context file at the path I provide.
+Use my personal context file at ~/.agentkit-seo/my-context.md.
 ```
 
-Typical outputs:
+Typical outputs include:
 
-- prioritized profile or portfolio audit
-- evidence-backed rewrite suggestions
-- ATS-safe CV structure and bullet improvements
-- GitHub README, topic, pin, and proof-point fixes
-- LinkedIn headline, About, Experience, Featured, and Skills recommendations
-- next actions ranked by impact and missing evidence
+- Prioritized profile, repository, CV, or portfolio audits.
+- Evidence-backed rewrite suggestions.
+- ATS-safe CV structure and bullet improvements.
+- GitHub README, topic, pin, and proof-point fixes.
+- LinkedIn headline, About, Experience, Featured, and Skills recommendations.
+- Next actions ranked by impact, evidence, and missing inputs.
 
 ## Agent Context Optimization
 
-Agent context optimization is the layer that keeps agentic AI work from drifting into generic or inconsistent personal-branding output.
+The agent-context-file is a private Markdown file, usually kept outside the repository at `~/.agentkit-seo/<name-surname>-seo-context.md`.
 
-Instead of asking every agent to rebuild the user's professional history from scattered prompts, AgentKit SEO starts from a private Markdown context file. That file stores verified facts, links, achievements, constraints, target roles, and positioning notes in a structure that both humans and agents can inspect.
+It contains verified identity facts, roles, projects, links, metrics, constraints, target roles, tone, and positioning notes.
 
-The platform skills then apply surface-specific rules on top of that source of truth:
-
-- LinkedIn gets searchable, recruiter-readable profile structure
-- GitHub gets clearer repository metadata, READMEs, topics, and proof links
-- CV/ATS gets parser-safe structure and evidence-backed bullets
-- portfolio pages get crawlable metadata, structured data, and useful snippets
-- X gets bio, pinned-post, and content-positioning guidance
-
-The practical goal is simple: make professional context reusable by agents, while keeping public outputs grounded in facts the user controls.
+Platform skills read that file first, then adapt the same facts to LinkedIn, GitHub, CV/ATS, web portfolio, or X/Twitter output rules.
 
 ## Modules
 
-| Goal                                                                     | Start here                                                           | Public playbook                                                                                    |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Build the reusable personal context layer                                | [agent-context-optimization](./hub/agent-context-optimization/README.md) | [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/) |
-| Improve GitHub profile and repository SEO                                | [github](./hub/github/README.md)                                         | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/)                            |
-| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./hub/linkedin/README.md)                                     | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/)                        |
-| Tailor a CV or resume for ATS parsing                                    | [cv-ats](./hub/cv-ats/README.md)                                         | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/)                        |
-| Fix portfolio SEO and indexability                                       | [web-portfolio](./hub/web-portfolio/README.md)                           | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/)                       |
-| Improve X/Twitter profile and posting strategy                           | [x-twitter](./hub/x-twitter/README.md)                                   | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/)                      |
+AgentKit SEO ships one context module and five platform modules.
 
-## Repository layout
-
-The project keeps human-readable methodology separate from provider-facing runtime artifacts:
-
-- `hub/` contains the editorial playbooks, templates, examples, and source notes.
-- `.skills/` contains the canonical portable skill source, provider adapters, and export/install CLI.
-- `commands/`, `skills/`, `GEMINI.md`, and `gemini-extension.json` are Gemini-compatible distribution artifacts kept at the repository root for gallery and direct GitHub installs.
-
-## Install
-
-The canonical install path uses the published npm package:
-
-```bash
-npx agentkit-seo install --provider codex
-```
-
-Replace `codex` with any supported provider.
-
-Check the package version and local package layout:
-
-```bash
-npx agentkit-seo version
-npx agentkit-seo doctor
-```
-
-`agentkit-seo install` now warns when the target provider CLI or its usual config directory cannot be detected. The installer still writes the bundle to the standard target so clean-machine or first-time setups can proceed, but the warning tells users when to switch to `--project-root` or `--target-dir`.
-
-Create a guided private context-file template before asking an agent to rewrite public profiles:
-
-```bash
-npx agentkit-seo template context --output ~/.agentkit-seo/my-context.md
-```
-
-Run it directly from the GitHub repository without a local clone:
-
-```bash
-npx github:agentkit-seo/agentkit-seo install --provider codex
-```
-
-For maintainers testing unpublished changes from a local checkout:
-
-```bash
-git clone https://github.com/agentkit-seo/agentkit-seo.git
-cd agentkit-seo
-npx . install --provider codex
-```
-
-Supported install targets:
-
-| Provider      | Installs to                                        | Activation model                                                                                         |
-| ------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Shared bundle | Portable `SKILL.md` folders                        | Manual reuse or packaging                                                                                |
-| Claude Code   | `~/.claude/skills/`                                | Skill selection depends on Claude Code's skill loading; explicit skill naming is safest                  |
-| Codex         | `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` | Use installed skills by name when available; behavior depends on Codex skill support and workspace setup |
-| Gemini CLI    | `~/.gemini/extensions/agentkit-seo/`               | Namespaced commands such as `/agentkit-seo:linkedin`                                                     |
-| Antigravity CLI | `~/.gemini/antigravity-cli/plugins/agentkit-seo/` | Plugin imported from Gemini-compatible layout; command syntax is TBD until `agy` confirms imported command names |
-| OpenCode      | `~/.config/opencode/skills/` plus command wrappers | Native skill loading plus flat commands such as `/agentkit-seo-linkedin`                                 |
-
-Project-local install from a local checkout:
-
-```bash
-npm exec --package ./. -- agentkit-seo install \
-  --provider codex \
-  --project-root .
-```
-
-If a machine uses a non-default provider location, override the destination explicitly:
-
-```bash
-npx agentkit-seo install --provider gemini-cli --target-dir /custom/path/agentkit-seo
-```
-
-Each install writes an `agentkit-seo-install.json` manifest in the install root so maintainers and users can inspect the installed package version, provider, skills, commands, and target paths.
+| Goal | Start here | Public playbook |
+| --- | --- | --- |
+| Build the reusable personal context layer | [agent-context-optimization](./hub/agent-context-optimization/README.md) | [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/) |
+| Improve GitHub profile and repository discoverability | [github](./hub/github/README.md) | [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/) |
+| Rewrite a LinkedIn profile for search, recruiters, and AI-readable proof | [linkedin](./hub/linkedin/README.md) | [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/) |
+| Tailor a CV or resume for ATS parsing and recruiter readability | [cv-ats](./hub/cv-ats/README.md) | [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/) |
+| Fix portfolio SEO, AI readability, and indexability | [web-portfolio](./hub/web-portfolio/README.md) | [Web portfolio SEO](https://agentkit-seo.github.io/playbooks/web-portfolio/) |
+| Improve X/Twitter profile positioning and posting strategy | [x-twitter](./hub/x-twitter/README.md) | [X/Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/) |
 
 ## How It Works
 
@@ -184,41 +128,93 @@ Each install writes an `agentkit-seo-install.json` manifest in the install root 
   <img src=".assets/image/workflow.png" alt="AgentKit SEO Workflow: One source of truth, many optimized surfaces" width="100%" />
 </p>
 
-The workflow moves from scattered raw material to consistent public results in four stages:
+The workflow moves from scattered raw material to consistent public output:
 
-1. **Raw material:** Gather your existing CV, LinkedIn exports, GitHub profile, portfolio URLs, screenshots, and raw project notes.
-2. **Agent context file:** Load your agent with the **agent-context-optimization** skill and provide your raw material. The agent will distill this into one private, structured source of truth. This file stores your verified identity, target roles, education, experience, projects, metrics, links, constraints, and preferred tone.
-3. **Platform skills:** Provide the resulting context file to an agent loaded with a focused platform skill (such as LinkedIn, GitHub, CV/ATS, or Portfolio).
-4. **Grounded output:** The agent produces an audit, rewrite, patch proposal, or action plan that is consistent across all surfaces and backed by the verified facts in your context file.
+1. **Raw material:** Gather CVs, LinkedIn sections, GitHub URLs, portfolio URLs, screenshots, exports, and project notes.
+2. **Agent context file:** Use `agentkit-seo-agent-context-optimization` to distill the material into one private Markdown source of truth.
+3. **Platform skill:** Give the context file to a focused skill such as LinkedIn, GitHub, CV/ATS, web portfolio, or X/Twitter.
+4. **Grounded output:** The agent produces an audit, rewrite, patch proposal, or action plan backed by the verified facts in the context file.
 
-It should not be committed to this repository. A portable convention is:
+Keep the context file private. A portable location is:
 
 ```text
 ~/.agentkit-seo/<name-surname>-seo-context.md
 ```
 
-The human-readable hub folders under `hub/` explain the methodology. The runtime skill source lives in `.skills/agent-skill/`. The export CLI turns that shared source into provider-specific layouts.
-
 This is not a prompt collection. It is an operating manual for agents working on professional identity: verify facts first, then optimize the surface.
+
+## LLM Wiki
+
+Without a knowledge layer, agents guess at platform constraints from training data: ATS parser behavior, LinkedIn field limits, GitHub Linguist rules, and other details that change or depend on context. That guessing produces confident but wrong advice. AgentKit SEO's wiki layer follows Andrej Karpathy's LLM Wiki concept: a knowledge base the LLM reads, not one it writes. The maintainer writing loop that keeps entries fresh from live sources is planned but not yet shipped.
+
+- Every skill ships with per-module Markdown entries for canonical definitions, platform constraints with confidence labels, known failure modes, evidence rules, and audit output rules.
+- Wiki entries load conditionally, so agents pull deeper context only when the current task needs it.
+- [agentkit-seo/wiki/agentkit-seo.md](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md) is the root self-description for installed agents.
+- [llms.txt](./llms.txt) and [llms-full.txt](./llms-full.txt) expose the project map and full wiki bundle for LLM tools.
+
+## Repository Layout
+
+The repository separates human documentation from runtime agent artifacts:
+
+- `hub/` contains public playbooks, templates, examples, and source notes.
+- `.skills/agent-skill/` contains the canonical portable skill source.
+- `.skills/export/` contains the install, export, doctor, and template CLI.
+- `.skills/providers/` contains provider-specific adapter notes and wrappers.
+- `commands/`, `skills/`, `GEMINI.md`, and `gemini-extension.json` provide the Gemini-compatible root distribution layout.
+
+## Install
+
+Install one provider at a time:
+
+```bash
+npx agentkit-seo install --provider codex
+```
+
+Supported providers:
+
+| Provider | Installs to | Activation model |
+| --- | --- | --- |
+| `shared` | Portable `SKILL.md` folders | Manual reuse or packaging |
+| `claude-code` | `~/.claude/skills/` | Ask for the installed skill by name |
+| `codex` | `~/.agents/skills/` plus `CODEX_HOME/skills` or `~/.codex/skills/` | Use installed skills by name when available |
+| `gemini-cli` | `~/.gemini/extensions/agentkit-seo/` | Namespaced commands such as `/agentkit-seo:linkedin` |
+| `antigravity` | `~/.gemini/antigravity-cli/plugins/agentkit-seo/` | Plugin layout based on the Gemini-compatible bundle |
+| `opencode` | `~/.config/opencode/skills/` plus command wrappers | Native skill loading plus flat command wrappers |
+
+Useful package commands:
+
+```bash
+npx agentkit-seo version
+npx agentkit-seo doctor
+npx agentkit-seo list providers
+npx agentkit-seo list skills
+```
+
+Install from GitHub without a local clone:
+
+```bash
+npx github:agentkit-seo/agentkit-seo install --provider codex
+```
+
+Use an explicit destination when a machine uses a non-default provider location:
+
+```bash
+npx agentkit-seo install --provider gemini-cli --target-dir /custom/path/agentkit-seo
+```
+
+Each install writes an `agentkit-seo-install.json` manifest in the install root with the package version, provider, skills, commands, and target paths.
 
 ## Invocation
 
-Provider behavior is not identical. Some agents can select installed skills from their metadata, some expose slash commands, and some require you to mention the skill or add provider-specific rules. The shared skill names are the stable contract, but the way you invoke them depends on the provider.
+Provider invocation varies. The stable contract is the shared skill name or the provider command wrapper.
 
 **Codex**
 
-Mention the installed skill when the environment supports it:
-
 ```text
-$agentkit-seo-agent-context-optimization
 $agentkit-seo-github
 ```
 
-Exact activation depends on the Codex environment and installed skill support.
-
 **Claude Code**
-
-Ask for the installed skill by name. Claude may auto-select from skill metadata, but explicit naming is safer:
 
 ```text
 Use the agentkit-seo-linkedin skill to audit my LinkedIn profile.
@@ -226,112 +222,27 @@ Use the agentkit-seo-linkedin skill to audit my LinkedIn profile.
 
 **Gemini CLI**
 
-Use the namespaced commands shipped with the Gemini extension bundle:
-
 ```text
-/agentkit-seo:context
 /agentkit-seo:github
-/agentkit-seo:linkedin
 ```
-
-The repository root now also exposes a Gemini-compatible extension layout for gallery and direct GitHub installs:
-
-- `gemini-extension.json` at the repo root for crawler and installer discovery
-- `GEMINI.md` at the repo root for extension context loading
-- `commands/agentkit-seo/*.toml` for namespaced Gemini commands
-- `skills/*` for bundled agent skills
 
 **Antigravity CLI**
 
-Install the Antigravity plugin bundle directly:
-
-```bash
-npx agentkit-seo install --provider antigravity
+```text
+Use the installed agentkit-seo-github plugin skill to audit my GitHub profile.
 ```
-
-Antigravity CLI migrates Gemini CLI extensions into plugins with:
-
-```bash
-agy plugin import gemini
-```
-
-AgentKit SEO installs the same Gemini-compatible layout to `~/.gemini/antigravity-cli/plugins/agentkit-seo/`. The exact imported command syntax in `agy` is still TBD, so use native skill/plugin discovery first and verify slash-command names inside Antigravity before relying on them.
-
-The installed plugin root includes `plugin.json`, `gemini-extension.json`, `GEMINI.md`, `commands/agentkit-seo/`, and `skills/`.
 
 **OpenCode**
 
-Use native skill loading or the flat command wrappers:
+```text
+/agentkit-seo-github
+```
+
+**Portable skill folders**
 
 ```text
-/agentkit-seo-context
-/agentkit-seo-github
-/agentkit-seo-linkedin
+Use the SKILL.md in agentkit-seo-web-portfolio to audit my portfolio site.
 ```
-
-**Other agents**
-
-Install or copy the portable `SKILL.md` folders, then follow that agent's rule or skill system. If the agent cannot load skills automatically, paste or reference the relevant skill instructions manually.
-
-## What's Inside
-
-| Capability                    | Typical output                                                                                 |
-| ----------------------------- | ---------------------------------------------------------------------------------------------- |
-| Personal context architecture | Structured `agent-context-file` that becomes the reusable source of truth                      |
-| LinkedIn optimization         | Section audit, headline/About rewrites, Featured strategy, and activity suggestions            |
-| GitHub optimization           | Profile and repository discoverability audit with README, topic, naming, and proof-point fixes |
-| CV/ATS optimization           | ATS-safe rewrite plan, keyword alignment, bullet improvements, and formatting risks            |
-| Web portfolio optimization    | SEO/AEO audit, structured-data recommendations, indexability checks, and content improvements  |
-| X optimization                | Bio, pinned-post, posting strategy, and engagement loop recommendations                        |
-
-## Status
-
-| Target                                       | Status                                               |
-| -------------------------------------------- | ---------------------------------------------------- |
-| Shared skill source                          | Ready                                                |
-| Install/export CLI                           | Ready                                                |
-| CLI diagnostics and context template command | Ready                                                |
-| Push and pull request validation workflow    | Ready                                                |
-| Claude Code direct install                   | Ready                                                |
-| Codex direct install                         | Ready                                                |
-| OpenCode direct install                      | Ready                                                |
-| Gemini CLI extension install                 | Ready locally                                        |
-| Antigravity CLI plugin install               | Ready locally; command syntax pending confirmation   |
-| Gemini CLI gallery root manifest             | Ready for crawler                                    |
-| Published `npx agentkit-seo ...` package     | Shipped                                              |
-| Marketplace / registry distribution          | npm shipped; Gemini gallery and Antigravity plugin distribution pending crawler or registry detection |
-
-First launch focus: `cv-ats`, `github`, and `linkedin`. Other modules can remain beta while packaging, provider support, and the main launch narrative are finished.
-
-Current project notes live in [.assets/docs/current-status.md](./.assets/docs/current-status.md), [.assets/docs/project.md](./.assets/docs/project.md), and [.assets/docs/architecture-map.md](./.assets/docs/architecture-map.md).
-
-Authoring and runtime conventions are defined in [.assets/docs/STYLEGUIDE.md](./.assets/docs/STYLEGUIDE.md) and [.skills/architecture.md](./.skills/architecture.md).
-
-Release history is tracked in [CHANGELOG.md](./CHANGELOG.md).
-
-Privacy and security policies are tracked in [PRIVACY.md](./PRIVACY.md) and [SECURITY.md](./SECURITY.md).
-
-## Releasing
-
-Npm is the canonical package registry for AgentKit SEO. GitHub releases mirror npm versions with matching `v*` tags.
-
-Automated publishing requires an `NPM_TOKEN` repository secret in GitHub with permission to publish `agentkit-seo`.
-
-```bash
-npm run validate
-npm version patch
-git push origin main --tags
-```
-
-Pushing a version tag such as `vX.Y.Z` runs the npm publish workflow, verifies the tag matches `package.json`, validates the package layout, and creates the matching GitHub release after npm publish succeeds.
-
-## Who It's For
-
-- developers preparing for job search or promotion cycles
-- students turning projects into credible portfolio proof
-- founders and freelancers improving public trust signals
-- agents that need structured personal context before editing public profiles
-- maintainers building portable skills for more than one coding agent
 
 ## Authors
 
@@ -341,5 +252,7 @@ Maintained by **Renato Mignone** and **Elia Innocenti**.
 | ------------------ | ------------------------------------------ | ------------------------------------------------------- | --------------------------------------------- |
 | **Renato Mignone** | [GitHub](https://github.com/RenatoMignone) | [LinkedIn](https://www.linkedin.com/in/renato-mignone/) | [Portfolio](https://renatomignone.github.io/) |
 | **Elia Innocenti** | [GitHub](https://github.com/eliainnocenti) | [LinkedIn](https://www.linkedin.com/in/eliainnocenti/)  | [Portfolio](https://eliainnocenti.github.io/) |
+
+Release history is tracked in [CHANGELOG.md](./CHANGELOG.md). Privacy and security policies are tracked in [PRIVACY.md](./PRIVACY.md) and [SECURITY.md](./SECURITY.md).
 
 If AgentKit SEO is useful, a GitHub star helps others find the project.

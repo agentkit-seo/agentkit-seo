@@ -28,6 +28,8 @@
     ".assets/docs/STYLEGUIDE.md",
     "gemini-extension.json",
     "GEMINI.md",
+    "llms.txt",
+    "llms-full.txt",
     "commands",
     "skills",
     "CHANGELOG.md",

@@ -17,6 +17,12 @@ Use only the LinkedIn module unless the user explicitly asks for cross-platform 
 - Full-profile review, consistency checks, update workflow: [references/profile-audit-and-maintenance.md](references/profile-audit-and-maintenance.md)
 - Algorithm rationale, confidence labels, `360Brew`: [references/algorithm-confidence.md](references/algorithm-confidence.md)
 
+## Wiki context
+
+- Read [wiki/index.md](wiki/index.md) when the task asks about LinkedIn search visibility, profile architecture constraints, activity strategy, algorithm explanations, `360Brew`, confidence labels, known agent failure modes, or full audit source discipline.
+- Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
+- If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Token discipline
 
 - Do not request or process the whole LinkedIn profile for a single section rewrite if the section and target role are enough.

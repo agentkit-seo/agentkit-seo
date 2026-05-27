@@ -9,6 +9,11 @@ description: Route broad or ambiguous AgentKit SEO work to the right module whil
 
 Use this skill as the orchestrator for the whole repository. Its main job is to select the right module skill, avoid loading irrelevant platform rules, and sequence cross-platform work in a sane order.
 
+## Wiki context
+
+- Read [wiki/agentkit-seo.md](wiki/agentkit-seo.md) when the user asks what AgentKit SEO is, what ACO means, how the skill system works, what the installer deploys, or how the repository's runtime architecture is organized.
+- If the wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Routing workflow
 
 1. Identify the target surface from the request.

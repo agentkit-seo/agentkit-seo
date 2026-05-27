@@ -17,6 +17,12 @@ Use only the CV and ATS guidance relevant to the requested deliverable. Keep the
 - Parser-failure diagnosis, LaTeX/PDF post-build QA, or plain-text extraction: [references/parser-risks-and-agent-workflow.md](references/parser-risks-and-agent-workflow.md)
 - Full-document review, consistency checks, maintenance: [references/cv-audit-and-maintenance.md](references/cv-audit-and-maintenance.md)
 
+## Wiki context
+
+- Read [wiki/index.md](wiki/index.md) when the task asks about ATS parser constraints, file-format safety, LaTeX PDF QA, plain-text extraction, job-description evidence handling, confidence labels, known agent failure modes, or full audit source discipline.
+- Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
+- If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Token discipline
 
 - Do not load all references for a single bullet, section, or parser question.

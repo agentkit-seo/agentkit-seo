@@ -17,6 +17,12 @@ Use this skill to improve how a personal site is crawled, rendered, summarized, 
 - Case studies, performance, AI retrieval conventions: [references/content-performance-and-aeo.md](references/content-performance-and-aeo.md)
 - Existing-site audit or maintenance: [references/portfolio-audit-and-maintenance.md](references/portfolio-audit-and-maintenance.md)
 
+## Wiki context
+
+- Read [wiki/index.md](wiki/index.md) when the task asks about `llms.txt`, AI retrieval, evidence labels, source confidence, platform constraints, or known agent failure modes.
+- Read [wiki/knowledge.md](wiki/knowledge.md) only after [wiki/index.md](wiki/index.md) routes the current task there.
+- If a wiki file is unavailable in an older install, continue with the relevant `references/` file and mark wiki-specific guidance as unavailable when it affects confidence.
+
 ## Token discipline
 
 - For a URL audit, inspect homepage, robots, sitemap, and only priority pages first.
