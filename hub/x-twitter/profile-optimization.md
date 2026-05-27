@@ -4,7 +4,7 @@ metadata:
   platform: "x-twitter"
   objective: "Rules for structuring an X profile for search discoverability, profile conversion, and clear niche positioning."
   status: "review"
-  last_updated: "2026-04-28"
+  last_updated: "2026-05-27"
   tags: ["profile", "bio", "seo", "footprint"]
   agent_priority: "high"
 -->
@@ -17,7 +17,7 @@ metadata:
 
 ## 1. Overview
 
-An X profile acts as a searchable landing page. Profiles and tweets can appear in Google surfaces such as tweet carousels, and profile clarity can improve who discovers and follows an account.
+An X profile acts as a compact public identity surface. X documents editable profile fields, a 160-character bio limit, pinned posts, and account-search preference for complete name, username, and bio fields.
 
 The primary audience for this file is an agent tasked with rewriting a user's X profile. The outcome is a profile that clearly communicates authority, uses relevant keywords naturally, and provides a structured funnel for profile visitors.
 
@@ -25,21 +25,21 @@ The primary audience for this file is an agent tasked with rewriting a user's X 
 
 ### 2.1 The display name and handle
 
-**Recommendation:** Include the primary keyword or job title in the display name (for example using `|` or `-`) to improve immediate clarity and people-search discoverability.
+**Recommendation:** Include the primary keyword or job title in the display name when it improves immediate clarity and people-search discoverability.
 
 **Recommendation:** Ensure the handle (`@username`) matches the user's brand across other platforms to build cross-platform entity trust for external search engines.
 
 ### 2.2 The Bio formula
 
-The 160-character bio functions like a compact profile summary for people, search surfaces, and external previews. It should be keyword-rich without reading as spam.
+The 160-character bio functions like a compact profile summary for people, search surfaces, and external previews. This is methodology layered on top of the official field limit, not a platform ranking guarantee.
 
 **Recommendation:** Structure the bio using this formula: `[Who I help] + [How I help] + [Social Proof] + [Call To Action]`
 
-**Recommendation:** Place the most critical industry keywords within the first 80 characters.
+**Recommendation:** Place the most critical niche terms early when doing so reads naturally.
 
 ### 2.3 The funnel (Pinned post and Highlights)
 
-Historical ranking snapshots suggest profile-click and downstream engagement are valuable signals, so the profile should immediately offer useful next-step content.
+Historical ranking snapshots suggest profile clicks and downstream engagement can matter, and X search guidance favors complete profiles. The profile should therefore offer a useful next step without forcing weak proof.
 
 **Recommendation:** Use a Pinned Post when the account has a strong evergreen asset. This acts as the top of the funnel (e.g., a lead magnet, a high-performing thread, or a newsletter link). If there is no strong evergreen asset yet, leave the pinned slot empty rather than pinning weak content. **Recommendation:** If the account has access to Highlights, curate testimonials, high-signal threads, and case studies to build authority for new visitors.
 
@@ -49,7 +49,7 @@ Historical ranking snapshots suggest profile-click and downstream engagement are
 
 Good example:
 ```text
-Helping SaaS founders scale organic traffic via programmatic SEO. 📈 Grew 3 startups to 1M+ monthly visits. 👇 Get my free technical SEO checklist:
+Helping SaaS founders scale organic traffic via programmatic SEO. Grew 3 startups to 1M+ monthly visits. Get my free technical SEO checklist:
 ```
 *Why this is good:* It follows the formula precisely. Who/How: "Helping SaaS founders scale organic traffic via programmatic SEO". Proof: "Grew 3 startups...". CTA: "Get my free...". It reads naturally while hitting major keywords.
 
@@ -67,6 +67,6 @@ SEO Expert | Growth Hacker | Digital Marketing | Coffee Addict | Views are my ow
 
 ### Link-tree only bios
 
-**What it looks like:** A bio that only says "Links below 👇" pointing to a Linktree. **Why it fails:** It wastes the limited bio space that search surfaces and profile visitors use to understand the account. **What to do instead:** Use at least 120 characters to define the user's niche and expertise before deploying the CTA for the link.
+**What it looks like:** A bio that only says "Links below" and points to a link hub. **Why it fails:** It wastes the limited bio space that search surfaces and profile visitors use to understand the account. **What to do instead:** Define the user's niche and expertise before adding the CTA for the link.
 
 ---

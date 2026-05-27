@@ -4,7 +4,7 @@ metadata:
   platform: "x-twitter"
   objective: "Evidence-aligned guidelines for formatting posts, media, and Alt Text to maximize readability, accessibility, and discoverability."
   status: "review"
-  last_updated: "2026-04-28"
+  last_updated: "2026-05-27"
   tags: ["posting", "media", "alt-text", "seo"]
   agent_priority: "high"
 -->
@@ -17,7 +17,7 @@ metadata:
 
 ## 1. Overview
 
-Content formatting influences how quickly users understand and engage with a post. Historical ranking snapshots suggest dwell and conversation depth matter, but exact live thresholds are not guaranteed. Treat format rules below as high-confidence best practices, with explicit notes when a claim is empirical.
+Content formatting influences how quickly users understand and engage with a post. Current X documentation supports general claims about recommendation signals, filtering, search categories, media, and post limits. Historical ranking snapshots can inform architecture priors, but exact live thresholds are not guaranteed.
 
 ## 2. Rules
 
@@ -41,7 +41,7 @@ Native media often improves engagement compared to text-only posts.
 
 ### 2.4 Thread structuring for dwell time
 
-Threads can increase reading time and create more reply opportunities.
+Threads can increase reading time and create more reply opportunities when the topic needs depth. They are a format choice, not a universal ranking requirement.
 
 **Recommendation:** Start with 4-8 posts when a topic needs depth, then adjust based on completion and engagement data. **Rule:** Use line breaks every 1-2 sentences for mobile readability.
 
@@ -69,6 +69,6 @@ Screenshot 2026-04-24
 
 ### High-frequency burst posting
 
-**What it looks like:** Publishing 4 separate posts within a 10-minute window to "flood the feed." **Why it can fail:** Author-diversity components are designed to avoid repetitive feed sessions, so rapid bursts from one account may compete with each other for visibility. **What to do instead:** Space out individual posts by several hours, or combine related thoughts into a single formatted thread.
+**What it looks like:** Publishing 4 separate posts within a 10-minute window to "flood the feed." **Why it can fail:** Historical architecture material and current filtering guidance support the general idea that feeds avoid repetitive or low-quality sessions, but no public threshold defines burst suppression. **What to do instead:** Space out individual posts, or combine related thoughts into a single formatted thread when the topic needs depth.
 
 ---

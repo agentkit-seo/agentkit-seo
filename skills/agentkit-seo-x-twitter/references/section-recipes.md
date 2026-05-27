@@ -16,7 +16,7 @@ Rules:
 
 ## Bio recipe
 
-Treat the bio as a compact landing page.
+Treat the official 160-character bio limit as a compact landing page constraint.
 
 Default structure:
 
@@ -67,7 +67,7 @@ Writing rules:
 
 ## Thread recipe
 
-Use a thread when the topic genuinely needs depth.
+Use a thread when the topic genuinely needs depth, not as a default ranking tactic.
 
 Default structure:
 

@@ -2,26 +2,42 @@
 metadata:
   title: "X algorithm and ranking signals"
   platform: "x-twitter"
-  objective: "Explains what is officially documented in the X open-source code versus what is inferred about Grok and the Phoenix update."
+  objective: "Separates current official X recommender documentation from historical open-source architecture and inferred Grok or Phoenix-era claims."
   status: "review"
-  last_updated: "2026-04-28"
+  last_updated: "2026-05-27"
   tags: ["algorithm", "open-source", "weights", "ranking"]
   agent_priority: "high"
 -->
 
 # X algorithm and ranking signals
 
-> This file separates confirmed X (Twitter) ranking behavior found in the open-source codebase from inferred behavior related to Grok and the "Phoenix" updates.
+> This file separates current official X recommender documentation from historical open-source architecture and inferred Grok or Phoenix-era claims.
 
 ---
 
 ## 1. Overview
 
-X open-sourced major parts of its recommendation stack (`twitter/the-algorithm` and `twitter/the-algorithm-ml`), giving high-confidence visibility into the For You pipeline architecture and historical ranking signals. Later snapshots (such as `xai-org/x-algorithm`) provide additional architectural detail, but should not be assumed to be a full, immutable mirror of live production.
+Current X help pages document recommender systems for For You, Search, Explore, Notifications, and other surfaces. They describe candidate sourcing, personalization signals, ranking, filtering, feedback collection, and user controls at a product level.
 
-When optimizing content, prioritize documented architecture and official platform documentation first. Treat tactical creator heuristics as testable hypotheses, not guaranteed ranking laws.
+X also open-sourced major parts of its recommendation stack in `twitter/the-algorithm` and `twitter/the-algorithm-ml`. Those repositories provide useful historical architecture context. Later repositories such as `xai-org/x-algorithm` require separate maintainer review before being used as production evidence.
 
-## 2. The historical baseline (Heavy Ranker)
+When optimizing content, prioritize current official X documentation first. Treat historical repositories, architecture snapshots, and creator heuristics as inference, not guaranteed ranking laws.
+
+## 2. Current official recommender documentation
+
+X's current help pages support these product-level claims:
+
+- For You finds posts from accounts, Lists, and Topics the viewer follows, plus accounts the viewer does not explicitly follow.
+- For You ranks relevance using a neural network trained on interactions such as Likes, Reposts, and Replies.
+- For You uses signals such as followed accounts, followed Topics, liked posts, posts liked by the viewer's network, and accounts followed by the viewer's network.
+- Search has multiple result categories, including Top, Latest, People, Media, and Lists.
+- Top search ranking uses engagement, health, and relevance scores.
+- Latest search is the least personalized path and returns matching posts in reverse chronological order with global visibility filtering.
+- X filters content that may be harmful, abusive, spammy, blocked, muted, protected, or otherwise ineligible before showing recommendations.
+
+These pages do not publish a universal formula for reach, a guaranteed external-link penalty, or deterministic posting-frequency thresholds.
+
+## 3. The historical baseline (Heavy Ranker)
 
 The values below are historical examples from the 2023 open-source release and are most useful as directional priors. They should not be treated as guaranteed live constants.
 
@@ -38,22 +54,22 @@ The values below are historical examples from the 2023 open-source release and a
 - **Report (~-369.0):** Historically a severe negative outcome.
 - **Negative feedback (~-74.0):** "Show less often," mute, and block events.
 
-## 3. SimClusters and Two-Tower Retrieval
+## 4. SimClusters and Two-Tower retrieval
 
 X has historically sourced out-of-network content using graph and embedding-based retrieval systems.
 
 **Recommendation:** Stay in your lane to improve out-of-network fit. Historically, SimClusters modeled community affinity from follow and engagement graphs. More recent architecture snapshots describe Two-Tower retrieval (User Tower + Candidate Tower) for semantic matching. Strategic takeaway: strong topical consistency can improve retrieval quality and out-of-network fit.
 
-## 4. The current architecture (Phoenix and Grok)
+## 5. Phoenix and Grok-era architecture snapshots
 
-Recent public architecture snapshots describe a Phoenix pipeline with:
+Recent public architecture snapshots describe a Phoenix-style pipeline with:
 
 - In-network and out-of-network candidate sourcing.
 - Multi-action prediction and weighted scoring.
 - Author diversity scoring to avoid feed monotony.
 - Filtering layers for policy, safety, duplication, and user preferences.
 
-These are useful design signals, but not a full public contract for every live ranking behavior.
+These are useful design signals. They are not a full public contract for every live ranking behavior unless current official X documentation links them as production documentation.
 
 **Not publicly documented as deterministic rules:**
 
@@ -65,7 +81,7 @@ These are useful design signals, but not a full public contract for every live r
 
 **Recommendation:** Pace posts to reduce self-competition in the same feed session.
 
-## 5. Examples
+## 6. Examples
 
 Good example:
 
@@ -82,10 +98,10 @@ Bad example:
 10 tools every developer needs. Like and bookmark this right now!
 ```
 
-## 6. Anti-Patterns
+## 7. Anti-patterns
 
 ### The Like-farming thread
 
-**What it looks like:** "10 tools you need. Like and bookmark this!" **Why it fails:** Historically, likes were much lower-weight than replies and conversation depth. **What to do instead:** End the thread with a specific, open-ended question to invite substantive replies, then continue the discussion in follow-up responses.
+**What it looks like:** "10 tools you need. Like and bookmark this!" **Why it fails:** It optimizes for shallow engagement instead of useful discussion. Historical ranking material also treated deeper conversation signals as more meaningful than likes alone. **What to do instead:** End the thread with a specific, open-ended question to invite substantive replies, then continue the discussion in follow-up responses.
 
 ---

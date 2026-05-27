@@ -4,7 +4,7 @@
 
 - Keep handle and identity aligned with the user's other public surfaces.
 - Use a display name that improves clarity when appropriate.
-- Treat the 160-character bio as a compact landing page.
+- Treat the 160-character bio limit as official and the compact landing-page structure as methodology.
 - Keep profile image, header, bio, and linked destination aligned around the same niche.
 
 ## Bio formula
@@ -34,7 +34,7 @@ Guidance:
 - use descriptive alt text for images and GIFs
 - prefer native media when it serves the idea
 - use line breaks for mobile readability
-- use threads when the topic needs depth, not by default
+- use threads when the topic needs depth, not as a default ranking tactic
 - keep each post focused on one clear idea or insight
 
 ## Link guidance

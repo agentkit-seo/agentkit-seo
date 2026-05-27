@@ -47,7 +47,9 @@ Apply the source quality rules from [MAINTAINING.md](../../../MAINTAINING.md) ex
 - `inferred`: Official source code snapshots, architecture writeups, discontinued or historical official material, or repo-owned methodology where no external platform source exists.
 - `disputed`: Conflicting official sources, unsupported public narratives, secondary commentary, or behavior where no clean official source exists.
 
-Never introduce a source that does not meet the inclusion bar. Never upgrade `inferred` to `stable` without an explicit official source. Record every fetch with URL, fetch date, determinable source changes, and affected wiki claims.
+When tools allow network access, search for newer or missing official sources before treating the current `sources.md` list as complete. Accept only official platform documentation, official help-center pages, official engineering or product blogs, published specs, RFC-style documents, or official maintainer-published repositories. Do not add secondary commentary, influencer posts, SEO agency articles, community speculation, Reddit threads, or login-gated material as source evidence.
+
+Never introduce a source that does not meet the inclusion bar. Never upgrade `inferred` to `stable` without an explicit official source. Record every fetch and discovery check with URL, fetch date, determinable source changes, and affected wiki claims.
 
 ## Patch output rules
 
@@ -82,6 +84,8 @@ This skill must never touch:
 - Provider mirrors under `skills/` or `commands/`
 - Files outside the confirmed list above
 
+If a source change implies that any forbidden file should change, do not edit that file. Flag it in a follow-up section with the exact file, affected section when known, reason, and source URL. This applies to hub playbooks, runtime references, module `SKILL.md` routing or loading behavior, `wiki/index.md` load maps, README content, CHANGELOG entries, and provider mirrors.
+
 ## Mode 1: Single module refresh
 
 Use this mode when the maintainer asks:
@@ -94,17 +98,19 @@ Workflow:
 
 1. Read `hub/<module>/sources.md` to identify official sources for the surface.
 2. Read `.skills/agent-skill/agentkit-seo-<module>/wiki/knowledge.md` to understand current claims, confidence labels, `last_reviewed`, and `review_by`.
-3. Fetch every official source in `sources.md` that is newer than `last_reviewed`. If `last_reviewed` is more than 30 days ago, fetch all official sources regardless of the stated review interval.
-4. Extract source-backed claims relevant to the module surface.
-5. Diff extracted claims against current `knowledge.md`:
+3. Search for newer or missing official sources for the same surface. Use source discovery queries that target official domains, specs, help centers, engineering blogs, or maintainer-published repositories. Reject secondary or speculative material.
+4. Fetch every official source in `sources.md` that is newer than `last_reviewed`, plus any newly discovered official source that meets the inclusion bar. If `last_reviewed` is more than 30 days ago, fetch all official sources regardless of the stated review interval.
+5. Extract source-backed claims relevant to the module surface.
+6. Diff extracted claims against current `knowledge.md`:
    - New claims supported by official sources that are absent from the wiki.
    - Existing claims whose confidence should change based on current source text.
    - Claims the source no longer supports, flagged for removal or downgrade.
    - Claims contradicted by a conflicting official source, marked `disputed`.
-6. Produce a proposed patch with exact line-level edits to `knowledge.md` and source URL justification for every change.
-7. Present the full proposed patch before writing anything. Ask for explicit confirmation.
-8. On confirmation only, apply the patch, update `last_reviewed` to today, set `review_by` from the dominant confidence level, regenerate `llms-full.txt`, and run `npm run validate`.
-9. Report what changed, which source justified it, and which confidence labels moved up, down, or to `disputed`.
+7. Identify downstream files that may need separate human or agent updates outside this skill's write permissions, including hub playbooks, runtime references, module `SKILL.md` routing, `wiki/index.md` load maps, README, CHANGELOG, or generated provider mirrors.
+8. Produce a proposed patch with exact line-level edits to `knowledge.md` and source URL justification for every change.
+9. Present the full proposed patch and the downstream follow-up list before writing anything. Ask for explicit confirmation.
+10. On confirmation only, apply the patch, update `last_reviewed` to today, set `review_by` from the dominant confidence level, regenerate `llms-full.txt`, and run `npm run validate`.
+11. Report what changed, which source justified it, which confidence labels moved up, down, or to `disputed`, and which follow-up files should be updated outside this skill if any.
 
 Use these review intervals:
 
@@ -124,10 +130,11 @@ Use agentkit-seo-wiki-maintenance to audit all modules
 Workflow:
 
 1. Spawn parallel subagent tasks for the six module ids: `agent-context-optimization`, `cv-ats`, `github`, `linkedin`, `web-portfolio`, and `x-twitter`.
-2. Each subagent runs Mode 1 through step 6 only. It produces a proposed patch and performs no writes.
+2. Each subagent runs Mode 1 through step 8 only. It produces a proposed patch and downstream follow-up list, but performs no writes.
 3. Collect the proposed patches into one unified audit report:
    - Per module: sources fetched, claims changed, confidence movements, new claims, and flagged removals.
    - Cross-module: consistency issues, including the same claim labeled differently across modules or shared taxonomy drift.
+   - Follow-ups: forbidden files that should be updated separately, with file path, reason, and source URL.
 4. Present the full unified report to the maintainer.
 5. Ask which modules to apply, which to skip, and which require further review.
 6. Apply only confirmed module patches. Regenerate `llms-full.txt` once after all confirmed writes. Run `npm run validate` once after all confirmed writes.
@@ -151,14 +158,16 @@ Use agentkit-seo-wiki-maintenance to audit all sources
 Workflow:
 
 1. Read `hub/<module>/sources.md`.
-2. Fetch each source and check:
+2. Search for newer or missing official sources for the module surface. Prefer official platform documentation, help centers, engineering or product blogs, published specs, RFC-style documents, and official maintainer-published repositories.
+3. Fetch each listed and newly discovered candidate source and check:
    - Whether it is still live and accessible.
    - Whether it is still official, not moved to a third party, and not deprecated.
    - Whether it still covers what the `sources.md` entry claims it covers.
    - Whether a newer or more authoritative official source should replace or supplement it.
-3. Propose updates to `sources.md` only. Do not propose wiki changes in this mode.
-4. Present the full proposed patch and ask for explicit confirmation.
-5. On confirmation only, apply the `sources.md` patch and run `npm run validate`.
+4. Propose updates to `sources.md` only. Do not propose wiki changes in this mode.
+5. Present rejected candidate sources separately, with the reason they did not meet the inclusion bar.
+6. Present the full proposed patch and ask for explicit confirmation.
+7. On confirmation only, apply the `sources.md` patch and run `npm run validate`.
 
 ## Response shape
 
@@ -170,7 +179,8 @@ For proposed patches, return:
 4. Source justification for every change.
 5. Confidence movements.
 6. Claims flagged for removal, downgrade, dispute, or further review.
-7. Explicit confirmation request before writing.
+7. Downstream follow-up files that should be updated outside this skill, if any.
+8. Explicit confirmation request before writing.
 
 For completed writes, return:
 
@@ -178,4 +188,5 @@ For completed writes, return:
 2. Sources used.
 3. Confidence movements.
 4. `llms-full.txt` regeneration status when applicable.
-5. Validation result.
+5. Downstream follow-up files that still need separate updates, if any.
+6. Validation result.

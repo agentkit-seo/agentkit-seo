@@ -963,16 +963,22 @@ For X/Twitter work, `Verified` means the fact was observed in public account fie
 
 ## 4. Platform constraints
 
-- `stable`: The bio is short and should act as a compact landing page for niche, value, proof, and next step.
-- `stable`: Profile image, header, bio, link path, pinned post, and recent topics should not contradict the user's claimed niche.
+- `stable`: X profile bio is limited to 160 characters.
+- `inferred`: Treat the bio as a compact landing page for niche, value, proof, and next step.
+- `stable`: X profiles support editable profile image, header image, name, bio, location, website, birth date, and pinned post fields.
+- `likely`: X account search gives preference to profiles with complete name, username, and bio fields.
+- `inferred`: Profile image, header, bio, link path, pinned post, and recent topics should align around the user's credible niche.
 - `stable`: Alt Text is for accessibility first and AI interpretation second.
-- `stable`: Threads should be used when the topic needs depth, not as a default format for every idea.
+- `inferred`: Use threads or longer posts only when the topic needs depth; do not make them the default format for every idea.
+- `stable`: Standard posts support up to 280 characters and up to 4 total media items.
+- `likely`: Longer posts are Premium-dependent and documented limits vary by client and current product state, so verify current X documentation before drafting beyond 280 characters.
 - `likely`: Native value plus a relevant external link is safer than a post that only points away from the platform.
 - `likely`: Substantive replies and conversation depth are stronger practical signals than shallow engagement volume.
-- `likely`: Staying online long enough to reply while discussion is active supports conversation quality.
+- `inferred`: Staying available to reply while discussion is active can support conversation quality, but timing tactics should be sized to the user's real capacity.
 - `inferred`: Burst posting can make a user's own posts compete for attention when audience overlap is high.
+- `likely`: X publishes current account action limits, including daily post and reply limits for unverified accounts, but states that limits may be temporarily reduced during heavy site usage.
 - `disputed`: A universal external-link penalty should not be presented as settled fact.
-- `disputed`: Exact live ranking weights, posting-frequency thresholds, and Phoenix or Grok-era production behavior should not be claimed as complete current truth.
+- `disputed`: Exact live ranking weights across all X surfaces, universal posting-frequency thresholds, and whether Phoenix or Grok-era repository behavior exactly matches production should not be claimed as complete current truth.
 
 ## 5. Premium and ranking rules
 
@@ -980,7 +986,8 @@ For X/Twitter work, `Verified` means the fact was observed in public account fie
 - `stable`: Verify whether the user actually has Premium before suggesting Premium-only tactics.
 - `stable`: Treat paid Boost tools as separate from organic ranking behavior.
 - `likely`: Premium may change capabilities such as longer posts, longer video, and reply prioritization, but it is not a viral-growth guarantee.
-- `likely`: Historical open-source recommendation material supports directional priors around conversation, dwell, author replies, candidate sourcing, ranking, diversity, and filtering.
+- `likely`: Current X recommender help pages support directional priors around candidate sourcing, personalization signals, ranking, filtering, user controls, and engagement feedback.
+- `inferred`: Historical open-source recommendation repositories can inform architecture priors, but should not be treated as complete current production behavior unless linked from current X documentation.
 - `inferred`: Topical consistency helps out-of-network matching and reader trust, but exact matching behavior is not a live public contract.
 
 ## 6. Agent failure modes
@@ -1005,3 +1012,4 @@ When producing an X/Twitter audit or content plan:
 - Size recommendations to the user's posting capacity and credible niche.
 - Include a one-line `Depth note` when the audit did not inspect enough post history, replies, analytics, or Premium state.
 
+---

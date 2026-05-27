@@ -51,13 +51,14 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 
 ## Rules
 
+- Prefer current official X help and recommender-system documentation before historical open-source repositories when explaining platform behavior.
 - Treat Phoenix, Grok, and related architecture clues as design signals, not as a complete live-production contract.
 - Verify current official X product documentation before giving paid-tier, Premium, post-length, media-length, monetization, or account-capability advice. If verification is unavailable, label the guidance as historical or inferred.
 - Separate facts verified from public account material, facts supplied by the user's context material, and recommendations inferred from those facts.
 - Do not promise ranking outcomes.
 - Do not infer private analytics, Premium status, shadowban status, or ranking treatment from incomplete public views.
 - Keep recommendations aligned with the user's actual niche, expertise, and posting capacity.
-- Distinguish official product features from empirical tactics.
+- Distinguish official product features, current recommender documentation, historical/open-source inference, and empirical tactics.
 - Keep profile positioning, pinned assets, posting topics, and linked external proof aligned around one clear niche.
 - When profile proof, audience, or posting history is missing, ask for it before inventing claims or forcing a content strategy.
 

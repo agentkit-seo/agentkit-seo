@@ -26,7 +26,7 @@ Review the account in this order:
 
 - recent posts stay within a coherent topic range
 - strong posts lead with a clear hook or insight
-- threads are used only when the topic needs depth
+- threads are used only when the topic needs depth, not as a default ranking tactic
 - media includes useful Alt Text when appropriate
 - external links support real goals rather than replacing native value
 
@@ -35,7 +35,7 @@ Review the account in this order:
 - the user replies to thoughtful comments on their own posts
 - posts invite substantive replies when discussion is the goal
 - replies on other accounts add value instead of farming attention
-- burst posting is avoided when it causes self-competition
+- burst posting is avoided when it creates repetitive or low-quality sessions
 
 ## Proof and consistency checklist
 
@@ -47,7 +47,7 @@ Review the account in this order:
 ## Premium and capability checklist
 
 - verify whether the user actually has Premium
-- use long-form and reply-priority advice only when the feature exists
+- use long-form and reply-priority advice only when the feature exists and current limits are verified
 - do not confuse paid boost tools with organic ranking behavior
 
 ## Maintenance rules

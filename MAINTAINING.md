@@ -48,19 +48,19 @@ Create or update these files in order:
 
 ## What to update when wiki knowledge needs refreshing
 
-A maintainer writing skill that automates source fetching and wiki diffing is in development. Until it ships, use this manual process.
-
-For agent-assisted refreshes, invoke the agentkit-seo-wiki-maintenance skill in your coding agent from a local repo clone. The skill implements this manual process as an agentic workflow: it fetches official sources, diffs them against current wiki claims, proposes confidence-labeled patches with source justification for every change, and regenerates llms-full.txt after you confirm. Use Mode 1 for a single module, Mode 2 for a full cross-module audit, Mode 3 for a source-only check.
+For agent-assisted refreshes, invoke the agentkit-seo-wiki-maintenance skill in your coding agent from a local repo clone. The skill implements this manual process as an agentic workflow: it discovers and fetches official sources, diffs them against current wiki claims, proposes confidence-labeled patches with source justification for every change, flags downstream skill or hub files that need separate updates, and regenerates llms-full.txt after you confirm. Use Mode 1 for a single module, Mode 2 for a full cross-module audit, Mode 3 for a source-only check.
 
 1. Read the module's `hub/<module>/sources.md`.
-2. Refetch the official sources listed there.
-3. Add, remove, or downgrade sources that no longer meet the source-quality rules below.
-4. Diff the official source behavior against `.skills/agent-skill/agentkit-seo-<module>/wiki/knowledge.md`.
-5. Update only claims that changed or need clearer confidence labels.
-6. Set `last_reviewed` to the review date.
-7. Set `review_by` from the wiki confidence contract: `stable` after 6 months, `likely` after 3 months, `inferred` or `disputed` after 1 month.
-8. Regenerate `llms-full.txt`.
-9. Run `npm run validate`.
+2. Search for newer or missing official sources for the same surface.
+3. Refetch the official sources listed there and any newly discovered official sources that meet the source-quality rules below.
+4. Add, remove, or downgrade sources that no longer meet the source-quality rules below.
+5. Diff the official source behavior against `.skills/agent-skill/agentkit-seo-<module>/wiki/knowledge.md`.
+6. Update only claims that changed or need clearer confidence labels.
+7. Flag related hub playbooks, runtime references, module `SKILL.md`, `wiki/index.md`, README, or CHANGELOG changes that should be handled in a separate edit.
+8. Set `last_reviewed` to the review date.
+9. Set `review_by` from the wiki confidence contract: `stable` after 6 months, `likely` after 3 months, `inferred` or `disputed` after 1 month.
+10. Regenerate `llms-full.txt`.
+11. Run `npm run validate`.
 
 Do not upgrade an inferred claim to stable because it is common advice. Upgrade only when an acceptable source explicitly supports the behavior.
 
