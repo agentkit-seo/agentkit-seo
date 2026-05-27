@@ -163,6 +163,7 @@ This repository contains several Markdown file classes. They do not all use the 
 | Editorial Knowledge Hub docs | `hub/linkedin/*.md`, `hub/github/*.md`, `hub/cv-ats/*.md`, `hub/web-portfolio/*.md`, `hub/x-twitter/*.md`, `hub/agent-context-optimization/*.md` | Full Universal Template from section 4 with hidden metadata comments |
 | Runtime skill entrypoints | `.skills/agent-skill/*/SKILL.md` | Agent Skills frontmatter with `name` and `description`, followed by concise procedural instructions |
 | Runtime skill references | `.skills/agent-skill/*/references/*.md` | Lean Markdown optimized for agent loading; H1 plus focused procedural sections |
+| Runtime skill wiki entries | `.skills/agent-skill/*/wiki/*.md` | LLM wiki metadata block, one H1 matching `title`, confidence labels, review dates, source status, and conditional-load friendly sections |
 | Provider adapter notes | `.skills/providers/*/install.md` | Lean Markdown describing install targets and provider-specific behavior |
 | Public repository README | `README.md` | GitHub-facing project overview; exempt from frontmatter and the Universal Template |
 | Local planning and status docs | `.assets/docs/*.md` | Practical maintainer notes; frontmatter optional |

@@ -2,56 +2,47 @@
 metadata:
   title: "X optimization sources"
   platform: "x-twitter"
-  objective: "Centralized citations for the X module, separating official source code analysis from empirical research."
+  objective: "Centralized official and maintainer-published sources for X profile, post, search, accessibility, Premium, and recommendation claims."
   status: "review"
-  last_updated: "2026-04-28"
-  tags: ["x", "twitter", "sources", "research"]
+  last_updated: "2026-05-27"
+  tags: ["x", "twitter", "sources", "recommendations"]
   agent_priority: "low"
 -->
 
 # X optimization sources
 
-> This file contains the citations used by the `x-twitter` module. Sources are grouped by confidence level so agents can distinguish hard constraints from hypotheses.
+> This file lists official X, Twitter, and maintainer-published sources that can support X/Twitter module claims. Empirical creator advice and agency SEO posts are excluded from `stable` source support.
 
 ---
 
 ## 1. Overview
 
-The rules defined in the `x-twitter` module are grounded in two distinct types of evidence:
-1. **Primary evidence (highest confidence):** Official X documentation and historically official open-source repositories.
-2. **Architecture snapshots and research:** Useful for understanding possible system design, but not always a live production contract.
-3. **Secondary evidence (lower confidence):** External analyses and agency testing that should be treated as empirical guidance.
+The `x-twitter` module separates current official product behavior from historical open-source recommendation material. The 2023 Twitter recommendation release is useful as architecture evidence, but it is not a complete contract for current production ranking behavior.
 
-## 2. Primary sources (highest confidence)
+## 2. Source table
 
-- [twitter/the-algorithm (GitHub)](https://github.com/twitter/the-algorithm) — Open-source recommendation stack and architecture components for For You.
-- [ScoredTweetsParam.scala (direct path)](https://github.com/twitter/the-algorithm/blob/main/home-mixer/server/src/main/scala/com/twitter/home_mixer/product/scored_tweets/param/ScoredTweetsParam.scala) — Historical and configurable scoring/diversity parameters. Pin specific commits when citing exact constants.
-- [twitter/the-algorithm-ml (GitHub)](https://github.com/twitter/the-algorithm-ml) — Open-source ML artifacts including Heavy Ranker and TwHIN material.
-- [Twitter's Recommendation Algorithm (X Engineering)](https://blog.x.com/engineering/en_us/topics/open-source/2023/twitter-recommendation-algorithm) — Official overview of candidate sourcing, ranking, and filtering stages.
-- [About X Premium (Help Center)](https://help.x.com/en/using-x/x-premium) — Official Premium feature set and reply-priority language.
-- [About longer videos for X Premium subscribers](https://help.x.com/en/using-x/premium-longer-videos) — Official upload limits by platform/tier.
-- [How to write great image descriptions](https://help.x.com/en/using-x/write-image-descriptions) — Official Alt Text guidance focused on accessibility and clarity.
-- [How to use X search](https://help.x.com/en/using-x/x-search) — Official search usage and filtering controls.
-- [Boost (business.x.com)](https://business.x.com/en/products/boost) — Official paid amplification product documentation.
-- [SimClusters KDD 2020 paper (DOI)](https://doi.org/10.1145/3394486.3403370) — Core research on community-based representations used by Twitter.
+| Source | URL | Type | Covers | Confidence |
+|---|---|---|---|---|
+| X Help: How to customize your profile | https://help.x.com/articles/166743 | help-center | Profile image, header image, name, bio, location, website, birth date, pinned post, image recommendations, and 160-character bio limit | stable |
+| X Help: How to change your X username | https://help.x.com/articles/14609 | help-center | Username, handle, display-name behavior, username length, allowed handle characters | stable |
+| X Help: About our approach to recommendations | https://help.x.com/en/rules-and-policies/recommendations | help-center | Recommendation surfaces, amplification limits, For You signals, Trends inputs, user controls | likely |
+| X Engineering Blog: Twitter's Recommendation Algorithm | https://blog.x.com/engineering/en_us/topics/open-source/2023/twitter-recommendation-algorithm | official-blog | Historical For You candidate sourcing, ranking, filtering, and open-source release context | likely |
+| twitter/the-algorithm | https://github.com/twitter/the-algorithm | official-docs | Historical open-source recommendation code and architecture | inferred |
+| twitter/the-algorithm-ml | https://github.com/twitter/the-algorithm-ml | official-docs | Historical open-source ML artifacts, including Heavy Ranker and TwHIN material | inferred |
+| X Help: About X Premium | https://help.x.com/en/using-twitter/twitter-blue-help | help-center | Premium tiers and product capabilities such as longer posts, longer videos, reply prioritization, formatting, and articles | likely |
+| X Help: About longer videos for X Premium subscribers | https://help.x.com/en/using-x/premium-longer-videos | help-center | Video upload duration, resolution, platform, and file-size limits by Premium status | likely |
+| X Help: Undo Post | https://help.x.com/en/using-x/undo-post | help-center | Undo Post behavior and timing as a Premium feature | likely |
+| X Help: How to add image descriptions | https://help.x.com/en/using-x/add-image-descriptions | help-center | Alt Text purpose, user flow, and 1,000-character image-description field | stable |
+| X Help: How to use the ALT badge and GIF label | https://help.x.com/en/using-x/how-to-use-alt-gif | help-center | ALT badge and GIF label behavior | stable |
+| X Help: How to use X search | https://help.x.com/articles/459288 | help-center | Search surfaces, keyword and hashtag search, safe-search controls | stable |
+| X Business: Boost | https://business.x.com/en/products/boost | official-docs | Paid amplification product separate from organic ranking | likely |
 
-## 3. Architecture snapshots and research
+## 3. Removed or downgraded sources
 
-- [xai-org/x-algorithm (GitHub)](https://github.com/xai-org/x-algorithm) — Public architecture snapshot of a Phoenix/Grok-based recommendation pipeline. Treat as a design signal, not as an official guarantee of live production behavior.
+The previous source list included agency blogs, independent experiments, traffic-statistics posts, and a SimClusters research paper. Those sources are excluded from the authoritative source table. Use them only as background for `inferred` or `disputed` notes when explicitly needed.
 
-## 4. Secondary sources (empirical, use with caution)
+The `xai-org/x-algorithm` repository is not retained here because a clean official X product relationship was not established from an official X source. Do not use it to support current X production-behavior claims.
 
-- `[Agency blog]` [X (Twitter) SEO: How to Optimize Your Content for Visibility Beyond Google (SEO Sherpa)](https://seosherpa.com/x-twitter-seo/) — Practical SEO heuristics for profile and post formatting.
-- `[Agency blog]` [Twitter (X) Header & Profile Optimization Guide (TryMyPost)](https://www.trymypost.com/blog/twitter-x-header-optimization) — Practical profile-optimization framework for creators.
-- `[Agency blog]` [Optimizing Your X Business Profile: Strategies for 2026 (Wadi Digital)](https://wadidigital.com/blog/x-twitter-profile-optimization-strategies-for-peak-performance/) — Business-profile optimization ideas (not official algorithm documentation).
-- `[Independent experiment]` [Twitter Carousels & Google Search (Brodie Clark)](https://brodieclark.com/twitter-carousels-google-search/) — Evidence that tweet carousels can affect Google Search Console impressions/clicks.
-- `[Traffic statistics]` [X User Stats (Exploding Topics)](https://explodingtopics.com/blog/x-user-stats) — Secondary mobile/desktop traffic breakdowns and demographic estimates.
-
-## 5. Evidence handling rules for agents
-
-- **Use primary sources for hard rules** (for example, Premium features, official architecture stages, documented product behavior).
-- **Use architecture snapshots for directional design guidance** and label them clearly when they are not official product documentation.
-- **Use secondary sources for recommendations only** and phrase them as hypotheses to test.
-- **Do not present contested claims as deterministic facts** unless an official source explicitly documents them.
+No clean official source was found for exact live ranking weights, universal external-link penalties, shadowban diagnosis, posting-frequency thresholds, or Grok-era production ranking details. Treat those claims as `disputed` unless the user supplies current account evidence or official source material.
 
 ---

@@ -2,64 +2,72 @@
 metadata:
   title: "Web portfolio optimization sources"
   platform: "portfolio"
-  objective: "Centralized citations and official documentation validating the mechanics of portfolio indexing, metadata, structured data, and AI discovery."
-  status: "draft"
-  last_updated: "2026-05-11"
-  tags: ["portfolio", "sources", "research", "indexing"]
+  objective: "Centralized official sources and specs for web portfolio indexing, metadata, structured data, crawler policy, and LLM-readable docs."
+  status: "review"
+  last_updated: "2026-05-27"
+  tags: ["portfolio", "sources", "indexing", "llms-txt"]
   agent_priority: "low"
 -->
 
 # Web portfolio optimization sources
 
-> This file contains the official documentation, standards, and product guidance that validate the rules and recommendations in the web-portfolio module.
+> This file lists official documentation, published specs, and platform crawler docs that support web-portfolio claims. Third-party SEO implementation articles are excluded from `stable` source support.
 
 ---
 
 ## 1. Overview
 
-The rules in this module are based primarily on Google Search Central, Google Search Console Help, Bing Webmaster and IndexNow documentation, and official crawler guidance from AI-search vendors. Google remains the main reference for technical indexability, while Bing, OpenAI, Anthropic, and Perplexity are included where their official documentation adds operational guidance for discovery and retrieval.
+The `web-portfolio` module uses search-engine documentation, web standards, Schema.org vocabulary, and official AI-crawler documentation. The `llms.txt` convention is treated as an emerging spec and inference-time guidance, not as a guaranteed ranking or indexing mechanism.
 
-## 2. Sources
+## 2. Source table
 
-- [Google Search technical requirements](https://developers.google.com/search/docs/essentials/technical) — Confirms the minimum conditions for Google index eligibility: crawl access, HTTP `200`, and indexable content.
-- [Introduction to robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro) — Confirms that `robots.txt` controls crawling, not reliable deindexing, and points to `noindex` for search suppression.
-- [Robots `meta` tag, `data-nosnippet`, and `X-Robots-Tag` specifications](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) — Defines page-level index and snippet controls and explains the interaction between crawl access and indexing directives.
-- [Learn about sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview) — Validates the role of `sitemap.xml`, `lastmod`, and sitemap extensions.
-- [Sitemaps ping endpoint is going away](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping) — Confirms that Google's old sitemap ping endpoint was deprecated and should not be used as a modern submission workflow.
-- [Verify site ownership](https://support.google.com/webmasters/answer/9008080) — Documents Search Console verification methods, including DNS verification for Domain properties.
-- [Inspect and troubleshoot a single page](https://support.google.com/webmasters/answer/12482179) — Defines the live URL inspection workflow and request-indexing workflow for individual pages.
-- [Influencing title links in search results](https://developers.google.com/search/docs/appearance/title-link) — Validates best practices for page titles and explains how Google generates title links.
-- [Control your snippets in search results](https://developers.google.com/search/docs/appearance/snippet) — Confirms that snippets are usually generated from visible page content and only sometimes from meta descriptions.
-- [What is canonicalization](https://developers.google.com/search/docs/crawling-indexing/canonicalization) — Defines canonical selection and duplicate clustering.
-- [Understand the JavaScript SEO basics](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics) — Documents Google's crawl, render, and index pipeline for JavaScript-powered sites.
-- [Dynamic rendering as a workaround](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering) — Confirms that dynamic rendering is a workaround and that static rendering, SSR, or hydration are preferred.
-- [Fix lazy-loaded content](https://developers.google.com/search/docs/crawling-indexing/javascript/lazy-loading) — Defines safe lazy-loading behavior for content that still needs to be discovered and indexed.
-- [Mobile-first indexing best practices](https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing) — Confirms that Google indexes with the mobile crawler and explains mobile parity requirements.
-- [Link best practices for Google](https://developers.google.com/search/docs/crawling-indexing/links-crawlable) — Validates the requirement for crawlable `<a href>` links and meaningful anchor text.
-- [Provide a site name to Google Search](https://developers.google.com/search/docs/appearance/site-names) — Explains homepage site-name signals and the role of `WebSite` structured data.
-- [Understand how structured data works](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) — Explains the purpose of structured data, supported formats, and why JSON-LD is usually the easiest format to maintain.
-- [ProfilePage (Schema.org)](https://schema.org/ProfilePage) — The authoritative spec for `ProfilePage` markup.
-- [Profile page structured data (Google)](https://developers.google.com/search/docs/appearance/structured-data/profile-page) — Confirms `ProfilePage` support and explicitly includes About-style profile pages as valid use cases.
-- [Person (Schema.org)](https://schema.org/Person) — The authoritative spec for `Person` markup used inside the `ProfilePage` `mainEntity` or `Article` `author`.
-- [WebSite (Schema.org)](https://schema.org/WebSite) — The authoritative spec for site-level identity markup.
-- [Organization (Schema.org)](https://schema.org/Organization) — The authoritative spec for organization and publisher identity markup.
-- [SoftwareSourceCode (Schema.org)](https://schema.org/SoftwareSourceCode) — The authoritative spec for developer project markup covering languages, code repository links, and application architecture.
-- [SoftwareApplication (Schema.org)](https://schema.org/SoftwareApplication) — The authoritative spec for deployed software, tools, and application pages.
-- [CollectionPage (Schema.org)](https://schema.org/CollectionPage) — The authoritative spec for index and collection pages.
-- [ContactPage (Schema.org)](https://schema.org/ContactPage) — The authoritative spec for contact routes.
-- [TechArticle (Schema.org)](https://schema.org/TechArticle) — The authoritative spec for technical article pages, including procedural and specification-style content.
-- [BreadcrumbList (Schema.org)](https://schema.org/BreadcrumbList) — The authoritative spec for breadcrumb hierarchy markup.
-- [Breadcrumb structured data (Google)](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) — Validates breadcrumb markup and the recommendation to support site hierarchy with structured data.
-- [Article structured data](https://developers.google.com/search/docs/appearance/structured-data/article) — Documents article markup and author markup best practices relevant to writing and case-study pages.
-- [General structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies) — Confirms that structured data must match visible content and must not be blocked if rich-result eligibility is desired.
-- [JSON-LD structured data implementation reference](https://didof.dev/en/blog/json-ld-structured-data/) — Practical implementation walkthrough for adding JSON-LD to a web project; use as an implementation reference, not as a substitute for Google policy or Schema.org vocabulary.
-- [Understanding Core Web Vitals and Google search results](https://developers.google.com/search/docs/appearance/core-web-vitals) — Defines the current performance metrics Google recommends monitoring for page experience.
-- [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) — Provides the quality framework for people-first portfolio content and the "Who, How, and Why" self-assessment.
-- [IndexNow documentation](https://www.indexnow.org/documentation) — Defines the official protocol for notifying participating search engines about added, updated, or deleted URLs.
-- [Bing Webmaster Tools URL and Content Submission API](https://www.bing.com/webmasters/url-submission-api?source=card) — Documents Bing's direct URL and content submission APIs.
-- [ChatGPT search](https://help.openai.com/en/articles/9237897-chatgpt-search/) — Confirms that inclusion in ChatGPT Search depends in part on allowing `OAI-Searchbot` and its published IP ranges.
-- [The `/llms.txt` file](https://llmstxt.org/) — Official proposal describing `llms.txt` as an inference-time guidance file for LLMs.
-- [Does Anthropic crawl data from the web, and how can site owners block the crawler?](https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler) — Documents Anthropic's crawler separation and robots.txt controls.
-- [Perplexity crawlers](https://docs.perplexity.ai/guides/bots) — Official crawler guidance for Perplexity, including robots.txt tags and use distinctions.
-- [RFC 9309: Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309) — The formal standard for `robots.txt`.
-- [Sitemaps XML format](https://www.sitemaps.org/protocol.html) — The canonical protocol reference for sitemap structure.
+| Source | URL | Type | Covers | Confidence |
+|---|---|---|---|---|
+| Google Search Central: Technical requirements | https://developers.google.com/search/docs/essentials/technical | official-docs | Minimum technical requirements for Google Search eligibility and crawl/index basics | stable |
+| Google Search Central: Introduction to robots.txt | https://developers.google.com/search/docs/crawling-indexing/robots/intro | official-docs | Robots.txt as crawl control, not reliable deindexing | stable |
+| Google Search Central: Robots meta tag and X-Robots-Tag | https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag | official-docs | Page-level index and snippet controls | stable |
+| Google Search Central: Sitemaps | https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview | official-docs | Sitemap role, URL discovery, and `lastmod` guidance | stable |
+| Google Search Central Blog: Sitemaps ping endpoint is going away | https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping | official-blog | Deprecation of Google's sitemap ping endpoint | stable |
+| Google Search Console Help: Verify site ownership | https://support.google.com/webmasters/answer/9008080 | help-center | Search Console verification methods | stable |
+| Google Search Console Help: URL inspection | https://support.google.com/webmasters/answer/12482179 | help-center | Live URL inspection and request-indexing workflow | stable |
+| Google Search Central: Influencing title links | https://developers.google.com/search/docs/appearance/title-link | official-docs | Title-link generation and page-title guidance | stable |
+| Google Search Central: Snippets | https://developers.google.com/search/docs/appearance/snippet | official-docs | Snippet generation and meta-description limits | stable |
+| Google Search Central: Canonicalization | https://developers.google.com/search/docs/crawling-indexing/canonicalization | official-docs | Canonical selection and duplicate clustering | stable |
+| Google Search Central: JavaScript SEO basics | https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics | official-docs | Google crawl, render, and index pipeline for JavaScript sites | stable |
+| Google Search Central: Dynamic rendering | https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering | official-docs | Dynamic rendering as workaround, not preferred long-term approach | stable |
+| Google Search Central: Lazy-loaded content | https://developers.google.com/search/docs/crawling-indexing/javascript/lazy-loading | official-docs | Lazy-loading requirements for discoverable content | stable |
+| Google Search Central: Mobile-first indexing | https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing | official-docs | Mobile crawler and mobile content parity | stable |
+| Google Search Central: Link best practices | https://developers.google.com/search/docs/crawling-indexing/links-crawlable | official-docs | Crawlable anchor links and anchor text | stable |
+| Google Search Central: Structured data introduction | https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data | official-docs | Structured data purpose, formats, and JSON-LD maintainability | stable |
+| Google Search Central: General structured data guidelines | https://developers.google.com/search/docs/appearance/structured-data/sd-policies | official-docs | Structured data must match visible content and be crawlable | stable |
+| Google Search Central: Profile page structured data | https://developers.google.com/search/docs/appearance/structured-data/profile-page | official-docs | ProfilePage support and valid profile-page use cases | stable |
+| Google Search Central: Breadcrumb structured data | https://developers.google.com/search/docs/appearance/structured-data/breadcrumb | official-docs | Breadcrumb markup and hierarchy signals | stable |
+| Google Search Central: Article structured data | https://developers.google.com/search/docs/appearance/structured-data/article | official-docs | Article and author markup guidance | stable |
+| Schema.org: ProfilePage | https://schema.org/ProfilePage | spec | Profile page vocabulary | stable |
+| Schema.org: Person | https://schema.org/Person | spec | Person vocabulary | stable |
+| Schema.org: WebSite | https://schema.org/WebSite | spec | Website identity vocabulary | stable |
+| Schema.org: Organization | https://schema.org/Organization | spec | Organization and publisher identity vocabulary | stable |
+| Schema.org: SoftwareSourceCode | https://schema.org/SoftwareSourceCode | spec | Source-code project vocabulary | stable |
+| Schema.org: SoftwareApplication | https://schema.org/SoftwareApplication | spec | Software product and application vocabulary | stable |
+| Schema.org: CollectionPage | https://schema.org/CollectionPage | spec | Collection and index page vocabulary | stable |
+| Schema.org: ContactPage | https://schema.org/ContactPage | spec | Contact page vocabulary | stable |
+| Schema.org: TechArticle | https://schema.org/TechArticle | spec | Technical article vocabulary | stable |
+| Schema.org: BreadcrumbList | https://schema.org/BreadcrumbList | spec | Breadcrumb hierarchy vocabulary | stable |
+| Google Search Central: Core Web Vitals and search results | https://developers.google.com/search/docs/appearance/core-web-vitals | official-docs | Current page-experience metrics Google recommends monitoring | likely |
+| Google Search Central: Helpful, reliable, people-first content | https://developers.google.com/search/docs/fundamentals/creating-helpful-content | official-docs | People-first content quality framework and "Who, How, and Why" guidance | likely |
+| IndexNow documentation | https://www.indexnow.org/documentation | spec | URL change notification protocol for participating search engines | stable |
+| Bing Webmaster Tools URL Submission API | https://www.bing.com/webmasters/url-submission-api | official-docs | Bing URL and content submission APIs | likely |
+| OpenAI platform docs: Crawlers | https://platform.openai.com/docs/bots | official-docs | OpenAI crawler user agents and robots.txt controls | likely |
+| Anthropic Support: Crawler controls | https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler | help-center | Anthropic crawler separation and robots.txt controls | likely |
+| Perplexity Docs: Crawlers | https://docs.perplexity.ai/guides/bots | official-docs | Perplexity bot names, robots.txt tags, and use distinctions | likely |
+| RFC 9309: Robots Exclusion Protocol | https://www.rfc-editor.org/rfc/rfc9309 | spec | Formal robots.txt standard | stable |
+| Sitemaps XML format | https://www.sitemaps.org/protocol.html | spec | Sitemap XML protocol | stable |
+| llms.txt proposal | https://llmstxt.org/ | spec | `llms.txt` structure, optional sections, and context-file variants | likely |
+
+## 3. Removed or downgraded sources
+
+The previous source list included a third-party JSON-LD implementation walkthrough. That source is useful implementation background, but it does not support `stable` search or structured-data policy claims.
+
+No clean official source was found for guaranteed AI citation, guaranteed LLM ingestion, guaranteed `llms.txt` support by major search or AI providers, or ranking benefits from `llms.txt`. Treat those claims as `disputed`.
+
+---

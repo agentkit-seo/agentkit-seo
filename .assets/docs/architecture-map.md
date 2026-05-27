@@ -31,10 +31,10 @@ Do not load every skill module by default. Route to one module unless the task i
 
 | Layer | Canonical path | Purpose | Edit when |
 | --- | --- | --- | --- |
-| Project overview | `README.md` | Public GitHub overview, install commands, module list, and release summary | Public package behavior, install flow, or project positioning changes |
+| Project overview | `README.md` | Public GitHub overview, problem narrative, install commands, module list, and links to release/privacy docs | Public package behavior, install flow, or project positioning changes |
 | Human-readable hub | `hub/` | Editorial playbooks, templates, examples, and source-traceable methodology for humans | Public playbook content, examples, templates, or source notes change |
 | Maintainer docs | `.assets/docs/` | Internal project notes, status, style rules, and this architecture map | Maintainer-facing process or architecture changes |
-| Runtime skills | `.skills/agent-skill/` | Portable skill source shipped to users | Skill behavior, routing, references, or module methodology changes |
+| Runtime skills | `.skills/agent-skill/` | Portable skill source, references, and wiki knowledge shipped to users | Skill behavior, routing, references, wiki entries, or module methodology changes |
 | Provider adapters | `.skills/providers/` | Provider-specific install notes, wrappers, manifests, and command templates | A provider needs different activation, layout, metadata, or wrapper commands |
 | Export CLI | `.skills/export/` | Install, export, doctor, version, and template commands | Package behavior, install targets, generated layouts, or diagnostics change |
 | Release automation | `.github/workflows/` | Validation and npm publication workflows | CI, release checks, package publication, or tag behavior changes |
@@ -44,6 +44,8 @@ Do not load every skill module by default. Route to one module unless the task i
 ## 4. Source-of-truth rules
 
 Runtime methodology belongs in `.skills/agent-skill/`.
+
+Durable runtime knowledge that is too detailed for `SKILL.md` belongs in each skill's `wiki/` folder. Keep wiki entries conditional-load friendly and maintain their metadata so `agentkit-seo doctor` can validate them.
 
 Human-readable methodology belongs in `hub/`. Keep the root directory focused on project metadata and distribution entrypoints.
 
@@ -61,7 +63,7 @@ Use this table to decide what to edit for common tasks.
 
 | Task | Primary files | Usually also update | Validation |
 | --- | --- | --- | --- |
-| Change a platform skill workflow | `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`, `.skills/agent-skill/agentkit-seo-<module>/references/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
+| Change a platform skill workflow | `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`, `.skills/agent-skill/agentkit-seo-<module>/references/`, `.skills/agent-skill/agentkit-seo-<module>/wiki/` | Related `README.md` module row, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate` |
 | Change a human-readable playbook | `hub/<module>/` | Related runtime skill reference if behavior changes, `README.md`, `.assets/docs/current-status.md` | Link/path smoke check, `npm run validate` if runtime behavior changes |
 | Add a new skill module | `.skills/agent-skill/agentkit-seo-<module>/` | `.skills/export/export-config.json`, provider wrappers, `README.md`, `.assets/docs/project.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | `npm run validate`, export all providers |
 | Change provider install behavior | `.skills/providers/<provider>/`, `.skills/export/export-config.json`, `.skills/export/scripts/agentkit-seo.mjs` | Provider docs in `README.md`, `.skills/architecture.md`, `.assets/docs/current-status.md`, `CHANGELOG.md` | Provider install smoke test |

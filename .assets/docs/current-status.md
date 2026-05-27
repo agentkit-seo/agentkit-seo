@@ -2,7 +2,7 @@
 
 This file is the maintainer snapshot for the current state of AgentKit SEO. It records what is live, what is automated, and what still remains open without turning the public `README.md` into an internal log.
 
-## As of 2026-05-26
+## As of 2026-05-27
 
 ### Public surfaces
 
@@ -37,6 +37,7 @@ GitHub releases currently published or pending:
 - `.skills/providers/` contains provider-specific adapter notes and install shapes.
 - `.skills/export/` contains the install/export CLI.
 - `hub/` contains the human-readable editorial playbooks, templates, examples, and source notes.
+- root `llms.txt` and `llms-full.txt` expose the project map and bundled wiki layer for LLM tools.
 - the repo root is reserved for project metadata, maintainer entrypoints, and provider distribution artifacts
 - the public site mirrors the human-readable layer for crawlability, indexing, and public navigation
 - `.assets/docs/STYLEGUIDE.md` remains the schema reference for repo Markdown authoring
@@ -58,6 +59,7 @@ Each runtime module is self-contained through:
 
 - `SKILL.md`
 - local `references/`
+- local `wiki/` entries for canonical definitions, platform constraints, confidence labels, failure modes, evidence rules, and audit output rules
 - provider-agnostic structure suitable for export and install
 
 ### Current install and distribution status
@@ -80,6 +82,8 @@ Working today:
 - install-time provider detection warnings for clean-machine setups
 - guided context-file scaffolding through `agentkit-seo template context`
 - local install manifests through `agentkit-seo-install.json`
+- bundled wiki folders in installed and exported skill bundles
+- package-level `llms.txt` and `llms-full.txt` files
 
 Provider-facing command shapes available today:
 
@@ -118,6 +122,7 @@ The current public indexing baseline is in place:
 - `robots.txt` allows crawling and exposes the sitemap
 - `sitemap.xml` is generated from public routes, skill routes, and playbooks
 - `llms.txt` provides a public-safe AI-readable summary and route map
+- `llms-full.txt` concatenates the root self-description, module wiki indexes, and module wiki knowledge entries for LLM tools
 - the main repo has its website URL set to the live site
 
 The OG preview asset for the site was corrected and regenerated to fix layout overflow and inconsistent preview styling.
@@ -212,6 +217,13 @@ Completed repository work includes:
 - CLI version, doctor, context template, and install manifest support added
 - package validation now checks that runtime skill and provider assets are included in the npm `files` list
 - GitHub organization profile README updated with clickable maintainer badges
+- root `README.md` rewritten as a public landing page centered on the `CLAUDE.md` / `AGENTS.md` career-context analogy
+- public status and release-process detail removed from `README.md` and kept in maintainer docs and `CHANGELOG.md`
+- LLM wiki layer added to runtime skills with per-module `wiki/index.md` and `wiki/knowledge.md` files
+- root self-description added at `.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md`
+- skill `## Wiki context` sections added so wiki entries load conditionally during agent work
+- CLI doctor extended to validate wiki metadata, review dates, local wiki links, skill wiki context sections, Gemini mirror wiki folders, and package `files` entries for `llms.txt` and `llms-full.txt`
+- export and install behavior now includes wiki folders for provider bundles
 
 ### Current process boundaries
 
@@ -238,3 +250,4 @@ Important gaps still open:
 - the main repo does not yet have a separately configured custom GitHub social preview
 - installed skills expose local package metadata, but do not yet compare against npm latest
 - demo assets and before/after public examples are still missing
+- the maintainer writing loop for refreshing wiki entries from live sources is planned but not yet shipped

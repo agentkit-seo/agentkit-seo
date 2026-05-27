@@ -1,0 +1,115 @@
+# Maintaining AgentKit SEO
+
+This file is for maintainers, contributors, and pull request authors who touch knowledge, sources, skills, wiki entries, or generated LLM-facing files.
+
+## What to update when platform behavior changes
+
+Always update from source evidence outward:
+
+```text
+hub/<module>/sources.md
+hub/<module>/README.md or playbook content
+.skills/agent-skill/agentkit-seo-<module>/wiki/knowledge.md
+.skills/agent-skill/agentkit-seo-<module>/SKILL.md, only if routing changes
+llms-full.txt regeneration
+npm run validate
+```
+
+Use this module map:
+
+| Surface | Source file | Human docs | Runtime wiki | Runtime skill |
+|---|---|---|---|---|
+| Agent context optimization | `hub/agent-context-optimization/sources.md` | `hub/agent-context-optimization/README.md`, module playbooks, templates | `.skills/agent-skill/agentkit-seo-agent-context-optimization/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md` |
+| CV and ATS | `hub/cv-ats/sources.md` | `hub/cv-ats/README.md`, module playbooks, templates | `.skills/agent-skill/agentkit-seo-cv-ats/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-cv-ats/SKILL.md` |
+| GitHub | `hub/github/sources.md` | `hub/github/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-github/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-github/SKILL.md` |
+| LinkedIn | `hub/linkedin/sources.md` | `hub/linkedin/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-linkedin/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-linkedin/SKILL.md` |
+| Web portfolio | `hub/web-portfolio/sources.md` | `hub/web-portfolio/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-web-portfolio/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-web-portfolio/SKILL.md` |
+| X/Twitter | `hub/x-twitter/sources.md` | `hub/x-twitter/README.md`, module playbooks | `.skills/agent-skill/agentkit-seo-x-twitter/wiki/knowledge.md` | `.skills/agent-skill/agentkit-seo-x-twitter/SKILL.md` |
+
+After runtime wiki changes, mirror generated provider files through the export CLI. Do not hand-edit generated mirrors.
+
+## What to update when a new skill or module is added
+
+Create or update these files in order:
+
+1. Add `hub/<module>/README.md`, `hub/<module>/sources.md`, and any human playbooks or templates.
+2. Add `.skills/agent-skill/agentkit-seo-<module>/SKILL.md`.
+3. Add `.skills/agent-skill/agentkit-seo-<module>/references/` for runtime procedures.
+4. Add `.skills/agent-skill/agentkit-seo-<module>/wiki/index.md` and `wiki/knowledge.md`.
+5. Add a `## Wiki context` section to the module `SKILL.md`.
+6. Add the module to `.skills/export/export-config.json` and provider adapter manifests or wrappers when required.
+7. Regenerate provider mirrors, including `skills/` and `commands/`, through the export CLI.
+8. Update `llms.txt`.
+9. Regenerate `llms-full.txt`.
+10. Update the README modules table.
+11. Update `CHANGELOG.md`.
+12. Run `npm run validate`.
+13. Run an export smoke test when provider packaging changed.
+
+## What to update when wiki knowledge needs refreshing
+
+A maintainer writing skill that automates source fetching and wiki diffing is in development. Until it ships, use this manual process.
+
+1. Read the module's `hub/<module>/sources.md`.
+2. Refetch the official sources listed there.
+3. Add, remove, or downgrade sources that no longer meet the source-quality rules below.
+4. Diff the official source behavior against `.skills/agent-skill/agentkit-seo-<module>/wiki/knowledge.md`.
+5. Update only claims that changed or need clearer confidence labels.
+6. Set `last_reviewed` to the review date.
+7. Set `review_by` from the wiki confidence contract: `stable` after 6 months, `likely` after 3 months, `inferred` or `disputed` after 1 month.
+8. Regenerate `llms-full.txt`.
+9. Run `npm run validate`.
+
+Do not upgrade an inferred claim to stable because it is common advice. Upgrade only when an acceptable source explicitly supports the behavior.
+
+## Source quality rules
+
+Use this inclusion bar for `hub/<module>/sources.md`:
+
+| Confidence | Acceptable source | Rule |
+|---|---|---|
+| `stable` | Official platform documentation, official help-center pages describing system behavior, official engineering or product blogs, published specs, RFC-style documents, or official maintainer-published repositories | The source directly supports the claim and is unlikely to change quickly. |
+| `likely` | Official sources that describe current behavior but depend on product tiers, UI state, geography, rollout status, undocumented implementation details, or provider-specific support | The source is authoritative, but the claim may change or may not apply everywhere. |
+| `inferred` | Official source code snapshots, architecture writeups, discontinued/historical official material, or repo-owned methodology where no external platform source exists | The source supports a directional interpretation, not a current product guarantee. |
+| `disputed` | Conflicting official sources, unsupported public narratives, secondary commentary, or behavior where no clean official source exists | Keep the claim out of stable guidance until better evidence exists. |
+
+Do not use these as `stable` sources:
+
+- Third-party SEO blogs
+- LinkedIn influencer posts
+- Medium articles
+- Reddit threads
+- Community speculation
+- Agency experiments
+- Vendor posts that describe observed behavior without official platform backing
+- Login-gated pages that reviewers cannot inspect
+
+If a source is useful but does not meet the inclusion bar, either omit it from `sources.md` or mention it in a "removed or downgraded" note with `inferred` or `disputed` handling.
+
+## Files never edited directly
+
+Do not edit these by hand:
+
+- `skills/` Gemini mirror files. They are generated by the export CLI.
+- `commands/` Gemini command wrappers. They are generated by the export CLI.
+- `llms-full.txt`. It is generated from root and module wiki files.
+
+Provider adapter folders under `.skills/providers/` are thin wrappers. Put methodology changes in `hub/` and `.skills/agent-skill/`, not in provider adapter notes.
+
+## Pull request checklist
+
+Before opening a PR that touches knowledge, skills, wiki entries, or sources:
+
+- Read `.assets/docs/architecture-map.md` — covers how hub/, .skills/, provider adapters, and generated mirrors relate to each other.
+- Read `.assets/docs/STYLEGUIDE.md` — covers tone, formatting, and claim-labeling conventions for all knowledge and skill files.
+- Read `.skills/architecture.md` — covers the runtime skill folder structure and export conventions.
+- Update `hub/<module>/sources.md` before changing claims in hub playbooks or runtime wiki files.
+- Keep official sources separate from inference and disputed public narratives.
+- Add or update wiki metadata, confidence labels, `last_reviewed`, and `review_by`.
+- Update `SKILL.md` only when routing, loading, or workflow behavior changes.
+- Regenerate `llms-full.txt` after wiki changes.
+- Regenerate provider mirrors through the export CLI when runtime skills change.
+- Update README and CHANGELOG for user-visible behavior changes.
+- Run `npm run validate`.
+- Run `node .skills/export/scripts/agentkit-seo.mjs export --provider all --output /tmp/agentkit-seo-export --force` when provider packaging or mirrored files changed.
+- Run `npm pack --dry-run` when package contents changed.
