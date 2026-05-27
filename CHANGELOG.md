@@ -6,13 +6,24 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.6.0 - 2026-05-27
+
 ### Added
 
-- Added LLM wiki entries for all AgentKit SEO runtime modules and root `llms.txt` / `llms-full.txt` maps for LLM-readable project discovery.
+- Added an LLM wiki layer with `wiki/` folders for all six platform modules, a root AgentKit SEO self-description, a conditional loading convention, shared evidence labels, and inline confidence labels.
+- Added root `llms.txt` and `llms-full.txt` files and included them in the npm package.
+- Added `MAINTAINING.md` with platform update chains, source quality rules, generated-file boundaries, and a contributor pull request checklist.
 
 ### Changed
 
-- Updated provider skill copying to preserve `wiki/` support folders alongside `references/` during install and export.
+- Extended `agentkit-seo doctor` to validate wiki metadata, stale review dates, local wiki links, skill wiki context sections, Gemini mirror wiki presence, and package file coverage for LLM-facing files.
+- Updated provider install and export copying so `wiki/` folders are included for all providers alongside `SKILL.md` and `references/`.
+- Cleaned `hub/*/sources.md` inventories per module by removing third-party sources from stable support or downgrading unsupported claims to inferred or disputed handling.
+- Rewrote the root `README.md` around the `AGENTS.md` career-context analogy, added an LLM Wiki section, and tightened the public landing-page structure for production use.
+
+### Fixed
+
+- Fixed the Gemini mirror export gap so generated `skills/` mirrors include matching `wiki/` folders.
 
 ## 1.5.3 - 2026-05-26
 
