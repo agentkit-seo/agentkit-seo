@@ -50,6 +50,8 @@ Create or update these files in order:
 
 A maintainer writing skill that automates source fetching and wiki diffing is in development. Until it ships, use this manual process.
 
+For agent-assisted refreshes, invoke the agentkit-seo-wiki-maintenance skill in your coding agent from a local repo clone. The skill implements this manual process as an agentic workflow: it fetches official sources, diffs them against current wiki claims, proposes confidence-labeled patches with source justification for every change, and regenerates llms-full.txt after you confirm. Use Mode 1 for a single module, Mode 2 for a full cross-module audit, Mode 3 for a source-only check.
+
 1. Read the module's `hub/<module>/sources.md`.
 2. Refetch the official sources listed there.
 3. Add, remove, or downgrade sources that no longer meet the source-quality rules below.
