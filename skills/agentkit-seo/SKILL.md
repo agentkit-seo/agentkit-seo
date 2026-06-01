@@ -47,6 +47,14 @@ For broad requests with no clear surface:
 - For private or login-gated surfaces, ask the user for pasted section text, screenshots, exports, or a local text file instead of guessing.
 - If critical facts are missing, ask only for the minimum extra inputs needed to proceed.
 
+## Version check workflow
+
+- When a user asks whether AgentKit SEO is current, or when an installed skill seems older than the documented package behavior, prefer the explicit CLI check instead of guessing from memory.
+- To check the package being run, use `agentkit-seo update` or `npx agentkit-seo update`.
+- To check the version installed for a specific provider, use `npx agentkit-seo@latest update --provider <provider>` with the same `--project-root` or `--target-dir` flags used for install when the provider is not in its default location.
+- Treat the npm lookup as a networked, user-visible action. Do not claim that AgentKit SEO performs background update checks.
+- If the check reports `outdated`, recommend reinstalling with `npx agentkit-seo@latest install --provider <provider> --force` and preserve any provider-specific destination flags.
+
 ## Module map
 
 - LinkedIn work: `agentkit-seo-linkedin`

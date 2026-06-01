@@ -91,7 +91,7 @@ Check whether a newer package is published before reinstalling:
 npx agentkit-seo update
 ```
 
-This compares your local version against the npm registry latest. It runs only when invoked and needs network access; there is no background or automatic check. To update, reinstall from the latest package.
+This compares your local package version against the npm registry latest. To check a provider install instead, run `npx agentkit-seo@latest update --provider codex` and preserve any custom `--project-root` or `--target-dir` flags. The check runs only when invoked and needs network access; there is no background or automatic check. To update, reinstall from the latest package.
 
 Remove an install with the same provider and destination flags used to install it:
 

@@ -64,7 +64,7 @@ Working install targets:
 Working CLI surfaces:
 
 - `agentkit-seo version`
-- `agentkit-seo update` (compares the local version against the npm registry latest; explicit, network-only, never automatic; supports `--json` and `--timeout`)
+- `agentkit-seo update` (compares either the running package or an installed provider manifest against the npm registry latest; explicit, network-only, never automatic; supports `--provider`, `--json`, and `--timeout`)
 - `agentkit-seo doctor`
 - `agentkit-seo list providers`
 - `agentkit-seo list skills`
@@ -141,7 +141,7 @@ The project is not currently prioritizing:
 
 - benchmark or eval suites
 - elaborate showcase assets
-- online latest-version checks inside installed agents
+- background latest-version checks inside installed agents
 - broad marketplace-specific rewrites before provider behavior is confirmed
 
 ### Open gaps
@@ -149,7 +149,7 @@ The project is not currently prioritizing:
 - Gemini CLI gallery listing still depends on external crawler/listing behavior after tagged releases.
 - Antigravity CLI command syntax needs live `agy` confirmation.
 - The main source repo still needs a dedicated GitHub social preview.
-- `agentkit-seo update` provides an explicit npm-latest comparison, but installed skills still carry only local package metadata and do not self-check against npm at agent runtime.
+- Installed skills can prompt an explicit `agentkit-seo update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
 - Public demo assets and before/after examples are still sparse.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
 

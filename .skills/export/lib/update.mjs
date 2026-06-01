@@ -1,7 +1,13 @@
+import fs from "node:fs";
+import path from "node:path";
 import process from "node:process";
+
+import { readJsonFile } from "./filesystem.mjs";
+import { resolveInstallRoot } from "./install.mjs";
 
 const REGISTRY_URL = "https://registry.npmjs.org";
 const DEFAULT_TIMEOUT_MS = 7000;
+const MANIFEST_NAME = "agentkit-seo-install.json";
 
 function parseSemver(version) {
   const match = /^(\d+)\.(\d+)\.(\d+)(?:[-+]([0-9A-Za-z.-]+))?$/.exec(version ?? "");
@@ -73,9 +79,50 @@ async function fetchLatestVersion(name, timeoutMs) {
   }
 }
 
+function readInstalledVersion(config, flags) {
+  if (!flags.provider) {
+    return { version: config.package.version, provider: null, manifestPath: null };
+  }
+
+  const provider = flags.provider;
+  if (provider === "all") {
+    throw new Error("Update checks accept one provider at a time so the install location stays explicit.");
+  }
+
+  const providerSpec = config.providers[provider];
+  if (!providerSpec) {
+    const available = Object.keys(config.providers).sort().join(", ");
+    throw new Error(`Unknown provider '${provider}'. Available: ${available}`);
+  }
+
+  const targetRoot = resolveInstallRoot(flags, providerSpec, provider);
+  const manifestPath = path.join(targetRoot, MANIFEST_NAME);
+  if (!fs.existsSync(manifestPath)) {
+    throw new Error(
+      `No AgentKit SEO install manifest found at ${targetRoot}. Confirm the install location with --target-dir or --project-root, then rerun the update check.`
+    );
+  }
+
+  let manifest;
+  try {
+    manifest = readJsonFile(manifestPath);
+  } catch (error) {
+    throw new Error(`Could not read install manifest at ${manifestPath}: ${error.message}`);
+  }
+
+  const version = manifest?.package?.version;
+  if (typeof version !== "string" || version.length === 0) {
+    throw new Error(`Install manifest at ${manifestPath} does not include package.version.`);
+  }
+
+  return { version, provider, manifestPath };
+}
+
 export async function checkForUpdates(config, flags) {
+  const installed = readInstalledVersion(config, flags);
   const name = config.package.name;
-  const current = config.package.version;
+  const current = installed.version;
+  const sourceLabel = installed.provider ? String(installed.provider) + " install" : "local package";
   const asJson = Boolean(flags.json);
   const timeoutMs = flags.timeout ? Number(flags.timeout) : DEFAULT_TIMEOUT_MS;
   if (Number.isNaN(timeoutMs) || timeoutMs <= 0) {
@@ -88,7 +135,7 @@ export async function checkForUpdates(config, flags) {
   } catch (error) {
     if (asJson) {
       console.log(
-        JSON.stringify({ name, current, latest: null, status: "error", error: error.message }, null, 2)
+        JSON.stringify({ name, source: sourceLabel, provider: installed.provider, manifest: installed.manifestPath, current, latest: null, status: "error", error: error.message }, null, 2)
       );
     } else {
       console.error(`error: could not check npm for the latest ${name} version: ${error.message}`);
@@ -113,11 +160,15 @@ export async function checkForUpdates(config, flags) {
   }
 
   if (asJson) {
-    console.log(JSON.stringify({ name, current, latest, status }, null, 2));
+    console.log(JSON.stringify({ name, source: sourceLabel, provider: installed.provider, manifest: installed.manifestPath, current, latest, status }, null, 2));
     return;
   }
 
   console.log(name);
+  console.log(`- source: ${sourceLabel}`);
+  if (installed.manifestPath) {
+    console.log(`- manifest: ${installed.manifestPath}`);
+  }
   console.log(`- installed: ${current}`);
   console.log(`- npm latest: ${latest}`);
   if (status === "current") {
@@ -125,7 +176,16 @@ export async function checkForUpdates(config, flags) {
   } else if (status === "outdated") {
     console.log(`An update is available: ${current} -> ${latest}`);
     console.log("Reinstall the skills from the latest package to update, for example:");
-    console.log("  npx agentkit-seo@latest install --provider <provider> --force");
+    const providerFlag = installed.provider ? installed.provider : "<provider>";
+    let destinationFlags = "";
+    if (flags["target-dir"]) {
+      destinationFlags = ` --target-dir ${flags["target-dir"]}`;
+    } else if (flags["project-root"]) {
+      destinationFlags = ` --project-root ${flags["project-root"]}`;
+    } else if (installed.provider === "shared") {
+      destinationFlags = " --target-dir <dir>";
+    }
+    console.log(`  npx agentkit-seo@latest install --provider ${providerFlag}${destinationFlags} --force`);
   } else if (status === "ahead") {
     console.log("Your local version is newer than the latest published release.");
   } else {

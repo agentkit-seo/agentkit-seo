@@ -5,7 +5,7 @@ export function usage() {
 
 Usage:
   agentkit-seo version
-  agentkit-seo update [--json] [--timeout <ms>]
+  agentkit-seo update [--provider <provider>] [--project-root <dir>|--target-dir <dir>] [--json] [--timeout <ms>]
   agentkit-seo doctor
   agentkit-seo export --provider <provider|all> --output <dir> [--force]
   agentkit-seo install --provider <provider> [--project-root <dir>|--target-dir <dir>] [--commands-target-dir <dir>] [--force]

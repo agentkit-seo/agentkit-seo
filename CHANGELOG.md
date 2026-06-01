@@ -6,6 +6,10 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+### Changed
+
+- Extended `agentkit-seo update --provider <provider>` to read the installed provider manifest and compare that installed skill version against npm latest, so agents can suggest an explicit update check without background network behavior.
+
 ## 1.7.0 - 2026-06-01
 
 ### Added

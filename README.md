@@ -207,7 +207,13 @@ npx agentkit-seo list providers
 npx agentkit-seo list skills
 ```
 
-`update` checks the npm registry for the latest published version and compares it to the version you are running. It only runs when you invoke it; AgentKit SEO never checks for updates on its own. When an update is available, reinstall the skills from the latest package.
+`update` checks the npm registry for the latest published version. By default it compares the package you are running; with `--provider <provider>` it reads the installed provider manifest and compares the installed skill version. It only runs when you invoke it; AgentKit SEO never checks for updates on its own. When an update is available, reinstall the skills from the latest package.
+
+Check the installed Codex skill bundle directly:
+
+```bash
+npx agentkit-seo@latest update --provider codex
+```
 
 Remove an install with the same provider and destination flags used to install it:
 
