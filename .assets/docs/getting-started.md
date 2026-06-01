@@ -50,7 +50,7 @@ npx agentkit-seo version
 Expected output:
 
 ```text
-agentkit-seo 1.6.1
+agentkit-seo 1.7.0
 Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.
 ```
 
@@ -84,6 +84,22 @@ gemini-cli
 opencode
 shared
 ```
+
+Check whether a newer package is published before reinstalling:
+
+```bash
+npx agentkit-seo update
+```
+
+This compares your local version against the npm registry latest. It runs only when invoked and needs network access; there is no background or automatic check. To update, reinstall from the latest package.
+
+Remove an install with the same provider and destination flags used to install it:
+
+```bash
+npx agentkit-seo uninstall --provider codex
+```
+
+Uninstall reads the install manifest and removes only the AgentKit SEO skill folders, command wrappers, and manifest. Use `--dry-run` to preview removals before deleting anything.
 
 ## 4. First use
 
