@@ -85,4 +85,4 @@ When an AI agent is tasked with optimizing a user's LinkedIn profile:
 
 ---
 
-Runtime skill: [.skills/agent-skill/agentkit-seo-linkedin/SKILL.md](../../.skills/agent-skill/agentkit-seo-linkedin/SKILL.md). Source notes: [sources.md](./sources.md).
+Runtime skill: [.skills/agent-skill/agentkit-seo-linkedin/SKILL.md](../../.skills/agent-skill/agentkit-seo-linkedin/SKILL.md). Source notes: [sources.md](./sources.md). Worked example: [headline and About before and after](./examples/headline-and-about-before-after.md).

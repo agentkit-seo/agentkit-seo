@@ -347,7 +347,16 @@ Expected output:
 - follow-up prompts for each focused skill
 ```
 
-## 9. See also
+## 9. Worked before and after examples
+
+The demos above show prompts and expected output shapes. For concrete before and after artifacts grounded in a public sample context file, see:
+
+- [GitHub profile before and after](../../hub/github/examples/profile-readme-before-after.md)
+- [LinkedIn headline and About before and after](../../hub/linkedin/examples/headline-and-about-before-after.md)
+
+Both reuse the [sample context file](../../hub/agent-context-optimization/examples/renato-mignone-context-file-example.md) so the optimized output stays traceable to verified facts.
+
+## 10. See also
 
 - [Getting started](./getting-started.md)
 - [Architecture map](./architecture-map.md)

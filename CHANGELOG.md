@@ -10,6 +10,7 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 - Added `DESIGN.md`, a human and recruiter-facing overview that maps each applied agentic-AI concept (career context file, LLM Wiki, progressive disclosure, Markdown knowledge graph, evidence labeling, one-source-many-adapters) to its origin and to where it lives in the source tree, with a knowledge-graph diagram and a release-by-release record of how the design evolved.
 - Added a `Design principles` section to `README.md` with a concept table and a Mermaid knowledge-graph diagram, plus a `Design` navigation link and a `getting-started.md` path entry.
+- Added worked before/after examples for GitHub and LinkedIn under `hub/github/examples/` and `hub/linkedin/examples/`, grounded in the public sample context file and linked from the module READMEs and the end-to-end demos doc.
 
 ### Changed
 

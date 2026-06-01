@@ -151,7 +151,7 @@ The project is not currently prioritizing:
 - Antigravity CLI command syntax needs live `agy` confirmation.
 - The main source repo still needs a dedicated GitHub social preview.
 - Installed skills can prompt an explicit `agentkit-seo update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
-- Public demo assets and before/after examples are still sparse.
+- Worked before/after examples now exist for GitHub and LinkedIn under `hub/*/examples/`; CV/ATS, web-portfolio, and X/Twitter still lack equivalent before/after artifacts.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
 
 ---
