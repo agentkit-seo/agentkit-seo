@@ -6,6 +6,8 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.7.0 - 2026-06-01
+
 ### Added
 
 - Added `agentkit-seo update`, an explicit, opt-in CLI command that compares the local package version against the npm registry latest and reports whether an update is available. It runs only when invoked, supports `--json` and `--timeout`, and never checks for updates automatically.

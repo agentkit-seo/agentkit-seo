@@ -9,13 +9,14 @@ This file is the maintainer snapshot for what is live, what is packaged, and wha
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.6.1`
+- Current package version: `agentkit-seo@1.7.0`
 
 Published release line:
 
 - `v0.1.0` through `v0.1.4`
 - `v1.5.0` through `v1.5.3`
 - `v1.6.0` through `v1.6.1`
+- `v1.7.0`
 
 ### Current architecture
 
