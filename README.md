@@ -160,13 +160,15 @@ AgentKit SEO is a small system that applies current agentic-AI ideas, not just a
 
 | Concept | One-line idea | Where it lives |
 | --- | --- | --- |
-| Career context file | A private `AGENTS.md` for a person: verified facts an agent reads before writing | [agent-context-optimization](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
+| Career context file | A private `AGENTS.md` for a person: verified facts plus stated goals and targeting an agent reads before writing | [agent-context-optimization](./.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
 | LLM Wiki | A knowledge base a maintainer agent compiles from sources and keeps current, which runtime agents read instead of re-deriving facts per query | [`wiki/`](./.skills/agent-skill/agentkit-seo/wiki/agentkit-seo.md), [llms-full.txt](./llms-full.txt) |
 | Progressive disclosure | Load one module, then only the references a task needs | `## Wiki context` sections in each `SKILL.md` |
 | Markdown knowledge graph | Cross-referenced `.md` files with one entrypoint and explicit edges | [references](./.skills/agent-skill/agentkit-seo/references/), [llms.txt](./llms.txt) |
 | Evidence and confidence labels | Mark each claim as verified, inferred, or needing evidence | `Boundaries` sections and `wiki/` metadata |
 | One source, many adapters | Keep one portable source, generate per-provider layouts | [`.skills/agent-skill/`](./.skills/agent-skill/), [`.skills/providers/`](./.skills/providers/) |
 | AI-answer-engine readiness (GEO/AEO) | Structure each surface so AI search and assistants can quote a person accurately | [GitHub Copilot indexing](./hub/github/copilot-and-agents.md), [LinkedIn AI structure](./hub/linkedin/ai-agent-optimization.md), [portfolio AEO](./hub/web-portfolio/llms-and-aeo.md) |
+| Role-grounded persona and self-review | Each skill reasons as the relevant professional (hiring manager, recruiter, ATS screener) and checks its own draft for fabrication, evidence labels, and scope before returning | each module `SKILL.md` overview and its `## Self-review` step |
+| Audit scorecard | Weighted 0-100 triage with bands and a fix-first order, used as an internal prioritization heuristic, not a platform ranking | [audit-scoring.md](./.skills/agent-skill/agentkit-seo-github/references/audit-scoring.md) |
 
 Hiring discovery increasingly runs through AI answer engines, so the same properties these modules enforce, consistent facts across surfaces and verifiable proof, are what those systems can quote accurately. The project treats generative and answer engine optimization as an evolving practice with no guaranteed ranking outcome, not a promise.
 

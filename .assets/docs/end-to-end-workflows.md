@@ -70,6 +70,8 @@ Create my agent-context-file from these inputs:
 
 Write the result to ~/.agentkit-seo/<name>-context.md if file editing is available.
 Separate verified facts, supplied context, inferences, and missing evidence.
+Also capture my goals and targeting: ideal role, current focus, what I want to
+work on next, target locations (or no restriction), interests, and constraints.
 Ask before turning uncertain claims into public copy.
 ```
 
@@ -79,6 +81,7 @@ Expected output:
 - context-file draft or saved file path
 - source ledger for every major claim
 - conflicts found across CV, LinkedIn, GitHub, and portfolio material
+- goals and targeting captured as stated intent, kept separate from verified facts
 - missing evidence list
 - reusable positioning summary
 - next recommended platform skill

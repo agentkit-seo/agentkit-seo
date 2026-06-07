@@ -6,7 +6,7 @@ AgentKit SEO is a two-surface system: a public human-readable website and an ins
 
 AgentKit SEO lets a user install a focused skill bundle into their preferred coding agent, point it at career material, and receive grounded optimization work for LinkedIn, GitHub, CVs, portfolios, X/Twitter, and reusable professional context files.
 
-The core workflow is context first. A private agent context file acts like a `CLAUDE.md` or `AGENTS.md` for a person's career: verified facts, constraints, target roles, links, achievements, and positioning live in one reusable Markdown source of truth outside this repository.
+The core workflow is context first. A private agent context file acts like a `CLAUDE.md` or `AGENTS.md` for a person's career: verified facts, constraints, target roles, links, achievements, and positioning live in one reusable Markdown source of truth outside this repository. The file also records the user's direction in a `Goals and targeting` section, ideal role, current focus, what they want to work on next, target locations (or no restriction), interests, and constraints, kept as stated intent separate from verified facts so downstream skills can aim output without inventing experience.
 
 ## 2. Public surfaces
 
@@ -90,6 +90,8 @@ The package ships these shared skills:
 
 This modular shape solves the context-window problem: a LinkedIn task should load the LinkedIn skill, not the whole system.
 
+Each user-facing module opens its `SKILL.md` from a role-grounded professional persona (for example a hiring manager and maintainer for GitHub, a technical recruiter for LinkedIn) and runs a `## Self-review` step before returning, checking for fabricated facts, evidence-label accuracy, scope and goal alignment, and impact ordering. The GitHub, LinkedIn, CV/ATS, and web-portfolio modules also ship an `audit-scoring.md` weighted 0-100 triage scorecard used strictly as an internal prioritization heuristic, not a platform ranking.
+
 The source tree also contains `agentkit-seo-wiki-maintenance` as a maintainer-only workflow for local source audits and wiki refreshes. It is not part of the installed user runtime bundle.
 
 ## 6. Install model
@@ -113,9 +115,9 @@ The npm package is the canonical registry artifact. GitHub releases mirror npm v
 
 Before release:
 
-1. Update package and provider manifest versions.
+1. Set the new version in `package.json`, then keep the six version-bearing files in sync: `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files (the Gemini manifests are refreshed by regenerating the mirror through the export CLI). `agentkit-seo doctor` fails on any drift.
 2. Update `CHANGELOG.md` and `.assets/docs/current-status.md`.
-3. Run `npm run validate`.
+3. Run `npm test` and `npm run validate`.
 4. Run provider export or install smoke tests.
 5. Run `npm pack --dry-run`.
 6. Push an annotated `vX.Y.Z` tag.

@@ -2,14 +2,14 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-06-01
+## As of 2026-06-07
 
 ### Public surfaces
 
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.7.0`
+- Current package version: `agentkit-seo@1.8.0`
 
 Published release line:
 
@@ -17,6 +17,7 @@ Published release line:
 - `v1.5.0` through `v1.5.3`
 - `v1.6.0` through `v1.6.1`
 - `v1.7.0`
+- `v1.8.0`
 
 ### Current architecture
 
@@ -45,9 +46,12 @@ The installable user bundle ships seven portable runtime skill bundles:
 
 Each runtime module carries:
 
-- `SKILL.md`
-- local `references/`
+- `SKILL.md`, with a role-grounded professional persona in its overview and a `## Self-review` step that checks the draft for fabricated facts, evidence-label accuracy, scope and goal alignment, and impact ordering before returning
+- local `references/`, including an `audit-scoring.md` weighted 0-100 triage scorecard on the GitHub, LinkedIn, CV/ATS, and web-portfolio modules (an internal prioritization heuristic, not a platform ranking)
 - local `wiki/` entries where durable constraints, confidence labels, failure modes, and audit rules belong
+- `license` and a `metadata` block (homepage, repository) in frontmatter so provenance travels with the installed skill
+
+The `agentkit-seo-agent-context-optimization` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, target locations (or `No restriction`), interests, and constraints as stated intent kept separate from verified facts.
 
 ### Install and distribution status
 
