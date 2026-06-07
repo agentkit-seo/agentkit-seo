@@ -44,6 +44,8 @@ Do not load every skill module by default. Route to one module unless the task i
 | Release automation | `.github/workflows/` | Validation and npm publication workflows | CI, release checks, package publication, or tag behavior changes |
 | Public release notes | `CHANGELOG.md` | User-facing release history | Any package-visible behavior changes |
 | Package metadata | `package.json` | npm package metadata, bin command, scripts, and version | CLI, dependencies, package files, scripts, or version changes |
+| Claude Code plugin marketplace | `.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json` | `/plugin` install channel and plugin manifest, validated by `doctor` against `package.json` | Plugin metadata, marketplace listing, or version changes |
+| CLI unit tests | `test/` | Deterministic `node:test` suite for the export CLI library, run by `npm test` in CI | CLI library behavior in semver, arg parsing, package-file matching, install-root, or uninstall paths changes |
 
 ## 4. Source-of-truth rules
 
@@ -105,11 +107,11 @@ Provider wrappers must route to the shared skill names:
 
 Before pushing a release tag:
 
-1. Update `package.json`.
-2. Update any provider manifest with an explicit package version.
+1. Set the new version in `package.json`, then keep the six version-bearing files in sync (`doctor` fails on drift): `package.json`, `.claude-plugin/plugin.json`, the plugin entry in `.claude-plugin/marketplace.json`, the root `gemini-extension.json`, and the two provider `gemini-extension.json` files. See [MAINTAINING.md](../../MAINTAINING.md#version-files-to-bump-on-release).
+2. Regenerate the Gemini mirror through the export CLI so the Gemini manifests pick up the new version.
 3. Move public changes from `CHANGELOG.md` `Unreleased` into the new version section.
 4. Update `.assets/docs/current-status.md` with the current package version and release list.
-5. Run `npm run validate`.
+5. Run `npm test` and `npm run validate`.
 6. Run CLI smoke tests for changed commands.
 7. Run provider export or install smoke tests for changed providers.
 8. Run `npm pack --dry-run`.
