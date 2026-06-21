@@ -19,7 +19,7 @@ metadata:
 
 Current X help pages document recommender systems for For You, Search, Explore, Notifications, and other surfaces. They describe candidate sourcing, personalization signals, ranking, filtering, feedback collection, and user controls at a product level.
 
-X also open-sourced major parts of its recommendation stack in `twitter/the-algorithm` and `twitter/the-algorithm-ml`. Those repositories provide useful historical architecture context. Later repositories such as `xai-org/x-algorithm` require separate maintainer review before being used as production evidence.
+X also open-sourced major parts of its recommendation stack in `twitter/the-algorithm` and `twitter/the-algorithm-ml`. Those repositories provide useful historical architecture context. Later repositories such as `xai-org/x-algorithm` require separate maintainer review before being used as source evidence.
 
 When optimizing content, prioritize current official X documentation first. Treat historical repositories, architecture snapshots, and creator heuristics as inference, not guaranteed ranking laws.
 
@@ -62,14 +62,14 @@ X has historically sourced out-of-network content using graph and embedding-base
 
 ## 5. Phoenix and Grok-era architecture snapshots
 
-Recent public architecture snapshots describe a Phoenix-style pipeline with:
+Unreviewed public architecture snapshots describe a Phoenix-style pipeline with:
 
 - In-network and out-of-network candidate sourcing.
 - Multi-action prediction and weighted scoring.
 - Author diversity scoring to avoid feed monotony.
 - Filtering layers for policy, safety, duplication, and user preferences.
 
-These are useful design signals. They are not a full public contract for every live ranking behavior unless current official X documentation links them as production documentation.
+Treat these as inferred design signals only. They are not a full public contract for live ranking behavior unless current official X documentation links them as production documentation.
 
 **Not publicly documented as deterministic rules:**
 

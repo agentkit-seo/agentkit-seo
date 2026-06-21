@@ -57,7 +57,7 @@ Agents must route to the specific file needed for the task at hand. Do not load 
 - [posting-strategy.md](./posting-strategy.md) — Content SEO, opening-hook heuristics, link placement experiments, and native media.
 - [engagement-and-growth.md](./engagement-and-growth.md) — Conversation depth, replies, and source-aware niche engagement.
 - [premium-strategies.md](./premium-strategies.md) — Officially documented Premium capabilities and practical tactics.
-- [sources.md](./sources.md) — Primary and secondary sources with confidence notes.
+- [sources.md](./sources.md) — Official, maintainer-published, and confidence-labeled sources with downgrade notes.
 
 ## 5. Rules
 

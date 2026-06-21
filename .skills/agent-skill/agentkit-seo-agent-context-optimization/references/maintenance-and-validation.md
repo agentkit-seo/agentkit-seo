@@ -34,7 +34,7 @@ A valid context file should satisfy all of the following:
 - required sections are present: scope declaration, education, skills index, languages
 - conditional sections appear only when the user has relevant content
 - semantic tags are used consistently: `[DEGREE]`, `[COURSE]`, `[PROJECT]`, `[THESIS]`, `[ROLE]`, `[PAPER]`, `[PREPRINT]`, `[CERT]`, `[COMPETITION]`, `[AWARD]`, `[ORG]`
-- every `[PROJECT]`, `[THESIS]`, and `[ROLE]` entry has a meaningful `TL;DR` when the format requires one
+- every `[PROJECT]`, `[THESIS]`, `[COMPETITION]`, and `[ROLE]` entry has a meaningful `TL;DR` when the format requires one
 - the Skills index contains only skills supported elsewhere in the file
 - the `VERIFIED FACTS` comment exists and covers the hard facts in the body
 - dates, titles, metrics, and chronology are internally consistent

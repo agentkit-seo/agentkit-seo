@@ -2,16 +2,16 @@
 metadata:
   title: "Agent workflow for CV optimization"
   platform: "cv-ats"
-  objective: "Explains why LaTeX (.tex) is the superior format for AI agents automating CV tailoring."
+  objective: "Explains why LaTeX (.tex) can be a strong source format for AI agents automating CV tailoring."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-06-21"
   tags: ["cv", "ats", "latex", "agents", "automation"]
   agent_priority: "high"
 -->
 
 # Agent workflow for CV optimization
 
-> This file details a robust technical workflow for AI agents managing CVs, advocating for LaTeX (`.tex`) as a version-controlled source format with precise visual control.
+> This file details a robust technical workflow for AI agents managing CVs, using LaTeX (`.tex`) as a version-controlled source format with precise visual control when the user is comfortable compiling PDFs.
 
 ---
 
@@ -21,9 +21,9 @@ While word processors like Microsoft Word are standard for humans, they introduc
 
 ## 2. The LaTeX advantage
 
-**Rule:** Use `.tex` as the source of truth for programmatic CV generation. LaTeX files are pure plain text. This allows AI agents to directly inject keywords, rewrite bullet points, and reorder sections without ever breaking the visual layout.
+**Recommendation:** Use `.tex` as the source of truth for programmatic CV generation when the user already works comfortably with LaTeX. LaTeX files are plain text, which helps AI agents inject keywords, rewrite bullet points, and reorder sections with less risk than binary or layout-heavy formats. Layout still needs a compile and extraction check after edits.
 
-**Recommendation:** Compile `.tex` directly to PDF for the final ATS submission. A PDF generated from LaTeX gives strong control over layout, margins, and typography. Unlike Word-to-PDF exports that can scramble the underlying text layer with floating text boxes, `pdflatex` or `xelatex` usually produces a cleaner text layer. The exported PDF still needs to pass a plain-text extraction check before submission.
+**Recommendation:** Compile `.tex` directly to PDF for the final ATS submission when the employer accepts PDF. A PDF generated from LaTeX gives strong control over layout, margins, and typography, but the exported PDF still needs to pass a plain-text extraction check before submission.
 
 ## 3. Agent workflow constraints
 

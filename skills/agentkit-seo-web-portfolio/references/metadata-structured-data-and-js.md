@@ -28,7 +28,7 @@
 - contact pages: `ContactPage`
 - software project pages: `SoftwareSourceCode` or `SoftwareApplication` when the visible page actually supports that type
 - writing pages: `Article`, `BlogPosting`, or `TechArticle` only when visible content supports article fields
-- outbound identity links: `rel="me"` where useful
+- outbound identity links: `rel="me"` where useful, without presenting it as a guaranteed identity or ranking mechanism
 
 Keep markup aligned with visible content. Do not pile on unrelated schema types.
 

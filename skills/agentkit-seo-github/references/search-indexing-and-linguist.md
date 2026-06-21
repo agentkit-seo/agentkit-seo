@@ -8,7 +8,7 @@
   - file size limits
   - searchable byte limits per file
   - repository file-count limits
-  - archive status
+  - archive status and query filters
   - fork-specific search restrictions
 
 ## Stable search rules
@@ -16,7 +16,7 @@
 - keep the default branch non-empty
 - keep showcase repositories mildly active over time
 - use clear file names, symbol names, and directory names
-- remember that archived repositories are not searchable
+- remember that archived repositories are read-only and can be filtered with `is:archived`, so active showcase repositories should usually stay unarchived
 - understand that untouched forks are poor portfolio anchors because fork visibility in search is constrained
 
 ## Linguist rules

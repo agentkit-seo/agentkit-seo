@@ -4,7 +4,7 @@ metadata:
   platform: "linkedin"
   objective: "Master index for optimizing LinkedIn profiles around current ranking signals, search discovery, and AI-readable profile structure."
   status: "draft"
-  last_updated: "2026-05-11"
+  last_updated: "2026-06-21"
   tags: ["linkedin", "360Brew", "search", "ai"]
   agent_priority: "high"
 -->
@@ -65,7 +65,7 @@ The optimization logic is divided into the following documents, ordered from fou
 - **[Experience and skills](./experience-and-skills.md):** How to keep profile facts aligned with the CV, surface proof links, and use current LinkedIn skills features well.
 - **[Featured section](./featured-section.md):** Structuring the Featured carousel with "Proof of Work" (video demos, architecture diagrams, GitHub repositories).
 - **[Engagement strategy](./engagement-strategy.md):** Evidence-based posting and commenting practices that align with documented relevance and quality signals.
-- **[Sources](./sources.md):** Official help pages, the 360Brew paper, and limited external sources used in this module.
+- **[Sources](./sources.md):** Official LinkedIn help pages plus downgrade notes for 360Brew research and external commentary.
 
 ## 5. Reference profiles
 

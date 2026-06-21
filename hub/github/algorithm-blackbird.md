@@ -4,7 +4,7 @@ metadata:
   platform: "github"
   objective: "Practical guide to GitHub code search mechanics and the documented restrictions that affect repository discoverability."
   status: "draft"
-  last_updated: "2026-04-29"
+  last_updated: "2026-06-21"
   tags: ["github", "algorithm", "blackbird", "search"]
   agent_priority: "medium"
 -->
@@ -30,7 +30,8 @@ GitHub's global code search is powered by Blackbird. Unlike standard web search 
 - Only files smaller than `384 KB` are searchable.
 - Only the first `500 KB` of each file is searchable.
 - Only repositories with fewer than `500,000` files are searchable.
-- Archived repositories are not searchable.
+
+**Recommendation:** Treat archived repositories as weaker portfolio anchors. Current GitHub Code Search syntax supports the `is:archived` qualifier, so archived repositories can still be queried. They are read-only, harder to maintain, and easier to filter out, so keep showcase repositories unarchived when they are meant to represent active work.
 
 ## 3. Search behavior and visibility
 

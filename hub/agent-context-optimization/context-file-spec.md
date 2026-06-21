@@ -46,7 +46,7 @@ The context file contains eleven sections in a fixed order. The table below defi
 **Rule:** Use one H1 heading containing the person's full name and a one-phrase professional descriptor.
 
 ```markdown
-# Firstname Lastname — Professional Descriptor
+# Firstname Lastname - Professional Descriptor
 ```
 
 The descriptor reflects the person's positioning, not their current job title. It is the phrase an agent uses as a default tagline in generated outputs.
@@ -307,7 +307,7 @@ These rules apply across the entire file regardless of section.
 
 ### 3.1 Semantic section tags
 
-Every H3 and deeper heading representing a professional artifact must begin with a semantic tag in square brackets. The table below lists the full tag vocabulary.
+Every heading representing a professional artifact must begin with a semantic tag in square brackets, including degree entries that use H2 headings. The table below lists the full tag vocabulary.
 
 | Tag | Used for |
 |---|---|

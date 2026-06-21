@@ -4,7 +4,7 @@ metadata:
   platform: "cv-ats"
   objective: "Methodology for extracting and integrating job description keywords effectively into a CV."
   status: "draft"
-  last_updated: "2026-04-28"
+  last_updated: "2026-06-21"
   tags: ["cv", "ats", "keywords", "seo"]
   agent_priority: "high"
 -->
@@ -31,7 +31,7 @@ ATS platforms and recruiter workflows often use keyword matches, structured fiel
 
 ## 3. Keyword integration rules
 
-**Recommendation:** Contextualize keywords for semantic matching. Modern recruiting tools increasingly use semantic search or AI-assisted screening, but the exact models are usually not public. Integrate target keywords directly into Work Experience bullet points to show how the skill was used and why it mattered. Do not create a massive block of comma-separated keywords at the bottom of the CV.
+**Recommendation:** Contextualize keywords for parser and recruiter clarity. Some recruiting workflows may use matching tools or AI-assisted screening, but exact models are usually vendor-specific and not public. Integrate target keywords directly into Work Experience bullet points to show how the skill was used and why it mattered. Do not create a massive block of comma-separated keywords at the bottom of the CV.
 
 **Rule:** Avoid keyword stuffing. Do not hide keywords using white text or artificially repeat a keyword more than naturally required. Parsers may still extract hidden text, and human reviewers can reject the application if the tactic is discovered.
 

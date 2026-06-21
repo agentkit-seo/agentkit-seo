@@ -4,7 +4,7 @@ metadata:
   platform: "portfolio"
   objective: "Define the optional AI-discovery enhancements that make a personal website easier to retrieve and summarize accurately."
   status: "draft"
-  last_updated: "2026-04-28"
+  last_updated: "2026-06-21"
   tags: ["portfolio", "llms", "aeo", "llms-txt"]
   agent_priority: "medium"
 -->
@@ -25,11 +25,11 @@ Traditional SEO is still the base layer of discoverability, but personal website
 
 **Rule:** Treat `llms.txt` as a curated guide, not as a shadow sitemap. List the most important pages only: homepage, About page, Projects hub, best project-detail pages, writing hub, and selected articles or case studies. The file should stay short enough to be genuinely useful to a model with limited context.
 
-**Recommendation:** Publish `/llms-full.txt` to provide a complete context dump. While `llms.txt` serves as a lightweight index, the proposed `llms-full.txt` variant contains the full Markdown content of the most important pages on the site. For developer portfolios, a self-contained context file can help models summarize projects with fewer external fetch requests.
+**Recommendation:** Consider `/llms-full.txt` only when the site can maintain a synchronized Markdown export. While `llms.txt` serves as a lightweight index, the proposed `llms-full.txt` variant contains the full Markdown content of selected important pages. For developer portfolios, this can reduce repeated fetches for systems that choose to use it, but it is optional and not a documented ranking or indexing standard.
 
 **Recommendation:** Keep canonical pages concise and self-contained. LLM retrieval works better when a project page can be summarized accurately from its own content. Do not force agents to reconstruct meaning by stitching together dozens of fragments across the site.
 
-**Recommendation:** Make crawler policy explicit when AI search visibility matters. OpenAI's guidance for ChatGPT Search is clear: inclusion depends in part on allowing `OAI-Searchbot`. Other vendors also expose separate bots for different functions. Keep the site's `robots.txt` policy intentional instead of assuming every crawler behaves like Googlebot.
+**Recommendation:** Make crawler policy explicit when AI search visibility matters. OpenAI documents crawler user agents and robots.txt controls, and other vendors also expose crawler documentation. Keep the site's `robots.txt` policy intentional instead of assuming every crawler behaves like Googlebot.
 
 **Recommendation:** Separate retrieval policy from training policy when the provider supports distinct bots. Some vendors use one bot for search or user-directed retrieval and another for model training or general crawling. Treat these as separate policy decisions.
 

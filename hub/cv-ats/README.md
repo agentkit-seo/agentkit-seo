@@ -4,7 +4,7 @@ metadata:
   platform: "cv-ats"
   objective: "Master index and routing logic for formatting and optimizing CVs for Applicant Tracking Systems."
   status: "draft"
-  last_updated: "2026-05-11"
+  last_updated: "2026-06-21"
   tags: ["cv", "ats", "resume", "index"]
   agent_priority: "high"
 -->
@@ -56,10 +56,10 @@ The optimization logic is divided into the following documents, ordered from the
 - **[Core sections](./core-sections.md):** The mandatory CV sections you must include, their exact naming conventions, and the correct chronological ordering.
 - **[Formatting rules](./formatting-rules.md):** Hard constraints on the single-page layout, typography, file types, and eliminating wasted space.
 - **[Common pitfalls](./common-pitfalls.md):** The elements that immediately break ATS parsers (graphics, tables), how to run the mandatory "copy-paste-friendly" test, and avoiding the LinkedIn "Trust Gap".
-- **[Keyword strategy](./keyword-strategy.md):** The methodology for extracting hard and soft skills, handling gap analysis and skill translation, and injecting keywords for Reasoning-Based Matching.
+- **[Keyword strategy](./keyword-strategy.md):** The methodology for extracting hard and soft skills, handling gap analysis and skill translation, and integrating keywords for parser and recruiter clarity.
 - **[Achievement metrics](./achievement-metrics.md):** The syntactic formula (Action Verb + Task + Result) and STAR/STAR+R/XYZ methods for writing high-impact bullet points, including the Resume Quantifier strategy.
 - **[Agent workflow](./agent-workflow.md):** Why plain-text LaTeX (.tex) is the preferred format for automated CV tailoring by AI agents.
-- **[Sources](./sources.md):** Citations and research on legacy and LLM-based ATS algorithms and parsing logic.
+- **[Sources](./sources.md):** Official ATS, recruiting-platform, and parser documentation plus downgrade notes for unsupported claims.
 
 ## 5. Usage for agents
 

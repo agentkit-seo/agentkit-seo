@@ -2,26 +2,26 @@
 metadata:
   title: "CV achievement metrics"
   platform: "cv-ats"
-  objective: "Defines the syntactic formula for writing high-impact, easily parsed experience bullet points."
+  objective: "Defines a structured formula for writing high-impact, readable experience bullet points."
   status: "draft"
-  last_updated: "2026-04-28"
+  last_updated: "2026-06-21"
   tags: ["cv", "ats", "metrics", "achievements"]
   agent_priority: "medium"
 -->
 
 # CV achievement metrics
 
-> This file defines the mandatory formula for structuring work experience bullet points so they highlight quantifiable impact for both parsers and human reviewers.
+> This file defines a structured formula for work experience bullet points so they highlight quantifiable impact for both parsers and human reviewers.
 
 ---
 
 ## 1. Overview
 
-Recruiters and many screening workflows prioritize candidates who demonstrate impact rather than just listing responsibilities. The structure of a bullet point must clearly connect an action to a business result. This document enforces a specific syntactic formula so bullet points are rich in relevant keywords, easily parsed, and persuasive to humans.
+Recruiters and many screening workflows prioritize candidates who demonstrate impact rather than just listing responsibilities. Strong bullet points connect an action to a business result. This document recommends a clear syntactic formula so bullet points are rich in relevant keywords, easier to scan, and persuasive to humans.
 
 ## 2. The bullet point formula
 
-**Rule:** Structure every bullet point using an established framework like STAR, STAR+R, or XYZ. Adopt a rigorous formula to make impact visible. The baseline is Action Verb + Task + Result. Highly recommended variations include:
+**Recommendation:** Structure bullet points with an established framework like STAR, STAR+R, or XYZ when the experience supports it. Adopt a rigorous formula to make impact visible. The baseline is Action Verb + Task + Result. Highly recommended variations include:
 - **STAR:** Situation (context), Task (challenge), Action (what you did), Result (quantifiable outcome).
 - **STAR+R:** Adds *Reflection* to STAR (what was learned or how it shaped future architectural decisions). This is useful for seniority signals and interview preparation, especially when a reviewer wants evidence of reasoning.
 - **XYZ:** Accomplished [X] as measured by [Y], by doing [Z].

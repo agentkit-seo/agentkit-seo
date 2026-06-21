@@ -4,7 +4,7 @@ metadata:
   platform: "linkedin"
   objective: "Explains what is officially documented about LinkedIn ranking, what the public 360Brew debate adds, and which conclusions remain inferred."
   status: "draft"
-  last_updated: "2026-04-28"
+  last_updated: "2026-06-21"
   tags: ["linkedin", "360Brew", "ranking", "search"]
   agent_priority: "medium"
 -->
@@ -17,15 +17,15 @@ metadata:
 
 ## 1. Overview
 
-LinkedIn has publicly documented how Feed and search relevance work, and LinkedIn researchers previously published a 360Brew paper. These are not the same level of evidence.
+LinkedIn has publicly documented how Feed and search relevance work. 360Brew research and public commentary are useful background, but they are not official product documentation for current LinkedIn ranking behavior.
 
-As of April 28, 2026, the grounded position is:
+As of June 21, 2026, the grounded position is:
 
 - LinkedIn officially says Feed ranking uses signals from profile identity, content, network, and recent activity.
 - LinkedIn officially says people search results depend on relevance to the searcher, profile completeness, skills, connections, and standard job titles.
-- LinkedIn researchers publicly described 360Brew as a pre-production foundation model for ranking and recommendation tasks.
+- 360Brew material and public commentary may explain research direction, but they are not retained as stable source support in this module.
 - Several marketing and creator articles claim 360Brew is deployed, but those claims are not official LinkedIn product documentation.
-- Secondary reporting and LinkedIn posts quote LinkedIn VP Tim Jurka saying 360Brew was tested with a small group of members and shut down.
+- Secondary reporting and social posts about LinkedIn statements are useful dispute context, not stable product evidence.
 - This module therefore treats 360Brew as research and public debate, not as a production rulebook.
 
 ## 2. What LinkedIn officially documents
@@ -42,11 +42,11 @@ As of April 28, 2026, the grounded position is:
 
 ## 3. What the 360Brew debate changes
 
-**Rule:** Treat 360Brew as evidence of research direction, not proof of rollout. The 360Brew paper is useful because it shows LinkedIn explored large textual models for ranking and recommendation across many tasks. It does not prove that 360Brew is the live Feed algorithm. Strong claims about full deployment should be treated as secondary commentary unless LinkedIn publishes official product or engineering documentation confirming them.
+**Rule:** Treat 360Brew as dispute context, not proof of rollout. The public discussion around 360Brew may show research direction and market interpretation, but it does not prove that 360Brew is the live Feed algorithm. Strong claims about full deployment should be treated as secondary commentary unless LinkedIn publishes official product or engineering documentation confirming them.
 
 **Inference:** semantic consistency remains a durable bet. LinkedIn's official guidance already combines profile identity, content, activity, and relevance. Independent commentary around 360Brew points in the same practical direction: clear role positioning, consistent topic focus, and explicit evidence of skills are safer than vague content. It is not reasonable to infer a specific live "semantic coherence score" unless LinkedIn publishes that behavior.
 
-**Inference:** recent behavior likely remains important. LinkedIn's official help pages already emphasize recent engagement and recent content. The 360Brew paper reinforces the idea that recent behavior can be useful ranking context, but it does not prove specific folklore rules such as fixed weighting windows or exact feed caps.
+**Inference:** recent behavior likely remains important. LinkedIn's official help pages already emphasize recent engagement and recent content. Public 360Brew commentary points in a compatible direction, but it does not prove specific folklore rules such as fixed weighting windows or exact feed caps.
 
 **Rule:** Separate observed platform changes from model naming. Reach patterns, content-format performance, and recommendation behavior can change even if the community name for the change is wrong. Agents should optimize for official relevance signals and clearly labeled observations, not for a branded algorithm narrative.
 

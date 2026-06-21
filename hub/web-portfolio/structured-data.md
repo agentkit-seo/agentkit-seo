@@ -63,7 +63,7 @@ Use this map as the default schema strategy:
 
 **Recommendation:** Link authors to a real author or About URL. When article markup includes an author, use `Person` and provide a valid `url` or `sameAs` value that points to a page or profile that identifies the author clearly.
 
-**Recommendation:** Use `rel="me"` for cross-platform identity verification. On outbound links to external profiles (e.g., GitHub, LinkedIn, Mastodon), include the `rel="me"` attribute. This serves as a decentralized identity-verification function, helping AI disambiguation systems and search engines confirm that the portfolio and the social profiles belong to the exact same entity.
+**Recommendation:** Use `rel="me"` for cross-platform identity links when the target platform supports the convention or the site owner wants explicit reciprocal identity signals. On outbound links to external profiles such as GitHub, LinkedIn, or Mastodon, the attribute can clarify author-controlled identity relationships. Do not present it as a guaranteed search ranking or AI-disambiguation mechanism.
 
 **Rule:** Keep markup aligned with visible page content. Structured data must describe what users can actually see on the page. Hidden, misleading, or generic markup can invalidate rich-result eligibility and weaken trust signals.
 

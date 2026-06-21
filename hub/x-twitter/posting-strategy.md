@@ -25,7 +25,7 @@ Content formatting influences how quickly users understand and engage with a pos
 
 There is no official public rule proving a deterministic "first 50 characters" ranking factor.
 
-**Recommendation:** Place the primary keyword or strongest hook at the start of the post (often within the first ~50 characters) to improve scannability and intent matching.
+**Recommendation:** Place the primary keyword or strongest hook near the start of the post to improve scannability and intent matching.
 
 ### 2.2 Alt Text and AI visibility
 
@@ -59,13 +59,13 @@ Bad example (Alt Text for a chart):
 ```text
 Screenshot 2026-04-24
 ```
-*Why it fails:* It provides zero context to the AI or search engines, resulting in lost ranking potential.
+*Why it fails:* It provides little context for assistive technology, readers, or downstream systems that rely on text to understand the image.
 
 ## 4. Anti-Patterns
 
 ### Main-body external links
 
-**What it looks like:** Writing a short hook and immediately pasting a YouTube or Substack link. **Why it can fail:** A link-first post with low native value often gets weaker engagement. A universal platform-level link penalty is not publicly documented as a hard rule. **What to do instead:** Write a comprehensive, zero-click post or thread that delivers the core value natively. Place the external link in the first reply.
+**What it looks like:** Writing a short hook and immediately pasting a YouTube or Substack link. **Why it can fail:** A link-first post with low native value often gets weaker engagement. A universal platform-level link penalty is not publicly documented as a hard rule. **What to do instead:** Write a comprehensive, zero-click post or thread that delivers the core value natively. Use external links where they support the goal, and test inline links against first-reply placement when optimization matters.
 
 ### High-frequency burst posting
 
