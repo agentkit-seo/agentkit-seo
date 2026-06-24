@@ -4,7 +4,7 @@ metadata:
   platform: "github"
   objective: "Master index and routing logic for optimizing a GitHub profile and repositories for internal search and Copilot."
   status: "draft"
-  last_updated: "2026-05-11"
+  last_updated: "2026-06-24"
   tags: ["github", "index", "seo", "blackbird"]
   agent_priority: "high"
 -->
@@ -66,9 +66,10 @@ The optimization logic is divided into the following documents, ordered from fou
 
 When an AI agent is tasked with optimizing a user's GitHub presence:
 
-1. **Information Fetching**: Before auditing, you can retrieve the user's public bio, profile README, and up to 20 recent repository READMEs without consuming REST API rate limits by executing:
-   `node skills/agentkit-seo-github/scripts/github-fetcher.mjs <username> [output_dir] [max_repos]`
-   Then inspect the generated report at `output/github_<username>_report.md`.
+1. Before auditing, retrieve public profile fields, pinned or popular repositories, recent source repositories, and bounded README excerpts without authentication:
+   `node <skill_dir>/scripts/github-fetcher.mjs <username> [output_dir] [max_repos]`
+   The default depth is 3 repositories. Inspect `output/github_<username>_report.md` for agent context and the adjacent JSON file for structured evidence.
+   Treat extraction warnings as unavailable evidence because public GitHub HTML can change without notice.
 2. Review this index to determine which specific sub-module is relevant to the task.
 3. If optimizing the overarching profile (`username/username`), load `profile-architecture.md` and `profile-readme.md`.
 4. If optimizing a specific project repository, load `repository-seo.md` and `linguist-and-stats.md`.

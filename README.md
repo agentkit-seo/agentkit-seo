@@ -104,6 +104,8 @@ Typical outputs include:
 - LinkedIn headline, About, Experience, Featured, and Skills recommendations.
 - Next actions ranked by impact, evidence, and missing inputs.
 
+The GitHub skill also includes a tokenless public-profile fetcher that produces bounded Markdown and JSON evidence reports from public profile HTML and raw README files. It does not request a personal access token for public audits and reports extraction uncertainty instead of treating unparsed fields as absent.
+
 ## New Here?
 
 Start with the practical onboarding path before opening every module:

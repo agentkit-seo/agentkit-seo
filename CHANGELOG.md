@@ -6,9 +6,18 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## 1.8.2 - 2026-06-24
+
 ### Added
 
-- Added a non-API GitHub profile and repository fetching script (`github-fetcher.mjs`) in the `agentkit-seo-github` skill. The script fetches profile bio, profile README, and up to 20 recent active repositories (excluding duplicates and forks) using lightweight HTTP requests and Git CLI commands, applying sequential throttling to avoid rate limits.
+- Added a tokenless GitHub public-profile fetcher to the `agentkit-seo-github` skill. It extracts public profile fields, distinguishes pinned repositories from GitHub's popular-repository fallback, retrieves recent source repositories and bounded README excerpts, and writes compact Markdown plus structured JSON reports.
+
+### Changed
+
+- Reworked the GitHub fetcher to remove shell execution and Git CLI calls, validate profile input, use semantic HTML landmarks instead of exact class strings, retry bounded public requests, default to the three-repository audit depth, preserve partial-result warnings, and use English comments and output throughout.
+- Added deterministic tests for profile, showcase, repository-list, pagination, input-validation, HTML-cleaning, and report-boundary behavior.
 
 ## 1.8.1 - 2026-06-21
 

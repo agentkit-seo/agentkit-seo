@@ -2,14 +2,14 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-06-21
+## As of 2026-06-24
 
 ### Public surfaces
 
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.8.1`
+- Current package version: `agentkit-seo@1.8.2`
 
 Published release line:
 
@@ -17,7 +17,7 @@ Published release line:
 - `v1.5.0` through `v1.5.3`
 - `v1.6.0` through `v1.6.1`
 - `v1.7.0`
-- `v1.8.0` through `v1.8.1`
+- `v1.8.0` through `v1.8.2`
 
 ### Current architecture
 
@@ -52,6 +52,8 @@ Each runtime module carries:
 - `license` and a `metadata` block (homepage, repository) in frontmatter so provenance travels with the installed skill
 
 The `agentkit-seo-agent-context-optimization` module additionally captures the user's direction, not only their history: a `Goals and targeting` section in the context-file spec, template, and intake records ideal role, current focus, what they want to work on next, growth direction, target locations (or `No restriction`), interests, evidence boundaries, positioning constraints, and claims to avoid as stated intent kept separate from verified facts.
+
+The `agentkit-seo-github` module includes a tokenless public-profile fetcher. It reads public GitHub HTML and raw repository files without requesting a user token, distinguishes pinned repositories from the popular-repository fallback, defaults to three selected repositories, and emits Markdown plus JSON with extraction warnings when public markup cannot be interpreted confidently.
 
 ### Install and distribution status
 
@@ -127,7 +129,7 @@ Website automation:
 
 Validation surfaces currently include:
 
-- `npm test` (deterministic `node:test` unit suite for the CLI library)
+- `npm test` (deterministic `node:test` unit suite for the CLI library and GitHub public-profile fetcher)
 - `npm run validate`
 - CLI version check
 - provider export smoke test
