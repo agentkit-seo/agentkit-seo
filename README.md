@@ -54,6 +54,14 @@ The goal is simple:
 
 The personal career context file supplies facts and direction. Platform skills supply formatting, discoverability guidance, and channel-specific constraints. They do not become a second source of truth.
 
+### Use it in any AI conversation
+
+<p align="center">
+  <img src=".assets/image/public-visuals/use-case.png" alt="A career task is completed by attaching a personal career context file to any AI chat or agent and asking for a grounded draft" width="100%" />
+</p>
+
+The personal career context file is not limited to AgentKit SEO modules. Attach it to any AI chat or agent that needs to understand an individual's career, then describe the current task. It can ground application answers, professional messages, emails, interview preparation, and other career-related drafts without requiring the same background to be explained again.
+
 ### Why grounding matters
 
 <p align="center">
