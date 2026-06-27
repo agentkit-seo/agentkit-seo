@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/agentkit-seo"><img src="https://img.shields.io/npm/v/agentkit-seo?style=flat-square&logo=npm&color=CB3837" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/agentkit-seo"><img src="https://img.shields.io/npm/dm/agentkit-seo?style=flat-square&logo=npm&color=CB3837&label=downloads" alt="monthly npm downloads" /></a>
+  <a href="#modules"><img src="https://img.shields.io/badge/agent_skills-7-2563EB?style=flat-square" alt="7 agent skills" /></a>
   <a href="https://github.com/agentkit-seo/agentkit-seo/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/agentkit-seo/agentkit-seo/validate.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=build" alt="build status" /></a>
   <a href="https://github.com/agentkit-seo/agentkit-seo/stargazers"><img src="https://img.shields.io/github/stars/agentkit-seo/agentkit-seo?style=flat-square&logo=github&label=stars" alt="GitHub stars" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/agentkit-seo/agentkit-seo?style=flat-square&label=license" alt="MIT license" /></a>
