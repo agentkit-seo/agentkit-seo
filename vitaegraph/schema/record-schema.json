@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/agentkit-seo/agentkit-seo/vitaegraph/schema/record-schema.json",
+  "title": "VitaeGraph record frontmatter",
+  "type": "object",
+  "required": ["type", "id", "title"],
+  "properties": {
+    "type": {
+      "enum": ["project", "experience", "education", "course", "thesis", "certification", "award", "publication"]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*:[a-z0-9][a-z0-9-]*$"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "status": { "type": "string" },
+    "visibility": { "enum": ["private", "public"] },
+    "parent": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*:[a-z0-9][a-z0-9-]*$"
+    },
+    "related_records": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*:[a-z0-9][a-z0-9-]*$" },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "type": { "const": "project" } } }, "then": { "properties": { "id": { "pattern": "^project:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "experience" } } }, "then": { "properties": { "id": { "pattern": "^experience:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "education" } } }, "then": { "properties": { "id": { "pattern": "^education:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "course" } } }, "then": { "properties": { "id": { "pattern": "^course:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "thesis" } } }, "then": { "properties": { "id": { "pattern": "^thesis:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "certification" } } }, "then": { "properties": { "id": { "pattern": "^certification:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "award" } } }, "then": { "properties": { "id": { "pattern": "^award:[a-z0-9][a-z0-9-]*$" } } } },
+    { "if": { "properties": { "type": { "const": "publication" } } }, "then": { "properties": { "id": { "pattern": "^publication:[a-z0-9][a-z0-9-]*$" } } } }
+  ],
+  "additionalProperties": true
+}
