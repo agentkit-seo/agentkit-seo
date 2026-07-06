@@ -1,4 +1,6 @@
-# VitaeGraph
+<p align="center">
+  <img src="../.assets/image/vitaegraph-banner.png" alt="VitaeGraph" width="80%" />
+</p>
 
 VitaeGraph is AgentKit SEO's private, Markdown-first career knowledge graph. It gives detailed projects, roles, degrees, courses, thesis work, certifications, awards, and publications a durable structure that agents can inspect selectively.
 
