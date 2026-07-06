@@ -7,8 +7,11 @@ import {
   getAttribute,
   parseArguments,
   parseProfileHtml,
+  parseRepositoryApiResponse,
+  parseRepositoryPageHtml,
   parseRepositoryListHtml,
-  renderMarkdownReport
+  renderMarkdownReport,
+  renderRepositoryMarkdownReport
 } from "../.skills/agent-skill/agentkit-seo-github/scripts/github-fetcher.mjs";
 
 const PROFILE_WITH_PINS = `
@@ -95,6 +98,7 @@ test("parseArguments validates usernames and defaults to three repositories", ()
   const parsed = parseArguments(["https://github.com/example-owner"]);
   assert.equal(parsed.username, "example-owner");
   assert.equal(parsed.maxRepositories, 3);
+  assert.equal(parsed.outputDirectory, null);
   assert.throws(
     () => parseArguments(["example-owner;touch-pwned"]),
     /unsupported characters/
@@ -103,6 +107,55 @@ test("parseArguments validates usernames and defaults to three repositories", ()
     () => parseArguments(["https://example.com/example-owner"]),
     /Only github.com/
   );
+});
+
+test("parseArguments accepts an exact GitHub repository URL", () => {
+  const parsed = parseArguments(["https://github.com/example-owner/example-repo"]);
+  assert.equal(parsed.targetType, "repository");
+  assert.equal(parsed.username, "example-owner");
+  assert.equal(parsed.repository, "example-repo");
+});
+
+test("parseRepositoryPageHtml extracts bounded repository metadata", () => {
+  const parsed = parseRepositoryPageHtml(
+    `<meta property="og:description" content="A useful repository">
+     <a href="/topics/security">security</a>
+     <span itemprop="programmingLanguage">TypeScript</span>`,
+    "example-owner",
+    "example-repo"
+  );
+  assert.equal(parsed.description, "A useful repository");
+  assert.deepEqual(parsed.topics, ["security"]);
+  assert.deepEqual(parsed.languages, ["TypeScript"]);
+});
+
+test("parseRepositoryApiResponse keeps useful evaluation metadata", () => {
+  const parsed = parseRepositoryApiResponse(
+    {
+      archived: false,
+      created_at: "2024-01-02T03:04:05Z",
+      default_branch: "main",
+      description: "A useful repository",
+      fork: false,
+      homepage: "https://example.com",
+      html_url: "https://github.com/example-owner/example-repo",
+      language: "TypeScript",
+      license: { spdx_id: "MIT" },
+      name: "example-repo",
+      owner: { login: "example-owner" },
+      pushed_at: "2026-07-05T09:00:00Z",
+      topics: ["security", "agents"],
+      updated_at: "2026-07-05T10:00:00Z"
+    },
+    "example-owner",
+    "example-repo"
+  );
+
+  assert.equal(parsed.defaultBranch, "main");
+  assert.equal(parsed.license, "MIT");
+  assert.equal(parsed.primaryLanguage, "TypeScript");
+  assert.deepEqual(parsed.topics, ["agents", "security"]);
+  assert.equal(parsed.pushedAt, "2026-07-05T09:00:00Z");
 });
 
 test("parseProfileHtml reads pinned repositories without relying on class order", () => {
@@ -202,4 +255,23 @@ test("renderMarkdownReport contains README fences that embedded Markdown cannot 
   });
 
   assert.match(markdown, /````markdown\n```markdown/);
+});
+
+test("renderRepositoryMarkdownReport keeps repository observations bounded", () => {
+  const markdown = renderRepositoryMarkdownReport({
+    fetchedAt: "2026-07-06T12:00:00.000Z",
+    readme: { content: "# Example", filename: "README.md", url: "https://raw.example" },
+    repository: {
+      archived: false,
+      description: "Example",
+      languages: ["JavaScript"],
+      name: "repo",
+      owner: "owner",
+      topics: ["agents"]
+    },
+    source: { repository: "https://github.com/owner/repo" },
+    warnings: []
+  });
+  assert.match(markdown, /owner\/repo/);
+  assert.match(markdown, /untrusted external content/);
 });
