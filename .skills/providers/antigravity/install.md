@@ -15,6 +15,8 @@ The plugin uses the Gemini extension-compatible structure that Antigravity impor
 - shared skills copied into `skills/<skill-name>/`
 - commands copied into `commands/agentkit-seo/<module>.toml`
 
+The generated wrappers include the separate `agentkit-seo:vitaegraph` entrypoint. Exact Antigravity command surfacing still requires live runtime confirmation.
+
 OpenAI/Codex-only metadata from `agents/` is excluded from generated Antigravity installs.
 
 Antigravity CLI migration documentation and real user output indicate that imported Gemini CLI extensions are staged as plugins under `~/.gemini/antigravity-cli/plugins`. The exact in-session command surface for imported TOML commands is still settling. Treat Gemini-style commands such as `/agentkit-seo:linkedin` as the expected compatibility target, but verify in `agy` before documenting it as guaranteed.

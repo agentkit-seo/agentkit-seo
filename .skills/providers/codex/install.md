@@ -52,6 +52,7 @@ Codex skills are better treated as explicit skills than as slash commands. Desig
 - `$agentkit-seo-linkedin`
 - `$agentkit-seo-github`
 - `$agentkit-seo-cv-ats`
+- `$agentkit-seo-vitaegraph`
 
 ## Practical recommendation
 

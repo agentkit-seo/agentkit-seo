@@ -66,5 +66,6 @@ Use the shared skills directly for the first version:
 - `agentkit-seo-web-portfolio`
 - `agentkit-seo-x-twitter`
 - `agentkit-seo-agent-context-optimization`
+- `agentkit-seo-vitaegraph`
 
 If you later want the exact `/agentkit-seo:linkedin` interface in Claude Code, package the provider adapter as a Claude plugin instead of relying only on local project commands.

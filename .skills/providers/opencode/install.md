@@ -65,6 +65,7 @@ OpenCode has native skill discovery and also supports custom commands.
 The docs clearly describe flat custom command names from filenames, but they do not document the same clean colon namespace pattern for commands that Gemini CLI does. Because of that, the safest OpenCode command surface is flat:
 
 - `/agentkit-seo-context`
+- `/agentkit-seo-vitaegraph`
 - `/agentkit-seo-linkedin`
 - `/agentkit-seo-github`
 - `/agentkit-seo-cv-ats`

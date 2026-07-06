@@ -26,6 +26,10 @@
       "source": ".skills/agent-skill/agentkit-seo-linkedin"
     },
     {
+      "name": "agentkit-seo-vitaegraph",
+      "source": ".skills/agent-skill/agentkit-seo-vitaegraph"
+    },
+    {
       "name": "agentkit-seo-web-portfolio",
       "source": ".skills/agent-skill/agentkit-seo-web-portfolio"
     },
@@ -98,6 +102,10 @@
           "source": ".skills/providers/gemini-cli/commands/agentkit-seo/linkedin.toml"
         },
         {
+          "name": "agentkit-seo:vitaegraph",
+          "source": ".skills/providers/gemini-cli/commands/agentkit-seo/vitaegraph.toml"
+        },
+        {
           "name": "agentkit-seo:portfolio",
           "source": ".skills/providers/gemini-cli/commands/agentkit-seo/portfolio.toml"
         },
@@ -146,6 +154,10 @@
           "source": ".skills/providers/antigravity/commands/agentkit-seo/linkedin.toml"
         },
         {
+          "name": "agentkit-seo:vitaegraph",
+          "source": ".skills/providers/antigravity/commands/agentkit-seo/vitaegraph.toml"
+        },
+        {
           "name": "agentkit-seo:portfolio",
           "source": ".skills/providers/antigravity/commands/agentkit-seo/portfolio.toml"
         },
@@ -180,6 +192,10 @@
         {
           "name": "agentkit-seo-linkedin",
           "source": ".skills/providers/opencode/commands/agentkit-seo-linkedin.md"
+        },
+        {
+          "name": "agentkit-seo-vitaegraph",
+          "source": ".skills/providers/opencode/commands/agentkit-seo-vitaegraph.md"
         },
         {
           "name": "agentkit-seo-portfolio",

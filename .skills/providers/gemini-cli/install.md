@@ -19,6 +19,7 @@ OpenAI/Codex-only metadata from `agents/` is excluded from generated Gemini CLI 
 Gemini CLI exposes the nested command files as namespaced commands:
 
 - `/agentkit-seo:context`
+- `/agentkit-seo:vitaegraph`
 - `/agentkit-seo:linkedin`
 - `/agentkit-seo:github`
 - `/agentkit-seo:cv-ats`

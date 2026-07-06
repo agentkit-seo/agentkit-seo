@@ -1,7 +1,7 @@
 {
   "name": "agentkit-seo",
   "version": "1.8.3",
-  "description": "Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.",
+  "description": "Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.",
   "type": "module",
   "bin": {
     "agentkit-seo": ".skills/export/scripts/agentkit-seo.mjs"
@@ -23,6 +23,7 @@
     ".skills/export",
     ".skills/providers",
     "hub",
+    "vitaegraph",
     ".assets/docs/getting-started.md",
     ".assets/docs/end-to-end-workflows.md",
     ".assets/docs/current-status.md",
@@ -69,7 +70,8 @@
     "portfolio-seo",
     "twitter",
     "x-twitter",
-    "career-context"
+    "career-context",
+    "career-knowledge-graph"
   ],
   "license": "MIT"
 }
