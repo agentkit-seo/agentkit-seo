@@ -168,7 +168,7 @@ The project is not currently prioritizing:
 
 - Gemini CLI gallery listing still depends on external crawler/listing behavior after tagged releases.
 - Antigravity CLI command syntax needs live `agy` confirmation.
-- The main source repo still needs a dedicated GitHub social preview.
+- A dedicated GitHub social preview candidate exists at `.assets/image/preview/image.png`; upload or replace it through the GitHub repository settings when final.
 - Installed skills can prompt an explicit `agentkit-seo update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
 - Public demo assets and before/after examples are still sparse.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.

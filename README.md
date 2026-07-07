@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".assets/image/agentkit-seo-banner.png" alt="AgentKit SEO" width="90%" />
+  <img src=".assets/image/banners/lighter/agentkit-newnew-banner.png" alt="AgentKit SEO" width="90%" />
 </p>
 
 <p align="center">
@@ -111,7 +111,7 @@ Keep the personal career context file private. A portable default location is:
 ---
 
 <p align="center">
-  <img src=".assets/image/vitaegraph-writing-banner.png" alt="VitaeGraph" width="70%" />
+  <img src=".assets/image/banners/lighter/vitaegraph-new-banner.png" alt="VitaeGraph" width="70%" />
 </p>
 
 ## VitaeGraph
