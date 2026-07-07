@@ -111,7 +111,7 @@ Keep the personal career context file private. A portable default location is:
 ---
 
 <p align="center">
-  <img src=".assets/image/banners/lighter/vitaegraph-banner-light.png" alt="VitaeGraph" width="70%" />
+  <img src=".assets/image/banners/lighter/vitaegraph-banner-light.png" alt="VitaeGraph" width="80%" />
 </p>
 
 ## VitaeGraph
