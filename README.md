@@ -107,6 +107,12 @@ Keep the personal career context file private. A portable default location is:
 ~/.agentkit-seo/<name-surname>-career-context.md
 ```
 
+---
+
+<p align="center">
+  <img src=".assets/image/vitaegraph-writing-banner.png" alt="VitaeGraph" width="70%" />
+</p>
+
 ## VitaeGraph
 
 [VitaeGraph](./vitaegraph/README.md) is the deeper sibling of the personal career context file. Use the context file for compact, repeated facts and quick grounded drafts. Use VitaeGraph when the agent needs detailed records for projects, roles, degrees, courses, thesis work, certifications, awards, publications, and the relationships between them.
@@ -132,6 +138,8 @@ npx agentkit-seo graph index
 ```
 
 Pass `--root /path/to/custom-vitaegraph` to use that exact directory. Indexing creates deterministic `graph.json`, `search-index.json`, and `diagnostics.json` under `.generated/`. Markdown remains canonical. The CLI does not overwrite a non-empty graph without `--force`, and provider or npm exports never include user workspace data.
+
+---
 
 ## Modules
 
