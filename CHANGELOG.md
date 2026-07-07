@@ -6,6 +6,14 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.9.1 - 2026-07-07
+
+### Changed
+
+- Refreshed the AgentKit SEO and VitaeGraph README banners with lighter, clearer public branding.
+- Included the new README banner asset directory in the npm package and removed stale package file entries for retired banner paths.
+- Updated maintainer docs so the repository map reflects VitaeGraph as an installed product module and the current eight-skill runtime bundle.
+
 ## 1.9.0 - 2026-07-07
 
 ### Added

@@ -9,7 +9,7 @@
       "name": "agentkit-seo",
       "source": "./",
       "description": "Portable agent skills for VitaeGraph, career context, GitHub, LinkedIn, CV/ATS, web portfolio, and X.",
-      "version": "1.9.0",
+      "version": "1.9.1",
       "category": "productivity",
       "keywords": [
         "seo",

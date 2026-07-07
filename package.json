@@ -1,6 +1,6 @@
 {
   "name": "agentkit-seo",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.",
   "type": "module",
   "bin": {
@@ -24,11 +24,9 @@
     ".skills/providers",
     "hub",
     "vitaegraph",
-    ".assets/image/agentkit-seo-banner.png",
     ".assets/image/banners",
     ".assets/image/preview",
     ".assets/image/public-visuals",
-    ".assets/image/vitaegraph-writing-banner.png",
     ".assets/image/vitaegraph",
     ".assets/docs/getting-started.md",
     ".assets/docs/end-to-end-workflows.md",

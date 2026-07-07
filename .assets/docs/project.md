@@ -30,6 +30,7 @@ hub/
     agentkit-seo-cv-ats/
     agentkit-seo-github/
     agentkit-seo-linkedin/
+    agentkit-seo-vitaegraph/
     agentkit-seo-web-portfolio/
     agentkit-seo-x-twitter/
   providers/
@@ -51,6 +52,8 @@ Current hub modules:
 - `hub/linkedin/`
 - `hub/web-portfolio/`
 - `hub/x-twitter/`
+
+VitaeGraph is intentionally not under `hub/`. Its root [`vitaegraph/`](../../vitaegraph/) directory is the product entrypoint for the graph artifact contract: schemas, graph model, and canonical Markdown templates.
 
 The `.skills/agent-skill/` directory is the runtime source of truth. Each shared skill carries `SKILL.md`, local `references/`, local `wiki/`, and optional provider metadata.
 
@@ -85,6 +88,7 @@ The package ships these shared skills:
 - `agentkit-seo-cv-ats`: ATS-safe CV and resume work
 - `agentkit-seo-github`: GitHub profile, repository, search, and agent-readiness work
 - `agentkit-seo-linkedin`: LinkedIn profile, search, positioning, and activity work
+- `agentkit-seo-vitaegraph`: private hierarchical career knowledge graphs, record enrichment, validation, and selective retrieval
 - `agentkit-seo-web-portfolio`: portfolio SEO, metadata, structured data, AI retrieval, and crawlability
 - `agentkit-seo-x-twitter`: X/Twitter profile, posting, Premium, and engagement guidance
 
@@ -138,7 +142,7 @@ The publish workflow validates the package, checks tag/version alignment, publis
 
 - Confirm Antigravity command syntax in a live `agy` environment.
 - Track Gemini gallery listing behavior after release crawler updates.
-- Add a dedicated GitHub social preview for the source repo.
+- Finalize and upload a dedicated GitHub social preview for the source repo.
 - Add selective demos or before/after examples when they improve public communication.
 - The `agentkit-seo update --provider <provider>` flow lets installed agents surface an explicit provider-version check without adding background network behavior.
 - Consider more automation around the existing maintainer-only wiki refresh workflow.

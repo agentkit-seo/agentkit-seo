@@ -9,7 +9,7 @@ This file is the maintainer snapshot for what is live, what is packaged, and wha
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.9.0`
+- Current package version: `agentkit-seo@1.9.1`
 
 Published release line:
 
@@ -18,7 +18,7 @@ Published release line:
 - `v1.6.0` through `v1.6.1`
 - `v1.7.0`
 - `v1.8.0` through `v1.8.3`
-- `v1.9.0`
+- `v1.9.0` through `v1.9.1`
 
 ### Current architecture
 
@@ -104,7 +104,7 @@ The runtime skill inventories supplied material before writing, processes one su
 - The root runtime wiki explains the graph navigation contract before agents load module details.
 - Module `SKILL.md` files use `## Wiki context` to declare when wiki files should be loaded.
 - `agentkit-seo doctor` validates wiki metadata, review dates, links, module/folder matches, skill wiki-context sections, current wiki inclusion in `llms-full.txt`, skill description convention (what plus when, within 1024 characters) and `license` field, the Claude Code marketplace and plugin manifests, Gemini mirror coverage, and package `files` inclusion for LLM-facing files.
-- `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the seven installed runtime skills.
+- `agentkit-seo-wiki-maintenance` exists in the source tree as a maintainer-only local audit workflow; it is not part of the eight installed runtime skills.
 
 ### Website and discovery status
 
@@ -168,7 +168,7 @@ The project is not currently prioritizing:
 
 - Gemini CLI gallery listing still depends on external crawler/listing behavior after tagged releases.
 - Antigravity CLI command syntax needs live `agy` confirmation.
-- A dedicated GitHub social preview candidate exists at `.assets/image/preview/image.png`; upload or replace it through the GitHub repository settings when final.
+- A dedicated GitHub social preview candidate exists at `.assets/image/preview/image.png`, and README banner assets live under `.assets/image/banners/`; upload or replace the GitHub social preview through the GitHub repository settings when final.
 - Installed skills can prompt an explicit `agentkit-seo update --provider <provider>` check against npm, but they still do not perform background update checks at agent runtime.
 - Public demo assets and before/after examples are still sparse.
 - Fully automated unattended wiki refresh from live official sources is not shipped; source-tree assisted maintenance is available through the maintainer-only wiki-maintenance skill.
