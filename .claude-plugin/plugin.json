@@ -1,7 +1,7 @@
 {
   "name": "agentkit-seo",
-  "version": "1.8.3",
-  "description": "Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.",
+  "version": "1.9.0",
+  "description": "Portable agent skills for VitaeGraph, career context, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.",
   "author": {
     "name": "Renato Mignone and Elia Innocenti"
   },

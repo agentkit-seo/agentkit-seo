@@ -33,7 +33,7 @@ The `agent-context-optimization` module adapts the same durable-context pattern 
 
 ## 3. Claims without external platform sources
 
-AgentKit SEO-specific names such as `personal career context file`, `QUICK REFERENCE`, `VERIFIED FACTS`, semantic tags, and the recommended `~/.agentkit-seo/<name-surname>-seo-context.md` path are project methodology. Treat them as repo-grounded, not external platform behavior.
+AgentKit SEO-specific names such as `personal career context file`, `QUICK REFERENCE`, `VERIFIED FACTS`, semantic tags, and the recommended `~/.agentkit-seo/<name-surname>-career-context.md` path are project methodology. Treat them as repo-grounded, not external platform behavior.
 
 No clean official external source was found for career-specific context-file schemas, cross-platform resume/profile factual ledgers, or guaranteed agent adherence to personal career context files. Treat adherence claims as `likely` or `inferred`.
 

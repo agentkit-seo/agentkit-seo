@@ -7,10 +7,10 @@ The personal career context file is one Markdown document with a fixed, stable s
 Recommended portable location when the user wants a reusable path:
 
 ```text
-~/.agentkit-seo/<name-surname>-seo-context.md
+~/.agentkit-seo/<name-surname>-career-context.md
 ```
 
-This path is a convention, not a requirement. An explicit path supplied by the user always wins. A local workspace draft such as `./<name-surname>-seo-context.md` is also valid when the user wants to iterate inside the active project before moving the file to a private reusable location.
+This path is a convention, not a requirement. An explicit path supplied by the user always wins. A local workspace draft such as `./<name-surname>-career-context.md` is also valid when the user wants to iterate inside the active project before moving the file to a private reusable location.
 
 Required, recommended, and conditional sections, in order:
 

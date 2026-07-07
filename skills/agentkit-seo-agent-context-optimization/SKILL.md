@@ -52,7 +52,7 @@ Default to `Default pass` for broad context-file work. Offer `Deep reconciliatio
 ## Intake workflow
 
 - If the user supplies an existing context file path, read it first.
-- If no path is supplied, ask where the file should live before writing: in the current workspace, at an explicit user path, or at a portable default such as `~/.agentkit-seo/<name-surname>-seo-context.md`.
+- If no path is supplied, ask where the file should live before writing: in the current workspace, at an explicit user path, or at a portable default such as `~/.agentkit-seo/<name-surname>-career-context.md`.
 - Do not assume the agent can write outside the current workspace. If writing requires permission, ask before writing.
 - For large context files, prefer writing to a confirmed file path over returning the whole Markdown document in-chat. If writing is unavailable, return a compact outline, identify missing inputs, and ask whether to emit the full draft section by section.
 - When building or repairing a context file, also capture the user's direction, not just their history: ideal role or dream job, current focus, what they want to work on next, target roles, growth direction, emerging interests, evidence boundaries, positioning constraints, claims to avoid, and target locations for applications (specific cities or countries, remote or hybrid preference, willingness to relocate, or no restriction). Ask for any of these that are missing, and record "no restriction" or "open" explicitly rather than leaving a guess.

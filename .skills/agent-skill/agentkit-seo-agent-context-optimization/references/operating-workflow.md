@@ -13,14 +13,14 @@
 Prefer an explicit path supplied by the user. Good options include:
 
 ```text
-Use the personal career context file at ~/career/name-surname-seo-context.md.
-Create a draft in this workspace at ./name-surname-seo-context.md.
+Use the personal career context file at ~/career/name-surname-career-context.md.
+Create a draft in this workspace at ./name-surname-career-context.md.
 ```
 
 If the user wants a portable default, suggest:
 
 ```text
-~/.agentkit-seo/<name-surname>-seo-context.md
+~/.agentkit-seo/<name-surname>-career-context.md
 ```
 
 The generic fallback `~/.agentkit-seo/context.md` is acceptable only when the user prefers it.

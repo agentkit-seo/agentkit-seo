@@ -2,14 +2,14 @@
 
 This file is the maintainer snapshot for what is live, what is packaged, and what remains open. Keep public positioning in `README.md`; keep operational status here.
 
-## As of 2026-07-06
+## As of 2026-07-07
 
 ### Public surfaces
 
 - Source repo: `https://github.com/agentkit-seo/agentkit-seo`
 - Website and human-readable hub: `https://agentkit-seo.github.io/`
 - npm package: `https://www.npmjs.com/package/agentkit-seo`
-- Current package version: `agentkit-seo@1.8.3`
+- Current package version: `agentkit-seo@1.9.0`
 
 Published release line:
 
@@ -18,6 +18,7 @@ Published release line:
 - `v1.6.0` through `v1.6.1`
 - `v1.7.0`
 - `v1.8.0` through `v1.8.3`
+- `v1.9.0`
 
 ### Current architecture
 

@@ -8,8 +8,8 @@
     {
       "name": "agentkit-seo",
       "source": "./",
-      "description": "Portable agent skills for optimizing GitHub, LinkedIn, CV/ATS, web portfolio, and X, plus agent context optimization.",
-      "version": "1.8.3",
+      "description": "Portable agent skills for VitaeGraph, career context, GitHub, LinkedIn, CV/ATS, web portfolio, and X.",
+      "version": "1.9.0",
       "category": "productivity",
       "keywords": [
         "seo",
@@ -18,7 +18,8 @@
         "linkedin",
         "github",
         "portfolio",
-        "geo"
+        "geo",
+        "vitaegraph"
       ],
       "license": "MIT"
     }

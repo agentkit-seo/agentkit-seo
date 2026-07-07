@@ -11,7 +11,7 @@ context update:
 
 Prefer explicit files provided by the user. If no target is provided, ask
 whether to use a workspace draft, a named portable default such as
-`~/.agentkit-seo/<name-surname>-seo-context.md`, or the generic
+`~/.agentkit-seo/<name-surname>-career-context.md`, or the generic
 `~/.agentkit-seo/context.md` only by user preference. Do not scan the whole
 filesystem. Use bounded source ingestion and add a depth note before expanding
 to full reconciliation.

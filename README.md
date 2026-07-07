@@ -83,7 +83,7 @@ npx agentkit-seo install --provider codex
 Create the personal career context file template in a private location:
 
 ```bash
-npx agentkit-seo template context --output ~/.agentkit-seo/my-context.md
+npx agentkit-seo template context --output ~/.agentkit-seo/name-surname-career-context.md
 ```
 
 Ask an agent to build the context from trusted material:
@@ -98,7 +98,7 @@ Then use one platform skill:
 
 ```text
 Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
-Use my personal career context file at ~/.agentkit-seo/my-context.md.
+Use my personal career context file at ~/.agentkit-seo/name-surname-career-context.md.
 ```
 
 Keep the personal career context file private. A portable default location is:

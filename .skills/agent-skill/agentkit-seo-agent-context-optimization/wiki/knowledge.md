@@ -54,7 +54,7 @@ For context-file work, `From context` means a fact is already present in the exi
 - `stable`: The scope declaration closes with a `VERIFIED FACTS` HTML comment.
 - `stable`: Skills in the skills index must be evidenced elsewhere in the file.
 - `stable`: Languages should be represented as a table.
-- `likely`: `~/.agentkit-seo/<name-surname>-seo-context.md` is a portable default path when the user wants a reusable file, but an explicit user path always wins.
+- `likely`: `~/.agentkit-seo/<name-surname>-career-context.md` is a portable default path when the user wants a reusable file, but an explicit user path always wins.
 
 ## 5. Maintenance and validation rules
 

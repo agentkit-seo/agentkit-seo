@@ -6,6 +6,8 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ## Unreleased
 
+## 1.9.0 - 2026-07-07
+
 ### Added
 
 - Added VitaeGraph as the separate `agentkit-seo-vitaegraph` runtime skill and root product subsystem, with schemas, canonical Markdown templates, provider wrappers, runtime wiki guidance, and package coverage.
@@ -14,6 +16,8 @@ This project follows npm package versions and mirrors them with matching GitHub 
 
 ### Changed
 
+- Standardized personal career context examples on the private `~/.agentkit-seo/<name-surname>-career-context.md` convention across runtime guidance, provider wrappers, hub docs, generated mirrors, and the README.
+- Included the public README and VitaeGraph visual assets in the npm package so packed documentation resolves its referenced images without adding private workspace data.
 - Updated root routing and platform skills to consume selected VitaeGraph records when the user supplies an explicit path, while preserving the independent compact personal career context workflow.
 - Redesigned VitaeGraph around hierarchical degree, course, thesis, project, role, and certification records. The canonical graph now uses parent containment and rich domain templates instead of evidence nodes, source ledgers, evidence references, or evidence-level metadata.
 - Expanded the root VitaeGraph product entrypoint into a self-contained guide covering its architecture, installation, workspace model, authoring lifecycle, validation, generated artifacts, retrieval, and privacy boundaries.
