@@ -44,4 +44,4 @@ Keep Experience and Education in reverse chronological order. Use standard secti
 
 ## Verification rule
 
-Always perform a plain-text extraction sanity check before treating a CV as submission-ready.
+Perform a plain-text extraction sanity check before treating a final rendered CV as submission-ready. For a text-only audit or draft where no final PDF or DOCX exists, report the check as pending rather than blocking the requested analysis.

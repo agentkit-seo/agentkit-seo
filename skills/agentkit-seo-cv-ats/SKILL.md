@@ -63,7 +63,7 @@ Default to `Default audit` for broad CV or resume reviews. Offer `Deep audit` as
 
 ## Rules
 
-- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only target-relevant experience, education, certification, and project records. Preserve stated limitations and claims to avoid.
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only target-relevant experience, education, certification, and project records. Preserve stated limitations, open questions, and graph-level claims to avoid.
 
 - Do not claim guaranteed ATS success or exact ranking behavior.
 - Separate facts visible in the CV, facts supplied by the user's context material, job-description requirements, and recommendations inferred from those inputs.
@@ -101,4 +101,4 @@ Return only requested-relevant sections. For full CV audits or broad tailoring p
 For audits, use concise labels such as `Verified`, `From context`, `From job description`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Include a `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews; omit it for narrow bullet or section rewrites unless more input is needed.
 When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a vendor ATS score or pass guarantee.
 
-Human playbook: [hub/cv-ats/README.md](../../../hub/cv-ats/README.md).
+Human playbook: [CV and ATS optimization](https://agentkit-seo.github.io/playbooks/cv-ats/).

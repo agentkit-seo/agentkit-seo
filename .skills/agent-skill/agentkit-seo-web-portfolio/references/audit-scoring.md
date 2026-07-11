@@ -27,7 +27,15 @@ If a page type is absent (for example, no article pages), exclude its checks and
 
 ## Scoring each category
 
-Score each category from 0 to 100 percent of its weight using the linked reference checklist. Partial credit is expected: award proportional points for items present, and subtract for documented gaps. Round the weighted total to a whole number.
+Assign one anchored completion rate to each inspected category using the linked checklist:
+
+- `0`: absent, unusable, or blocked by a critical failure
+- `25`: weak foundation with most important checks failing
+- `50`: partially implemented, with material gaps
+- `75`: strong implementation with limited, non-blocking gaps
+- `100`: all applicable inspected checks pass with supporting evidence
+
+Use intermediate multiples of 10 only when the evidence clearly falls between anchors. Convert the rate to awarded points with `category weight x completion rate / 100`, then round the overall total to a whole number. Do not use false precision below 10-point completion-rate increments.
 
 ## Bands
 
@@ -42,7 +50,7 @@ When a score is requested, return:
 
 1. overall score and band
 2. per-category breakdown: `score / weight` plus one evidence-backed reason
-3. `Fix first`: the categories ranked by weight multiplied by the gap to full marks, so the highest-leverage fixes lead
+3. `Fix first`: categories ranked by unearned weighted points (`category weight - awarded points`), with critical blockers ahead of cosmetic gaps
 4. `Informational`: diagnostic observations that did not affect the score
 5. a one-line confidence note and a `Depth note` listing any categories marked `Needs inspection`
 

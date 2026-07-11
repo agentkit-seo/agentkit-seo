@@ -82,4 +82,4 @@ When producing a LinkedIn audit or rewrite:
 - Preserve factual alignment with the personal career context file when available.
 - Include a one-line `Depth note` for broad audits, inaccessible sections, or intentionally deferred activity review.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/linkedin/sources.md](../../../../hub/linkedin/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/linkedin/sources.md).

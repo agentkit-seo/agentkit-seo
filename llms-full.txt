@@ -13,8 +13,8 @@ metadata:
   title: "AgentKit SEO"
   status: stable
   confidence: stable
-  last_reviewed: 2026-05-27
-  review_by: 2026-11-27
+  last_reviewed: 2026-07-10
+  review_by: 2027-01-10
   source_status: repo
   agent_priority: high
 -->
@@ -70,15 +70,15 @@ The root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` files 
 
 Runtime `references/` files contain focused procedural guidance for a task. Runtime `wiki/` files contain durable definitions, constraints, confidence labels, and failure modes that the agent loads only when the task needs them.
 
-Agents should route to one module by default. Cross-platform work should usually start with the agent-context-optimization skill so user facts are normalized before public outputs are rewritten.
+Agents should route to one module by default. Cross-platform work should use an explicit existing personal career context file for compact current facts or retrieve the smallest relevant subtree from an explicit existing VitaeGraph. Start with the agent-context-optimization skill when facts are scattered, conflicting, or no usable source of truth exists. Do not silently create or convert either private artifact.
 
 Before loading detailed module files, agents should use this root wiki as the graph entrypoint:
 
 1. Use this file to understand the repository and runtime layers.
 2. Choose the relevant module from the linked module wiki indexes.
-3. Read only that module's `wiki/index.md` before deciding whether `wiki/knowledge.md`, `references/`, or human hub files are needed.
+3. Read only that module's `wiki/index.md` before deciding whether `wiki/knowledge.md` or local `references/` are needed.
 4. Use `llms.txt` as the public package map and `llms-full.txt` as the full bundled wiki context when those files are available in the package checkout.
-5. Use `.assets/docs/getting-started.md` for setup onboarding and `.assets/docs/end-to-end-workflows.md` for demo prompts, sample inputs, multimodal material, and expected deliverables.
+5. Use the repository's maintainer docs only when working from a package checkout or source clone. Installed provider skill folders must remain usable without those files.
 
 ## 6. Install behavior
 
@@ -138,10 +138,10 @@ Human hub files explain playbooks, examples, templates, and source ledgers. Runt
 - [VitaeGraph wiki index](../../agentkit-seo-vitaegraph/wiki/index.md)
 - [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
 - [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
-- [Getting started](../../../../.assets/docs/getting-started.md)
-- [End-to-end demos](../../../../.assets/docs/end-to-end-workflows.md)
-- [llms.txt](../../../../llms.txt)
-- [llms-full.txt](../../../../llms-full.txt)
+- [Getting started](https://github.com/agentkit-seo/agentkit-seo/blob/main/.assets/docs/getting-started.md)
+- [End-to-end demos](https://github.com/agentkit-seo/agentkit-seo/blob/main/.assets/docs/end-to-end-workflows.md)
+- [llms.txt](https://agentkit-seo.github.io/llms.txt)
+- [llms-full.txt](https://agentkit-seo.github.io/llms-full.txt)
 
 ---
 
@@ -301,7 +301,7 @@ When producing a context-file audit, creation plan, or maintenance edit:
 - Hand off to exactly one platform skill after context cleanup unless the user asks for a multi-surface pass.
 - Include a one-line `Depth note` when sources, sections, or cross-platform checks were intentionally bounded.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/agent-context-optimization/sources.md](../../../../hub/agent-context-optimization/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/agent-context-optimization/sources.md).
 
 ---
 
@@ -453,7 +453,7 @@ When producing a CV audit, tailoring pass, or parser-safety plan:
 - Use "no conflict found in inspected inputs" for bounded audits instead of implying full verification.
 - Include a one-line `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/cv-ats/sources.md](../../../../hub/cv-ats/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/cv-ats/sources.md).
 
 ---
 
@@ -605,7 +605,7 @@ When producing a GitHub audit or implementation plan:
 - Prefer concrete README, About text, topic, pin, or file changes over generic branding advice.
 - Include a one-line `Depth note` when the audit did not inspect every relevant repository or file.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/github/sources.md](../../../../hub/github/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/github/sources.md).
 
 ---
 
@@ -754,7 +754,7 @@ When producing a LinkedIn audit or rewrite:
 - Preserve factual alignment with the personal career context file when available.
 - Include a one-line `Depth note` for broad audits, inaccessible sections, or intentionally deferred activity review.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/linkedin/sources.md](../../../../hub/linkedin/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/linkedin/sources.md).
 
 ---
 
@@ -800,8 +800,8 @@ metadata:
   title: "VitaeGraph runtime knowledge"
   status: stable
   confidence: stable
-  last_reviewed: 2026-07-06
-  review_by: 2027-01-06
+  last_reviewed: 2026-07-10
+  review_by: 2027-01-10
   source_status: repo
   agent_priority: high
 -->
@@ -842,7 +842,19 @@ Record frontmatter requires `type`, stable `id`, and `title`. The canonical grap
 
 Private graph content is not a package, provider export, publication, or repository artifact. Temporary GitHub fetcher reports remain outside VitaeGraph and should be deleted when no longer needed.
 
-## 6. Failure modes
+`visibility: public` marks a record as eligible for public consideration. It does not authorize publication. Public-output retrieval must also apply graph-level claims to avoid, record limitations, open questions, and the user's requested scope.
+
+## 6. Lifecycle modes
+
+- `Create` and `deepen` add supported detail from explicit sources.
+- `Maintain` corrects facts and relationships without rewriting unrelated domains.
+- `Validate` and `index` are structural operations; indexing never changes canonical Markdown.
+- `Retrieve` is read-only and loads the smallest relevant subtree.
+- `Migrate` previews path, hierarchy, and relationship changes while preserving stable IDs.
+
+Deletion, duplicate merges, and many-record migrations require a preview because they can remove private history or break inbound relationships.
+
+## 7. Failure modes
 
 - Creating shallow files for every noun before understanding the available material.
 - Flattening thesis and university courses into unrelated top-level directories.
@@ -1014,7 +1026,7 @@ When producing a web-portfolio audit or implementation plan:
 - Keep `llms.txt` recommendations short, curated, and synchronized with public pages.
 - Name the smallest next inspection when the current audit is bounded.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/web-portfolio/sources.md](../../../../hub/web-portfolio/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/web-portfolio/sources.md).
 
 ---
 
@@ -1171,6 +1183,4 @@ When producing an X/Twitter audit or content plan:
 - Size recommendations to the user's posting capacity and credible niche.
 - Include a one-line `Depth note` when the audit did not inspect enough post history, replies, analytics, or Premium state.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/x-twitter/sources.md](../../../../hub/x-twitter/sources.md).
-
----
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/x-twitter/sources.md).

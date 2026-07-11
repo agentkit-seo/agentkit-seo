@@ -5,8 +5,8 @@ metadata:
   title: "VitaeGraph runtime knowledge"
   status: stable
   confidence: stable
-  last_reviewed: 2026-07-06
-  review_by: 2027-01-06
+  last_reviewed: 2026-07-10
+  review_by: 2027-01-10
   source_status: repo
   agent_priority: high
 -->
@@ -47,7 +47,19 @@ Record frontmatter requires `type`, stable `id`, and `title`. The canonical grap
 
 Private graph content is not a package, provider export, publication, or repository artifact. Temporary GitHub fetcher reports remain outside VitaeGraph and should be deleted when no longer needed.
 
-## 6. Failure modes
+`visibility: public` marks a record as eligible for public consideration. It does not authorize publication. Public-output retrieval must also apply graph-level claims to avoid, record limitations, open questions, and the user's requested scope.
+
+## 6. Lifecycle modes
+
+- `Create` and `deepen` add supported detail from explicit sources.
+- `Maintain` corrects facts and relationships without rewriting unrelated domains.
+- `Validate` and `index` are structural operations; indexing never changes canonical Markdown.
+- `Retrieve` is read-only and loads the smallest relevant subtree.
+- `Migrate` previews path, hierarchy, and relationship changes while preserving stable IDs.
+
+Deletion, duplicate merges, and many-record migrations require a preview because they can remove private history or break inbound relationships.
+
+## 7. Failure modes
 
 - Creating shallow files for every noun before understanding the available material.
 - Flattening thesis and university courses into unrelated top-level directories.

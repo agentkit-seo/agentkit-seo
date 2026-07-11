@@ -97,4 +97,4 @@ When producing a web-portfolio audit or implementation plan:
 - Keep `llms.txt` recommendations short, curated, and synchronized with public pages.
 - Name the smallest next inspection when the current audit is bounded.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/web-portfolio/sources.md](../../../../hub/web-portfolio/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/web-portfolio/sources.md).

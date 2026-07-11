@@ -71,6 +71,7 @@ Default to `Default pass` for broad context-file work. Offer `Deep reconciliatio
 - Flag unsupported claims instead of smoothing them into confident prose.
 - Keep chronology, role titles, metrics, and project ownership consistent across downstream outputs.
 - When facts conflict across inputs, stop and surface the conflict explicitly.
+- Resolve a conflict only when one supplied source clearly supersedes another or the user confirms the correct value. Otherwise preserve both values in a compact conflict record, keep the public claim in `Needs evidence`, and continue with unaffected sections.
 - Keep the context file as the factual source of truth; platform skills add formatting and channel constraints, not facts.
 - When drafting from scratch, produce the canonical section order first and populate only verified material.
 - When updating an existing file, prefer targeted entry-level edits over rewriting the whole document.
@@ -83,6 +84,7 @@ Before returning, check the draft and fix or flag any failure:
 - Every fact traces to supplied source material or the existing file; nothing was invented or upgraded beyond its evidence.
 - Goals, interests, and target locations are recorded as stated intent, kept distinct from verified facts.
 - Conflicts across inputs are surfaced, not silently resolved.
+- Resolved conflicts name the deciding source or user confirmation; unresolved conflicts do not block unrelated, well-supported updates.
 - The output matches the requested scope and storage mode.
 
 If a check fails and cannot be resolved from the available inputs, say so explicitly instead of smoothing it over.
@@ -106,4 +108,4 @@ Return:
 
 For audits or validation passes, use concise labels such as `Verified`, `From context`, `From source`, `Inference`, and `Needs evidence` when a claim could otherwise be ambiguous. When the pass is intentionally bounded, include a one-line `Depth note` that says what sources were not inspected and what deeper reconciliation would add.
 
-Human playbook: [hub/agent-context-optimization/README.md](../../../hub/agent-context-optimization/README.md).
+Human playbook: [Agent context optimization](https://agentkit-seo.github.io/playbooks/agent-context-optimization/).

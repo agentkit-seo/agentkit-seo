@@ -57,7 +57,7 @@ Default to `Default audit` for broad portfolio audits. Offer `Deep audit` as an 
 
 ## Rules
 
-- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant public project, thesis, award, and publication records. Never expose private paths.
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant project, thesis, award, and publication records. Never expose private paths, preserve limitations and open questions, and treat `visibility: public` as eligibility for consideration rather than publication consent.
 
 - Separate documented standards from emerging conventions such as `llms.txt`.
 - Separate facts verified from public pages or local source, facts supplied by the user's context material, and recommendations inferred from those facts.
@@ -98,4 +98,4 @@ Return:
 For audits, use concise labels such as `Verified`, `From source`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Mark unsupported responsibilities, metrics, seniority, clients, testimonials, or outcomes as gaps rather than turning them into metadata, schema, or copy. When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.
 When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a ranking or indexing guarantee.
 
-Human playbook: [hub/web-portfolio/README.md](../../../hub/web-portfolio/README.md).
+Human playbook: [Web portfolio optimization](https://agentkit-seo.github.io/playbooks/web-portfolio/).

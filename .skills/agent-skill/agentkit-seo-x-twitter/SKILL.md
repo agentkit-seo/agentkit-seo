@@ -55,7 +55,7 @@ Default to `Default audit` for broad account or profile requests. Offer `Deep au
 
 ## Rules
 
-- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant public projects, directions, and safe claims. Exclude private evidence and `avoid` records.
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant project or other supported records. Read target direction and claims to avoid from `VITAEGRAPH.md`; do not assume separate direction, evidence, or avoid record types exist. Treat `visibility: public` as eligibility for consideration, not publication consent, and include only claims supported and appropriate for the requested public output.
 
 - Prefer current official X help and recommender-system documentation before historical open-source repositories when explaining platform behavior.
 - Treat Phoenix, Grok, and related architecture clues as design signals, not as a complete live-production contract.
@@ -93,4 +93,4 @@ Return only requested-relevant sections. Do not add cadence or engagement strate
 
 For audits, use concise labels such as `Verified`, `Official feature`, `Historical/open-source inference`, `Empirical tactic`, `From context`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. When the audit is intentionally bounded, include a one-line `Depth note` that says what profile/post scope was inspected, what was not inspected, and what deeper inspection would add.
 
-Human playbook: [hub/x-twitter/README.md](../../../hub/x-twitter/README.md).
+Human playbook: [X and Twitter optimization](https://agentkit-seo.github.io/playbooks/x-twitter/).

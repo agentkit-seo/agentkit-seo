@@ -40,6 +40,13 @@ They should not become alternate copies of the platform methodology.
 
 Treat the installable artifact as the shared skill bundle, not as the full repository. The full repo remains useful for authoring, review, and source traceability, but the runtime package should be able to travel with only the `.skills/agent-skill/` content plus the relevant provider adapter.
 
-## CLI-wrapper recommendation
+## CLI and provider contract
 
-An `npx` installer can be useful as a convenience layer later, but it should be treated as a wrapper around provider-native install targets, not as the core standard. Provider-native skills, commands, extensions, or marketplace packages should remain the primary delivery model.
+The published `agentkit-seo` npm CLI is the shared implementation for install, update, uninstall, export, diagnostics, templates, and VitaeGraph commands. `npx agentkit-seo` is a user-facing execution path for that implementation, not a future wrapper.
+
+Provider-native discovery and invocation remain provider-specific. Some providers load skills directly, while others add commands, extensions, or plugin metadata. Keep these responsibilities separate:
+
+- The npm CLI owns deterministic copying, manifests, target resolution, and package commands.
+- Shared skill folders own runtime methodology.
+- Provider adapters own only provider-specific layout, metadata, and invocation ergonomics.
+- The installed shared skill name remains the portable runtime contract.

@@ -90,4 +90,4 @@ When producing an X/Twitter audit or content plan:
 - Size recommendations to the user's posting capacity and credible niche.
 - Include a one-line `Depth note` when the audit did not inspect enough post history, replies, analytics, or Premium state.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/x-twitter/sources.md](../../../../hub/x-twitter/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/x-twitter/sources.md).

@@ -84,4 +84,4 @@ When producing a GitHub audit or implementation plan:
 - Prefer concrete README, About text, topic, pin, or file changes over generic branding advice.
 - Include a one-line `Depth note` when the audit did not inspect every relevant repository or file.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/github/sources.md](../../../../hub/github/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/github/sources.md).

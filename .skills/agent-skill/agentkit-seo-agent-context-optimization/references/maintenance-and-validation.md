@@ -21,6 +21,16 @@ Do not add speculative future entries to the verified record. Store aspirations,
 5. If the material changes future direction, update `Goals and targeting` and keep evidence boundaries explicit.
 6. Apply the smallest edit that preserves the rest of the file untouched.
 
+## Conflict resolution workflow
+
+1. Record the conflicting field, each observed value, and its source group.
+2. Check whether one source explicitly supersedes the other, such as a newer official credential, corrected CV, or user-confirmed date.
+3. If precedence is clear, apply the corrected value and name the deciding source in the change report.
+4. If precedence is unclear, keep the claim out of `VERIFIED FACTS`, label it `Needs evidence`, and ask for the smallest fact required to resolve it.
+5. Continue updating unrelated sections whose evidence is not affected by the conflict.
+
+Do not turn a local conflict into a full-workflow stop unless it affects identity, chronology, ownership, or another hard anchor required by the requested output.
+
 ## Validation checklist
 
 A valid context file should satisfy all of the following:

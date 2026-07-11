@@ -5,8 +5,8 @@ metadata:
   title: "AgentKit SEO"
   status: stable
   confidence: stable
-  last_reviewed: 2026-05-27
-  review_by: 2026-11-27
+  last_reviewed: 2026-07-10
+  review_by: 2027-01-10
   source_status: repo
   agent_priority: high
 -->
@@ -62,15 +62,15 @@ The root `skills/`, `commands/`, `GEMINI.md`, and `gemini-extension.json` files 
 
 Runtime `references/` files contain focused procedural guidance for a task. Runtime `wiki/` files contain durable definitions, constraints, confidence labels, and failure modes that the agent loads only when the task needs them.
 
-Agents should route to one module by default. Cross-platform work should usually start with the agent-context-optimization skill so user facts are normalized before public outputs are rewritten.
+Agents should route to one module by default. Cross-platform work should use an explicit existing personal career context file for compact current facts or retrieve the smallest relevant subtree from an explicit existing VitaeGraph. Start with the agent-context-optimization skill when facts are scattered, conflicting, or no usable source of truth exists. Do not silently create or convert either private artifact.
 
 Before loading detailed module files, agents should use this root wiki as the graph entrypoint:
 
 1. Use this file to understand the repository and runtime layers.
 2. Choose the relevant module from the linked module wiki indexes.
-3. Read only that module's `wiki/index.md` before deciding whether `wiki/knowledge.md`, `references/`, or human hub files are needed.
+3. Read only that module's `wiki/index.md` before deciding whether `wiki/knowledge.md` or local `references/` are needed.
 4. Use `llms.txt` as the public package map and `llms-full.txt` as the full bundled wiki context when those files are available in the package checkout.
-5. Use `.assets/docs/getting-started.md` for setup onboarding and `.assets/docs/end-to-end-workflows.md` for demo prompts, sample inputs, multimodal material, and expected deliverables.
+5. Use the repository's maintainer docs only when working from a package checkout or source clone. Installed provider skill folders must remain usable without those files.
 
 ## 6. Install behavior
 
@@ -130,7 +130,7 @@ Human hub files explain playbooks, examples, templates, and source ledgers. Runt
 - [VitaeGraph wiki index](../../agentkit-seo-vitaegraph/wiki/index.md)
 - [Web portfolio wiki index](../../agentkit-seo-web-portfolio/wiki/index.md)
 - [X Twitter wiki index](../../agentkit-seo-x-twitter/wiki/index.md)
-- [Getting started](../../../../.assets/docs/getting-started.md)
-- [End-to-end demos](../../../../.assets/docs/end-to-end-workflows.md)
-- [llms.txt](../../../../llms.txt)
-- [llms-full.txt](../../../../llms-full.txt)
+- [Getting started](https://github.com/agentkit-seo/agentkit-seo/blob/main/.assets/docs/getting-started.md)
+- [End-to-end demos](https://github.com/agentkit-seo/agentkit-seo/blob/main/.assets/docs/end-to-end-workflows.md)
+- [llms.txt](https://agentkit-seo.github.io/llms.txt)
+- [llms-full.txt](https://agentkit-seo.github.io/llms-full.txt)

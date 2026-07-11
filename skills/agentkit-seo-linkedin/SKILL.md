@@ -58,7 +58,7 @@ Default to `Default audit` for broad LinkedIn profile requests. Offer `Deep audi
 
 ## Rules
 
-- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant experience, project, education, direction, and constraint records. Preserve stated limitations and claims to avoid.
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant experience, project, and education records. Read target direction and claims to avoid from `VITAEGRAPH.md`; they are not separate record types. Preserve limitations and open questions, and treat `visibility: public` as eligibility for consideration rather than publication consent.
 
 - Treat disputed `360Brew` rollout claims as disputed, not as settled production truth.
 - Separate facts verified on LinkedIn or supplied files, facts supplied by the user's context material, and recommendations inferred from those facts.
@@ -96,4 +96,4 @@ Return only requested-relevant sections. For audits, return:
 For audits, use concise labels such as `Verified`, `From context`, `Official guidance`, `Inference`, and `Inaccessible` when a claim could otherwise be ambiguous. Include a `Depth note` only for broad audits, incomplete inputs, or intentionally deferred profile/activity review.
 When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a LinkedIn ranking.
 
-Human playbook: [hub/linkedin/README.md](../../../hub/linkedin/README.md).
+Human playbook: [LinkedIn optimization](https://agentkit-seo.github.io/playbooks/linkedin/).

@@ -85,4 +85,4 @@ When producing a CV audit, tailoring pass, or parser-safety plan:
 - Use "no conflict found in inspected inputs" for bounded audits instead of implying full verification.
 - Include a one-line `Depth note` for full-document audits, parser debugging, or intentionally bounded reviews.
 
-Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [hub/cv-ats/sources.md](../../../../hub/cv-ats/sources.md).
+Shared taxonomy: [agentkit-seo/wiki/agentkit-seo.md](../../agentkit-seo/wiki/agentkit-seo.md). Source grounding: [repository source inventory](https://github.com/agentkit-seo/agentkit-seo/blob/main/hub/cv-ats/sources.md).

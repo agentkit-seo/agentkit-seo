@@ -63,7 +63,7 @@ Default to `Default audit` for broad profile requests. Offer `Deep audit` as an 
 
 ## Rules
 
-- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant public project records. Preserve stated limitations and omit private paths from output.
+- If the user supplies an explicit VitaeGraph path, read `VITAEGRAPH.md`, `index.md`, and only relevant project records. Preserve stated limitations and open questions, omit private paths, and treat `visibility: public` as eligibility for consideration rather than publication consent.
 
 - Distinguish documented GitHub behavior from inference.
 - Separate facts verified on GitHub, facts supplied by the user's context files, and recommendations inferred from those facts.
@@ -104,4 +104,4 @@ For audits, make the output feel like a grounded review rather than a generic ma
 When the audit is intentionally bounded, include a one-line `Depth note` that says what was not inspected and what deeper inspection would add.
 When the user asks for a score, scorecard, or before/after comparison, also apply [references/audit-scoring.md](references/audit-scoring.md): report the overall score, band, per-category breakdown, and a fix-first ranking, labeled as an internal prioritization heuristic rather than a platform ranking.
 
-Human playbook: [hub/github/README.md](../../../hub/github/README.md).
+Human playbook: [GitHub optimization](https://agentkit-seo.github.io/playbooks/github/).
