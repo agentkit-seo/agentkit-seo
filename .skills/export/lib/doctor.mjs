@@ -415,6 +415,82 @@ function validateSkillDescriptions(repoRoot, config, errors, warnings) {
   }
 }
 
+function validateRuntimeContracts(repoRoot, config, errors) {
+  const bundleRoot = path.resolve(repoRoot, ".skills", "agent-skill");
+  const routingPath = path.join(
+    repoRoot,
+    ".skills",
+    "agent-skill",
+    "agentkit-seo",
+    "references",
+    "module-routing.md"
+  );
+  const routing = fs.existsSync(routingPath) ? fs.readFileSync(routingPath, "utf8") : "";
+
+  for (const skill of config.skills ?? []) {
+    const sourceRoot = path.resolve(repoRoot, skill.source);
+    const skillFile = path.join(sourceRoot, "SKILL.md");
+    if (!fs.existsSync(skillFile)) {
+      continue;
+    }
+    const skillContent = fs.readFileSync(skillFile, "utf8");
+    if (!/^## Self-review$/m.test(skillContent)) {
+      errors.push(`configured runtime skill is missing ## Self-review: ${skill.source}/SKILL.md`);
+    }
+    if (skill.name !== "agentkit-seo" && !routing.includes(`\`${skill.name}\``)) {
+      errors.push(`root module routing is missing configured skill: ${skill.name}`);
+    }
+
+    for (const markdownFile of listFilesRecursive(sourceRoot).filter((file) => file.endsWith(".md"))) {
+      const content = fs.readFileSync(markdownFile, "utf8");
+      for (const match of content.matchAll(/!?\[[^\]]+\]\(([^)]+)\)/g)) {
+        const href = match[1].trim().split("#")[0];
+        if (
+          !href ||
+          href.startsWith("#") ||
+          href.startsWith("http://") ||
+          href.startsWith("https://") ||
+          href.startsWith("mailto:")
+        ) {
+          continue;
+        }
+        const target = path.resolve(path.dirname(markdownFile), href);
+        const relativeFile = normalizeRelativePath(path.relative(repoRoot, markdownFile));
+        if (!fs.existsSync(target)) {
+          errors.push(`runtime skill link target does not exist: ${relativeFile} -> ${href}`);
+        } else if (target !== bundleRoot && !target.startsWith(`${bundleRoot}${path.sep}`)) {
+          errors.push(`runtime skill relative link escapes portable bundle: ${relativeFile} -> ${href}`);
+        }
+      }
+    }
+  }
+
+  const vitaeGraphConsumers = [
+    "agentkit-seo-cv-ats",
+    "agentkit-seo-github",
+    "agentkit-seo-linkedin",
+    "agentkit-seo-web-portfolio",
+    "agentkit-seo-x-twitter"
+  ];
+  const legacyVocabulary = [
+    /direction and constraint records/i,
+    /target-direction records/i,
+    /private evidence and `avoid` records/i
+  ];
+  for (const skillName of vitaeGraphConsumers) {
+    const skillFile = path.join(bundleRoot, skillName, "SKILL.md");
+    if (!fs.existsSync(skillFile)) {
+      continue;
+    }
+    const content = fs.readFileSync(skillFile, "utf8");
+    for (const pattern of legacyVocabulary) {
+      if (pattern.test(content)) {
+        errors.push(`runtime skill uses legacy VitaeGraph vocabulary: ${skillName}/SKILL.md`);
+      }
+    }
+  }
+}
+
 // Validate the Claude Code marketplace manifests so the /plugin distribution channel
 // stays consistent with package.json. Mirrors the gemini-extension version checks.
 function validateMarketplace(repoRoot, packageMetadata, errors) {
@@ -558,6 +634,7 @@ export function doctor(repoRoot, config) {
     validateProvider(repoRoot, provider, providerSpec, packageMetadata, errors);
   }
   validateSkillDescriptions(repoRoot, config, errors, warnings);
+  validateRuntimeContracts(repoRoot, config, errors);
   validateWikiFiles(repoRoot, config, errors, warnings);
   validateLlmsFullWikiBundle(repoRoot, config, errors);
   validateGeminiMarketplaceLayout(repoRoot, config, packageMetadata, errors);
@@ -577,6 +654,7 @@ export function doctor(repoRoot, config) {
   console.log(`ok: package ${packageMetadata.name}@${packageMetadata.version}`);
   console.log(`ok: ${config.skills.length} skill source(s)`);
   console.log("ok: skill descriptions state what and when");
+  console.log("ok: runtime routing, self-review, and portable links valid");
   console.log("ok: Claude Code marketplace manifests valid");
   console.log(`ok: ${Object.keys(config.providers).length} provider adapter(s)`);
   console.log("ok: context template available");

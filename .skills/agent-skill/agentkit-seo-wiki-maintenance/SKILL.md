@@ -11,7 +11,7 @@ metadata:
 
 ## Overview
 
-Use this maintainer-only skill to keep AgentKit SEO `wiki/knowledge.md`, `hub/<module>/sources.md`, human-facing hub playbooks, and runtime skill guidance aligned with official sources.
+Use this maintainer-only skill to keep AgentKit SEO `wiki/knowledge.md`, `hub/<module>/sources.md`, human-facing hub playbooks, runtime skill guidance, and internal runtime contracts aligned with their sources of truth.
 
 This skill is for repository maintainers working from a local clone. It is never exported to user installs. End users receive static, pre-authored wiki entries through the package install flow.
 
@@ -153,6 +153,31 @@ Workflow:
 6. Apply only confirmed module patches. Regenerate `llms-full.txt` once after all confirmed writes. Run `npm run validate` once after all confirmed writes.
 
 If subagent tooling is unavailable, run the six module audits sequentially and state that parallel subagents were unavailable.
+
+## Mode 4: Internal contract audit
+
+Use this mode when the maintainer asks to audit routing, installed-skill workflow behavior, or VitaeGraph consistency. This mode is source-tree based and does not require external platform research.
+
+Audit these contracts:
+
+1. Every skill configured in `.skills/export/export-config.json` is represented in root routing and provider-capable command maps.
+2. Every configured runtime skill defines trigger frontmatter, task or depth selection appropriate to its operations, mutation boundaries, verification behavior, self-review, and a bounded response or completion shape.
+3. Relative runtime links resolve inside the portable skill bundle. Repository-only playbooks, source inventories, maintainer docs, and package maps use durable public links when installed providers do not ship them.
+4. VitaeGraph record vocabulary matches `vitaegraph/schema/record-schema.json`; graph-level direction and claims to avoid are not described as record types.
+5. VitaeGraph templates, schema, runtime skill, CLI validation, generated graph model, downstream retrieval rules, and public specification agree on paths, IDs, relationships, visibility, privacy, and lifecycle operations.
+6. Audit-only modes do not silently authorize writes, and destructive or many-record operations require a preview and confirmation.
+7. Generated mirrors match canonical skill sources after intentional provider exclusions.
+
+Workflow:
+
+1. Read the architecture map, style guide, skill architecture, root runtime skill, export configuration, and VitaeGraph specification when applicable.
+2. Trace representative agent runs for audit, draft, apply, validate, retrieve, maintain, and degraded-tool scenarios.
+3. Run `npm test`, `npm run validate`, and a provider export smoke test.
+4. Produce a prioritized contract-drift report with exact files, observed behavior, proposed behavior, and the runtime consequence.
+5. Present proposed patches before writing. Apply only changes confirmed by the maintainer under the repository's normal file ownership rules.
+6. Regenerate stored mirrors and `llms-full.txt` when their canonical sources change, then rerun validation.
+
+Do not force external-source confidence labels onto repo-owned architecture claims in this mode. Validate those claims against code, schemas, templates, tests, generated output, and repository docs.
 
 ## Mode 3: Source audit only
 
