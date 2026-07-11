@@ -317,7 +317,51 @@ Expected output:
 - missing inputs for a deeper account pass
 ```
 
-## 8. Demo: full cross-platform refresh
+## 8. Demo: build and maintain a VitaeGraph
+
+Goal: create or deepen detailed private career records without loading every domain, publishing private content, or flattening education and project relationships.
+
+Example inputs:
+
+```text
+- exact graph path: ~/.agentkit-seo/vitaegraph
+- current CV or personal career context file
+- selected project notes and repository URLs
+- degree, course, or thesis material
+- corrections to existing records
+```
+
+Prompt:
+
+```text
+Use agentkit-seo-vitaegraph.
+
+Graph: ~/.agentkit-seo/vitaegraph
+Mode: deepen
+Scope: projects and the related degree only
+
+Inspect only the CV, notes, and repositories I provide. Preserve stable IDs,
+do not rewrite unrelated domains, and treat visibility metadata as something
+to filter rather than publication consent. Validate and index after canonical
+Markdown changes. If the graph CLI is unavailable, report the manual checks
+without claiming machine validation passed.
+```
+
+Expected output:
+
+```text
+- selected mode, depth, exact graph path, and mutation scope
+- records created, corrected, moved, or deepened
+- repository enrichment and access limitations
+- relationship, root-summary, and index changes
+- validation and indexing results
+- unresolved conflicts and open questions
+- smallest downstream handoff
+```
+
+For validation or retrieval only, change `Mode` to `validate` or `retrieve`. Those modes are read-only unless repair is explicitly requested. For deletion, duplicate merging, or many-record migration, expect a preview before application.
+
+## 9. Demo: full cross-platform refresh
 
 Goal: coordinate all public surfaces from the same private context file.
 
@@ -352,7 +396,7 @@ Expected output:
 - follow-up prompts for each focused skill
 ```
 
-## 9. See also
+## 10. See also
 
 - [Getting started](./getting-started.md)
 - [Architecture map](./architecture-map.md)

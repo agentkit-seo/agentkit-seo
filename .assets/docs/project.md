@@ -96,6 +96,8 @@ This modular shape solves the context-window problem: a LinkedIn task should loa
 
 Each user-facing module opens its `SKILL.md` from a role-grounded professional persona (for example a hiring manager and maintainer for GitHub, a technical recruiter for LinkedIn) and runs a `## Self-review` step before returning, checking for fabricated facts, evidence-label accuracy, scope and goal alignment, and impact ordering. The GitHub, LinkedIn, CV/ATS, and web-portfolio modules also ship an `audit-scoring.md` weighted 0-100 triage scorecard used strictly as an internal prioritization heuristic, not a platform ranking.
 
+The root orchestrator resolves the primary surface, task mode, mutation authority, evidence scope, and bounded depth before loading module detail. VitaeGraph separately routes create, deepen, maintain, validate, index, retrieve, and migrate operations so read-only graph work does not enter the full build workflow.
+
 The source tree also contains `agentkit-seo-wiki-maintenance` as a maintainer-only workflow for local source audits and wiki refreshes. It is not part of the installed user runtime bundle.
 
 ## 6. Install model

@@ -55,7 +55,7 @@ Create or update these files in order:
 
 ## What to update when wiki knowledge needs refreshing
 
-For agent-assisted refreshes, invoke the agentkit-seo-wiki-maintenance skill in your coding agent from a local repo clone. The skill implements this manual process as an agentic workflow: it discovers and fetches official sources, diffs them against current wiki claims, proposes confidence-labeled patches with source justification for every change, flags downstream skill or hub files that need separate updates, and regenerates llms-full.txt after you confirm. Use Mode 1 for a single module, Mode 2 for a full cross-module audit, Mode 3 for a source-only check.
+For agent-assisted refreshes, invoke the agentkit-seo-wiki-maintenance skill in your coding agent from a local repo clone. The skill implements this manual process as an agentic workflow: it discovers and fetches official sources, diffs them against current wiki claims, proposes confidence-labeled patches with source justification for every change, flags downstream skill or hub files that need separate updates, and regenerates llms-full.txt after you confirm. Use Mode 1 for a single module, Mode 2 for a full cross-module audit, Mode 3 for a source-only check, and Mode 4 for an internal routing, portability, or VitaeGraph contract audit grounded in repository code and schemas.
 
 1. Read the module's `hub/<module>/sources.md`.
 2. Search for newer or missing official sources for the same surface.

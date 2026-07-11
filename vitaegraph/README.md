@@ -271,6 +271,17 @@ A strong graph is built domain by domain instead of producing one shallow record
 7. Validate the graph.
 8. Generate the indexes only after validation passes.
 
+Choose the smallest lifecycle mode before loading detailed workflows:
+
+- `Create` initializes an absent graph and builds supported records.
+- `Deepen` adds evidence-supported detail to selected records.
+- `Maintain` corrects facts and relationships without rewriting unrelated domains.
+- `Validate` and `index` are structural operations and do not rewrite canonical content.
+- `Retrieve` reads the smallest relevant subtree without modifying the graph.
+- `Migrate` previews hierarchy, path, and relationship changes while preserving stable IDs.
+
+Deletion, duplicate merges, and many-record migrations require a preview of affected IDs, paths, inbound relationships, and index links before application.
+
 The runtime skill contains focused workflows for education, projects, experience, certifications, awards, and publications. In particular, project records should inspect supplied local repositories and enrich public GitHub URLs through the sibling GitHub skill when available. Repository metadata is supporting material, not permission to invent ownership, impact, or technical depth.
 
 The templates in [`templates/`](templates/) define the expected depth for each record type:
@@ -342,7 +353,7 @@ Agents should retrieve progressively:
 Typical selections include:
 
 - GitHub work: relevant project records.
-- LinkedIn work: identity, experience, project, education, and target-direction records.
+- LinkedIn work: graph-level identity and target direction from `VITAEGRAPH.md`, plus relevant experience, project, and education records.
 - CV or ATS work: experience, education, certification, and selected project records.
 - Portfolio work: projects, thesis work, awards, and publications.
 - X or Twitter work: only records and claims safe for public discussion.

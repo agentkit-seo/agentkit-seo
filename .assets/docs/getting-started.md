@@ -11,6 +11,7 @@ Use this table before opening deeper files.
 | Install AgentKit SEO into an agent tool | [README.md](../../README.md) | First install |
 | See what a skill-ready agent can do | [end-to-end-workflows.md](./end-to-end-workflows.md) | The matching runtime skill |
 | Build a personal career context file | [hub/agent-context-optimization/README.md](../../hub/agent-context-optimization/README.md) | [context-optimization skill](../../.skills/agent-skill/agentkit-seo-agent-context-optimization/SKILL.md) |
+| Build, maintain, validate, or retrieve a detailed private career graph | [vitaegraph/README.md](../../vitaegraph/README.md) | [VitaeGraph skill](../../.skills/agent-skill/agentkit-seo-vitaegraph/SKILL.md) |
 | Optimize one public surface | The matching `hub/<module>/README.md` | The matching `.skills/agent-skill/agentkit-seo-<module>/SKILL.md` |
 | Understand the design thinking and concepts applied | [DESIGN.md](../../DESIGN.md) | [architecture-map.md](./architecture-map.md) |
 | Understand the repo architecture | [architecture-map.md](./architecture-map.md) | [.skills/architecture.md](../../.skills/architecture.md) |
@@ -19,7 +20,7 @@ Use this table before opening deeper files.
 
 ## 2. Repository layers
 
-AgentKit SEO has two main documentation branches.
+AgentKit SEO has two documentation branches plus the VitaeGraph product contract.
 
 Human layer:
 
@@ -38,6 +39,14 @@ Runtime layer:
         └── wiki/knowledge.md
 ```
 
+VitaeGraph product layer:
+
+```text
+vitaegraph/README.md
+├── schema/
+└── templates/
+```
+
 The human layer explains playbooks, templates, examples, and source ledgers. The runtime layer is what installed agents use to decide which skill and wiki entries to load.
 
 ## 3. First install
@@ -51,8 +60,8 @@ npx agentkit-seo version
 Expected output:
 
 ```text
-agentkit-seo 1.8.1
-Portable agent skills for LinkedIn, GitHub, CV/ATS, portfolio SEO, X, and agent context optimization.
+agentkit-seo 1.9.1
+Portable agent skills for career context, VitaeGraph, LinkedIn, GitHub, CV/ATS, portfolio SEO, and X.
 ```
 
 Install the skills for one provider:
@@ -64,7 +73,7 @@ npx agentkit-seo install --provider codex
 Expected shape:
 
 ```text
-Installed 7 skill folder(s) for codex
+Installed 8 skill folder(s) for codex
 - target: <codex skill directory>
 - manifest: <codex skill directory>/agentkit-seo-install.json
 ```
@@ -129,6 +138,18 @@ Then use one platform skill:
 ```text
 Use agentkit-seo-github to audit my GitHub profile for hiring visibility.
 Use my personal career context file at ~/.agentkit-seo/my-context.md.
+```
+
+For detailed multi-file records, initialize a separate private VitaeGraph and ask the skill to select the smallest lifecycle mode:
+
+```bash
+npx agentkit-seo graph init
+```
+
+```text
+Use agentkit-seo-vitaegraph to deepen the project records in
+~/.agentkit-seo/vitaegraph from these explicit repositories and notes.
+Do not modify unrelated domains. Validate and index after the update.
 ```
 
 ## 5. How agents should navigate

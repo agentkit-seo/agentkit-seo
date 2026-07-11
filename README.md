@@ -124,6 +124,8 @@ Keep the personal career context file private. A portable default location is:
 
 Its root directory is an independently readable product entrypoint containing the format specification, schema, graph model, and canonical templates. The skill inventories supplied material first, then completes domain-specific workflows. Markdown remains canonical; generated JSON files are rebuildable local indexes.
 
+The runtime selects create, deepen, maintain, validate, index, retrieve, or migrate mode before loading node-specific context. Destructive and many-record changes are previewed, stable IDs survive path changes, and `visibility: public` never acts as automatic publication consent.
+
 ```text
 ~/.agentkit-seo/
 ├── <name-surname>-career-context.md
