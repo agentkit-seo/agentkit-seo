@@ -23,6 +23,7 @@ These instructions apply to the whole repository.
 
 - Product: **VitaeContext**. Tagline: **Keep your career context. Reuse it across AI.**
 - Canonical definition: **VitaeContext gives AI agents a private, reusable source of truth about a person's career, then provides focused skills for turning that context into grounded professional work.**
+- Position VitaeContext as the context layer before agent-assisted career systems and workflows. It is provider- and system-agnostic: it prepares the precise, evidence-bounded Career Context those systems use, rather than depending on a particular CV builder, application tool, or AI provider.
 - Use **Career Context** for the private user-owned artifact. Describe **VitaeGraph** as VitaeContext's optional deeper structured-record layer.
 - Frame the product as career-context infrastructure. SEO, AEO, ATS, and platform optimization are capabilities of focused modules, not the umbrella identity.
 - Keep `agentkit-seo` only where compatibility behavior or migration history requires it.

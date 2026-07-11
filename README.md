@@ -47,6 +47,12 @@ The goal is simple:
 - Adapt the same evidence to each platform without turning positioning into invention.
 - Reuse the workflow across supported AI coding agents.
 
+### The context layer before career automation
+
+Many tools can draft a CV, tailor an application, write a message, or automate a career workflow. Those tools can only work from the career information they receive. When that input is scattered, stale, incomplete, or overstated, the same problems travel through the rest of the workflow.
+
+VitaeContext sits one logical layer before those systems. It helps create and maintain the private, evidence-bounded Career Context file that an agent, CV builder, application workflow, or other career tool can use as its starting point. VitaeContext is provider- and system-agnostic: it does not require a particular AI provider or downstream automation product. The file stays portable so it can be supplied wherever precise career context is needed.
+
 ## How it works
 
 <p align="center">
@@ -66,7 +72,7 @@ The Career Context file supplies facts and direction. Platform skills supply for
   <img src=".assets/image/public-visuals/vitaecontext/workflow-use-case.png" alt="A career task is completed by attaching a Career Context file to any AI chat or agent and asking for a grounded draft" width="100%" />
 </p>
 
-The Career Context file is not limited to VitaeContext modules. Attach it to any AI chat or agent that needs to understand an individual's career, then describe the current task. It can ground application answers, professional messages, emails, interview preparation, and other career-related drafts without requiring the same background to be explained again.
+The Career Context file is not limited to VitaeContext modules. Attach it to any AI chat, agent, or career system that accepts supplied context, then describe the current task. It can ground application answers, professional messages, emails, interview preparation, and other career-related drafts without requiring the same background to be explained again.
 
 ### Why grounding matters
 
