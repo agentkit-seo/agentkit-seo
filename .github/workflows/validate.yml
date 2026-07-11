@@ -27,6 +27,14 @@ jobs:
       - name: Run unit tests
         run: npm test
 
+      - name: Install compatibility package dependencies
+        working-directory: packages/agentkit-seo-compat
+        run: npm ci --ignore-scripts
+
+      - name: Test AgentKit SEO compatibility forwarding
+        working-directory: packages/agentkit-seo-compat
+        run: npm test
+
       - name: Validate CLI package layout
         run: npm run validate
 
@@ -46,4 +54,8 @@ jobs:
         run: node .skills/export/scripts/vitaecontext.mjs install --provider antigravity --target-dir /tmp/vitaecontext-antigravity-install-check --force
 
       - name: Verify package contents
+        run: npm pack --dry-run
+
+      - name: Verify compatibility package contents
+        working-directory: packages/agentkit-seo-compat
         run: npm pack --dry-run

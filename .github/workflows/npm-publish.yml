@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*"
+      - "agentkit-seo-v*"
 
 jobs:
   publish:
@@ -17,22 +18,56 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Select package from tag
+        id: package
+        shell: bash
+        run: |
+          case "$GITHUB_REF_NAME" in
+            agentkit-seo-v*)
+              echo "directory=packages/agentkit-seo-compat" >> "$GITHUB_OUTPUT"
+              echo "name=agentkit-seo" >> "$GITHUB_OUTPUT"
+              echo "version=${GITHUB_REF_NAME#agentkit-seo-v}" >> "$GITHUB_OUTPUT"
+              ;;
+            v*)
+              echo "directory=." >> "$GITHUB_OUTPUT"
+              echo "name=vitaecontext" >> "$GITHUB_OUTPUT"
+              echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "Unsupported release tag: $GITHUB_REF_NAME" >&2
+              exit 1
+              ;;
+          esac
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Verify tag matches package version
+      - name: Install package dependencies
+        working-directory: ${{ steps.package.outputs.directory }}
+        run: npm install --ignore-scripts
+
+      - name: Verify tag matches package identity
+        working-directory: ${{ steps.package.outputs.directory }}
+        env:
+          EXPECTED_NAME: ${{ steps.package.outputs.name }}
+          EXPECTED_VERSION: ${{ steps.package.outputs.version }}
         run: |
+          package_name="$(node -p "require('./package.json').name")"
           package_version="$(node -p "require('./package.json').version")"
-          tag_version="${GITHUB_REF_NAME#v}"
-          if [ "$tag_version" != "$package_version" ]; then
-            echo "Tag ${GITHUB_REF_NAME} does not match package.json version ${package_version}."
+          if [ "$package_name" != "$EXPECTED_NAME" ]; then
+            echo "Package name ${package_name} does not match ${EXPECTED_NAME}."
+            exit 1
+          fi
+          if [ "$package_version" != "$EXPECTED_VERSION" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match ${package_name}@${package_version}."
             exit 1
           fi
 
       - name: Verify provider metadata versions
+        if: steps.package.outputs.name == 'vitaecontext'
         run: |
           node --input-type=module -e '
             import fs from "node:fs";
@@ -50,13 +85,35 @@ jobs:
             }
           '
 
-      - name: Validate package layout
+      - name: Validate VitaeContext package
+        if: steps.package.outputs.name == 'vitaecontext'
         run: npm run validate
 
+      - name: Test compatibility package
+        if: steps.package.outputs.name == 'agentkit-seo'
+        working-directory: packages/agentkit-seo-compat
+        run: npm test
+
       - name: Verify package contents
+        working-directory: ${{ steps.package.outputs.directory }}
         run: npm pack --dry-run
 
+      - name: Check whether version is already published
+        id: registry
+        env:
+          PACKAGE_NAME: ${{ steps.package.outputs.name }}
+          PACKAGE_VERSION: ${{ steps.package.outputs.version }}
+        run: |
+          if npm view "${PACKAGE_NAME}@${PACKAGE_VERSION}" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "${PACKAGE_NAME}@${PACKAGE_VERSION} is already published; skipping npm publish."
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Publish to npm
+        if: steps.registry.outputs.published != 'true'
+        working-directory: ${{ steps.package.outputs.directory }}
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -69,12 +126,29 @@ jobs:
       contents: write
 
     steps:
+      - name: Select release metadata
+        id: release
+        shell: bash
+        run: |
+          case "$GITHUB_REF_NAME" in
+            agentkit-seo-v*)
+              echo "package=agentkit-seo" >> "$GITHUB_OUTPUT"
+              echo "version=${GITHUB_REF_NAME#agentkit-seo-v}" >> "$GITHUB_OUTPUT"
+              ;;
+            v*)
+              echo "package=vitaecontext" >> "$GITHUB_OUTPUT"
+              echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
       - name: Create release
         env:
           GH_TOKEN: ${{ github.token }}
+          PACKAGE_NAME: ${{ steps.release.outputs.package }}
+          PACKAGE_VERSION: ${{ steps.release.outputs.version }}
           TAG_NAME: ${{ github.ref_name }}
         run: |
           gh release create "$TAG_NAME" \
             --repo "$GITHUB_REPOSITORY" \
-            --title "vitaecontext $TAG_NAME" \
-            --notes "Npm package: https://www.npmjs.com/package/vitaecontext"
+            --title "${PACKAGE_NAME} ${PACKAGE_VERSION}" \
+            --notes "npm package: https://www.npmjs.com/package/${PACKAGE_NAME}/v/${PACKAGE_VERSION}"

@@ -15,6 +15,7 @@ This project follows npm package versions and mirrors them with matching GitHub 
 ### Compatibility
 
 - Kept `agentkit-seo` as a deprecated executable alias that forwards to `vitaecontext` with a warning.
+- Added a separately published `agentkit-seo` compatibility package that depends on VitaeContext and forwards legacy `npx agentkit-seo` commands.
 - Kept update and uninstall support for existing `agentkit-seo-install.json` manifests while new installs write `vitaecontext-install.json`.
 
 ## 1.9.2 - 2026-07-11

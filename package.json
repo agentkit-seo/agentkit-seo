@@ -55,7 +55,7 @@
     "install:skills": "node .skills/export/scripts/vitaecontext.mjs install",
     "list:providers": "node .skills/export/scripts/vitaecontext.mjs list providers",
     "list:skills": "node .skills/export/scripts/vitaecontext.mjs list skills",
-    "test": "node --test",
+    "test": "node --test test/*.test.mjs",
     "validate": "node .skills/export/scripts/vitaecontext.mjs doctor",
     "version:cli": "node .skills/export/scripts/vitaecontext.mjs version"
   },
