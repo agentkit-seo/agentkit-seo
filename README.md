@@ -21,6 +21,7 @@
   <a href="#why-vitaecontext">Why</a> •
   <a href="#how-it-works">How it works</a> •
   <a href="#quick-start">Quick start</a> •
+  <a href="#set-up-with-an-agent">Agent setup</a> •
   <a href="#vitaegraph">VitaeGraph</a> •
   <a href="#modules">Modules</a> •
   <a href="#install">Install</a> •
@@ -81,6 +82,20 @@ Repeated rewriting can make copy sound more confident while moving it farther fr
 It does not promise automatic fact-checking or guaranteed platform results. It provides the context structure, evidence rules, current platform knowledge, and self-review workflow agents need to produce more consistent work.
 
 ## Quick start
+
+### Set up with an agent
+
+Copy this prompt into your agent. GitHub adds a copy control to the prompt block.
+
+```text
+Set up VitaeContext for this agent environment.
+
+- Read https://vitaecontext.github.io/docs/installation/ and https://vitaecontext.github.io/providers/ first. Identify the matching provider and its invocation format.
+- Run `npx vitaecontext install --provider <matching-provider>`. Do not use `--force` or change install locations unless I approve it.
+- Verify the installation with `npx vitaecontext doctor`, then tell me which skills are available and how to invoke them here.
+- Ask me for a private name and file path, then create a Career Context template with `npx vitaecontext template context --output <private-path>`.
+- Read https://vitaecontext.github.io/docs/usage/ and propose three practical next steps. Start with building the context from career material I choose to share, then suggest one focused skill for my immediate goal. Do not upload or share my files without asking.
+```
 
 Install the skills for an agent provider:
 
